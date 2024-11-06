@@ -4,10 +4,10 @@
   "type": "module",
   "scripts": {
     "cql-to-elm": "npx cql-to-elm input/cql",    
-    "test-cql": "mocha 'test' --reporter spec --recursive --timeout 100000",
-    "test-cql-reporter": "mocha --reporter spec --recursive --timeout 100000 --reporter mocha-junit-reporter --reporter-options mochaFile=junit.xml --exit",    
+    "test-cql": "mocha 'test' --reporter spec --recursive --timeout 100000 --no-package",
+    "test-cql-reporter": "mocha 'test' --reporter spec --recursive --timeout 100000 --reporter mocha-junit-reporter --reporter-options mochaFile=junit.xml --no-package --exit",    
     "sushi": "npx sushi",
-    "test-apply": "mocha 'apply' --reporter spec --recursive --timeout 100000"
+    "test-apply": "mocha 'apply' --reporter spec --recursive --timeout 100000 --no-package"
   },
   "license": "Apache-2.0",
   "devDependencies": {
