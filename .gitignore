@@ -5,3 +5,9 @@ Thumbs.db
 /output
 /temp
 /template
+
+.vscode
+/node_modules
+junit.xml
+test/examples
+apply/examples
