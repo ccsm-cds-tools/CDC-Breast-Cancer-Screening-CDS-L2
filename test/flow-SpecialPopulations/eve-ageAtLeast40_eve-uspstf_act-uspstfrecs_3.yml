@@ -1,0 +1,15 @@
+---
+name: eve-fhxbrca_eve-ageAtLeast40_eve-uspstf_act-uspstfrecs
+flow: flow-SpecialPopulations
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-fhxbrca"
+  - "*eve-ageAtLeast40"
+  - "*eve-uspstf"
+results:
+  flow-SpecialPopulations:
+    - "*act-uspstfrecs"

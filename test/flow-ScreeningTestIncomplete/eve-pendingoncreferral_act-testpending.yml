@@ -1,0 +1,13 @@
+---
+name: eve-pendingoncreferral_act-testpending
+flow: flow-ScreeningTestIncomplete
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-pendingoncreferral"
+results:
+  flow-ScreeningTestIncomplete:
+    - "*act-testpending"

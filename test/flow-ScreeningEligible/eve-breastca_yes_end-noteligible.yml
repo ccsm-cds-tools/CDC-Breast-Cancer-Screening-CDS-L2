@@ -1,0 +1,13 @@
+---
+name: eve-female_yes_eve-breastca_yes_end-noteligible
+flow: flow-ScreeningEligible
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-female"
+  - "*eve-breastca"
+results:
+  flow-ScreeningEligible: []

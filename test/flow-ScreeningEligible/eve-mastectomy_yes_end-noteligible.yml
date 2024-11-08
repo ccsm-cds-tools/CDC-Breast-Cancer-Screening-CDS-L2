@@ -1,0 +1,14 @@
+---
+name: eve-female_yes_eve-breastca_no_eve-mastectomy_yes_end-noteligible
+flow: flow-ScreeningEligible
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-female"
+  - "*eve-breastca"
+  - "*eve-mastectomy"
+results:
+  flow-ScreeningEligible: []

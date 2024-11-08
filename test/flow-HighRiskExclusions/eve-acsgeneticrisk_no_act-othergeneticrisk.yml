@@ -1,0 +1,14 @@
+---
+name: eve-geneticrisk_yes_eve-acsgeneticrisk_no_act-othergeneticrisk
+flow: flow-HighRiskExclusions
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-geneticrisk"
+  - "*eve-acsgeneticrisk"
+results:
+  flow-HighRiskExclusions:
+    - "*act-othergeneticrisk"

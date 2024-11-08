@@ -1,0 +1,15 @@
+---
+name: eve-firstdeggenetic_eve-ageUnder30_eve-uspstf_act-startdateuspstf
+flow: flow-SpecialPopulations
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-firstdeggenetic"
+  - "*eve-ageUnder30"
+  - "*eve-uspstf"
+results:
+  flow-SpecialPopulations:
+    - "*act-startdateuspstf"

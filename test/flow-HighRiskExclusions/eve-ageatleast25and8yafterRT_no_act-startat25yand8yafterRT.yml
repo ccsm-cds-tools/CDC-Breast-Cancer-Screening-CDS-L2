@@ -1,0 +1,15 @@
+---
+name: eve-geneticrisk_no_eve-chestxrt_yes_eve-ageatleast25and8yafterRT_no_act-startat25yand8yafterRT
+flow: flow-HighRiskExclusions
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-geneticrisk"
+  - "*eve-chestxrt"
+  - "*eve-ageatleast25and8yafterRT"
+results:
+  flow-HighRiskExclusions:
+    - "*act-startat25yand8yafterRT"

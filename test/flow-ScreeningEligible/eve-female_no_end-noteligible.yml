@@ -1,0 +1,12 @@
+---
+name: eve-female_no_end-noteligible
+flow: flow-ScreeningEligible
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-female"
+results:
+  flow-ScreeningEligible: []

@@ -1,0 +1,18 @@
+---
+name: eve-fhxgeneinherited_no_eve-brcageneancestry_no_eve-fhxbrcaovcatubalperit_yes_eve-preferredfhxriskmethod_informal_act-fhxriskassess__eve-fhxriskresult_positive_act-geneticreferral
+flow: flow-GeneticRiskReferral
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-fhxgeneinherited"
+  - "*eve-brcageneancestry"
+  - "*eve-fhxbrcaovcatubalperit"
+  - "*eve-preferredfhxriskmethod"
+  - "*eve-fhxriskresult"
+results:
+  flow-GeneticRiskReferral:
+    - "*act-fhxriskassess"
+    - "*act-geneticreferral"

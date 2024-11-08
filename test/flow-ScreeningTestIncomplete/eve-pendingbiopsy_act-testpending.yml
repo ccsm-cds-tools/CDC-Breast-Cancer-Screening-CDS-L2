@@ -1,0 +1,13 @@
+---
+name: eve-pendingbiopsy_act-testpending
+flow: flow-ScreeningTestIncomplete
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-pendingbiopsy"
+results:
+  flow-ScreeningTestIncomplete:
+    - "*act-testpending"

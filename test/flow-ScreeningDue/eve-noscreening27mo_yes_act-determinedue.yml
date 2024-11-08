@@ -1,0 +1,14 @@
+---
+name: eve-nextdueexists_no_eve-noscreening27mo_yes_act-determinedue
+flow: flow-ScreeningDue
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-nextdueexists"
+  - "*eve-noscreening27mo"
+results:
+  flow-ScreeningDue:
+    - "*act-determinedue"

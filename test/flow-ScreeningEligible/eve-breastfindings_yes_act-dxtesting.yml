@@ -1,0 +1,17 @@
+---
+name: eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_yes_act-dxtesting
+flow: flow-ScreeningEligible
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-female"
+  - "*eve-breastca"
+  - "*eve-mastectomy"
+  - "*eve-breastsymptoms"
+  - "*eve-breastfindings"
+results:
+  flow-ScreeningEligible:
+    - "*act-dxtesting"
