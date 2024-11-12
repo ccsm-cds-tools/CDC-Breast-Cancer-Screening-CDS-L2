@@ -1,0 +1,8 @@
+default_patient:
+- &defaultPatient
+  - resourceType: Patient
+    id: "defaultPatient"
+    name: 
+    - given:
+      - Jane
+      family: Doe

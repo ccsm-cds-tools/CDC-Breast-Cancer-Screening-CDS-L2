@@ -1,12 +1,11 @@
 ---
 name: eve-female_no_end-noteligible
 flow: flow-ScreeningEligible
-skip: true
 externalData:
   - ./events/events
   - ./actions/actions
-  - ../default_patients
+  - ../DataElements/data_elements
 data:
-  - "*eve-female"
+  - *Sex_assigned_at_birth_=_male_AND_gender_=_female
 results:
-  flow-ScreeningEligible: []
+  flow-ScreeningEligible: *end-noteligible-notassignedfemaleatbirth

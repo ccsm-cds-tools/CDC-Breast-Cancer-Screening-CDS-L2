@@ -1,9 +1,50 @@
 de-female:
-  - "&Sex_assigned_at_birth_=_female_OR_Sex_assigned_at_birth_missing_or_unknown_AND_administrative_gender_=_female_OR_gender_identity_=_transgender_male"
-  - "&Sex_assigned_at_birth_=_female"
-  - "&Sex_assigned_at_birth_missing_or_unknown_AND_administrative_gender_=_female"
-  - "&Sex_assigned_at_birth_missing_or_unknown"
-  - "&administrative_gender_=_female"
+  - &Sex_assigned_at_birth_=_female_AND_gender_=_other
+    resourceType: Patient
+    name: Joanne Smith
+    gender: other
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: F
+  - &Sex_assigned_at_birth_=_male_AND_gender_=_female
+    resourceType: Patient
+    name: Joanne Smith
+    gender: female
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: M     
+  - &Sex_assigned_at_birth_=_none_AND_gender_=_female
+    resourceType: Patient
+    name: Joanne Smith
+    gender: female
+    birthDate: 1980-01-01
+  - &Sex_assigned_at_birth_=_none_AND_gender_=_male
+    resourceType: Patient
+    name: Joanne Smith
+    gender: male
+    birthDate: 1980-01-01  
+  - &Sex_assigned_at_birth_missing_or_unknown_AND_administrative_gender_=_female 
+    resourceType: Patient
+    name: Joanne Smith
+    gender: female
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: UNK    
+  - &Sex_assigned_at_birth_missing_or_unknown_AND_administrative_gender_=_male 
+    resourceType: Patient
+    name: Joanne Smith
+    gender: male
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: UNK  
   - "&gender_identity_=_transgender_male"
 de-breastca:
   - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_active_OR_CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_active"

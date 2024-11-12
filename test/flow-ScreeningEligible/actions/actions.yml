@@ -1,2 +1,17 @@
-act-dxtesting: []
-act-eligible: []
+act-eligible:
+  - &act-eligible
+    result: true
+    code:
+      code: "eligible"
+      system: "http://example.org/CodeSystem/plan-definition-action-code-system"
+    reason: 'eligibleforscreening'
+end-noteligible-notassignedfemaleatbirth:
+  - &end-noteligible-notassignedfemaleatbirth
+    result: false
+    code:
+      code: "noteligible"
+      system: "http://example.org/CodeSystem/plan-definition-action-code-system"    
+    reason:
+      code: "notassignedfemaleatbirth"
+      system: "http://example.org/CodeSystem/plan-definition-action-reason-code-system"    
+act-dxtesting: []    

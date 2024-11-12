@@ -1,5 +1,13 @@
 eve-female:
-  - "&'Assigned_female_at_birth'_is_TRUE"
+  - &Sex_assigned_at_birth_=_male_AND_gender_=_female
+    resourceType: Patient
+    name: Joanne Smith
+    gender: female
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: M  
 eve-breastca:
   - "&'Current_breast_cancer'_is_TRUE"
 eve-mastectomy:

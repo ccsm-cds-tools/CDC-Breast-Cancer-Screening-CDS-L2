@@ -1,0 +1,29 @@
+{
+  "resourceType": "Bundle",
+  "id": "eve-female_no_end-noteligible",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "79489dd5-cf2d-45f1-9f9e-6d9271ab0466",
+        "name": [
+          {
+            "given": [
+              "Joanne"
+            ],
+            "family": "Smith"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1980-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+            "valueCode": "M"
+          }
+        ]
+      }
+    }
+  ]
+}
