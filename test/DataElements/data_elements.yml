@@ -47,9 +47,81 @@ de-female:
       valueCode: UNK  
   - "&gender_identity_=_transgender_male"
 de-breastca:
-  - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_active_OR_CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_active"
-  - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_active"
-  - "&CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_active"
+  - &CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_active
+    resourceType: Condition
+    id: invasive-breast-cancer
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+          display: Active
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+          display: Confirmed
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-category
+            code: problem-list-item
+            display: Problem List Item
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 254837009
+          display: Invasive breast cancer
+      text: Invasive Breast Cancer
+    onsetDateTime: '2023-10-01'
+  - &CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_active
+    resourceType: Condition
+    id: non-invasive-breast-cancer
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+          display: Active
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+          display: Confirmed
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-category
+            code: problem-list-item
+            display: Problem List Item
+    code:
+      coding:
+        - system: http://hl7.org/fhir/sid/icd-10-cm
+          code: D05.10
+          display: Non-invasive breast cancer
+      text: Non-Invasive Breast Cancer
+    onsetDateTime: '2023-10-01'
+  - &CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive
+    resourceType: Condition
+    id: invasive-breast-cancer
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: inactive
+          display: Inactive
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+          display: Confirmed
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-category
+            code: problem-list-item
+            display: Problem List Item
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 254837009
+          display: Invasive breast cancer
+      text: Invasive Breast Cancer
+    onsetDateTime: '2023-10-01'    
 de-mastectomy:
   - "&CONDITIONS_include_`BILATERAL_MASTECTOMY`_OR_PROCEDURES_include_`BILATERAL_MASTECTOMY`_OR_(PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_left_AND_PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_right)"
   - "&CONDITIONS_include_`BILATERAL_MASTECTOMY`"

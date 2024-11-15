@@ -44,6 +44,10 @@ Usage: #definition
 * action[=].action[=].condition[+].kind =  $ACKIND#applicability "Applicability"
 * action[=].action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].action[=].condition[=].expression.expression = "IsNotScreeningEligible"
+* action[=].action[=].definitionCanonical = Canonical(CommunicateNotEligible|1.0.0)
+* action[=].action[=].dynamicValue[+].path = "reasonCode"
+* action[=].action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].action[=].dynamicValue[=].expression.expression = "ScreeningEligibleReason"
 // -----------------------------------------------------------------------------
 // Inclusions error
 // -----------------------------------------------------------------------------
@@ -59,3 +63,21 @@ Usage: #definition
 * action[=].condition[=].expression.expression = "MissingAgeOrBirthdate"
 * action[=].condition[=].expression.reference = "Library/ScreeningEligible|1.0.0"
 * action[=].definitionCanonical = Canonical(ScreeningEligibleQuestionnaire|1.0.0)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Instance: CommunicateNotEligible
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity
+Title: "Communicate Not Eligible"
+Usage: #definition
+
+* insert CPGKnowledgeExtensions
+* insert CommonMetadata
+* meta.profile[+] = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
+// * cpg-partOf = Canonical(TopLevelPlanDefinition) // TODO: Tie this into the entire pathway
+* url = Canonical(CommunicateNotEligible)
+* name = "CommunicateNotEligible"
+* description = "This ActivityDefinition generates a CommunicationRequest containing information about the patient's ineligibility for screening."
+* kind = $RRTYPE#CommunicationRequest "CommunicationRequest"
+* intent = $RINTENT#proposal "Proposal"
+* priority = $RPRIOR#routine "Routine"

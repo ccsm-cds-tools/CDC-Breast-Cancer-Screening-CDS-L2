@@ -14,4 +14,13 @@ end-noteligible-notassignedfemaleatbirth:
     reason:
       code: "notassignedfemaleatbirth"
       system: "http://example.org/CodeSystem/plan-definition-action-reason-code-system"    
+end-noteligible-currentbreastcancer:
+  - &end-noteligible-currentbreastcancer
+    result: false
+    code:
+      code: "noteligible"
+      system: "http://example.org/CodeSystem/plan-definition-action-code-system"    
+    reason:
+      code: "currentbreastcancer"
+      system: "http://example.org/CodeSystem/plan-definition-action-reason-code-system"        
 act-dxtesting: []    

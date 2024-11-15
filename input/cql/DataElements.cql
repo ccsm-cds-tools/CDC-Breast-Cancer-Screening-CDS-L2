@@ -1,6 +1,9 @@
 library DataElements version '1.0.0'
 
 using FHIR version '4.0.1'
+
+include CDSConnectCommonsforFHIRv401 version '1.0.0' called C3F
+include CSMCommonFunctions version '1.0.0' called Common
 include FHIRHelpers  version '4.0.1' called FHIRHelpers
 
 //------------------------------------------------------------------------------
@@ -13,6 +16,20 @@ codesystem "RXNORM": 'http://www.nlm.nih.gov/research/umls/rxnorm'
 codesystem "ICD-9": 'http://hl7.org/fhir/sid/icd-9-cm'
 codesystem "ICD-10": 'http://hl7.org/fhir/sid/icd-10-cm'
 codesystem "GENDER-IDENTITY": 'http://hl7.org/fhir/gender-identity'
+codesystem "CONDCLINSTATUS": 'http://terminology.hl7.org/CodeSystem/condition-clinical'
+
+code "Condition inactive code": 'inactive' from "CONDCLINSTATUS" display 'Inactive'
+code "Condition remission code": 'remission' from "CONDCLINSTATUS" display 'Remission'
+code "Condition resolved code": 'resolved' from "CONDCLINSTATUS" display 'Resolved'
+
+concept "Condition inactive": { "Condition inactive code" } display 'Inactive'
+concept "Condition remission": { "Condition remission code" } display 'Remission'
+concept "Condition resolved": { "Condition resolved code" } display 'Resolved'
+
+// Breast diagnoses, procedures, and observations
+valueset "INVASIVE BREAST CANCER": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.185'
+// TODO: replace placeholder value set OID
+valueset "NON-INVASIVE BREAST CANCER": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.246'
 
 // Standard codes
 code "Gender Identity": '76691-5' from "LOINC" display 'Gender identity'
@@ -104,4 +121,20 @@ define FemaleorTransgenderMale:
 define GenderText:
   if Exists(GenderIdentityExtension) then GenderIdentityExtension[0].value.coding[0].code.value
   else Patient.gender.value
+
+//------------------------------------------------------------------------------
+// PERTINENT CONDITIONS
+//------------------------------------------------------------------------------
+// Conditions relevant to breast cancer
+//    No lookback restriction
+
+define "de-breastca":
+  exists BreastCancerDiagnoses C
+    where C.clinicalStatus !~ "Condition inactive"
+      and C.clinicalStatus !~ "Condition remission"
+      and C.clinicalStatus !~ "Condition resolved"
+
+define BreastCancerDiagnoses:
+  (Common.ValidCondition([Condition: "INVASIVE BREAST CANCER"]) union
+  Common.ValidCondition([Condition: "NON-INVASIVE BREAST CANCER"]))
 

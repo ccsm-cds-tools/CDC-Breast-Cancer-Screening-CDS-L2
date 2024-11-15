@@ -10,8 +10,8 @@ context Patient
 define "eve-female":
   DataElements."de-female"
 
-//define "eve-breastca":
-  // TODO: Implement logic for eve-breastca
+define "eve-breastca":
+  DataElements."de-breastca"
 
 //define "eve-mastectomy":
   // TODO: Implement logic for eve-mastectomy

@@ -9,7 +9,7 @@
       }, {
          "type" : "Annotation",
          "s" : {
-            "r" : "244",
+            "r" : "266",
             "s" : [ {
                "value" : [ "","library ScreeningEligibleActions version '1.0.0'" ]
             } ]
@@ -240,28 +240,55 @@
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}CodeSystem",
                "name" : "ReasonCode"
             }
+         }, {
+            "localId" : "219",
+            "locator" : "17:1-17:69",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Current breast cancer",
+            "id" : "currentbreastcancer",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "219",
+                  "s" : [ {
+                     "value" : [ "","code ","\"Current breast cancer\"",": ","'currentbreastcancer'"," from " ]
+                  }, {
+                     "r" : "220",
+                     "s" : [ {
+                        "value" : [ "\"ReasonCode\"" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "220",
+               "locator" : "17:58-17:69",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}CodeSystem",
+               "name" : "ReasonCode"
+            }
          } ]
       },
       "contexts" : {
          "def" : [ {
-            "localId" : "222",
-            "locator" : "18:1-18:15",
+            "localId" : "224",
+            "locator" : "19:1-19:15",
             "name" : "Patient"
          } ]
       },
       "statements" : {
          "def" : [ {
-            "localId" : "220",
-            "locator" : "18:1-18:15",
+            "localId" : "222",
+            "locator" : "19:1-19:15",
             "name" : "Patient",
             "context" : "Patient",
             "expression" : {
-               "localId" : "221",
+               "localId" : "223",
                "type" : "SingletonFrom",
                "signature" : [ ],
                "operand" : {
-                  "localId" : "219",
-                  "locator" : "18:1-18:15",
+                  "localId" : "221",
+                  "locator" : "19:1-19:15",
                   "dataType" : "{http://hl7.org/fhir}Patient",
                   "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
                   "type" : "Retrieve",
@@ -272,24 +299,24 @@
                }
             }
          }, {
-            "localId" : "224",
-            "locator" : "20:1-25:2",
+            "localId" : "226",
+            "locator" : "21:1-26:2",
             "name" : "act-eligible",
             "context" : "Patient",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
-                  "r" : "224",
+                  "r" : "226",
                   "s" : [ {
                      "value" : [ "","define ","\"act-eligible\"",":\n  " ]
                   }, {
-                     "r" : "225",
+                     "r" : "227",
                      "s" : [ {
                         "value" : [ "{\n    " ]
                      }, {
                         "s" : [ {
-                           "r" : "226",
+                           "r" : "228",
                            "value" : [ "result",": ","true" ]
                         } ]
                      }, {
@@ -298,7 +325,7 @@
                         "s" : [ {
                            "value" : [ "code",": " ]
                         }, {
-                           "r" : "227",
+                           "r" : "229",
                            "s" : [ {
                               "value" : [ "\"Eligible for screening\"" ]
                            } ]
@@ -309,7 +336,7 @@
                         "s" : [ {
                            "value" : [ "reason",": " ]
                         }, {
-                           "r" : "228",
+                           "r" : "230",
                            "s" : [ {
                               "value" : [ "\"Eligible for screening reason\"" ]
                            } ]
@@ -321,62 +348,62 @@
                }
             } ],
             "resultTypeSpecifier" : {
-               "localId" : "236",
+               "localId" : "238",
                "type" : "TupleTypeSpecifier",
                "element" : [ {
-                  "localId" : "237",
+                  "localId" : "239",
                   "name" : "result",
                   "elementType" : {
-                     "localId" : "238",
+                     "localId" : "240",
                      "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "NamedTypeSpecifier"
                   }
                }, {
-                  "localId" : "239",
+                  "localId" : "241",
                   "name" : "code",
                   "elementType" : {
-                     "localId" : "240",
+                     "localId" : "242",
                      "name" : "{urn:hl7-org:elm-types:r1}Code",
                      "type" : "NamedTypeSpecifier"
                   }
                }, {
-                  "localId" : "241",
+                  "localId" : "243",
                   "name" : "reason",
                   "elementType" : {
-                     "localId" : "242",
+                     "localId" : "244",
                      "name" : "{urn:hl7-org:elm-types:r1}Code",
                      "type" : "NamedTypeSpecifier"
                   }
                } ]
             },
             "expression" : {
-               "localId" : "225",
-               "locator" : "21:3-25:2",
+               "localId" : "227",
+               "locator" : "22:3-26:2",
                "type" : "Tuple",
                "resultTypeSpecifier" : {
-                  "localId" : "229",
+                  "localId" : "231",
                   "type" : "TupleTypeSpecifier",
                   "element" : [ {
-                     "localId" : "230",
+                     "localId" : "232",
                      "name" : "result",
                      "elementType" : {
-                        "localId" : "231",
+                        "localId" : "233",
                         "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
-                     "localId" : "232",
+                     "localId" : "234",
                      "name" : "code",
                      "elementType" : {
-                        "localId" : "233",
+                        "localId" : "235",
                         "name" : "{urn:hl7-org:elm-types:r1}Code",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
-                     "localId" : "234",
+                     "localId" : "236",
                      "name" : "reason",
                      "elementType" : {
-                        "localId" : "235",
+                        "localId" : "237",
                         "name" : "{urn:hl7-org:elm-types:r1}Code",
                         "type" : "NamedTypeSpecifier"
                      }
@@ -385,8 +412,8 @@
                "element" : [ {
                   "name" : "result",
                   "value" : {
-                     "localId" : "226",
-                     "locator" : "22:13-22:16",
+                     "localId" : "228",
+                     "locator" : "23:13-23:16",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "value" : "true",
@@ -395,8 +422,8 @@
                }, {
                   "name" : "code",
                   "value" : {
-                     "localId" : "227",
-                     "locator" : "23:9-23:32",
+                     "localId" : "229",
+                     "locator" : "24:9-24:32",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                      "name" : "Eligible for screening",
                      "type" : "CodeRef"
@@ -404,8 +431,8 @@
                }, {
                   "name" : "reason",
                   "value" : {
-                     "localId" : "228",
-                     "locator" : "24:13-24:43",
+                     "localId" : "230",
+                     "locator" : "25:13-25:43",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                      "name" : "Eligible for screening reason",
                      "type" : "CodeRef"
@@ -413,24 +440,24 @@
                } ]
             }
          }, {
-            "localId" : "244",
-            "locator" : "27:1-32:2",
+            "localId" : "246",
+            "locator" : "28:1-33:2",
             "name" : "end-noteligible-notassignedfemaleatbirth",
             "context" : "Patient",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
-                  "r" : "244",
+                  "r" : "246",
                   "s" : [ {
                      "value" : [ "","define ","\"end-noteligible-notassignedfemaleatbirth\"",":\n  " ]
                   }, {
-                     "r" : "245",
+                     "r" : "247",
                      "s" : [ {
                         "value" : [ "{\n    " ]
                      }, {
                         "s" : [ {
-                           "r" : "246",
+                           "r" : "248",
                            "value" : [ "result",": ","false" ]
                         } ]
                      }, {
@@ -439,7 +466,7 @@
                         "s" : [ {
                            "value" : [ "code",": " ]
                         }, {
-                           "r" : "247",
+                           "r" : "249",
                            "s" : [ {
                               "value" : [ "\"Not eligible for screening\"" ]
                            } ]
@@ -450,7 +477,7 @@
                         "s" : [ {
                            "value" : [ "reason",": " ]
                         }, {
-                           "r" : "248",
+                           "r" : "250",
                            "s" : [ {
                               "value" : [ "\"Not assigned female at birth\"" ]
                            } ]
@@ -462,62 +489,62 @@
                }
             } ],
             "resultTypeSpecifier" : {
-               "localId" : "256",
+               "localId" : "258",
                "type" : "TupleTypeSpecifier",
                "element" : [ {
-                  "localId" : "257",
+                  "localId" : "259",
                   "name" : "result",
                   "elementType" : {
-                     "localId" : "258",
+                     "localId" : "260",
                      "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "NamedTypeSpecifier"
                   }
                }, {
-                  "localId" : "259",
+                  "localId" : "261",
                   "name" : "code",
                   "elementType" : {
-                     "localId" : "260",
+                     "localId" : "262",
                      "name" : "{urn:hl7-org:elm-types:r1}Code",
                      "type" : "NamedTypeSpecifier"
                   }
                }, {
-                  "localId" : "261",
+                  "localId" : "263",
                   "name" : "reason",
                   "elementType" : {
-                     "localId" : "262",
+                     "localId" : "264",
                      "name" : "{urn:hl7-org:elm-types:r1}Code",
                      "type" : "NamedTypeSpecifier"
                   }
                } ]
             },
             "expression" : {
-               "localId" : "245",
-               "locator" : "28:3-32:2",
+               "localId" : "247",
+               "locator" : "29:3-33:2",
                "type" : "Tuple",
                "resultTypeSpecifier" : {
-                  "localId" : "249",
+                  "localId" : "251",
                   "type" : "TupleTypeSpecifier",
                   "element" : [ {
-                     "localId" : "250",
+                     "localId" : "252",
                      "name" : "result",
                      "elementType" : {
-                        "localId" : "251",
+                        "localId" : "253",
                         "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
-                     "localId" : "252",
+                     "localId" : "254",
                      "name" : "code",
                      "elementType" : {
-                        "localId" : "253",
+                        "localId" : "255",
                         "name" : "{urn:hl7-org:elm-types:r1}Code",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
-                     "localId" : "254",
+                     "localId" : "256",
                      "name" : "reason",
                      "elementType" : {
-                        "localId" : "255",
+                        "localId" : "257",
                         "name" : "{urn:hl7-org:elm-types:r1}Code",
                         "type" : "NamedTypeSpecifier"
                      }
@@ -526,8 +553,8 @@
                "element" : [ {
                   "name" : "result",
                   "value" : {
-                     "localId" : "246",
-                     "locator" : "29:13-29:17",
+                     "localId" : "248",
+                     "locator" : "30:13-30:17",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "value" : "false",
@@ -536,8 +563,8 @@
                }, {
                   "name" : "code",
                   "value" : {
-                     "localId" : "247",
-                     "locator" : "30:9-30:36",
+                     "localId" : "249",
+                     "locator" : "31:9-31:36",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                      "name" : "Not eligible for screening",
                      "type" : "CodeRef"
@@ -545,10 +572,151 @@
                }, {
                   "name" : "reason",
                   "value" : {
-                     "localId" : "248",
-                     "locator" : "31:13-31:42",
+                     "localId" : "250",
+                     "locator" : "32:13-32:42",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                      "name" : "Not assigned female at birth",
+                     "type" : "CodeRef"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "266",
+            "locator" : "35:1-40:2",
+            "name" : "end-noteligible-currentbreastcancer",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "266",
+                  "s" : [ {
+                     "value" : [ "","define ","\"end-noteligible-currentbreastcancer\"",":\n  " ]
+                  }, {
+                     "r" : "267",
+                     "s" : [ {
+                        "value" : [ "{\n    " ]
+                     }, {
+                        "s" : [ {
+                           "r" : "268",
+                           "value" : [ "result",": ","false" ]
+                        } ]
+                     }, {
+                        "value" : [ ",\n\t\t" ]
+                     }, {
+                        "s" : [ {
+                           "value" : [ "code",": " ]
+                        }, {
+                           "r" : "269",
+                           "s" : [ {
+                              "value" : [ "\"Not eligible for screening\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ ",\n    " ]
+                     }, {
+                        "s" : [ {
+                           "value" : [ "reason",": " ]
+                        }, {
+                           "r" : "270",
+                           "s" : [ {
+                              "value" : [ "\"Current breast cancer\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n\t}" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "resultTypeSpecifier" : {
+               "localId" : "278",
+               "type" : "TupleTypeSpecifier",
+               "element" : [ {
+                  "localId" : "279",
+                  "name" : "result",
+                  "elementType" : {
+                     "localId" : "280",
+                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }, {
+                  "localId" : "281",
+                  "name" : "code",
+                  "elementType" : {
+                     "localId" : "282",
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }, {
+                  "localId" : "283",
+                  "name" : "reason",
+                  "elementType" : {
+                     "localId" : "284",
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               } ]
+            },
+            "expression" : {
+               "localId" : "267",
+               "locator" : "36:3-40:2",
+               "type" : "Tuple",
+               "resultTypeSpecifier" : {
+                  "localId" : "271",
+                  "type" : "TupleTypeSpecifier",
+                  "element" : [ {
+                     "localId" : "272",
+                     "name" : "result",
+                     "elementType" : {
+                        "localId" : "273",
+                        "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  }, {
+                     "localId" : "274",
+                     "name" : "code",
+                     "elementType" : {
+                        "localId" : "275",
+                        "name" : "{urn:hl7-org:elm-types:r1}Code",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  }, {
+                     "localId" : "276",
+                     "name" : "reason",
+                     "elementType" : {
+                        "localId" : "277",
+                        "name" : "{urn:hl7-org:elm-types:r1}Code",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  } ]
+               },
+               "element" : [ {
+                  "name" : "result",
+                  "value" : {
+                     "localId" : "268",
+                     "locator" : "37:13-37:17",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "value" : "false",
+                     "type" : "Literal"
+                  }
+               }, {
+                  "name" : "code",
+                  "value" : {
+                     "localId" : "269",
+                     "locator" : "38:9-38:36",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+                     "name" : "Not eligible for screening",
+                     "type" : "CodeRef"
+                  }
+               }, {
+                  "name" : "reason",
+                  "value" : {
+                     "localId" : "270",
+                     "locator" : "39:13-39:35",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+                     "name" : "Current breast cancer",
                      "type" : "CodeRef"
                   }
                } ]

@@ -9,7 +9,7 @@
       }, {
          "type" : "Annotation",
          "s" : {
-            "r" : "214",
+            "r" : "218",
             "s" : [ {
                "value" : [ "","library ScreeningEligibleEvents version '1.0.0'" ]
             } ]
@@ -161,6 +161,45 @@
                "locator" : "11:3-11:26",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "name" : "de-female",
+               "libraryName" : "DataElements",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "218",
+            "locator" : "13:1-14:28",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+            "name" : "eve-breastca",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "","define ","\"eve-breastca\"",":\n  " ]
+                  }, {
+                     "r" : "220",
+                     "s" : [ {
+                        "r" : "219",
+                        "s" : [ {
+                           "value" : [ "DataElements" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "220",
+                        "s" : [ {
+                           "value" : [ "\"de-breastca\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "220",
+               "locator" : "14:3-14:28",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "name" : "de-breastca",
                "libraryName" : "DataElements",
                "type" : "ExpressionRef"
             }

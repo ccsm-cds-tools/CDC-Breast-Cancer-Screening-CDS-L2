@@ -14,6 +14,7 @@ code "Not eligible for screening": 'noteligible' from "ActCode"
 // Reason Codes
 code "Eligible for screening reason": 'eligibleforscreening' from "ReasonCode"
 code "Not assigned female at birth": 'notassignedfemaleatbirth' from "ReasonCode"
+code "Current breast cancer": 'currentbreastcancer' from "ReasonCode"
 
 context Patient
 
@@ -30,6 +31,13 @@ define "end-noteligible-notassignedfemaleatbirth":
 		code: "Not eligible for screening",
     reason: "Not assigned female at birth"
 	}
+
+define "end-noteligible-currentbreastcancer":
+  {
+    result: false,
+		code: "Not eligible for screening",
+    reason: "Current breast cancer"
+	}  
 
 //define "act-dxtesting":
   // TODO: Implement logic for act-dxtesting

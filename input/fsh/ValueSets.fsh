@@ -33,6 +33,7 @@ Description: "Code representing plan definition action reason codes"
 * #eligibleforscreening "Eligible for screening"
 * #missingageorbirthdate "Missing patient age in years or birth date"
 * #notassignedfemaleatbirth "Not assigned female at birth"
+* #currentbreastcancer "Current breast cancer"
 
 ValueSet:    PlanDefinitionActionReasonCodes
 Id:          plan-definition-action-reason-codes
