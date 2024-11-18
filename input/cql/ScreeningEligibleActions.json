@@ -99,33 +99,33 @@
       "codeSystems" : {
          "def" : [ {
             "localId" : "209",
-            "locator" : "8:1-8:88",
+            "locator" : "8:1-8:114",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}CodeSystem",
             "name" : "ActCode",
-            "id" : "http://example.org/CodeSystem/plan-definition-action-code-system",
+            "id" : "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
                   "r" : "209",
                   "s" : [ {
-                     "value" : [ "","codesystem ","\"ActCode\"",": ","'http://example.org/CodeSystem/plan-definition-action-code-system'" ]
+                     "value" : [ "","codesystem ","\"ActCode\"",": ","'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system'" ]
                   } ]
                }
             } ]
          }, {
             "localId" : "210",
-            "locator" : "9:1-9:98",
+            "locator" : "9:1-9:124",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}CodeSystem",
             "name" : "ReasonCode",
-            "id" : "http://example.org/CodeSystem/plan-definition-action-reason-code-system",
+            "id" : "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
                   "r" : "210",
                   "s" : [ {
-                     "value" : [ "","codesystem ","\"ReasonCode\"",": ","'http://example.org/CodeSystem/plan-definition-action-reason-code-system'" ]
+                     "value" : [ "","codesystem ","\"ReasonCode\"",": ","'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system'" ]
                   } ]
                }
             } ]
@@ -134,10 +134,11 @@
       "codes" : {
          "def" : [ {
             "localId" : "211",
-            "locator" : "12:1-12:56",
+            "locator" : "12:1-12:89",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
             "name" : "Eligible for screening",
             "id" : "eligible",
+            "display" : "Eligible for screening",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
@@ -150,6 +151,8 @@
                      "s" : [ {
                         "value" : [ "\"ActCode\"" ]
                      } ]
+                  }, {
+                     "value" : [ " display ","'Eligible for screening'" ]
                   } ]
                }
             } ],
@@ -161,10 +164,11 @@
             }
          }, {
             "localId" : "213",
-            "locator" : "13:1-13:63",
+            "locator" : "13:1-13:100",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
             "name" : "Not eligible for screening",
             "id" : "noteligible",
+            "display" : "Not eligible for screening",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
@@ -177,6 +181,8 @@
                      "s" : [ {
                         "value" : [ "\"ActCode\"" ]
                      } ]
+                  }, {
+                     "value" : [ " display ","'Not eligible for screening'" ]
                   } ]
                }
             } ],
@@ -188,10 +194,11 @@
             }
          }, {
             "localId" : "215",
-            "locator" : "15:1-15:78",
+            "locator" : "15:1-15:111",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
             "name" : "Eligible for screening reason",
             "id" : "eligibleforscreening",
+            "display" : "Eligible for screening",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
@@ -204,6 +211,8 @@
                      "s" : [ {
                         "value" : [ "\"ReasonCode\"" ]
                      } ]
+                  }, {
+                     "value" : [ " display ","'Eligible for screening'" ]
                   } ]
                }
             } ],
@@ -215,10 +224,11 @@
             }
          }, {
             "localId" : "217",
-            "locator" : "16:1-16:81",
+            "locator" : "16:1-16:120",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
             "name" : "Not assigned female at birth",
             "id" : "notassignedfemaleatbirth",
+            "display" : "Not assigned female at birth",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
@@ -231,6 +241,8 @@
                      "s" : [ {
                         "value" : [ "\"ReasonCode\"" ]
                      } ]
+                  }, {
+                     "value" : [ " display ","'Not assigned female at birth'" ]
                   } ]
                }
             } ],
@@ -242,10 +254,11 @@
             }
          }, {
             "localId" : "219",
-            "locator" : "17:1-17:69",
+            "locator" : "17:1-17:101",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
             "name" : "Current breast cancer",
             "id" : "currentbreastcancer",
+            "display" : "Current breast cancer",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
@@ -258,6 +271,8 @@
                      "s" : [ {
                         "value" : [ "\"ReasonCode\"" ]
                      } ]
+                  }, {
+                     "value" : [ " display ","'Current breast cancer'" ]
                   } ]
                }
             } ],
@@ -269,10 +284,11 @@
             }
          }, {
             "localId" : "221",
-            "locator" : "18:1-18:65",
+            "locator" : "18:1-18:96",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
             "name" : "Bilateral mastectomy",
             "id" : "bilatmastectomy",
+            "display" : "Bilateral mastectomy",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
@@ -285,6 +301,8 @@
                      "s" : [ {
                         "value" : [ "\"ReasonCode\"" ]
                      } ]
+                  }, {
+                     "value" : [ " display ","'Bilateral mastectomy'" ]
                   } ]
                }
             } ],

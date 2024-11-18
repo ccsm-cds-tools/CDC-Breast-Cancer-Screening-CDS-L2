@@ -83,3 +83,26 @@ Usage: #definition
 * kind = $RRTYPE#CommunicationRequest "CommunicationRequest"
 * intent = $RINTENT#proposal "Proposal"
 * priority = $RPRIOR#routine "Routine"
+* code = $PDACS#noteligible "Not eligible for screening"
+* code.text = "Not eligible for screening"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Instance: ScreeningEligibleQuestionnaireTask
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity
+Title: "Screening Eligible Questionnaire Task"
+Usage: #definition
+
+* insert CPGKnowledgeExtensions
+* insert CommonMetadata
+* meta.profile[+] = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
+// * cpg-partOf = Canonical(TopLevelPlanDefinition) // TODO: Tie this into the entire pathway
+* url = Canonical(ScreeningEligibleQuestionnaireTask)
+* name = "ScreeningEligibleQuestionnaireTask"
+* description = "This ActivityDefinition generates a Questionnaire Task containing a request to complete a questionnaire."
+* kind = $RRTYPE#Task "Task"
+* intent = $RINTENT#proposal "Proposal"
+* priority = $RPRIOR#routine "Routine"
+* code = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type#collect-information "Collect information"
+* extension[+].url = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith"
+* extension[=].valueCanonical = Canonical(ScreeningEligibleQuestionnaire|1.0.0)

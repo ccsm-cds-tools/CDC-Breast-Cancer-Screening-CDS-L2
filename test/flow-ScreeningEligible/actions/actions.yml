@@ -3,33 +3,39 @@ act-eligible:
     result: true
     code:
       code: "eligible"
-      system: "http://example.org/CodeSystem/plan-definition-action-code-system"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
     reason: 'eligibleforscreening'
 end-noteligible-notassignedfemaleatbirth:
   - &end-noteligible-notassignedfemaleatbirth
     result: false
     code:
       code: "noteligible"
-      system: "http://example.org/CodeSystem/plan-definition-action-code-system"    
+      display: "Not eligible for screening"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
     reason:
       code: "notassignedfemaleatbirth"
-      system: "http://example.org/CodeSystem/plan-definition-action-reason-code-system"    
+      display: "Not assigned female at birth"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"    
 end-noteligible-currentbreastcancer:
   - &end-noteligible-currentbreastcancer
     result: false
     code:
       code: "noteligible"
-      system: "http://example.org/CodeSystem/plan-definition-action-code-system"    
+      display: "Not eligible for screening"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system" 
     reason:
       code: "currentbreastcancer"
-      system: "http://example.org/CodeSystem/plan-definition-action-reason-code-system"        
+      display: "Current breast cancer"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"        
 end-noteligible-bilatmastectomy:
   - &end-noteligible-bilatmastectomy
     result: false
     code:
       code: "noteligible"
-      system: "http://example.org/CodeSystem/plan-definition-action-code-system"    
+      display: "Not eligible for screening"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
     reason:
       code: "bilatmastectomy"
-      system: "http://example.org/CodeSystem/plan-definition-action-reason-code-system"             
+      display: "Bilateral mastectomy"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"             
 act-dxtesting: []    

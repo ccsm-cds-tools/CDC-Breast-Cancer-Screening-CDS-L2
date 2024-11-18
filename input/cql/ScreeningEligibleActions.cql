@@ -9,13 +9,13 @@ codesystem "ActCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/p
 codesystem "ReasonCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system'
 
 // Act Codes
-code "Eligible for screening": 'eligible' from "ActCode"
-code "Not eligible for screening": 'noteligible' from "ActCode"
+code "Eligible for screening": 'eligible' from "ActCode" display 'Eligible for screening'
+code "Not eligible for screening": 'noteligible' from "ActCode" display 'Not eligible for screening'
 // Reason Codes
-code "Eligible for screening reason": 'eligibleforscreening' from "ReasonCode"
-code "Not assigned female at birth": 'notassignedfemaleatbirth' from "ReasonCode"
-code "Current breast cancer": 'currentbreastcancer' from "ReasonCode"
-code "Bilateral mastectomy":  'bilatmastectomy' from "ReasonCode"
+code "Eligible for screening reason": 'eligibleforscreening' from "ReasonCode" display 'Eligible for screening'
+code "Not assigned female at birth": 'notassignedfemaleatbirth' from "ReasonCode" display 'Not assigned female at birth'
+code "Current breast cancer": 'currentbreastcancer' from "ReasonCode" display 'Current breast cancer'
+code "Bilateral mastectomy":  'bilatmastectomy' from "ReasonCode" display 'Bilateral mastectomy'
 
 context Patient
 
