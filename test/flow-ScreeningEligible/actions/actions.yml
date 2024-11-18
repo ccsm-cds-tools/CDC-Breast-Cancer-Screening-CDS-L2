@@ -23,4 +23,13 @@ end-noteligible-currentbreastcancer:
     reason:
       code: "currentbreastcancer"
       system: "http://example.org/CodeSystem/plan-definition-action-reason-code-system"        
+end-noteligible-bilatmastectomy:
+  - &end-noteligible-bilatmastectomy
+    result: false
+    code:
+      code: "noteligible"
+      system: "http://example.org/CodeSystem/plan-definition-action-code-system"    
+    reason:
+      code: "bilatmastectomy"
+      system: "http://example.org/CodeSystem/plan-definition-action-reason-code-system"             
 act-dxtesting: []    

@@ -6,6 +6,6 @@ externalData:
   - ./actions/actions
   - ../DataElements/data_elements
 data:
-  - *Sex_assigned_at_birth_=_male_AND_gender_=_female
+  - *'Assigned_female_at_birth'_is_FALSE
 results:
   flow-ScreeningEligible: *end-noteligible-notassignedfemaleatbirth

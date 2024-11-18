@@ -30,11 +30,20 @@ concept "Condition resolved": { "Condition resolved code" } display 'Resolved'
 valueset "INVASIVE BREAST CANCER": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.185'
 // TODO: replace placeholder value set OID
 valueset "NON-INVASIVE BREAST CANCER": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.246'
+valueset "BILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1068'
+valueset "LEFT UNILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1069'
+valueset "RIGHT UNILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070'
+valueset "BILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005'
+valueset "UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071'
+valueset "LEFT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133'
+valueset "RIGHT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134'
 
 // Standard codes
 code "Gender Identity": '76691-5' from "LOINC" display 'Gender identity'
 code "Transgender Male Code": 'transgender-male' from "GENDER-IDENTITY" display 'transgender male'
 code "Female-to-male Transsexual": '407377005' from "SNOMED-CT" display 'Female-to-male transsexual (finding)'
+code "Left (qualifier value)": '7771000' from "SNOMED-CT" display 'Left (qualifier value)'
+code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qualifier value)'
 
 /***** BEGIN CDS LOGIC ********************************************************/
 
@@ -137,4 +146,31 @@ define "de-breastca":
 define BreastCancerDiagnoses:
   (Common.ValidCondition([Condition: "INVASIVE BREAST CANCER"]) union
   Common.ValidCondition([Condition: "NON-INVASIVE BREAST CANCER"]))
+
+define "de-mastectomy":
+  BilateralMastectomy or (LeftUnilateralMastectomy and RightUnilateralMastectomy)
+
+define BilateralMastectomy:
+  exists Common.ValidCondition([Condition: "BILATERAL MASTECTOMY"]) or 
+  exists C3F.Completed([Procedure: "BILATERAL MASTECTOMY PROCEDURE"])
+
+define LeftUnilateralMastectomy:
+  exists Common.ValidCondition([Condition: "LEFT UNILATERAL MASTECTOMY"]) or
+  exists C3F.Completed([Procedure: "LEFT UNILATERAL MASTECTOMY PROCEDURE"]) or
+  exists (C3F.Completed([Procedure: "UNILATERAL MASTECTOMY PROCEDURE"]) as List<Procedure>) P
+    where 
+      exists P.bodySite bs where bs ~ "Left (qualifier value)" or
+      exists (P.bodySite.extension E
+        where E.url = 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-laterality-qualifier'
+          and E.value as CodeableConcept ~ "Left (qualifier value)")    
+
+define RightUnilateralMastectomy:
+  exists Common.ValidCondition([Condition: "RIGHT UNILATERAL MASTECTOMY"]) or
+  exists C3F.Completed([Procedure: "RIGHT UNILATERAL MASTECTOMY PROCEDURE"]) or 
+  exists (C3F.Completed([Procedure: "UNILATERAL MASTECTOMY PROCEDURE"]) as List<Procedure>) P
+    where
+      exists P.bodySite bs where bs ~ "Right (qualifier value)" or
+      exists (P.bodySite.extension E
+        where E.url = 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-laterality-qualifier'
+          and E.value as CodeableConcept ~ "Right (qualifier value)")
 

@@ -9,7 +9,7 @@
       }, {
          "type" : "Annotation",
          "s" : {
-            "r" : "218",
+            "r" : "222",
             "s" : [ {
                "value" : [ "","library ScreeningEligibleEvents version '1.0.0'" ]
             } ]
@@ -200,6 +200,45 @@
                "locator" : "14:3-14:28",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "name" : "de-breastca",
+               "libraryName" : "DataElements",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "222",
+            "locator" : "16:1-17:30",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+            "name" : "eve-mastectomy",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "222",
+                  "s" : [ {
+                     "value" : [ "","define ","\"eve-mastectomy\"",":\n  " ]
+                  }, {
+                     "r" : "224",
+                     "s" : [ {
+                        "r" : "223",
+                        "s" : [ {
+                           "value" : [ "DataElements" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "224",
+                        "s" : [ {
+                           "value" : [ "\"de-mastectomy\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "224",
+               "locator" : "17:3-17:30",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "name" : "de-mastectomy",
                "libraryName" : "DataElements",
                "type" : "ExpressionRef"
             }

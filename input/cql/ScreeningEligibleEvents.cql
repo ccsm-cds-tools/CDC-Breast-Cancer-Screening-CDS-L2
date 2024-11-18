@@ -13,8 +13,8 @@ define "eve-female":
 define "eve-breastca":
   DataElements."de-breastca"
 
-//define "eve-mastectomy":
-  // TODO: Implement logic for eve-mastectomy
+define "eve-mastectomy":
+  DataElements."de-mastectomy"  
 
 //define "eve-breastsymptoms":
   // TODO: Implement logic for eve-breastsymptoms

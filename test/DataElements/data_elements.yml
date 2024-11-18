@@ -121,15 +121,91 @@ de-breastca:
           code: 254837009
           display: Invasive breast cancer
       text: Invasive Breast Cancer
-    onsetDateTime: '2023-10-01'    
-de-mastectomy:
-  - "&CONDITIONS_include_`BILATERAL_MASTECTOMY`_OR_PROCEDURES_include_`BILATERAL_MASTECTOMY`_OR_(PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_left_AND_PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_right)"
-  - "&CONDITIONS_include_`BILATERAL_MASTECTOMY`"
-  - "&PROCEDURES_include_`BILATERAL_MASTECTOMY`"
-  - "&(PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_left_AND_PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_right)"
-  - "&PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_left_AND_PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_right"
-  - "&PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_left"
-  - "&PROCEDURES_include_`UNILATERAL_MASTECTOMY`_with_laterality_right"
+    onsetDateTime: '2023-10-01'
+
+de-mastectomy:  
+  - &CONDITIONS_include_`BILATERAL_MASTECTOMY`
+    resourceType: Condition
+    id: bilateral-mastectomy-condition
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 428529004
+  - &PROCEDURES_include_`BILATERAL_MASTECTOMY_PROCEDURE`
+    resourceType: Procedure
+    id: bilateral-mastectomy-procedure
+    status: completed
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 22418005
+  - &CONDITIONS_include_`LEFT_UNILATERAL_MASTECTOMY`
+    resourceType: Condition
+    id: left-unilateral-mastectomy-condition
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 429009003
+  - &CONDITIONS_include_`RIGHT_UNILATERAL_MASTECTOMY`
+    resourceType: Condition
+    id: right-unilateral-mastectomy-condition
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 429242008
+  - &PROCEDURES_include_`LEFT_UNILATERAL_MASTECTOMY_PROCEDURE`
+    resourceType: Procedure
+    id: left-unilateral-mastectomy-procedure
+    status: completed
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 726437009
+  - &PROCEDURES_include_`RIGHT_UNILATERAL_MASTECTOMY_PROCEDURE`
+    resourceType: Procedure
+    id: right-unilateral-mastectomy-procedure
+    status: completed
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 726436000
+  - &PROCEDURES_include_`UNILATERAL_MASTECTOMY_PROCEDURE`_with_laterality_`LEFT_LATERLITY`
+    resourceType: Procedure
+    id: unilateral-mastectomy-left-procedure
+    status: completed
+    code:
+      coding:
+        - system: http://hl7.org/fhir/sid/icd-10-cm
+          code: Z90.10
+    bodySite:
+      coding:
+        - system: http://snomed.info/sct
+          code: 7771000
+  - &PROCEDURES_include_`UNILATERAL_MASTECTOMY_PROCEDURE`_with_laterality_`RIGHT_LATERLITY`
+    resourceType: Procedure
+    id: unilateral-mastectomy-right-procedure
+    status: completed
+    code:
+      coding:
+        - system: http://hl7.org/fhir/sid/icd-10-cm
+          code: Z90.10
+    bodySite:
+      coding:
+        - system: http://snomed.info/sct
+          code: 24028007
+          
 de-breastsymptoms:
   - "&REVIEW_OF_SYMPTOMS_include_breast-related_symptoms__which_may_include_one_or_more_of_`PALPABLE_SYMPTOM`_OR_`NIPPLE_INVERSION_OR_RETRACTION`_OR_`NIPPLE_DISCHARGE`_OR_`SKIN_CHANGES`_such_as_Peau_d’orange__Erythema__Nipple_excoriation__Scaling__eczema__Skin_ulcers_OR_`BREAST_PAIN`_which_is_focal_OR_`AXILLARY_MASS`"
   - "&REVIEW_OF_SYMPTOMS_include_breast-related_symptoms__which_may_include_one_or_more_of_`PALPABLE_SYMPTOM`"
