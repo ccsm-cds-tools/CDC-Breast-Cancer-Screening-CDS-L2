@@ -1,7 +1,6 @@
 ---
 name: eve-female_yes_eve-breastca_yes_end-noteligible
 flow: flow-ScreeningEligible
-skip: false
 externalData:
   - ./events/events
   - ./actions/actions  

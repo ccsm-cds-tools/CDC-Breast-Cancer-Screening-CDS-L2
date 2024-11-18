@@ -5,8 +5,8 @@ include FHIRHelpers  version '4.0.1' called FHIRHelpers
 
 include DataElements version '1.0.0' called DataElements
 
-codesystem "ActCode": 'http://example.org/CodeSystem/plan-definition-action-code-system'
-codesystem "ReasonCode": 'http://example.org/CodeSystem/plan-definition-action-reason-code-system'
+codesystem "ActCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system'
+codesystem "ReasonCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system'
 
 // Act Codes
 code "Eligible for screening": 'eligible' from "ActCode"

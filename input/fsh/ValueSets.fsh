@@ -1,5 +1,5 @@
-Alias: PDACS = http://example.org/CodeSystem/plan-definition-action-code-system
-Alias: PDARCS = http://example.org/CodeSystem/plan-definition-action-reason-code-system
+Alias: $PDACS = http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system
+Alias: $PDARCS = http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -19,7 +19,7 @@ Id:          plan-definition-action-codes
 Title:       "Plan Definition Action Codes"
 Description: "This value set includes action codes for Plan Definitions within this implementation guide."
 * ^experimental = true
-* include codes from system PDACS
+* include codes from system $PDACS
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -41,6 +41,6 @@ Id:          plan-definition-action-reason-codes
 Title:       "Plan Definition Action Reason Codes"
 Description: "This value set includes action reason codes for Plan Definitions within this implementation guide."
 * ^experimental = true
-* include codes from system PDARCS
+* include codes from system $PDARCS
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

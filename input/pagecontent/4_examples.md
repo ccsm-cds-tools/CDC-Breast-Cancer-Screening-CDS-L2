@@ -1,5 +1,16 @@
 ### Test Cases
 
+#### flow-ScreeningEligible
+
+| Name | Description |
+|------|-------------|
+| [eve-female_yes_eve-breastca_yes_end-noteligible](Bundle-eve-female_yes_eve-breastca_yes_end-noteligible.html) |  |
+| [eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible](Bundle-eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible.html) |  |
+| [eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_yes_act-dxtesting](Bundle-eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_yes_act-dxtesting.html) |  |
+| [eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_yes_act-dxtesting](Bundle-eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_yes_act-dxtesting.html) |  |
+| [eve-female_no_end-noteligible](Bundle-eve-female_no_end-noteligible.html) |  |
+| [eve-female_yes_eve-breastca_no_eve-mastectomy_yes_end-noteligible](Bundle-eve-female_yes_eve-breastca_no_eve-mastectomy_yes_end-noteligible.html) |  |
+
 #### flow-AverageRisk
 
 | Name | Description |
@@ -108,17 +119,6 @@
 | [eve-nextdueexists_yes_eve-screeninginterval_annual_eve-dueannual_not due_end-notdue2](Bundle-eve-nextdueexists_yes_eve-screeninginterval_annual_eve-dueannual_not due_end-notdue2.html) |  |
 | [eve-nextdueexists_yes_eve-screeninginterval_biennial_eve-duebiennial_not due_end-notdue3](Bundle-eve-nextdueexists_yes_eve-screeninginterval_biennial_eve-duebiennial_not due_end-notdue3.html) |  |
 | [eve-nextdueexists_no_eve-noscreening27mo_yes_act-determinedue](Bundle-eve-nextdueexists_no_eve-noscreening27mo_yes_act-determinedue.html) |  |
-
-#### flow-ScreeningEligible
-
-| Name | Description |
-|------|-------------|
-| [eve-female_yes_eve-breastca_yes_end-noteligible](Bundle-eve-female_yes_eve-breastca_yes_end-noteligible.html) |  |
-| [eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible](Bundle-eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible.html) |  |
-| [eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_yes_act-dxtesting](Bundle-eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_yes_act-dxtesting.html) |  |
-| [eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_yes_act-dxtesting](Bundle-eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_yes_act-dxtesting.html) |  |
-| [eve-female_no_end-noteligible](Bundle-eve-female_no_end-noteligible.html) |  |
-| [eve-female_yes_eve-breastca_no_eve-mastectomy_yes_end-noteligible](Bundle-eve-female_yes_eve-breastca_no_eve-mastectomy_yes_end-noteligible.html) |  |
 
 #### flow-ScreeningTestIncomplete
 

@@ -32,7 +32,8 @@ Usage: #definition
 * action[=].action[+].id = "ScreeningEligible"
 * action[=].action[=].title = "Screening Eligible"
 * action[=].action[=].description = "Patient is eligible for screening"
-* action[=].action[=].condition[+].kind =  $ACKIND#applicability "Applicability"
+* action[=].action[=].code = $PDACS#eligible "Eligible for screening"
+* action[=].action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].action[=].condition[=].expression.expression = "IsScreeningEligible"
 // -----------------------------------------------------------------------------
@@ -41,6 +42,7 @@ Usage: #definition
 * action[=].action[+].id = "Not Screening Eligible"
 * action[=].action[=].title = "Not Screening Eligible"
 * action[=].action[=].description = "Patient is not eligible for screening"
+* action[=].action[=].code = $PDACS#noteligible "Not eligible for screening"
 * action[=].action[=].condition[+].kind =  $ACKIND#applicability "Applicability"
 * action[=].action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].action[=].condition[=].expression.expression = "IsNotScreeningEligible"
