@@ -46,6 +46,7 @@ de-female:
       url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
       valueCode: UNK  
   - "&gender_identity_=_transgender_male"
+  
 de-breastca:
   - &CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_active
     resourceType: Condition
@@ -91,11 +92,10 @@ de-breastca:
             code: problem-list-item
             display: Problem List Item
     code:
-      coding:
-        - system: http://hl7.org/fhir/sid/icd-10-cm
-          code: D05.10
-          display: Non-invasive breast cancer
-      text: Non-Invasive Breast Cancer
+      coding: # TODO: replace placeholder with real code 
+        - system: http://snomed.info/sct 
+          code: 54319003
+          display: Disruptive behavior disorder (disorder)
     onsetDateTime: '2023-10-01'
   - &CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive
     resourceType: Condition
@@ -181,10 +181,9 @@ de-mastectomy:
       coding:
         - system: http://snomed.info/sct
           code: 726436000
-  - &PROCEDURES_include_`UNILATERAL_MASTECTOMY_PROCEDURE`_with_laterality_`LEFT_LATERLITY`
-    resourceType: Procedure
-    id: unilateral-mastectomy-left-procedure
-    status: completed
+  - &CONDITIONS_include_`UNILATERAL_MASTECTOMY`_with_laterality_`LEFT_LATERLITY`
+    resourceType: Condition
+    id: unilateral-mastectomy-left-condition
     code:
       coding:
         - system: http://hl7.org/fhir/sid/icd-10-cm
@@ -193,10 +192,9 @@ de-mastectomy:
       coding:
         - system: http://snomed.info/sct
           code: 7771000
-  - &PROCEDURES_include_`UNILATERAL_MASTECTOMY_PROCEDURE`_with_laterality_`RIGHT_LATERLITY`
-    resourceType: Procedure
-    id: unilateral-mastectomy-right-procedure
-    status: completed
+  - &CONDITIONS_include_`UNILATERAL_MASTECTOMY`_with_laterality_`RIGHT_LATERLITY`
+    resourceType: Condition
+    id: unilateral-mastectomy-right-condition
     code:
       coding:
         - system: http://hl7.org/fhir/sid/icd-10-cm
@@ -207,18 +205,49 @@ de-mastectomy:
           code: 24028007
           
 de-breastsymptoms:
-  - "&REVIEW_OF_SYMPTOMS_include_breast-related_symptoms__which_may_include_one_or_more_of_`PALPABLE_SYMPTOM`_OR_`NIPPLE_INVERSION_OR_RETRACTION`_OR_`NIPPLE_DISCHARGE`_OR_`SKIN_CHANGES`_such_as_Peau_d’orange__Erythema__Nipple_excoriation__Scaling__eczema__Skin_ulcers_OR_`BREAST_PAIN`_which_is_focal_OR_`AXILLARY_MASS`"
-  - "&REVIEW_OF_SYMPTOMS_include_breast-related_symptoms__which_may_include_one_or_more_of_`PALPABLE_SYMPTOM`"
-  - "&`NIPPLE_INVERSION"
-  - "&RETRACTION`"
-  - "&`NIPPLE_DISCHARGE`"
-  - "&`SKIN_CHANGES`_such_as_Peau_d’orange__Erythema__Nipple_excoriation__Scaling__eczema__Skin_ulcers"
-  - "&`BREAST_PAIN`_which_is_focal"
-  - "&`AXILLARY_MASS`"
-de-breastfindings:
-  - "&PHYSICAL_EXAM_OBSERVATIONS_include_breast-related_symptoms__which_may_include_one_or_more_of_`PALPABLE_SYMPTOM`__`NIPPLE_INVERSION_OR_RETRACTION`_`SKIN_CHANGES`__`BREAST_PAIN`__`AXILLARY_MASS`"
-  - "&PHYSICAL_EXAM_OBSERVATIONS_include_breast-related_symptoms__which_may_include_one_or_more_of_`PALPABLE_SYMPTOM`__`NIPPLE_INVERSION"
-  - "&RETRACTION`_`SKIN_CHANGES`__`BREAST_PAIN`__`AXILLARY_MASS`"
+  - &OBSERVATIONS_include_new_or_worsening_breast_symptoms
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "BreastSymptoms"
+          display: "New or worsening breast symptoms"
+    valueBoolean: true
+    effectiveDateTime: "2023-12-10T00:00:00.0Z"
+  - &OBSERVATIONS_include_new_or_worsening_breast_symptoms_before_lookback
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "BreastSymptoms"
+          display: "New or worsening breast symptoms"
+    valueBoolean: true
+    effectiveDateTime: "2023-11-10T00:00:00.0Z"
+
+de-breastfindings:  
+  - &OBSERVATIONS_include_new_or_worsening_breast_findings
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "BreastFindings"
+          display: "New or worsening breast findings"
+    valueBoolean: true
+    effectiveDateTime: "2023-12-10T00:00:00.0Z"
+  - &OBSERVATIONS_include_new_or_worsening_breast_findings_before_lookback
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "BreastFindings"
+          display: "New or worsening breast findings"
+    valueBoolean: true
+    effectiveDateTime: "2023-11-10T00:00:00.0Z"
+
 de-screeningeligible:
   - "&See_'Screening_Eligible'_flow_logic"
 de-geneticrisk:

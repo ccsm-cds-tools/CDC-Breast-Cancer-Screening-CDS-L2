@@ -1,12 +1,12 @@
 {
   "resourceType": "Bundle",
-  "id": "eve-female_no_end-noteligible",
+  "id": "eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible",
   "type": "collection",
   "entry": [
     {
       "resource": {
         "resourceType": "Patient",
-        "id": "7e093569-9377-4665-8ea5-a5804d4d8740",
+        "id": "3371cf58-fe9c-4fcb-95a2-ecebf75e1a9a",
         "name": [
           {
             "given": [
@@ -15,12 +15,12 @@
             "family": "Smith"
           }
         ],
-        "gender": "female",
+        "gender": "other",
         "birthDate": "1980-01-01",
         "extension": [
           {
             "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
-            "valueCode": "M"
+            "valueCode": "F"
           }
         ]
       }

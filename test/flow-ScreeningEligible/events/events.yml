@@ -10,6 +10,8 @@ eve-mastectomy:
   - &'History_of_bilateral_mastectomy'_is_TRUE
     *CONDITIONS_include_`BILATERAL_MASTECTOMY`
 eve-breastsymptoms:
-  - "&Current_'Breast_symptoms'_exist_which_are_new_onset_or_progressively_worsening"
+  - &Current_'Breast_symptoms'_exist_which_are_new_onset_or_progressively_worsening
+    *OBSERVATIONS_include_new_or_worsening_breast_symptoms
 eve-breastfindings:
-  - "&Current_'Breast_exam_findings'_exist_which_are_new_onset_or_progressively_worsening"
+  - &Current_'Breast_exam_findings'_exist_which_are_new_onset_or_progressively_worsening
+    *OBSERVATIONS_include_new_or_worsening_breast_findings
