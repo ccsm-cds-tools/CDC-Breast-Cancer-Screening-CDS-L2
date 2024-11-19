@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import * as path from "path";
-import { applyAndMerge, simpleResolver } from "encender";
+import { applyPlan, applyAndMerge, simpleResolver } from "encender";
 
 export default class ApplyProcessor {
   constructor(elmResourcePath, fhirResourcePath) {
@@ -107,15 +107,21 @@ export default class ApplyProcessor {
     };
 
     // Run the $apply operations
-    const [RequestGroup, ...otherResources] = await applyAndMerge(
+    const [CarePlan, RequestGroup, ...otherResources] = await applyPlan(
+      this.planDefinition,
+      patientReference,
+      resolver,
+      aux
+    );
+    /*const [RequestGroup, ...otherResources] = await applyAndMerge(
         this.planDefinition,
         patientReference,
         resolver,
         aux
-    );
+    );*/
 
     // Concatenate all the resources created by $apply operation
-    const outputResources = [RequestGroup, ...otherResources];
+    const outputResources = [CarePlan, RequestGroup, ...otherResources];
 
     // Write them out to a file
     writeFileSync(outputFilePath, JSON.stringify(outputResources, null, 2));
