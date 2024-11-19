@@ -4,6 +4,7 @@ Alias: $ICD11 = http://id.who.int/icd/release/11/mms
 Alias: $ICD11Foundation = http://id.who.int/icd/entity
 Alias: $JURIS = urn:iso:std:iso:3166
 Alias: $SNOMED = http://snomed.info/sct
+Alias: $UCUM = http://unitsofmeasure.org
 
 Alias: $ObsCat = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $ObsStatus = http://hl7.org/fhir/observation-status

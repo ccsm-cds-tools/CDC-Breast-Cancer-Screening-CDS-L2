@@ -15,3 +15,16 @@ Usage: #definition
 * item[+].linkId = "age-in-years"
 * item[=].text = "Age in years"
 * item[=].type = $ITEMTYPE#integer
+* item[=].code = $LNC#30525-0
+* item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+* item[=].extension[=].valueCoding = $UCUM#[a]
+
+* item[+].linkId = "breast-symptoms"
+* item[=].text = "New or worsening breast symptoms"
+* item[=].type = $ITEMTYPE#boolean
+* item[=].code = $SOCS#BreastSymptoms
+
+* item[+].linkId = "breast-findings"
+* item[=].text = "New or worsening breast exam findings"
+* item[=].type = $ITEMTYPE#boolean
+* item[=].code = $SOCS#BreastFindings

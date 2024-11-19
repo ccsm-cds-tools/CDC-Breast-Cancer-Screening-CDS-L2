@@ -16,9 +16,9 @@ define "eve-breastca":
 define "eve-mastectomy":
   DataElements."de-mastectomy"  
 
-//define "eve-breastsymptoms":
-  // TODO: Implement logic for eve-breastsymptoms
+define "eve-breastsymptoms":
+  DataElements."de-breastsymptoms"
 
-//define "eve-breastfindings":
-  // TODO: Implement logic for eve-breastfindings
+define "eve-breastfindings":
+  DataElements."de-breastfindings"
 

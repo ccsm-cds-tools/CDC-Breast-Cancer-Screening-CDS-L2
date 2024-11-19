@@ -71,6 +71,8 @@ define "flow-ScreeningEligible":
   then Actions."end-noteligible-currentbreastcancer" as Tuple{result Boolean, code Code, reason Code}
   else if Events."eve-mastectomy" is true
   then Actions."end-noteligible-bilatmastectomy" as Tuple{result Boolean, code Code, reason Code}  
+  else if Events."eve-breastsymptoms" is true or Events."eve-breastfindings" is true
+  then Actions."act-dxtesting" as Tuple{result Boolean, code Code, reason Code}    
   else Actions."act-eligible" as Tuple{result Boolean, code Code, reason Code}
 
 define IsScreeningEligible:

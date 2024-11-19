@@ -16,6 +16,7 @@ code "Eligible for screening reason": 'eligibleforscreening' from "ReasonCode" d
 code "Not assigned female at birth": 'notassignedfemaleatbirth' from "ReasonCode" display 'Not assigned female at birth'
 code "Current breast cancer": 'currentbreastcancer' from "ReasonCode" display 'Current breast cancer'
 code "Bilateral mastectomy":  'bilatmastectomy' from "ReasonCode" display 'Bilateral mastectomy'
+code "Diagnostic testing":  'diagtesting' from "ReasonCode" display 'Diagnostic testing'
 
 context Patient
 
@@ -47,6 +48,10 @@ define "end-noteligible-bilatmastectomy":
     reason: "Bilateral mastectomy"
 	} 
 
-//define "act-dxtesting":
-  // TODO: Implement logic for act-dxtesting
+define "act-dxtesting":
+  {
+    result: false,
+		code: "Not eligible for screening",
+    reason: "Diagnostic testing"
+	} 
 

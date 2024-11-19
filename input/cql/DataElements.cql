@@ -17,6 +17,7 @@ codesystem "ICD-9": 'http://hl7.org/fhir/sid/icd-9-cm'
 codesystem "ICD-10": 'http://hl7.org/fhir/sid/icd-10-cm'
 codesystem "GENDER-IDENTITY": 'http://hl7.org/fhir/gender-identity'
 codesystem "CONDCLINSTATUS": 'http://terminology.hl7.org/CodeSystem/condition-clinical'
+codesystem "LOCAL": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system'
 
 code "Condition inactive code": 'inactive' from "CONDCLINSTATUS" display 'Inactive'
 code "Condition remission code": 'remission' from "CONDCLINSTATUS" display 'Remission'
@@ -29,12 +30,12 @@ concept "Condition resolved": { "Condition resolved code" } display 'Resolved'
 // Breast diagnoses, procedures, and observations
 valueset "INVASIVE BREAST CANCER": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.185'
 // TODO: replace placeholder value set OID
-valueset "NON-INVASIVE BREAST CANCER": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.246'
+valueset "NON-INVASIVE BREAST CANCER": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
 valueset "BILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1068'
 valueset "LEFT UNILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1069'
 valueset "RIGHT UNILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1070'
+valueset "UNILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071'
 valueset "BILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005'
-valueset "UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071'
 valueset "LEFT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133'
 valueset "RIGHT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134'
 
@@ -45,15 +46,25 @@ code "Female-to-male Transsexual": '407377005' from "SNOMED-CT" display 'Female-
 code "Left (qualifier value)": '7771000' from "SNOMED-CT" display 'Left (qualifier value)'
 code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qualifier value)'
 
+// Non-standard or "local" codes
+code "New or worsening breast symptoms": 'BreastSymptoms' from "LOCAL" display 'New or worsening breast symptoms'
+code "New or worsening breast exam findings": 'BreastFindings' from "LOCAL" display 'New or worsening breast exam findings'
+
+//------------------------------------------------------------------------------
+// PARAMETERS
+//------------------------------------------------------------------------------
+
+parameter ObservationLookbackPeriod default 14 days
+parameter SymptomaticLookBack default 14 days
+
 /***** BEGIN CDS LOGIC ********************************************************/
 
 context Patient
 
 //------------------------------------------------------------------------------
-// PERTINENT DEMOGRAPHICS
+// Assigned female at birth
 //------------------------------------------------------------------------------
 
-// Sex assigned at birth
 define "de-female":
   Female or TransgenderMale
     
@@ -93,7 +104,6 @@ define BirthSexText:
   else if BirthSexCode = 'M' then 'Male'
   else 'Unknown'
 
-// Patient Gender
 define FemaleGender:
   Patient.gender.value = 'female'
 
@@ -132,10 +142,8 @@ define GenderText:
   else Patient.gender.value
 
 //------------------------------------------------------------------------------
-// PERTINENT CONDITIONS
+// Current breast cancer
 //------------------------------------------------------------------------------
-// Conditions relevant to breast cancer
-//    No lookback restriction
 
 define "de-breastca":
   exists BreastCancerDiagnoses C
@@ -147,6 +155,10 @@ define BreastCancerDiagnoses:
   (Common.ValidCondition([Condition: "INVASIVE BREAST CANCER"]) union
   Common.ValidCondition([Condition: "NON-INVASIVE BREAST CANCER"]))
 
+//------------------------------------------------------------------------------
+// History of bilateral mastectomy
+//------------------------------------------------------------------------------
+
 define "de-mastectomy":
   BilateralMastectomy or (LeftUnilateralMastectomy and RightUnilateralMastectomy)
 
@@ -157,20 +169,67 @@ define BilateralMastectomy:
 define LeftUnilateralMastectomy:
   exists Common.ValidCondition([Condition: "LEFT UNILATERAL MASTECTOMY"]) or
   exists C3F.Completed([Procedure: "LEFT UNILATERAL MASTECTOMY PROCEDURE"]) or
-  exists (C3F.Completed([Procedure: "UNILATERAL MASTECTOMY PROCEDURE"]) as List<Procedure>) P
-    where 
-      exists P.bodySite bs where bs ~ "Left (qualifier value)" or
-      exists (P.bodySite.extension E
+  exists (Common.ValidCondition([Condition: "UNILATERAL MASTECTOMY"]) as List<Condition>) C
+    where
+      exists C.bodySite bs where bs ~ "Left (qualifier value)" or
+      exists (C.bodySite.extension E
         where E.url = 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-laterality-qualifier'
-          and E.value as CodeableConcept ~ "Left (qualifier value)")    
+          and E.value as CodeableConcept ~ "Left (qualifier value)")   
 
 define RightUnilateralMastectomy:
   exists Common.ValidCondition([Condition: "RIGHT UNILATERAL MASTECTOMY"]) or
   exists C3F.Completed([Procedure: "RIGHT UNILATERAL MASTECTOMY PROCEDURE"]) or 
-  exists (C3F.Completed([Procedure: "UNILATERAL MASTECTOMY PROCEDURE"]) as List<Procedure>) P
+  exists (Common.ValidCondition([Condition: "UNILATERAL MASTECTOMY"]) as List<Condition>) C
     where
-      exists P.bodySite bs where bs ~ "Right (qualifier value)" or
-      exists (P.bodySite.extension E
+      exists C.bodySite bs where bs ~ "Right (qualifier value)" or
+      exists (C.bodySite.extension E
         where E.url = 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-laterality-qualifier'
           and E.value as CodeableConcept ~ "Right (qualifier value)")
 
+//------------------------------------------------------------------------------
+// Breast symptoms
+//------------------------------------------------------------------------------
+
+// TODO: move this to events
+define "de-breastsymptoms":
+  NewOrWorseningBreastSymptoms
+
+
+// TODO: look into how to associate with current encounter rather than arbitrary lookback period
+define NewOrWorseningBreastSymptoms:
+  C3F.MostRecent(
+    C3F.ObservationLookBack(
+      NewOrWorseningBreastSymptomsObservations R
+        where R.value is true,
+      SymptomaticLookBack
+    )
+  ) is not null  
+
+define NewOrWorseningBreastSymptomsObservations:
+  C3F.ObservationLookBack(
+    [Observation: "New or worsening breast symptoms"],
+    ObservationLookbackPeriod
+  )  
+
+//------------------------------------------------------------------------------
+// Breast exam findings
+//------------------------------------------------------------------------------
+
+// TODO: move this to events
+define "de-breastfindings":
+  NewOrWorseningBreastFindings
+
+define NewOrWorseningBreastFindings:
+  C3F.MostRecent(
+    C3F.ObservationLookBack(
+      NewOrWorseningBreastFindingsObservations R
+        where R.value is true,
+      SymptomaticLookBack
+    )
+  ) is not null
+
+define NewOrWorseningBreastFindingsObservations:
+  C3F.ObservationLookBack(
+    [Observation: "New or worsening breast exam findings"],
+    ObservationLookbackPeriod
+  )    
