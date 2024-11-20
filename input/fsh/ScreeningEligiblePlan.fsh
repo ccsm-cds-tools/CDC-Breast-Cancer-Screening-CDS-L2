@@ -57,7 +57,7 @@ Usage: #definition
 * action[=].description = "Top level action that defines missing data for inclusion and exclusion."
 * action[=].documentation[+].type = $RATYPE#documentation "Documentation"
 * action[=].documentation[=].label = "Inclusions"
-* action[=].documentation[=].display = "Error "
+* action[=].documentation[=].display = "Error due to missing required data"
 * action[=].trigger[+].type = $TTYPE#named-event "Named Event"
 * action[=].trigger[=].name = "encounter-start" // CDS Hook name
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
