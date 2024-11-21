@@ -1,0 +1,8 @@
+---
+name: IsScreeningEligible_true
+externalData:
+  - ../default_patients
+data:
+  - *defaultPatient
+results:
+  IsScreeningEligible: true

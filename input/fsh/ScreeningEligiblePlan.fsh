@@ -25,7 +25,6 @@ Usage: #definition
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "CheckIsIncludedAndNotExcluded"
-* action[=].condition[=].expression.reference = "Library/ScreeningEligible|1.0.0"
 // -----------------------------------------------------------------------------
 // Action #1: Screening Eligible
 // -----------------------------------------------------------------------------
