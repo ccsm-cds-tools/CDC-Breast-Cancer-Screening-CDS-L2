@@ -43,7 +43,7 @@ define IsIncludedAndNotExcluded:
 
 // INCLUSIONS
 define IsIncluded:
-  "inc-AgeAtLeast18"
+  "inc-AgeAtLeast18" and "inc-femaleortransmale"
 
 // Age 18 years and older, only use MostRecentAgeValue if no birthdate  
 define "inc-AgeAtLeast18":
@@ -54,7 +54,10 @@ define MostRecentAgeValue:
     [Observation: "Age"] O
       where O.value.unit = 'years'
       sort by effective desc
-  ).value.value 
+  ).value.value.value
+
+define "inc-femaleortransmale":
+  Events."eve-female" or DataElements."TransgenderFemale"
 
 // EXCLUSIONS
 define Excluded:

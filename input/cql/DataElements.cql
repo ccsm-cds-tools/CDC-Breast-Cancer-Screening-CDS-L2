@@ -42,7 +42,9 @@ valueset "RIGHT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/V
 // Standard codes
 code "Gender Identity": '76691-5' from "LOINC" display 'Gender identity'
 code "Transgender Male Code": 'transgender-male' from "GENDER-IDENTITY" display 'transgender male'
+code "Transgender Female Code": 'transgender-female' from "GENDER-IDENTITY" display 'transgender female'
 code "Female-to-male Transsexual": '407377005' from "SNOMED-CT" display 'Female-to-male transsexual (finding)'
+code "Male-to-female Transsexual": '407376001' from "SNOMED-CT" display 'Male-to-female transsexual (finding)'
 code "Left (qualifier value)": '7771000' from "SNOMED-CT" display 'Left (qualifier value)'
 code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qualifier value)'
 
@@ -123,6 +125,12 @@ define TransgenderMaleExtension:
       E.value as FHIR.CodeableConcept ~ "Transgender Male Code" or
       E.value as FHIR.CodeableConcept ~ "Female-to-male Transsexual"
 
+define TransgenderFemaleExtension:
+  (GenderIdentityExtension) E
+    where
+      E.value as FHIR.CodeableConcept ~ "Transgender Female Code" or
+      E.value as FHIR.CodeableConcept ~ "Male-to-female Transsexual"      
+
 define GenderIdentityObservation:
   [Observation: "Gender Identity"]
 
@@ -131,8 +139,16 @@ define TransgenderMaleObservation:
   where O.value as FHIR.CodeableConcept ~ "Transgender Male Code"
   or O.value as FHIR.CodeableConcept ~ "Female-to-male Transsexual"
 
+define TransgenderFemaleObservation:
+  (GenderIdentityObservation) O
+    where O.value as FHIR.CodeableConcept ~ "Transgender Female Code"
+    or O.value as FHIR.CodeableConcept ~ "Male-to-female Transsexual"    
+
 define TransgenderMale:
   Exists(TransgenderMaleExtension) or Exists(TransgenderMaleObservation)
+
+define TransgenderFemale:
+  Exists(TransgenderFemaleExtension) or Exists(TransgenderFemaleObservation)  
 
 define FemaleorTransgenderMale:
   Female or TransgenderMale
