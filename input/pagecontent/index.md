@@ -18,8 +18,8 @@ risk patients and management of abnormal results.[^1] [^2] The Health
 FFRDC is developing the CDS using a reproducible process, utilizing
 interoperable health information technology (IT) standards including
 Health Level 7 International (HL7<sup>®</sup>) [Fast Healthcare Interoperability
-Resources](http://hl7.org/fhir) (FHIR<sup>®</sup>) and the [Clinical Quality
-Language](https://cql.hl7.org/01-introduction.html) (CQL).
+Resources](http://hl7.org/fhir){:target="_blank"} (FHIR<sup>®</sup>) and the [Clinical Quality
+Language](https://cql.hl7.org/01-introduction.html){:target="_blank"} (CQL).
 
 This document describes the purpose and intended use of the CDS for
 breast cancer screening and management (BCSM), options for integration
@@ -45,7 +45,10 @@ document provides a description of the following areas:
 
 ### Scope
 
-This document provides guidance for end-users and implementors of CDS tools for breast cancer screening and management (BCSM) guidelines. It includes information about the project background, CDS design details, EHR integration, and use in a clinical setting.
+This document provides guidance for end-users and implementors of CDS
+tools for breast cancer screening and management (BCSM) guidelines. It
+includes information about the project background, CDS design details,
+EHR integration, and use in a clinical setting.
 
 ### Audience
 
@@ -77,12 +80,10 @@ This document is organized as follows:
 -   Section 5 -- [Downloads](5_downloads.html)
 -   Section 6 -- [Artifacts](artifacts.html)
 
-
 [^1]: USPSTF United States Preventive Services Task Force, "Breast
     Cancer: Screening," 11 January 2016. \[Online\]. Available:
-    <https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening>.
+    [https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening){:target="_blank"}.
 
 [^2]: USPSTF United States Preventive Services Task Force, "Colorectal
     Cancer: Screening," 18 May 2021. \[Online\]. Available:
-    <https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening>
-
+    [https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening){:target="_blank"}
