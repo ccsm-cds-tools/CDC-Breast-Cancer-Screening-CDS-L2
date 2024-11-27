@@ -1,3 +1,7 @@
+/*
+@author: The Health FFRDC, operated by The MITRE Corporation, in support of the Division of Cancer Prevention and Control, Centers for Disease Control and Prevention.
+@description: Screening eligible criteria
+*/
 library ScreeningEligible version '1.0.0'
 
 using FHIR version '4.0.1'
