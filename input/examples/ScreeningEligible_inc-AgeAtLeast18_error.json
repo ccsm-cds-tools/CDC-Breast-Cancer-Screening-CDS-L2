@@ -4,7 +4,7 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/54",
+      "fullUrl": "http://example.org/RequestGroup/54",
       "resource": {
         "resourceType": "RequestGroup",
         "id": "54",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/Questionnaire/ScreeningEligibleQuestionnaire",
+      "fullUrl": "http://example.org/Questionnaire/ScreeningEligibleQuestionnaire",
       "resource": {
         "resourceType": "Questionnaire",
         "id": "ScreeningEligibleQuestionnaire",

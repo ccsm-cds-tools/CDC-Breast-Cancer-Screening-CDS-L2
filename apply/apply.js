@@ -115,7 +115,7 @@ export default class ApplyProcessor {
   }
 
   async applyPlan(patientBundle, outputFilePath) {
-    const baseUrl = 'http://cancerscreeningcds.github.io/bcsm-cds';
+    const baseUrl = 'http://example.org';
 
     // Bring in an example patient bundle from the test folder
     const examplePatientBundle = JSON.parse(readFileSync(patientBundle));
@@ -151,9 +151,13 @@ export default class ApplyProcessor {
     );*/
 
     // Concatenate all the resources created by $apply operation
+<<<<<<< HEAD
+    const outputResources = [CarePlan, RequestGroup, ...otherResources];
+=======
     const outputResources = this.createFhirBundle([RequestGroup, ...otherResources], 
       baseUrl, 
       path.basename(outputFilePath, '.json'));
+>>>>>>> main
 
     // Write them out to a file
     writeFileSync(outputFilePath, JSON.stringify(outputResources, null, 2));
