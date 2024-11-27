@@ -6,7 +6,7 @@
     {
       "resource": {
         "resourceType": "Patient",
-        "id": "c8ac79ef-4fe6-45d4-b8a0-0f8e74ab8a37",
+        "id": "2624a9cd-a140-4582-a355-b5495a526dc9",
         "name": [
           {
             "given": [
@@ -28,9 +28,9 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "6ef42222-3b51-4678-b699-eca6786d2816",
+        "id": "3470136a-bb5c-49da-a561-61f577b59bd5",
         "subject": {
-          "reference": "Patient/c8ac79ef-4fe6-45d4-b8a0-0f8e74ab8a37"
+          "reference": "Patient/2624a9cd-a140-4582-a355-b5495a526dc9"
         },
         "status": "final",
         "code": {

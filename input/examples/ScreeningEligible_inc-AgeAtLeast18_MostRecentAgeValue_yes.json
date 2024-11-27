@@ -1,0 +1,67 @@
+{
+  "resourceType": "Bundle",
+  "id": "ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/RequestGroup/49",
+      "resource": {
+        "resourceType": "RequestGroup",
+        "id": "49",
+        "subject": {
+          "reference": "Patient/7b3ea1dd-203b-4bc5-b01c-ba71f2649bb6",
+          "display": "Joanne Smith"
+        },
+        "instantiatesCanonical": "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible",
+        "intent": "proposal",
+        "status": "draft",
+        "action": [
+          {
+            "id": "50",
+            "title": "Screening Eligible Actions",
+            "description": "Top level action that defines trigger and criteria for inclusion and exclusion.",
+            "documentation": [
+              {
+                "type": "documentation",
+                "label": "Inclusions",
+                "display": "Appropriate for individuals >= age 18 years"
+              }
+            ],
+            "action": [
+              {
+                "id": "ScreeningEligible",
+                "title": "Screening Eligible",
+                "description": "Patient is eligible for screening",
+                "resource": {
+                  "reference": "CommunicationRequest/52"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/CommunicationRequest/52",
+      "resource": {
+        "id": "52",
+        "resourceType": "CommunicationRequest",
+        "status": "option",
+        "basedOn": [
+          {
+            "reference": "http://cancerscreeningcds.github.io/bcsm-cds/ActivityDefinition/CommunicateEligible"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/7b3ea1dd-203b-4bc5-b01c-ba71f2649bb6",
+          "display": "Joanne Smith"
+        },
+        "payload": [
+          {
+            "contentString": "Eligible for screening"
+          }
+        ]
+      }
+    }
+  ]
+}

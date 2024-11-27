@@ -1,12 +1,12 @@
 {
   "resourceType": "Bundle",
-  "id": "eve-female_no_end-noteligible",
+  "id": "inc-femaleortransmale_yes",
   "type": "collection",
   "entry": [
     {
       "resource": {
         "resourceType": "Patient",
-        "id": "af527918-4488-4689-9588-5e7d4bd42825",
+        "id": "d98d68cf-6b20-47d1-b7f8-a50ac37e8f45",
         "name": [
           {
             "given": [
@@ -15,12 +15,22 @@
             "family": "Smith"
           }
         ],
-        "gender": "female",
         "birthDate": "1980-01-01",
         "extension": [
           {
             "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
             "valueCode": "M"
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "407376001"
+                }
+              ]
+            }
           }
         ]
       }

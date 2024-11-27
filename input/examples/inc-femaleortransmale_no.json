@@ -1,12 +1,12 @@
 {
   "resourceType": "Bundle",
-  "id": "eve-female_no_end-noteligible",
+  "id": "inc-femaleortransmale_no",
   "type": "collection",
   "entry": [
     {
       "resource": {
         "resourceType": "Patient",
-        "id": "af527918-4488-4689-9588-5e7d4bd42825",
+        "id": "6fd0c367-1fcf-41d4-a551-8e2ffa65ba03",
         "name": [
           {
             "given": [
@@ -15,7 +15,7 @@
             "family": "Smith"
           }
         ],
-        "gender": "female",
+        "gender": "male",
         "birthDate": "1980-01-01",
         "extension": [
           {

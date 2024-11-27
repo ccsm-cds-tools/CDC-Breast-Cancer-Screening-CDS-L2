@@ -1,0 +1,22 @@
+{
+  "resourceType": "Bundle",
+  "id": "ScreeningEligible_inc-femaleortransmale_no",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/RequestGroup/67",
+      "resource": {
+        "resourceType": "RequestGroup",
+        "id": "67",
+        "subject": {
+          "reference": "Patient/6fd0c367-1fcf-41d4-a551-8e2ffa65ba03",
+          "display": "Joanne Smith"
+        },
+        "instantiatesCanonical": "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible",
+        "intent": "proposal",
+        "status": "draft",
+        "action": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "resourceType": "Bundle",
+  "id": "ScreeningEligible_inc-AgeAtLeast18_no",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/RequestGroup/58",
+      "resource": {
+        "resourceType": "RequestGroup",
+        "id": "58",
+        "subject": {
+          "reference": "Patient/4425f3a0-1b83-4eeb-b34a-779fc0871db7",
+          "display": "Joanne Smith"
+        },
+        "instantiatesCanonical": "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible",
+        "intent": "proposal",
+        "status": "draft",
+        "action": []
+      }
+    }
+  ]
+}

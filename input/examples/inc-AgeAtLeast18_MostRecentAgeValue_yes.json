@@ -1,0 +1,46 @@
+{
+  "resourceType": "Bundle",
+  "id": "inc-AgeAtLeast18_MostRecentAgeValue_yes",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "7b3ea1dd-203b-4bc5-b01c-ba71f2649bb6",
+        "name": [
+          {
+            "given": [
+              "Joanne"
+            ],
+            "family": "Smith"
+          }
+        ],
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cc9b57b1-1a4f-4a08-abe3-ad29a3340107",
+        "subject": {
+          "reference": "Patient/7b3ea1dd-203b-4bc5-b01c-ba71f2649bb6"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30525-0",
+              "display": "Age"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 18,
+          "unit": "years"
+        },
+        "effectiveDateTime": "2023-12-10T00:00:00.0Z"
+      }
+    }
+  ]
+}

@@ -6,7 +6,7 @@
     {
       "resource": {
         "resourceType": "Patient",
-        "id": "5337a686-5e2e-47e6-a732-7827d5aec81f",
+        "id": "635c8dff-30ad-4adb-83e2-6d143ae19cff",
         "name": [
           {
             "given": [
@@ -30,7 +30,7 @@
         "resourceType": "Condition",
         "id": "bilateral-mastectomy-condition",
         "subject": {
-          "reference": "Patient/5337a686-5e2e-47e6-a732-7827d5aec81f"
+          "reference": "Patient/635c8dff-30ad-4adb-83e2-6d143ae19cff"
         },
         "clinicalStatus": {
           "coding": [
