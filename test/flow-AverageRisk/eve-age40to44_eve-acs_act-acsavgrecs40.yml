@@ -1,0 +1,14 @@
+---
+name: eve-age40to44_eve-acs_act-acsavgrecs40
+flow: flow-AverageRisk
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-age40to44"
+  - "*eve-acs"
+results:
+  flow-AverageRisk:
+    - "*act-acsavgrecs40"

@@ -1,0 +1,14 @@
+---
+name: eve-AgeOver74_no_eve-LifeExp10_no_eve-highriskexclusions_yes_end-decisionhighrisk
+flow: flow-DecisionToScreen
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-AgeOver74"
+  - "*eve-LifeExp10"
+  - "*eve-highriskexclusions"
+results:
+  flow-DecisionToScreen: []

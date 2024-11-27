@@ -1,0 +1,412 @@
+de-female:
+  - &Sex_assigned_at_birth_=_female_AND_gender_=_other
+    resourceType: Patient
+    name: Joanne Smith
+    gender: other
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: F
+  - &Sex_assigned_at_birth_=_male_AND_gender_=_female
+    resourceType: Patient
+    name: Joanne Smith
+    gender: female
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: M     
+  - &Sex_assigned_at_birth_=_none_AND_gender_=_female
+    resourceType: Patient
+    name: Joanne Smith
+    gender: female
+    birthDate: 1980-01-01
+  - &Sex_assigned_at_birth_=_none_AND_gender_=_male
+    resourceType: Patient
+    name: Joanne Smith
+    gender: male
+    birthDate: 1980-01-01  
+  - &Sex_assigned_at_birth_missing_or_unknown_AND_administrative_gender_=_female 
+    resourceType: Patient
+    name: Joanne Smith
+    gender: female
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: UNK    
+  - &Sex_assigned_at_birth_missing_or_unknown_AND_administrative_gender_=_male 
+    resourceType: Patient
+    name: Joanne Smith
+    gender: male
+    birthDate: 1980-01-01
+    extension:
+    -
+      url: http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex
+      valueCode: UNK  
+  - "&gender_identity_=_transgender_male"
+  
+de-breastca:
+  - &CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_active
+    resourceType: Condition
+    id: invasive-breast-cancer
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+          display: Active
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+          display: Confirmed
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-category
+            code: problem-list-item
+            display: Problem List Item
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 254837009
+          display: Invasive breast cancer
+      text: Invasive Breast Cancer
+    onsetDateTime: '2023-10-01'
+  - &CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_active
+    resourceType: Condition
+    id: non-invasive-breast-cancer
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+          display: Active
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+          display: Confirmed
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-category
+            code: problem-list-item
+            display: Problem List Item
+    code:
+      coding: # TODO: replace placeholder with real code 
+        - system: http://snomed.info/sct 
+          code: 54319003
+          display: Disruptive behavior disorder (disorder)
+    onsetDateTime: '2023-10-01'
+  - &CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive
+    resourceType: Condition
+    id: invasive-breast-cancer
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: inactive
+          display: Inactive
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+          display: Confirmed
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-category
+            code: problem-list-item
+            display: Problem List Item
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 254837009
+          display: Invasive breast cancer
+      text: Invasive Breast Cancer
+    onsetDateTime: '2023-10-01'
+
+de-mastectomy:  
+  - &CONDITIONS_include_`BILATERAL_MASTECTOMY`
+    resourceType: Condition
+    id: bilateral-mastectomy-condition
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 428529004
+  - &PROCEDURES_include_`BILATERAL_MASTECTOMY_PROCEDURE`
+    resourceType: Procedure
+    id: bilateral-mastectomy-procedure
+    status: completed
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 22418005
+  - &CONDITIONS_include_`LEFT_UNILATERAL_MASTECTOMY`
+    resourceType: Condition
+    id: left-unilateral-mastectomy-condition
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 429009003
+  - &CONDITIONS_include_`RIGHT_UNILATERAL_MASTECTOMY`
+    resourceType: Condition
+    id: right-unilateral-mastectomy-condition
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 429242008
+  - &PROCEDURES_include_`LEFT_UNILATERAL_MASTECTOMY_PROCEDURE`
+    resourceType: Procedure
+    id: left-unilateral-mastectomy-procedure
+    status: completed
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 726437009
+  - &PROCEDURES_include_`RIGHT_UNILATERAL_MASTECTOMY_PROCEDURE`
+    resourceType: Procedure
+    id: right-unilateral-mastectomy-procedure
+    status: completed
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 726436000
+  - &CONDITIONS_include_`UNILATERAL_MASTECTOMY`_with_laterality_`LEFT_LATERLITY`
+    resourceType: Condition
+    id: unilateral-mastectomy-left-condition
+    code:
+      coding:
+        - system: http://hl7.org/fhir/sid/icd-10-cm
+          code: Z90.10
+    bodySite:
+      coding:
+        - system: http://snomed.info/sct
+          code: 7771000
+  - &CONDITIONS_include_`UNILATERAL_MASTECTOMY`_with_laterality_`RIGHT_LATERLITY`
+    resourceType: Condition
+    id: unilateral-mastectomy-right-condition
+    code:
+      coding:
+        - system: http://hl7.org/fhir/sid/icd-10-cm
+          code: Z90.10
+    bodySite:
+      coding:
+        - system: http://snomed.info/sct
+          code: 24028007
+          
+de-breastsymptoms:
+  - &OBSERVATIONS_include_new_or_worsening_breast_symptoms
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "BreastSymptoms"
+          display: "New or worsening breast symptoms"
+    valueBoolean: true
+    effectiveDateTime: "2023-12-10T00:00:00.0Z"
+  - &OBSERVATIONS_include_new_or_worsening_breast_symptoms_before_lookback
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "BreastSymptoms"
+          display: "New or worsening breast symptoms"
+    valueBoolean: true
+    effectiveDateTime: "2023-11-10T00:00:00.0Z"
+
+de-breastfindings:  
+  - &OBSERVATIONS_include_new_or_worsening_breast_findings
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "BreastFindings"
+          display: "New or worsening breast findings"
+    valueBoolean: true
+    effectiveDateTime: "2023-12-10T00:00:00.0Z"
+  - &OBSERVATIONS_include_new_or_worsening_breast_findings_before_lookback
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "BreastFindings"
+          display: "New or worsening breast findings"
+    valueBoolean: true
+    effectiveDateTime: "2023-11-10T00:00:00.0Z"
+
+de-screeningeligible:
+  - "&See_'Screening_Eligible'_flow_logic"
+de-geneticrisk:
+  - "&CONDITIONS_include_`GENETIC_MARKER_OR_SYNDROME`_with_status_active"
+  - "&CONDITIONS_include_`GENETIC_MARKER"
+  - "&SYNDROME`_with_status_active"
+de-acsgeneticrisk:
+  - "&CONDITIONS_include_`BRCA-1_MUTATION_CONDITION`_OR_CONDITIONS_include_`BRCA-2_MUTATION_CONDITION`_OR_CONDITIONS_include_`LI-FRAUMENI_SYNDROME`_OR_CONDITIONS_include_`COWDEN_SYNDROME`_OR_CONDITIONS_include_`BANNAYAN-RILEY-RUVALCABA_SYNDROME`"
+  - "&CONDITIONS_include_`BRCA-1_MUTATION_CONDITION`"
+  - "&CONDITIONS_include_`BRCA-2_MUTATION_CONDITION`"
+  - "&CONDITIONS_include_`LI-FRAUMENI_SYNDROME`"
+  - "&CONDITIONS_include_`COWDEN_SYNDROME`"
+  - "&CONDITIONS_include_`BANNAYAN-RILEY-RUVALCABA_SYNDROME`"
+de-acsbrcafirstdeg:
+  - "&FAMILY_HISTORY_of_brca1_or_brca2_in_first_degree_relative__including_parent_or_child"
+de-acsgeneticfirstdeg:
+  - "&FAMILY_HISTORY_of_Li-Fraumeni_syndrome__Cowden_or_Bannayan-Riley-Ruvalcaba_syndrome_in_first_degree_relative__including_parent_or_child"
+de-chestxrt:
+  - "&CONDITIONS_include_`CHEST_RADIOTHERAPY`_with_age_of_onset_<=_30_years"
+de-hxbreastca:
+  - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive__resolved_OR_CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_inactive__resolved_OR_CONDITIONS_include_`INVASIVE_BREAST_CANCER__IN_REMISSION`_with_status_active_OR_CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER__IN_REMISSION`_with_status_active"
+  - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive__resolved"
+  - "&CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_inactive__resolved"
+  - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER__IN_REMISSION`_with_status_active"
+  - "&CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER__IN_REMISSION`_with_status_active"
+de-atypicalbx:
+  - "&CONDITIONS_or_DIAGNOSIS_CODES_include_`ATYPICAL_HYPERPLASIA`__`ATYPICAL_DUCTAL_HYPERPLASIA`__`ATYPICAL_LOBULAR_HYPERPLASIA`__`LOBULAR_CARCINOMA_IN_SITU`_OR_PATHOLOGY_REPORT_of_type_`BREAST_BIOPSY`_includes_narrative_documentation_of_pre-malignant_or_high-risk_lesions"
+  - "&CONDITIONS_or_DIAGNOSIS_CODES_include_`ATYPICAL_HYPERPLASIA`__`ATYPICAL_DUCTAL_HYPERPLASIA`__`ATYPICAL_LOBULAR_HYPERPLASIA`__`LOBULAR_CARCINOMA_IN_SITU`"
+  - "&PATHOLOGY_REPORT_of_type_`BREAST_BIOPSY`_includes_narrative_documentation_of_pre-malignant_or_high-risk_lesions"
+de-highlifetimerisk:
+  - "&Risk_assessment_using_a_formal_risk_assessment_tool_based_mainly_on_family_history_is_>20%_lifetime_risk_OR_Risk_assessment_without_using_a_formal_tool_is_estimated_>20%_lifetime_risk"
+  - "&Risk_assessment_using_a_formal_risk_assessment_tool_based_mainly_on_family_history_is_>20%_lifetime_risk"
+  - "&Risk_assessment_without_using_a_formal_tool_is_estimated_>20%_lifetime_risk"
+de-breastdensitycord:
+  - "&BI-RADS_breast_density_category_of_'Last_mammography'__as_reported_in_DIAGNOSTIC_REPORT_or_documented_in_a_structured_form"
+de-hospice:
+  - "&CONDITIONS_or_ENCOUNTER_DIAGNOSES_include_codes_from_`HOSPICE_INTERVENTION`_OR_`HOSPICE_ENCOUNTER`"
+  - "&CONDITIONS_or_ENCOUNTER_DIAGNOSES_include_codes_from_`HOSPICE_INTERVENTION`"
+  - "&`HOSPICE_ENCOUNTER`"
+de-palliative:
+  - "&CONDITIONS_or_ENCOUNTER_DIAGNOSES_include_codes_from_`PALLIATIVE_INTERVENTION`_OR_`PALLIATIVE_ENCOUNTER`"
+  - "&CONDITIONS_or_ENCOUNTER_DIAGNOSES_include_codes_from_`PALLIATIVE_INTERVENTION`"
+  - "&`PALLIATIVE_ENCOUNTER`"
+de-snpltc:
+  - "&AGE_>=_66_years_AND_ENCOUNTER_DIAGNOSES_with_POS_code_32__33__34__54_or_56_for_more_than_90_consecutive_days"
+  - "&AGE_>=_66_years"
+  - "&ENCOUNTER_DIAGNOSES_with_POS_code_32__33__34__54_or_56_for_more_than_90_consecutive_days"
+de-frailtydementiamed:
+  - "&AGE_>=_66_years_AND_>=_1_ENCOUNTER_DIAGNOSES_include_`CODES_TO_IDENTIFY_FRAILTY`_AND_>=_1_MEDICATIONS_include_`DEMENTIA_EXCLUSION_MEDICATIONS`_with_dispense"
+  - "&AGE_>=_66_years"
+  - "&>=_1_ENCOUNTER_DIAGNOSES_include_`CODES_TO_IDENTIFY_FRAILTY`"
+  - "&>=_1_MEDICATIONS_include_`DEMENTIA_EXCLUSION_MEDICATIONS`_with_dispense"
+de-frailtyadvillness:
+  - "&AGE_>=_66_years_AND_>=_1_ENCOUNTER_DIAGNOSES_include_`CODES_TO_IDENTIFY_FRAILTY`_AND_(>=_1_ENCOUNTER_of_type_acute_inpatient_where_DIAGNOSES_include_`CODES_TO_IDENTIFY_ADVANCED_ILLNESS`_OR_>=_2_ENCOUNTERS_of_type_outpatient__observation__ED_or_nonacute_inpatient_where_DIAGNOSES_include_`CODES_TO_IDENTIFY_ADVANCED_ILLNESS`)"
+  - "&AGE_>=_66_years"
+  - "&>=_1_ENCOUNTER_DIAGNOSES_include_`CODES_TO_IDENTIFY_FRAILTY`"
+  - "&>=_1_ENCOUNTER_of_type_acute_inpatient_where_DIAGNOSES_include_`CODES_TO_IDENTIFY_ADVANCED_ILLNESS`_OR_>=_2_ENCOUNTERS_of_type_outpatient__observation__ED_or_nonacute_inpatient_where_DIAGNOSES_include_`CODES_TO_IDENTIFY_ADVANCED_ILLNESS`"
+  - "&>=_1_ENCOUNTER_of_type_acute_inpatient_where_DIAGNOSES_include_`CODES_TO_IDENTIFY_ADVANCED_ILLNESS`"
+  - "&>=_2_ENCOUNTERS_of_type_outpatient__observation__ED_or_nonacute_inpatient_where_DIAGNOSES_include_`CODES_TO_IDENTIFY_ADVANCED_ILLNESS`"
+de-lastmammo:
+  - "&Latest_DIAGNOSTIC_REPORT_of_type_`SCREENING_MAMMOGRAPHY`_OR_`DIAGNOSTIC_MAMMOGRAPHY`_OR_Documented_result_of_latest_`SCREENING_MAMMOGRAPHY`_OR_`DIAGNOSTIC_MAMMOGRAPHY`."
+  - "&Latest_DIAGNOSTIC_REPORT_of_type_`SCREENING_MAMMOGRAPHY`"
+  - "&`DIAGNOSTIC_MAMMOGRAPHY`"
+  - "&Documented_result_of_latest_`SCREENING_MAMMOGRAPHY`"
+  - "&`DIAGNOSTIC_MAMMOGRAPHY`."
+de-lastmammodate:
+  - "&Study_date_of_'Last_mammography'"
+de-lastmammoresult:
+  - "&BI-RADS_score_of_'Last_mammography'__as_reported_in_DIAGNOSTIC_REPORT_or_documented_in_a_structured_form"
+de-pendingmammo:
+  - "&Most_recent_ORDER_or_REFERRAL_with_exam_code_`SCREENING_MAMMOGRAPHY`_AND_status_is_active"
+  - "&Most_recent_ORDER_or_REFERRAL_with_exam_code_`SCREENING_MAMMOGRAPHY`"
+  - "&status_is_active"
+de-lastmri:
+  - "&Latest_DIAGNOSTIC_REPORT_of_type_`SCREENING_MRI`_OR_Documented_result_of_latest_`SCREENING_MRI`_as_BI-RADS_score."
+  - "&Latest_DIAGNOSTIC_REPORT_of_type_`SCREENING_MRI`"
+  - "&Documented_result_of_latest_`SCREENING_MRI`_as_BI-RADS_score."
+de-lastmridate:
+  - "&Study_date_of_'Last_MRI'"
+de-lastmriresult:
+  - "&BI-RADS_score_of_'Last_MRI'__as_reported_in_DIAGNOSTIC_REPORT_or_documented_in_a_structured_form"
+de-pendingmri:
+  - "&Most_recent_ORDER_or_REFERRAL_with_exam_code_`SCREENING_MRI`_AND_status_is_active"
+  - "&Most_recent_ORDER_or_REFERRAL_with_exam_code_`SCREENING_MRI`"
+  - "&status_is_active"
+de-lastus:
+  - "&Latest_DIAGNOSTIC_REPORT_of_type_`SCREENING_US`_OR_`DIAGNOSTIC_US`_OR_Documented_result_of_latest_`SCREENING_US`_OR_`DIAGNOSTIC_US`_as_BI-RADS_score."
+  - "&Latest_DIAGNOSTIC_REPORT_of_type_`SCREENING_US`"
+  - "&`DIAGNOSTIC_US`"
+  - "&Documented_result_of_latest_`SCREENING_US`"
+  - "&`DIAGNOSTIC_US`_as_BI-RADS_score."
+de-lastusdate:
+  - "&Study_date_of_'Last_ultrasound'"
+de-pendingus:
+  - "&Most_recent_ORDER_or_REFERRAL_with_exam_code_`SCREENING_US`_AND_status_is_active"
+  - "&Most_recent_ORDER_or_REFERRAL_with_exam_code_`SCREENING_US`"
+  - "&status_is_active"
+de-lastbiopsy:
+  - "&Latest_DIAGNOSTIC_REPORT_of_type_`BREAST_BIOPSY`_OR_Documented_result_of_latest_`BREAST_BIOPSY`_as_diagnostic_code."
+  - "&Latest_DIAGNOSTIC_REPORT_of_type_`BREAST_BIOPSY`"
+  - "&Documented_result_of_latest_`BREAST_BIOPSY`_as_diagnostic_code."
+de-lastbiopsydate:
+  - "&Study_date_of_'Last_biopsy'"
+de-pendingbiopsy:
+  - "&Most_recent_ORDER_or_REFERRAL_where_exam_code_is_`BREAST_BIOPSY_PROCEDURE`_AND_status_is_active"
+  - "&Most_recent_ORDER_or_REFERRAL_where_exam_code_is_`BREAST_BIOPSY_PROCEDURE`"
+  - "&status_is_active"
+de-biopsyresultnegative:
+  - "&'Biopsy_result_atypical'_is_FALSE_AND_'Biopsy_result_malignant'_is_FALSE_AND_'Biopsy_result_indeterminate'_is_FALSE_AND_'Biopsy_result_discordant'_is_FALSE"
+  - "&'Biopsy_result_atypical'_is_FALSE"
+  - "&'Biopsy_result_malignant'_is_FALSE"
+  - "&'Biopsy_result_indeterminate'_is_FALSE"
+  - "&'Biopsy_result_discordant'_is_FALSE"
+de-biopsyresultatypical:
+  - "&Biopsy_result_includes_`ATYPICAL_HYPERPLASIA`_OR_`ATYPICAL_DUCTAL_HYPERPLASIA`_OR_`ATYPICAL_LOBULAR_HYPERPLASIA`_OR_`LOBULAR_CARCINOMA_IN_SITU`"
+  - "&Biopsy_result_includes_`ATYPICAL_HYPERPLASIA`"
+  - "&`ATYPICAL_DUCTAL_HYPERPLASIA`"
+  - "&`ATYPICAL_LOBULAR_HYPERPLASIA`"
+  - "&`LOBULAR_CARCINOMA_IN_SITU`"
+de-biopsyresultindeter:
+  - "&Biopsy_result_is_`INDETERMINATE_HISTOLOGY`"
+de-biopsyresultdiscordant:
+  - "&Biopsy_result_is_'Biopsy_result_negative'_AND_'Last_mammography_result'_is_BI-RADS_5"
+  - "&Biopsy_result_is_'Biopsy_result_negative'"
+  - "&'Last_mammography_result'_is_BI-RADS_5"
+de-biopsyresultmalignant:
+  - "&Biopsy_result_includes_`INVASIVE_BREAST_CANCER`_OR_`NON-INVASIVE_BREAST_CANCER`"
+  - "&Biopsy_result_includes_`INVASIVE_BREAST_CANCER`"
+  - "&`NON-INVASIVE_BREAST_CANCER`"
+de-brca1lab:
+  - "&EXISTS_DIAGNOSTIC_TEST_with_type_`BRCA-1_MUTATION`"
+de-brca2lab:
+  - "&EXISTS_DIAGNOSTIC_TEST_with_type_`BRCA-2_MUTATION`"
+de-brca1condition:
+  - "&CONDITIONS_include_`BRCA-1_MUTATION_CONDITION`_with_status_active"
+de-brca2condition:
+  - "&CONDITIONS_include_`BRCA-2_MUTATION_CONDITION`_with_status_active"
+de-fhxgeneinherited:
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`BRCA-1_MUTATION_CONDITION`_OR_`BRCA-2_MUTATION_CONDITION`"
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`BRCA-1_MUTATION_CONDITION`"
+  - "&`BRCA-2_MUTATION_CONDITION`"
+de-fhxbreastca:
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`INVASIVE_BREAST_CANCER`_OR_FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`NON-INVASIVE_BREAST_CANCER`"
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`INVASIVE_BREAST_CANCER`"
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`NON-INVASIVE_BREAST_CANCER`"
+de-fhxovca:
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`OVARIAN_CANCER`"
+de-fhxtubalca:
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`TUBAL_CANCER`"
+de-fhxperitonealca:
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`PERITONEAL_CANCER`"
+de-fhxrisk:
+  - "&FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_breast_cancer_OR_FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relatives_with_breast_cancer_diagnosed_<=_50_years_old_OR_FAMILY_HISTORY_includes_at_least_one_first-_or_second-_degree_relative_with_breast_AND_at_least_once_relative_wth_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relative_with_both_breast_and_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relative_with_2_independent_breast_cancers_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_male_relative_with_breast_cancer"
+  - "&FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_breast_cancer"
+  - "&FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_ovarian_cancer"
+  - "&FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relatives_with_breast_cancer_diagnosed_<=_50_years_old"
+  - "&FAMILY_HISTORY_includes_at_least_one_first-_or_second-_degree_relative_with_breast_AND_at_least_once_relative_wth_ovarian_cancer"
+  - "&FAMILY_HISTORY_includes_at_least_one_first-_or_second-_degree_relative_with_breast"
+  - "&at_least_once_relative_wth_ovarian_cancer"
+  - "&FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relative_with_both_breast_and_ovarian_cancer"
+  - "&FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relative_with_2_independent_breast_cancers"
+  - "&FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_male_relative_with_breast_cancer"

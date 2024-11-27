@@ -1,0 +1,15 @@
+---
+name: eve-highlifetimerisk_eve-age30to39_eve-uspstf_act-startdateuspstf
+flow: flow-SpecialPopulations
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-highlifetimerisk"
+  - "*eve-age30to39"
+  - "*eve-uspstf"
+results:
+  flow-SpecialPopulations:
+    - "*act-startdateuspstf"

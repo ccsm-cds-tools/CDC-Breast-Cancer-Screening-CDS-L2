@@ -1,0 +1,22 @@
+{
+  "resourceType": "Bundle",
+  "id": "PrimaryScreeningDecision_IsScreeningEligible_false",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/2",
+      "resource": {
+        "resourceType": "RequestGroup",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/defaultIneligiblePatient",
+          "display": "Jane Doe"
+        },
+        "instantiatesCanonical": "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/PrimaryScreeningDecision",
+        "intent": "proposal",
+        "status": "draft",
+        "action": []
+      }
+    }
+  ]
+}

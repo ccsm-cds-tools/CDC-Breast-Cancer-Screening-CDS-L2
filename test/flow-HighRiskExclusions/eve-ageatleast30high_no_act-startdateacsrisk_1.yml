@@ -1,0 +1,15 @@
+---
+name: eve-geneticrisk_yes_eve-acsgeneticrisk_yes_eve-ageatleast30high_no_act-startdateacsrisk
+flow: flow-HighRiskExclusions
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-geneticrisk"
+  - "*eve-acsgeneticrisk"
+  - "*eve-ageatleast30high"
+results:
+  flow-HighRiskExclusions:
+    - "*act-startdateacsrisk"

@@ -1,0 +1,10 @@
+---
+name: CONDITIONS_not_include_`BREAST_CANCER`
+elementId: de-breastca
+externalData:
+  - data_elements
+data:
+  - *Sex_assigned_at_birth_=_female_AND_gender_=_other
+results:
+  de-breastca: false
+  BreastCancerDiagnoses: $should have length 0

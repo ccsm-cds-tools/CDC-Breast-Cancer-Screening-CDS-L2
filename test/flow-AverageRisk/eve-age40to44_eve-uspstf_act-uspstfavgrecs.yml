@@ -1,0 +1,14 @@
+---
+name: eve-age40to44_eve-uspstf_act-uspstfavgrecs
+flow: flow-AverageRisk
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-age40to44"
+  - "*eve-uspstf"
+results:
+  flow-AverageRisk:
+    - "*act-uspstfavgrecs"

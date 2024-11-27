@@ -1,0 +1,14 @@
+---
+name: eve-fhxgeneinherited_no_eve-brcageneancestry_yes_act-geneticreferral
+flow: flow-GeneticRiskReferral
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-fhxgeneinherited"
+  - "*eve-brcageneancestry"
+results:
+  flow-GeneticRiskReferral:
+    - "*act-geneticreferral"

@@ -1,0 +1,12 @@
+---
+name: eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible
+flow: flow-ScreeningEligible
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../DataElements/data_elements
+  - ../default_patients
+data:
+  - *'Assigned_female_at_birth'_is_TRUE
+results:
+  flow-ScreeningEligible: *act-eligible

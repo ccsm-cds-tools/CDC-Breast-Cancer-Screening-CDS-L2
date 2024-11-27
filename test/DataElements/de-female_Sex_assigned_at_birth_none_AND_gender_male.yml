@@ -1,0 +1,14 @@
+---
+name: Sex_assigned_at_birth_none_AND_gender_male
+elementId: de-female
+externalData:
+  - data_elements
+data:
+  - *Sex_assigned_at_birth_=_none_AND_gender_=_male
+results:
+  de-female: false
+  FemaleGender: false
+  FemaleBirthSex: false
+  Female: false
+  TransgenderMale: false
+  FemaleorTransgenderMale: false

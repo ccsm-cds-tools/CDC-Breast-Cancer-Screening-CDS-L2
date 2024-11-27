@@ -1,0 +1,16 @@
+eve-AgeGroup:
+  - "&Patient_age_group"
+eve-Source:
+  - "&Source_of_recommendation"
+eve-ageUnder40:
+  - "&Patient_age_<_40_years"
+eve-age40to44:
+  - "&Patient_age_>=40_and_<=44"
+eve-Age45to54:
+  - "&Patient_age_>=45_and_<=54"
+eve-AgeOver54:
+  - "&Patient_age_>=55"
+eve-acs:
+  - "&Source_of_recommendation_is_ACS"
+eve-uspstf:
+  - "&Source_of_recommendation_is_USPSTF"

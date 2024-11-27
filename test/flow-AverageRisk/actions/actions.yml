@@ -1,0 +1,10 @@
+act-startdate:
+  - "&Next_due_date_=_date_patient_is_40_years_old"
+act-acsavgrecs40:
+  - "&Screening_age_=_>=_40_and_<44"
+act-acsavgrecs45:
+  - "&Screening_age_=_>=_45_and_<54"
+act-acsavgrecs55:
+  - "&Screening_age_=_>=_55"
+act-uspstfavgrecs:
+  - "&Screening_age_=_>=_40"

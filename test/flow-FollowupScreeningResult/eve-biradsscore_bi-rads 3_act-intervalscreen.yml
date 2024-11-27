@@ -1,0 +1,15 @@
+---
+name: eve-latesttesttype_mri_eve-actionablebirads_yes_eve-biradsscore_bi-rads 3_act-intervalscreen
+flow: flow-FollowupScreeningResult
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-latesttesttype"
+  - "*eve-actionablebirads"
+  - "*eve-biradsscore"
+results:
+  flow-FollowupScreeningResult:
+    - "*act-intervalscreen"

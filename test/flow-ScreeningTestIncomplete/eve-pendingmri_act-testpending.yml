@@ -1,0 +1,13 @@
+---
+name: eve-pendingmri_act-testpending
+flow: flow-ScreeningTestIncomplete
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-pendingmri"
+results:
+  flow-ScreeningTestIncomplete:
+    - "*act-testpending"

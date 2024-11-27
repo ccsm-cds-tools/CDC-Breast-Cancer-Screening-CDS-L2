@@ -1,0 +1,15 @@
+---
+name: eve-latesttesttype_mammogram_eve-actionablebirads_yes_eve-biradsscore_bi-rads 4 or 5_act-biopsy
+flow: flow-FollowupScreeningResult
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-latesttesttype"
+  - "*eve-actionablebirads"
+  - "*eve-biradsscore"
+results:
+  flow-FollowupScreeningResult:
+    - "*act-biopsy"

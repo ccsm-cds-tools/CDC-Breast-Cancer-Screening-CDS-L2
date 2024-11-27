@@ -1,0 +1,14 @@
+---
+name: eve-latesttesttype_biopsy_eve-biopsyresult_discordant_act-discordantbiopsy
+flow: flow-FollowupScreeningResult
+skip: true
+externalData:
+  - ./events/events
+  - ./actions/actions
+  - ../default_patients
+data:
+  - "*eve-latesttesttype"
+  - "*eve-biopsyresult"
+results:
+  flow-FollowupScreeningResult:
+    - "*act-discordantbiopsy"
