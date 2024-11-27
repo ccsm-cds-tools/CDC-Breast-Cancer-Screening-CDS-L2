@@ -4,7 +4,7 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://example.org/RequestGroup/24",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/24",
       "resource": {
         "resourceType": "RequestGroup",
         "id": "24",
@@ -42,7 +42,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/CommunicationRequest/27",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/27",
       "resource": {
         "id": "27",
         "resourceType": "CommunicationRequest",

@@ -4,7 +4,7 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://example.org/RequestGroup/10",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/10",
       "resource": {
         "resourceType": "RequestGroup",
         "id": "10",
@@ -50,7 +50,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/CommunicationRequest/15",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/15",
       "resource": {
         "id": "15",
         "resourceType": "CommunicationRequest",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "fullUrl": "http://example.org/CommunicationRequest/18",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/18",
       "resource": {
         "id": "18",
         "resourceType": "CommunicationRequest",
