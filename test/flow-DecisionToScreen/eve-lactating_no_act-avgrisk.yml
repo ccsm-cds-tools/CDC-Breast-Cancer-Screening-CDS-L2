@@ -3,8 +3,9 @@ name: eve-AgeOver74_no_eve-LifeExp10_no_eve-highriskexclusions_no_eve-specialpop
 flow: flow-DecisionToScreen
 skip: true
 externalData:
-  - ./events/events
+  - ../DecisionToScreenEvents/events
   - ./actions/actions
+  - ../DataElements/data_elements
   - ../default_patients
 data:
   - "*eve-AgeOver74"
