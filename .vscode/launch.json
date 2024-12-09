@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run test-cql",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "cql-to-elm",       
+      "program": "${workspaceFolder}/node_modules/.bin/mocha",
+      "args": [
+        "test",
+        "--reporter",
+        "spec",
+        "--recursive",
+        "--timeout",
+        "100000",
+        "--no-package"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+        "name": "Run test-apply",
+        "type": "node",
+        "request": "launch",
+        "preLaunchTask": "sushi",
+        "program": "${workspaceFolder}/node_modules/.bin/mocha",
+        "args": [
+          "apply",
+          "--reporter",
+          "spec",
+          "--recursive",
+          "--timeout",
+          "100000",
+          "--no-package"
+        ],
+        "console": "integratedTerminal"
+    }
+  ]
+}
