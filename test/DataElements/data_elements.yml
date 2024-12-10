@@ -285,14 +285,14 @@ de-breastdensitycord:
   - "&BI-RADS_breast_density_category_of_'Last_mammography'__as_reported_in_DIAGNOSTIC_REPORT_or_documented_in_a_structured_form"
 
 de-LifeExp10:
-  - &OBSERVATIONS_include_life_expectancy_under_10_years
+  - &OBSERVATIONS_include_life_expectancy_indicator
     resourceType: Observation
     status: final
     code:
       coding:
         - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
-          code: "LifeExpectancyUnder10Years"
-          display: "Life expectancy <10 years"
+          code: "ReducedLifeExpectancyIndicator"
+          display: "Reduced life expectancy indicator"
     valueBoolean: true
     effectiveDateTime: "2023-12-10T00:00:00.0Z"  
 

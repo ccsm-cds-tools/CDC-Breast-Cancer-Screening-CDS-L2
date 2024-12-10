@@ -1,5 +1,5 @@
 ---
-name: eve-AgeOver74_no_eve-LifeExp10_yes_act-sdmcontinuelifexp__eve-highriskexclusions_no_eve-specialpop_no_eve-lactating_yes_act-lactating__act-avgrisk
+name: eve-AgeOver74_no_eve-LifeExp_yes_act-sdmcontinuelifexp__eve-highriskexclusions_no_eve-specialpop_no_eve-lactating_yes_act-lactating__act-avgrisk
 flow: flow-DecisionToScreen
 externalData:
   - ../DecisionToScreenEvents/events
@@ -8,7 +8,7 @@ externalData:
   - ../default_patients
 data:
   - *Patient_age_=_74_years
-  - *Life_expectancy_under_10_years
+  - *Life_expectancy_reduced
   - *Patient_is_currently_lactating
 results:
   flow-DecisionToScreen:

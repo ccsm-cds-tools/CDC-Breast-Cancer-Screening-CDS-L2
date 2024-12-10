@@ -16,9 +16,9 @@ eve-AgeOver74:
     gender: female
     birthDate: "1949-12-10"
 
-eve-LifeExp10: 
-  - &Life_expectancy_under_10_years
-    *OBSERVATIONS_include_life_expectancy_under_10_years
+eve-LifeExp: 
+  - &Life_expectancy_reduced
+    *OBSERVATIONS_include_life_expectancy_indicator
 
 eve-lactating:
   - &Patient_is_currently_lactating

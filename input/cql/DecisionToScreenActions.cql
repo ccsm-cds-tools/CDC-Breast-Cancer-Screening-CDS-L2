@@ -12,7 +12,7 @@ code "Discuss decision to continue screening": 'sdmcontinue' from "ActCode" disp
 code "Discuss delay in screening": 'sdmdelay' from "ActCode" display 'Shared decision making to consider delay in screening'
 // Reason Codes
 code "Age over 74 years": 'ageover74' from "ReasonCode" display 'Age over 74 years'
-code "Life expectancy <10 years": 'lifeexp10' from "ReasonCode" display 'Life expectancy <10 years'
+code "Reduced life expectancy indicator": 'lifeexp' from "ReasonCode" display 'Reduced life expectancy indicator'
 code "Currently lactating": 'currentlylactating' from "ReasonCode" display 'Currently lactating'
 
 context Patient
@@ -26,7 +26,7 @@ define "act-sdmcontinueage":
 define "act-sdmcontinuelifexp":
   {
 		code: "Discuss decision to continue screening",
-    reason: "Life expectancy <10 years"
+    reason: "Reduced life expectancy indicator"
 	} 
 
 define "act-lactating":

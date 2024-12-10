@@ -203,31 +203,31 @@
             }
          }, {
             "localId" : "216",
-            "locator" : "15:1-15:99",
+            "locator" : "15:1-15:113",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
-            "name" : "Life expectancy <10 years",
-            "id" : "lifeexp10",
-            "display" : "Life expectancy <10 years",
+            "name" : "Reduced life expectancy indicator",
+            "id" : "lifeexp",
+            "display" : "Reduced life expectancy indicator",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
                   "r" : "216",
                   "s" : [ {
-                     "value" : [ "","code ","\"Life expectancy <10 years\"",": ","'lifeexp10'"," from " ]
+                     "value" : [ "","code ","\"Reduced life expectancy indicator\"",": ","'lifeexp'"," from " ]
                   }, {
                      "r" : "217",
                      "s" : [ {
                         "value" : [ "\"ReasonCode\"" ]
                      } ]
                   }, {
-                     "value" : [ " display ","'Life expectancy <10 years'" ]
+                     "value" : [ " display ","'Reduced life expectancy indicator'" ]
                   } ]
                }
             } ],
             "codeSystem" : {
                "localId" : "217",
-               "locator" : "15:52-15:63",
+               "locator" : "15:58-15:69",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}CodeSystem",
                "name" : "ReasonCode"
             }
@@ -433,7 +433,7 @@
                         }, {
                            "r" : "243",
                            "s" : [ {
-                              "value" : [ "\"Life expectancy <10 years\"" ]
+                              "value" : [ "\"Reduced life expectancy indicator\"" ]
                            } ]
                         } ]
                      }, {
@@ -501,9 +501,9 @@
                   "name" : "reason",
                   "value" : {
                      "localId" : "243",
-                     "locator" : "29:13-29:39",
+                     "locator" : "29:13-29:47",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
-                     "name" : "Life expectancy <10 years",
+                     "name" : "Reduced life expectancy indicator",
                      "type" : "CodeRef"
                   }
                } ]

@@ -1,5 +1,5 @@
 ---
-name: eve-AgeOver74_yes_eve-LifeExp10_yes
+name: eve-AgeOver74_yes_eve-LifeExp_yes
 flow: flow-DecisionToScreen
 externalData:
   - ../DecisionToScreenEvents/events
@@ -7,7 +7,7 @@ externalData:
   - ../DataElements/data_elements
 data:
   - *Patient_age_>_74_years
-  - *Life_expectancy_under_10_years
+  - *Life_expectancy_reduced
 results:
   flow-DecisionToScreen:
     - *act-sdmcontinueage

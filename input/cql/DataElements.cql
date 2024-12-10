@@ -51,7 +51,7 @@ code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qual
 // Non-standard or "local" codes
 code "New or worsening breast symptoms": 'BreastSymptoms' from "LOCAL" display 'New or worsening breast symptoms'
 code "New or worsening breast exam findings": 'BreastFindings' from "LOCAL" display 'New or worsening breast exam findings'
-code "Life expectancy under 10 years": 'LifeExpectancyUnder10Years' from "LOCAL" display 'Life expectancy <10 years'
+code "Reduced life expectancy indicator": 'ReducedLifeExpectancyIndicator' from "LOCAL" display 'Reduced life expectancy indicator'
 
 //------------------------------------------------------------------------------
 // PARAMETERS
@@ -255,21 +255,21 @@ define NewOrWorseningBreastFindingsObservations:
 // Life expectancy
 //------------------------------------------------------------------------------
 
-define "de-LifeExp10":
-  LifeExpectancyUnder10Years
+define "de-lifeexp":
+  ReducedLifeExpectancy
 
-define LifeExpectancyUnder10Years:
+define ReducedLifeExpectancy:
   C3F.MostRecent(
     C3F.ObservationLookBack(
-      LifeExpectancyUnder10YearsObservations R
+      ReducedLifeExpectancyObservations R
         where R.value is true,
       SymptomaticLookBack
     )
   ) is not null
 
-define LifeExpectancyUnder10YearsObservations:
+define ReducedLifeExpectancyObservations:
   C3F.ObservationLookBack(
-    [Observation: "Life expectancy under 10 years"],
+    [Observation: "Reduced life expectancy indicator"],
     ObservationLookbackPeriod
   )   
 

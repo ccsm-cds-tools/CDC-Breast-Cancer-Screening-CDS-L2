@@ -831,31 +831,31 @@
             }
          }, {
             "localId" : "257",
-            "locator" : "54:1-54:116",
+            "locator" : "54:1-54:131",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
-            "name" : "Life expectancy under 10 years",
-            "id" : "LifeExpectancyUnder10Years",
-            "display" : "Life expectancy <10 years",
+            "name" : "Reduced life expectancy indicator",
+            "id" : "ReducedLifeExpectancyIndicator",
+            "display" : "Reduced life expectancy indicator",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
                   "r" : "257",
                   "s" : [ {
-                     "value" : [ "","code ","\"Life expectancy under 10 years\"",": ","'LifeExpectancyUnder10Years'"," from " ]
+                     "value" : [ "","code ","\"Reduced life expectancy indicator\"",": ","'ReducedLifeExpectancyIndicator'"," from " ]
                   }, {
                      "r" : "258",
                      "s" : [ {
                         "value" : [ "\"LOCAL\"" ]
                      } ]
                   }, {
-                     "value" : [ " display ","'Life expectancy <10 years'" ]
+                     "value" : [ " display ","'Reduced life expectancy indicator'" ]
                   } ]
                }
             } ],
             "codeSystem" : {
                "localId" : "258",
-               "locator" : "54:74-54:80",
+               "locator" : "54:81-54:87",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}CodeSystem",
                "name" : "LOCAL"
             }
@@ -28479,7 +28479,7 @@
          }, {
             "localId" : "3060",
             "locator" : "270:1-274:3",
-            "name" : "LifeExpectancyUnder10YearsObservations",
+            "name" : "ReducedLifeExpectancyObservations",
             "context" : "Patient",
             "accessLevel" : "Public",
             "annotation" : [ {
@@ -28487,7 +28487,7 @@
                "s" : {
                   "r" : "3060",
                   "s" : [ {
-                     "value" : [ "","define ","LifeExpectancyUnder10YearsObservations",":\n  " ]
+                     "value" : [ "","define ","ReducedLifeExpectancyObservations",":\n  " ]
                   }, {
                      "r" : "3077",
                      "s" : [ {
@@ -28507,7 +28507,7 @@
                               "value" : [ "[","Observation",": " ]
                            }, {
                               "s" : [ {
-                                 "value" : [ "\"Life expectancy under 10 years\"" ]
+                                 "value" : [ "\"Reduced life expectancy indicator\"" ]
                               } ]
                            }, {
                               "value" : [ "]" ]
@@ -28565,7 +28565,7 @@
                } ],
                "operand" : [ {
                   "localId" : "3064",
-                  "locator" : "272:5-272:51",
+                  "locator" : "272:5-272:54",
                   "dataType" : "{http://hl7.org/fhir}Observation",
                   "templateId" : "http://hl7.org/fhir/StructureDefinition/Observation",
                   "codeProperty" : "code",
@@ -28586,9 +28586,9 @@
                      "signature" : [ ],
                      "operand" : {
                         "localId" : "3063",
-                        "locator" : "272:19-272:50",
+                        "locator" : "272:19-272:53",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
-                        "name" : "Life expectancy under 10 years",
+                        "name" : "Reduced life expectancy indicator",
                         "type" : "CodeRef"
                      }
                   },
@@ -28608,7 +28608,7 @@
             "localId" : "3055",
             "locator" : "261:1-268:15",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
-            "name" : "LifeExpectancyUnder10Years",
+            "name" : "ReducedLifeExpectancy",
             "context" : "Patient",
             "accessLevel" : "Public",
             "annotation" : [ {
@@ -28616,7 +28616,7 @@
                "s" : {
                   "r" : "3055",
                   "s" : [ {
-                     "value" : [ "","define ","LifeExpectancyUnder10Years",":\n  " ]
+                     "value" : [ "","define ","ReducedLifeExpectancy",":\n  " ]
                   }, {
                      "r" : "3140",
                      "s" : [ {
@@ -28654,7 +28654,7 @@
                                              "r" : "3087",
                                              "s" : [ {
                                                 "s" : [ {
-                                                   "value" : [ "LifeExpectancyUnder10YearsObservations" ]
+                                                   "value" : [ "ReducedLifeExpectancyObservations" ]
                                                 } ]
                                              } ]
                                           }, {
@@ -28789,7 +28789,7 @@
                            },
                            "source" : [ {
                               "localId" : "3058",
-                              "locator" : "264:7-264:46",
+                              "locator" : "264:7-264:41",
                               "alias" : "R",
                               "resultTypeSpecifier" : {
                                  "localId" : "3090",
@@ -28802,8 +28802,8 @@
                               },
                               "expression" : {
                                  "localId" : "3087",
-                                 "locator" : "264:7-264:44",
-                                 "name" : "LifeExpectancyUnder10YearsObservations",
+                                 "locator" : "264:7-264:39",
+                                 "name" : "ReducedLifeExpectancyObservations",
                                  "type" : "ExpressionRef",
                                  "resultTypeSpecifier" : {
                                     "localId" : "3088",
@@ -28916,9 +28916,9 @@
             }
          }, {
             "localId" : "3053",
-            "locator" : "258:1-259:28",
+            "locator" : "258:1-259:23",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
-            "name" : "de-LifeExp10",
+            "name" : "de-lifeexp",
             "context" : "Patient",
             "accessLevel" : "Public",
             "annotation" : [ {
@@ -28926,20 +28926,20 @@
                "s" : {
                   "r" : "3053",
                   "s" : [ {
-                     "value" : [ "//------------------------------------------------------------------------------\n// Life expectancy\n//------------------------------------------------------------------------------\n\n","define ","\"de-LifeExp10\"",":\n  " ]
+                     "value" : [ "//------------------------------------------------------------------------------\n// Life expectancy\n//------------------------------------------------------------------------------\n\n","define ","\"de-lifeexp\"",":\n  " ]
                   }, {
                      "r" : "3142",
                      "s" : [ {
-                        "value" : [ "LifeExpectancyUnder10Years" ]
+                        "value" : [ "ReducedLifeExpectancy" ]
                      } ]
                   } ]
                }
             } ],
             "expression" : {
                "localId" : "3142",
-               "locator" : "259:3-259:28",
+               "locator" : "259:3-259:23",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
-               "name" : "LifeExpectancyUnder10Years",
+               "name" : "ReducedLifeExpectancy",
                "type" : "ExpressionRef"
             }
          } ]

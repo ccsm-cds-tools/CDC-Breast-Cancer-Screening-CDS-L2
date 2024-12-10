@@ -40,7 +40,7 @@ Description: "Code representing plan definition action reason codes"
 * #bilatmastectomy "Bilateral mastectomy"
 * #diagtesting "Diagnostic testing"
 * #ageover74 "Age over 74 years"
-* #lifeexp10 "Life expectancy <10 years"
+* #lifeexp "Reduced life expectancy indicator"
 * #currentlylactating "Currently lactating"
 
 ValueSet:    PlanDefinitionActionReasonCodes
@@ -61,4 +61,4 @@ Description: "Code representing breast cancer screening related observations"
 
 * #BreastSymptoms "New or worsening breast symptoms"
 * #BreastFindings "New or worsening breast exam findings"
-* #LifeExpectancyUnder10Years "Life expectancy <10 years"
+* #ReducedLifeExpectancyIndicator "Reduced life expectancy indicator"

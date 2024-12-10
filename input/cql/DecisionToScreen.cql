@@ -17,7 +17,7 @@ define "flow-DecisionToScreen":
     (if Events."eve-AgeOver74" is true
     then Actions."act-sdmcontinueage" as Tuple{code Code, reason Code}
     else null),
-    (if Events."eve-LifeExp10" is true
+    (if Events."eve-LifeExp" is true
     then Actions."act-sdmcontinuelifexp" as Tuple{code Code, reason Code}
     else null),
     flatten({Actions."act-highriskexclusions"}),
@@ -39,7 +39,7 @@ define SDMContinueScreeningAgeReason:
   (Actions."act-sdmcontinueage").reason
 
 define ExistsSDMContinueScreeningLifeExp:
-  Events."eve-LifeExp10" is true
+  Events."eve-LifeExp" is true
 
 define SDMContinueScreeningLifeExpReason:
   (Actions."act-sdmcontinuelifexp").reason  

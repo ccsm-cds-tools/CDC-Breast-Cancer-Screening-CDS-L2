@@ -28,8 +28,8 @@ context Patient
 define "eve-AgeOver74":
   AgeInYears() > 74
 
-define "eve-LifeExp10":
-  DataElements."de-LifeExp10"
+define "eve-LifeExp":
+  DataElements."de-lifeexp"
 
 define "eve-lactating":
   Lactating
