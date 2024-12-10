@@ -9,7 +9,7 @@
       }, {
          "type" : "Annotation",
          "s" : {
-            "r" : "215",
+            "r" : "632",
             "s" : [ {
                "value" : [ "","library DecisionToScreen version '1.0.0'" ]
             } ]
@@ -1813,6 +1813,604 @@
                      "element" : [ ]
                   } ]
                } ]
+            }
+         }, {
+            "localId" : "536",
+            "locator" : "35:1-36:24",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+            "name" : "ExistsSDMContinueScreeningAge",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "536",
+                  "s" : [ {
+                     "value" : [ "","define ","ExistsSDMContinueScreeningAge",":\n  " ]
+                  }, {
+                     "r" : "538",
+                     "s" : [ {
+                        "r" : "537",
+                        "s" : [ {
+                           "value" : [ "Events" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "538",
+                        "s" : [ {
+                           "value" : [ "\"eve-AgeOver74\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "538",
+               "locator" : "36:3-36:24",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "name" : "eve-AgeOver74",
+               "libraryName" : "Events",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "540",
+            "locator" : "38:1-39:39",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "SDMContinueScreeningAgeReason",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "540",
+                  "s" : [ {
+                     "value" : [ "","define ","SDMContinueScreeningAgeReason",":\n  " ]
+                  }, {
+                     "r" : "558",
+                     "s" : [ {
+                        "r" : "542",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "542",
+                           "s" : [ {
+                              "r" : "541",
+                              "s" : [ {
+                                 "value" : [ "Actions" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "542",
+                              "s" : [ {
+                                 "value" : [ "\"act-sdmcontinueage\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "558",
+                        "s" : [ {
+                           "value" : [ "reason" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "558",
+               "locator" : "39:3-39:39",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+               "path" : "reason",
+               "type" : "Property",
+               "source" : {
+                  "localId" : "542",
+                  "locator" : "39:3-39:32",
+                  "name" : "act-sdmcontinueage",
+                  "libraryName" : "Actions",
+                  "type" : "ExpressionRef",
+                  "resultTypeSpecifier" : {
+                     "localId" : "553",
+                     "type" : "TupleTypeSpecifier",
+                     "element" : [ {
+                        "localId" : "554",
+                        "name" : "code",
+                        "elementType" : {
+                           "localId" : "555",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     }, {
+                        "localId" : "556",
+                        "name" : "reason",
+                        "elementType" : {
+                           "localId" : "557",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "560",
+            "locator" : "41:1-42:32",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+            "name" : "ExistsSDMContinueScreeningLifeExp",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "560",
+                  "s" : [ {
+                     "value" : [ "","define ","ExistsSDMContinueScreeningLifeExp",":\n  " ]
+                  }, {
+                     "r" : "563",
+                     "s" : [ {
+                        "r" : "562",
+                        "s" : [ {
+                           "r" : "561",
+                           "s" : [ {
+                              "value" : [ "Events" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "562",
+                           "s" : [ {
+                              "value" : [ "\"eve-LifeExp10\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " is true" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "563",
+               "locator" : "42:3-42:32",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "type" : "IsTrue",
+               "signature" : [ {
+                  "localId" : "564",
+                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : {
+                  "localId" : "562",
+                  "locator" : "42:3-42:24",
+                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "name" : "eve-LifeExp10",
+                  "libraryName" : "Events",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "566",
+            "locator" : "44:1-45:42",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "SDMContinueScreeningLifeExpReason",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "566",
+                  "s" : [ {
+                     "value" : [ "","define ","SDMContinueScreeningLifeExpReason",":\n  " ]
+                  }, {
+                     "r" : "584",
+                     "s" : [ {
+                        "r" : "568",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "568",
+                           "s" : [ {
+                              "r" : "567",
+                              "s" : [ {
+                                 "value" : [ "Actions" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "568",
+                              "s" : [ {
+                                 "value" : [ "\"act-sdmcontinuelifexp\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "584",
+                        "s" : [ {
+                           "value" : [ "reason" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "584",
+               "locator" : "45:3-45:42",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+               "path" : "reason",
+               "type" : "Property",
+               "source" : {
+                  "localId" : "568",
+                  "locator" : "45:3-45:35",
+                  "name" : "act-sdmcontinuelifexp",
+                  "libraryName" : "Actions",
+                  "type" : "ExpressionRef",
+                  "resultTypeSpecifier" : {
+                     "localId" : "579",
+                     "type" : "TupleTypeSpecifier",
+                     "element" : [ {
+                        "localId" : "580",
+                        "name" : "code",
+                        "elementType" : {
+                           "localId" : "581",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     }, {
+                        "localId" : "582",
+                        "name" : "reason",
+                        "elementType" : {
+                           "localId" : "583",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "586",
+            "locator" : "47:1-49:40",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+            "name" : "ExistsSDMDelayScreeningLactating",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "586",
+                  "s" : [ {
+                     "value" : [ "","define ","ExistsSDMDelayScreeningLactating",":\n  " ]
+                  }, {
+                     "r" : "587",
+                     "s" : [ {
+                        "r" : "588",
+                        "s" : [ {
+                           "r" : "589",
+                           "s" : [ {
+                              "r" : "600",
+                              "s" : [ {
+                                 "value" : [ "Count","(" ]
+                              }, {
+                                 "r" : "591",
+                                 "s" : [ {
+                                    "r" : "590",
+                                    "s" : [ {
+                                       "value" : [ "Actions" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "591",
+                                    "s" : [ {
+                                       "value" : [ "\"act-highriskexclusions\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           }, {
+                              "r" : "603",
+                              "value" : [ " ","="," ","0" ]
+                           } ]
+                        }, {
+                           "value" : [ " and " ]
+                        }, {
+                           "r" : "606",
+                           "s" : [ {
+                              "r" : "617",
+                              "s" : [ {
+                                 "value" : [ "Count","(" ]
+                              }, {
+                                 "r" : "608",
+                                 "s" : [ {
+                                    "r" : "607",
+                                    "s" : [ {
+                                       "value" : [ "Actions" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "608",
+                                    "s" : [ {
+                                       "value" : [ "\"act-specialpop\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           }, {
+                              "r" : "620",
+                              "value" : [ " ","="," ","0" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n      and " ]
+                     }, {
+                        "r" : "627",
+                        "s" : [ {
+                           "r" : "626",
+                           "s" : [ {
+                              "r" : "625",
+                              "s" : [ {
+                                 "value" : [ "Events" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "626",
+                              "s" : [ {
+                                 "value" : [ "\"eve-lactating\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " is true" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "587",
+               "locator" : "48:3-49:40",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "type" : "And",
+               "signature" : [ {
+                  "localId" : "629",
+                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "NamedTypeSpecifier"
+               }, {
+                  "localId" : "630",
+                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "NamedTypeSpecifier"
+               } ],
+               "operand" : [ {
+                  "localId" : "588",
+                  "locator" : "48:3-48:85",
+                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "And",
+                  "signature" : [ {
+                     "localId" : "623",
+                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "624",
+                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "NamedTypeSpecifier"
+                  } ],
+                  "operand" : [ {
+                     "localId" : "589",
+                     "locator" : "48:3-48:45",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "Equal",
+                     "signature" : [ {
+                        "localId" : "604",
+                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "605",
+                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "600",
+                        "locator" : "48:3-48:41",
+                        "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "Count",
+                        "signature" : [ {
+                           "localId" : "601",
+                           "type" : "ListTypeSpecifier",
+                           "elementType" : {
+                              "localId" : "602",
+                              "name" : "{urn:hl7-org:elm-types:r1}Any",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        } ],
+                        "source" : {
+                           "localId" : "591",
+                           "locator" : "48:9-48:40",
+                           "name" : "act-highriskexclusions",
+                           "libraryName" : "Actions",
+                           "type" : "ExpressionRef",
+                           "resultTypeSpecifier" : {
+                              "localId" : "594",
+                              "type" : "ListTypeSpecifier",
+                              "elementType" : {
+                                 "localId" : "595",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Any",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           }
+                        }
+                     }, {
+                        "localId" : "603",
+                        "locator" : "48:45",
+                        "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "0",
+                        "type" : "Literal"
+                     } ]
+                  }, {
+                     "localId" : "606",
+                     "locator" : "48:51-48:85",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "Equal",
+                     "signature" : [ {
+                        "localId" : "621",
+                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "NamedTypeSpecifier"
+                     }, {
+                        "localId" : "622",
+                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : [ {
+                        "localId" : "617",
+                        "locator" : "48:51-48:81",
+                        "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "type" : "Count",
+                        "signature" : [ {
+                           "localId" : "618",
+                           "type" : "ListTypeSpecifier",
+                           "elementType" : {
+                              "localId" : "619",
+                              "name" : "{urn:hl7-org:elm-types:r1}Any",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        } ],
+                        "source" : {
+                           "localId" : "608",
+                           "locator" : "48:57-48:80",
+                           "name" : "act-specialpop",
+                           "libraryName" : "Actions",
+                           "type" : "ExpressionRef",
+                           "resultTypeSpecifier" : {
+                              "localId" : "611",
+                              "type" : "ListTypeSpecifier",
+                              "elementType" : {
+                                 "localId" : "612",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Any",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           }
+                        }
+                     }, {
+                        "localId" : "620",
+                        "locator" : "48:85",
+                        "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "0",
+                        "type" : "Literal"
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "627",
+                  "locator" : "49:11-49:40",
+                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "IsTrue",
+                  "signature" : [ {
+                     "localId" : "628",
+                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "NamedTypeSpecifier"
+                  } ],
+                  "operand" : {
+                     "localId" : "626",
+                     "locator" : "49:11-49:32",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "name" : "eve-lactating",
+                     "libraryName" : "Events",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "632",
+            "locator" : "51:1-52:34",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "SDMDelayScreeningLactatingReason",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "632",
+                  "s" : [ {
+                     "value" : [ "","define ","SDMDelayScreeningLactatingReason",":\n  " ]
+                  }, {
+                     "r" : "650",
+                     "s" : [ {
+                        "r" : "634",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "634",
+                           "s" : [ {
+                              "r" : "633",
+                              "s" : [ {
+                                 "value" : [ "Actions" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "634",
+                              "s" : [ {
+                                 "value" : [ "\"act-lactating\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "650",
+                        "s" : [ {
+                           "value" : [ "reason" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "650",
+               "locator" : "52:3-52:34",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+               "path" : "reason",
+               "type" : "Property",
+               "source" : {
+                  "localId" : "634",
+                  "locator" : "52:3-52:27",
+                  "name" : "act-lactating",
+                  "libraryName" : "Actions",
+                  "type" : "ExpressionRef",
+                  "resultTypeSpecifier" : {
+                     "localId" : "645",
+                     "type" : "TupleTypeSpecifier",
+                     "element" : [ {
+                        "localId" : "646",
+                        "name" : "code",
+                        "elementType" : {
+                           "localId" : "647",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     }, {
+                        "localId" : "648",
+                        "name" : "reason",
+                        "elementType" : {
+                           "localId" : "649",
+                           "name" : "{urn:hl7-org:elm-types:r1}Code",
+                           "type" : "NamedTypeSpecifier"
+                        }
+                     } ]
+                  }
+               }
             }
          } ]
       }

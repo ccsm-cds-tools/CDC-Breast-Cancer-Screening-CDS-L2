@@ -31,3 +31,22 @@ define "flow-DecisionToScreen":
     else null)
   }   
   except { null, {} }
+
+define ExistsSDMContinueScreeningAge:
+  Events."eve-AgeOver74"
+
+define SDMContinueScreeningAgeReason:
+  (Actions."act-sdmcontinueage").reason
+
+define ExistsSDMContinueScreeningLifeExp:
+  Events."eve-LifeExp10" is true
+
+define SDMContinueScreeningLifeExpReason:
+  (Actions."act-sdmcontinuelifexp").reason  
+
+define ExistsSDMDelayScreeningLactating:
+  Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0
+      and Events."eve-lactating" is true
+
+define SDMDelayScreeningLactatingReason:
+  (Actions."act-lactating").reason    
