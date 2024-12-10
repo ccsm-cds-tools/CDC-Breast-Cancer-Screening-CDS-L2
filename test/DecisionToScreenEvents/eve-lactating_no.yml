@@ -1,0 +1,10 @@
+---
+name: eve-lactating_no
+elementId: eve-lactating
+externalData:
+  - ./events
+  - ../DataElements/data_elements
+data:
+  - *Patient_age_=_74_years
+results:
+  eve-lactating: false

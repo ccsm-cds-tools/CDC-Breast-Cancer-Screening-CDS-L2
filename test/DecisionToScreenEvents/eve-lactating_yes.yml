@@ -1,0 +1,12 @@
+---
+name: eve-lactating_yes
+elementId: eve-lactating
+externalData:
+  - ./events
+  - ../DataElements/data_elements
+  - ../default_patients
+data:
+  - *defaultPatient
+  - *Patient_is_currently_lactating
+results:
+  eve-lactating: true

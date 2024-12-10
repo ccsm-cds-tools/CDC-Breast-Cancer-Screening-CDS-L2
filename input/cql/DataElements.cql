@@ -51,6 +51,7 @@ code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qual
 // Non-standard or "local" codes
 code "New or worsening breast symptoms": 'BreastSymptoms' from "LOCAL" display 'New or worsening breast symptoms'
 code "New or worsening breast exam findings": 'BreastFindings' from "LOCAL" display 'New or worsening breast exam findings'
+code "Reduced life expectancy indicator": 'ReducedLifeExpectancyIndicator' from "LOCAL" display 'Reduced life expectancy indicator'
 
 //------------------------------------------------------------------------------
 // PARAMETERS
@@ -249,3 +250,40 @@ define NewOrWorseningBreastFindingsObservations:
     [Observation: "New or worsening breast exam findings"],
     ObservationLookbackPeriod
   )    
+
+//------------------------------------------------------------------------------
+// Life expectancy
+//------------------------------------------------------------------------------
+
+define "de-lifeexp":
+  ReducedLifeExpectancy
+
+define ReducedLifeExpectancy:
+  C3F.MostRecent(
+    C3F.ObservationLookBack(
+      ReducedLifeExpectancyObservations R
+        where R.value is true,
+      SymptomaticLookBack
+    )
+  ) is not null
+
+define ReducedLifeExpectancyObservations:
+  C3F.ObservationLookBack(
+    [Observation: "Reduced life expectancy indicator"],
+    ObservationLookbackPeriod
+  )   
+
+//define "de-hospice":
+  // TODO: Implement logic for de-hospice
+
+//define "de-palliative":
+  // TODO: Implement logic for de-palliative
+
+//define "de-snpltc":
+  // TODO: Implement logic for de-snpltc
+
+//define "de-frailtydementiamed":
+  // TODO: Implement logic for de-frailtydementiamed
+
+//define "de-frailtyadvillness":
+  // TODO: Implement logic for de-frailtyadvillness

@@ -1,0 +1,38 @@
+eve-AgeOver74:
+  - &Patient_age_>_74_years
+    resourceType: Patient
+    name: 
+      given:
+        - Jane
+      family: Doe    
+    gender: female
+    birthDate: "1945-01-01"
+  - &Patient_age_=_74_years
+    resourceType: Patient
+    name: 
+      given:
+        - Jane
+      family: Doe    
+    gender: female
+    birthDate: "1949-12-10"
+
+eve-LifeExp: 
+  - &Life_expectancy_reduced
+    *OBSERVATIONS_include_life_expectancy_indicator
+
+eve-lactating:
+  - &Patient_is_currently_lactating
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "CurrentlyLactating"
+          display: "Currently Lactating"
+    valueBoolean: true
+    effectiveDateTime: "2023-12-10T00:00:00.0Z"        
+
+eve-highriskexclusions:
+  - "&See_'High_Risk_Exclusions'_flow_logic"
+eve-specialpop:
+  - "&See_'Special_Populations'_flow_logic"

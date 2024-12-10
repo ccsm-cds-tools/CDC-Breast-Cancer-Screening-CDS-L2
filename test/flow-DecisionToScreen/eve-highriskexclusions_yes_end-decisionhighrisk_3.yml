@@ -3,8 +3,9 @@ name: eve-AgeOver74_yes_act-sdmcontinueage__eve-LifeExp10_yes_act-sdmcontinuelif
 flow: flow-DecisionToScreen
 skip: true
 externalData:
-  - ./events/events
+  - ../DecisionToScreenEvents/events
   - ./actions/actions
+  - ../DataElements/data_elements
   - ../default_patients
 data:
   - "*eve-AgeOver74"

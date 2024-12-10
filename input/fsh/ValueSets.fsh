@@ -14,6 +14,8 @@ Description: "Code representing plan definition action codes"
 * #eligible "Eligible for screening"
 * #noteligible "Not eligible for screening"
 * #error "An error occurred"
+* #sdmcontinue "Shared decision making to continue screening"
+* #sdmdelay "Shared decision making to delay screening"
 
 ValueSet:    PlanDefinitionActionCodes
 Id:          plan-definition-action-codes
@@ -37,6 +39,9 @@ Description: "Code representing plan definition action reason codes"
 * #currentbreastcancer "Current breast cancer"
 * #bilatmastectomy "Bilateral mastectomy"
 * #diagtesting "Diagnostic testing"
+* #ageover74 "Age over 74 years"
+* #lifeexp "Reduced life expectancy indicator"
+* #currentlylactating "Currently lactating"
 
 ValueSet:    PlanDefinitionActionReasonCodes
 Id:          plan-definition-action-reason-codes
@@ -56,3 +61,4 @@ Description: "Code representing breast cancer screening related observations"
 
 * #BreastSymptoms "New or worsening breast symptoms"
 * #BreastFindings "New or worsening breast exam findings"
+* #ReducedLifeExpectancyIndicator "Reduced life expectancy indicator"

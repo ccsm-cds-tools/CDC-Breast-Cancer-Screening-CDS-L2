@@ -1,5 +1,32 @@
-act-sdmcontinueage: []
-act-sdmcontinuelifexp: []
-act-lactating: []
+act-sdmcontinueage:
+  - &act-sdmcontinueage
+    code:
+      code: "sdmcontinue"
+      display: "Shared decision making to continue screening"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    reason:
+      code: "ageover74"
+      display: "Age over 74 years"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"
+act-sdmcontinuelifexp:
+  - &act-sdmcontinuelifexp
+    code:
+      code: "sdmcontinue"
+      display: "Shared decision making to continue screening"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    reason:
+      code: "lifeexp"
+      display: "Reduced life expectancy indicator"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"
+act-lactating:
+  - &act-lactating
+    code:
+      code: "sdmdelay"
+      display: "Shared decision making to consider delay in screening"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    reason:
+      code: "currentlylactating"
+      display: "Currently lactating"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"
 act-avgrisk:
   - "&See_'Average_Risk'_flow_logic"
