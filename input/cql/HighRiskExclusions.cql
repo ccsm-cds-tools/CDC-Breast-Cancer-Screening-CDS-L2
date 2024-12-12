@@ -16,9 +16,12 @@ define "flow-HighRiskExclusions":
   {
     if Events."eve-geneticrisk" is true
     then if Events."eve-acsgeneticrisk" is true
-      then Actions."act-acshighriskmammo" 
+      then Actions."act-acshighriskmammo"
       else Actions."act-othergeneticrisk"
-    else null
+    else null,
+    if Events."eve-geneticrisk" is true and Events."eve-acsgeneticrisk" is true
+    then Actions."act-acshighriskmri"
+    else null    
   }   
   except { null }
 
@@ -32,8 +35,27 @@ define ExistsACSHighRiskMammo:
 define ACSHighRiskMammoCode:    
   First(ACSHighRiskMammo R return R.code)
 
+define ACSHighRiskMammoTiming:    
+  First(ACSHighRiskMammo R return R.timingTiming)
+
 define ACSHighRiskMammoTimingEvent:    
-  ToString(First(ACSHighRiskMammo R return R.timingTiming.event))
+  ACSHighRiskMammoTiming R return First(R.event)
+
+define ACSHighRiskMri:
+  "flow-HighRiskExclusions" R 
+    where R.code = Actions."MR Breast" and R.reason = Actions."High risk exclusion"
+
+define ExistsACSHighRiskMri:
+  exists ACSHighRiskMri
+
+define ACSHighRiskMriCode:    
+  First(ACSHighRiskMri R return R.code)
+
+  define ACSHighRiskMriTiming:    
+  First(ACSHighRiskMri R return R.timingTiming)
+
+define ACSHighRiskMriTimingEvent:    
+  ACSHighRiskMriTiming R return First(R.event)
 
 define SpecialtyReferral:
   "flow-HighRiskExclusions" R where R.code = Actions."Refer to specialist recommendations"

@@ -30,6 +30,26 @@ act-acshighriskmammo:
         period: 1
         periodUnit: 'a'
 act-acshighriskmri:
+  - &act-acshighriskmri
+    code:
+      code: "30794-2"
+      display: "MR Breast"
+      system: "http://loinc.org"
+    reason:
+      code: "highriskexclusion"
+      display: "High risk exclusion"
+      system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"
+    timingAge:
+      value: 30
+      code: 'a'
+    timingTiming:
+      event: "2025-01-25"
+      repeat:
+        boundsPeriod:
+          start: "2010-01-01"
+        frequency: 1
+        period: 1
+        periodUnit: 'a'
   - "&Next_due_date_=_'Date_of_last_MRI'_plus_1_year__if_exists_OR_Next_due_date_=_'Date_of_last_mammography'_plus_1_year__if_exists_OR_Next_due_date_=_Now_if_'Last_MRI'_and_'Last_mammography'_do_not_exist"
   - "&Next_due_date_=_'Date_of_last_MRI'_plus_1_year__if_exists"
   - "&Next_due_date_=_'Date_of_last_mammography'_plus_1_year__if_exists"

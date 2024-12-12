@@ -14,3 +14,4 @@ data:
 results:
   flow-HighRiskExclusions:
     - *act-acshighriskmammo
+    - *act-acshighriskmri

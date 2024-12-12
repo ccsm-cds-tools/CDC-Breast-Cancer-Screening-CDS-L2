@@ -16,7 +16,8 @@ code "Other genetic marker or syndrome associated with breast cancer": 'othergen
 code "High risk exclusion": 'highriskexclusion' from "ReasonCode" display 'High risk exclusion'
 
 // Standard codes
-code "MG Breast Screening": '24606-6' from "LOINC" display 'MG Breast Screening'
+code "MG Breast Screening": '24606-6' from "LOINC" display 'MG Breast Screening' 
+code "MR Breast": '30794-2' from "LOINC" display 'MR Breast' 
 
 context Patient
 
@@ -32,9 +33,9 @@ define "act-acshighriskmammo":
     reason: "High risk exclusion",
     timingAge: {value: 30, code: 'a'},
     timingTiming: {
-      event: @2025-01-25, //TODO: placeholder for testing nextduedate
+      event: {ToString(@2025-01-25)}, //TODO: placeholder for testing nextduedate
       repeat: {
-        boundsPeriod: {start: Patient.birthDate + 30 years},
+        boundsPeriod: {start: ToString(Patient.birthDate + 30 years)},
         frequency: 1,
         period: 1,
         periodUnit: 'a'
@@ -42,8 +43,21 @@ define "act-acshighriskmammo":
     }
 	} 
 
-//define "act-acshighriskmri":
-  // TODO: Implement logic for act-acshighriskmri
+define "act-acshighriskmri":
+  {
+		code: "MR Breast",
+    reason: "High risk exclusion",
+    timingAge: {value: 30, code: 'a'},
+    timingTiming: {
+      event: {ToString(@2025-01-25)}, //TODO: placeholder for testing nextduedate
+      repeat: {
+        boundsPeriod: {start: ToString(Patient.birthDate + 30 years)},
+        frequency: 1,
+        period: 1,
+        periodUnit: 'a'
+      }
+    }
+	} 
 
 //define "act-acsintriskmammo":
   // TODO: Implement logic for act-acsintriskmammo
