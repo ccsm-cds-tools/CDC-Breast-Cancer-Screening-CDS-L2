@@ -38,6 +38,16 @@ valueset "UNILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840
 valueset "BILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005'
 valueset "LEFT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133'
 valueset "RIGHT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134'
+// TODO: replace placeholder value set OID
+valueset "BRCA1 Gene Mutation": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1444.3.203'
+// TODO: replace placeholder value set OID
+valueset "BRCA2 Gene Mutation": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1444.3.204'
+// TODO: replace placeholder value set OID
+valueset "Li-Fraumeni Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
+// TODO: replace placeholder value set OID
+valueset "Cowden Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
+// TODO: replace placeholder value set OID
+valueset "Bannayan-Riley-Ruvalcaba Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
 
 // Standard codes
 code "Gender Identity": '76691-5' from "LOINC" display 'Gender identity'
@@ -52,6 +62,7 @@ code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qual
 code "New or worsening breast symptoms": 'BreastSymptoms' from "LOCAL" display 'New or worsening breast symptoms'
 code "New or worsening breast exam findings": 'BreastFindings' from "LOCAL" display 'New or worsening breast exam findings'
 code "Reduced life expectancy indicator": 'ReducedLifeExpectancyIndicator' from "LOCAL" display 'Reduced life expectancy indicator'
+code "Genetic marker or syndrome associated with breast cancer": 'GeneticMarkerOrSyndrome' from "LOCAL" display 'Genetic marker or syndrome associated with breast cancer'
 
 //------------------------------------------------------------------------------
 // PARAMETERS
@@ -287,3 +298,37 @@ define ReducedLifeExpectancyObservations:
 
 //define "de-frailtyadvillness":
   // TODO: Implement logic for de-frailtyadvillness
+
+//------------------------------------------------------------------------------
+// Genetic syndrome
+//------------------------------------------------------------------------------
+
+define "de-geneticrisk":
+  GeneticMarkerOrSyndrome or "de-acsgeneticrisk"
+
+define GeneticMarkerOrSyndrome:
+  C3F.MostRecent(
+      [Observation: "Genetic marker or syndrome associated with breast cancer"] R
+        where R.value is true
+  ) is not null
+
+define "de-acsgeneticrisk":
+  exists "BRCA-1 Mutation Conditions" or exists "BRCA-2 Mutation Conditions" or
+    exists "Li-Fraumeni Syndrome Conditions" or exists "Cowden Syndrome Conditions" or
+    exists "Bannayan-Riley-Ruvalcaba Syndrome Conditions"
+
+define "BRCA-1 Mutation Conditions":
+  Common.ValidCondition([Condition: code in "BRCA1 Gene Mutation"])
+
+define "BRCA-2 Mutation Conditions":
+  Common.ValidCondition([Condition: code in "BRCA2 Gene Mutation"])
+
+define "Li-Fraumeni Syndrome Conditions":
+  Common.ValidCondition([Condition: code in "Li-Fraumeni Syndrome"])
+
+define "Cowden Syndrome Conditions":
+  Common.ValidCondition([Condition: code in "Cowden Syndrome"])
+
+define "Bannayan-Riley-Ruvalcaba Syndrome Conditions":
+  Common.ValidCondition([Condition: code in "Bannayan-Riley-Ruvalcaba Syndrome"])
+

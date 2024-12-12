@@ -1,16 +1,16 @@
 ---
 name: eve-geneticrisk_yes_eve-acsgeneticrisk_yes_eve-ageatleast30high_yes_act-acshighriskmammo__act-acshighriskmri
 flow: flow-HighRiskExclusions
-skip: true
+only: true
 externalData:
   - ./events/events
   - ./actions/actions
+  - ../DataElements/data_elements
   - ../default_patients
 data:
-  - "*eve-geneticrisk"
-  - "*eve-acsgeneticrisk"
-  - "*eve-ageatleast30high"
+  - *defaultPatient
+  - *'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer'_is_TRUE
+  - *'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer_as_defined_by_ACS'_is_TRUE
 results:
   flow-HighRiskExclusions:
-    - "*act-acshighriskmammo"
-    - "*act-acshighriskmri"
+    - *act-acshighriskmammo

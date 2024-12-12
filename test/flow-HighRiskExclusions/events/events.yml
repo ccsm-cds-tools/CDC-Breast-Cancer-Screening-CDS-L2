@@ -1,5 +1,6 @@
 eve-geneticrisk:
-  - "&'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer'_is_TRUE"
+  - &'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer'_is_TRUE
+    *OBSERVATIONS_include_`GENETIC_MARKER_OR_SYNDROME`
 eve-chestxrt:
   - "&'History_of_high-dose_radiation_therapy_to_the_chest'_with_age_at_treatment_start_>=_10_years_and_<=_30_years_OR_age_at_treatment_end_>=_10_years_and_<=_30_years"
   - "&'History_of_high-dose_radiation_therapy_to_the_chest'_with_age_at_treatment_start_>=_10_years_and_<=_30_years"
@@ -20,7 +21,8 @@ eve-atypicalbx:
 eve-highlifetimerisk:
   - "&'Lifetime_risk_of_breast_cancer_>_20%_or_25%'"
 eve-acsgeneticrisk:
-  - "&'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer_as_defined_by_ACS'_is_TRUE"
+  - &'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer_as_defined_by_ACS'_is_TRUE
+    *CONDITIONS_include_`BRCA-1_MUTATION_CONDITION`
 eve-ageatleast30high:
   - "&Patient_age_>=_30_years_AND_life_expectancy_of_10_years_or_longer"
   - "&Patient_age_>=_30_years"
