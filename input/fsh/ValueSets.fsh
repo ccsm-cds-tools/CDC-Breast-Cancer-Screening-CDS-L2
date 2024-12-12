@@ -16,6 +16,7 @@ Description: "Code representing plan definition action codes"
 * #error "An error occurred"
 * #sdmcontinue "Shared decision making to continue screening"
 * #sdmdelay "Shared decision making to delay screening"
+* #specialtyreferral "Refer to specialist recommendations"
 
 ValueSet:    PlanDefinitionActionCodes
 Id:          plan-definition-action-codes
@@ -42,6 +43,8 @@ Description: "Code representing plan definition action reason codes"
 * #ageover74 "Age over 74 years"
 * #lifeexp "Reduced life expectancy indicator"
 * #currentlylactating "Currently lactating"
+* #othergeneticrisk "Other genetic marker or syndrome associated with breast cancer"
+* #highriskexclusion "High risk exclusion"
 
 ValueSet:    PlanDefinitionActionReasonCodes
 Id:          plan-definition-action-reason-codes
