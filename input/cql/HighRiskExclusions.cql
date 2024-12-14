@@ -13,58 +13,123 @@ context Patient
 //------------------------------------------------------------------------------
 
 define "flow-HighRiskExclusions":
-  {
-    if Events."eve-geneticrisk" is true
-    then if Events."eve-acsgeneticrisk" is true
-      then Actions."act-acshighriskmammo"
-      else Actions."act-othergeneticrisk"
-    else null,
-    if Events."eve-geneticrisk" is true and Events."eve-acsgeneticrisk" is true
-    then Actions."act-acshighriskmri"
-    else null    
+  {    
+    ACSGeneticRiskMammo,
+    ACSGeneticRiskMri,
+    SpecialtyReferralGeneticRisk,
+    ACSMammoAfterRT,
+    ACSMriAfterRT,
+    ACSMammoAfterBrca,
+    SpecialtyReferralBreastCaWithin5y
   }   
   except { null }
 
-define ACSHighRiskMammo:
-  "flow-HighRiskExclusions" R 
-    where R.code = Actions."MG Breast Screening" and R.reason = Actions."High risk exclusion"
+define SpecialtyReferralGeneticRisk:
+  if Events."eve-geneticrisk" is true
+  then if Events."eve-acsgeneticrisk" is false
+    then Actions."act-othergeneticrisk" else null
+  else null    
 
-define ExistsACSHighRiskMammo:
-  exists ACSHighRiskMammo
+define ExistsSpecialtyReferralGeneticRisk:  
+  SpecialtyReferralGeneticRisk is not null
 
-define ACSHighRiskMammoCode:    
-  First(ACSHighRiskMammo R return R.code)
+define SpecialtyReferralGeneticRiskReason:
+  SpecialtyReferralGeneticRisk R return R.reason
 
-define ACSHighRiskMammoTiming:    
-  First(ACSHighRiskMammo R return R.timingTiming)
+define ACSGeneticRiskMammo:
+  if Events."eve-geneticrisk" is true
+    then if Events."eve-acsgeneticrisk" is true
+      then Actions."act-acsgeneticriskmammo" else null
+    else null    
 
-define ACSHighRiskMammoTimingEvent:    
-  ACSHighRiskMammoTiming R return First(R.event)
+define ExistsACSGeneticRiskMammo:
+  ACSGeneticRiskMammo is not null
 
-define ACSHighRiskMri:
-  "flow-HighRiskExclusions" R 
-    where R.code = Actions."MR Breast" and R.reason = Actions."High risk exclusion"
+define ACSGeneticRiskMammoCode:    
+  ACSGeneticRiskMammo R return R.code
 
-define ExistsACSHighRiskMri:
-  exists ACSHighRiskMri
+define ACSGeneticRiskMammoTiming:    
+  ACSGeneticRiskMammo R return R.timingTiming
 
-define ACSHighRiskMriCode:    
-  First(ACSHighRiskMri R return R.code)
+define ACSGeneticRiskMammoTimingEvent:    
+  ACSGeneticRiskMammoTiming R return First(R.event)
 
-  define ACSHighRiskMriTiming:    
-  First(ACSHighRiskMri R return R.timingTiming)
+define ACSGeneticRiskMri:
+  if Events."eve-geneticrisk" is true
+    then if Events."eve-acsgeneticrisk" is true
+      then Actions."act-acsgeneticriskmri" else null
+    else null       
 
-define ACSHighRiskMriTimingEvent:    
-  ACSHighRiskMriTiming R return First(R.event)
+define ExistsACSGeneticRiskMri:
+  ACSGeneticRiskMri is not null
 
-define SpecialtyReferral:
-  "flow-HighRiskExclusions" R where R.code = Actions."Refer to specialist recommendations"
+define ACSGeneticRiskMriCode:    
+  ACSGeneticRiskMri R return R.code
 
-define ExistsSpecialtyReferral:  
-  exists SpecialtyReferral
+  define ACSGeneticRiskMriTiming:    
+  ACSGeneticRiskMri R return R.timingTiming
 
-define SpecialtyReferralReason:
-  First(SpecialtyReferral R return R.reason)
-    
+define ACSGeneticRiskMriTimingEvent:    
+  ACSGeneticRiskMriTiming R return First(R.event)
 
+define ACSMammoAfterRT:
+  if Events."eve-chestxrt" is true
+    then Actions."act-acsmammoafterRT" else null    
 
+define ExistsACSMammoAfterRT:
+  ACSMammoAfterRT is not null
+
+define ACSMammoAfterRTCode:    
+  ACSMammoAfterRT R return R.code
+
+define ACSMammoAfterRTTiming:    
+  ACSMammoAfterRT R return R.timingTiming
+
+define ACSMammoAfterRTTimingEvent:    
+  ACSMammoAfterRTTiming R return First(R.event)
+
+define ACSMriAfterRT:
+  if Events."eve-chestxrt" is true
+    then Actions."act-acsmriafterRT" else null    
+
+define ExistsACSMriAfterRT:
+  ACSMriAfterRT is not null
+
+define ACSMriAfterRTCode:    
+  ACSMriAfterRT R return R.code
+
+  define ACSMriAfterRTTiming:    
+  ACSMriAfterRT R return R.timingTiming
+
+define ACSMriAfterRTTimingEvent:    
+  ACSMriAfterRTTiming R return First(R.event)  
+
+define ACSMammoAfterBrca:
+  if Events."eve-hxbreastca" is true
+    then if Events."eve-hxbreastcawithin5y" is false
+      then Actions."act-acsmammoafterbrca" else null
+    else null       
+
+define ExistsACSMammoAfterBrca:
+  ACSMammoAfterBrca is not null
+
+define ACSMammoAfterBrcaCode:    
+  ACSMammoAfterBrca R return R.code
+
+define ACSMammoAfterBrcaTiming:    
+  ACSMammoAfterBrca R return R.timingTiming
+
+define ACSMammoAfterBrcaTimingEvent:    
+  ACSMammoAfterBrcaTiming R return First(R.event)
+
+define SpecialtyReferralBreastCaWithin5y:
+  if Events."eve-hxbreastca" is true
+    then if Events."eve-hxbreastcawithin5y" is true
+      then Actions."act-hxbreastcawithin5y" else null
+    else null  
+
+define ExistsSpecialtyReferralBreastCaWithin5y:  
+  SpecialtyReferralBreastCaWithin5y is not null
+
+define SpecialtyReferralBreastCaWithin5yReason:
+  SpecialtyReferralBreastCaWithin5y R return R.reason

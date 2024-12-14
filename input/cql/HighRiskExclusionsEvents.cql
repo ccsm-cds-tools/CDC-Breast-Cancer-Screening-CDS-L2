@@ -10,17 +10,16 @@ context Patient
 define "eve-geneticrisk":
   DataElements."de-geneticrisk"
 
-//define "eve-chestxrt":
-  // TODO: Implement logic for eve-chestxrt
+define "eve-chestxrt":
+  exists DataElements."de-chestxrtage10to30"
 
-//define "eve-ageatleast25and8yafterRT":
-  // TODO: Implement logic for eve-ageatleast25and8yafterRT
+define "eve-hxbreastca":
+  exists DataElements."de-hxbreastca"
 
-//define "eve-hxbreastca":
-  // TODO: Implement logic for eve-hxbreastca
-
-//define "eve-hxbreastcawithin5y":
-  // TODO: Implement logic for eve-hxbreastcawithin5y
+//TODO: handling for missing dates
+define "eve-hxbreastcawithin5y":
+  exists DataElements."de-hxbreastca" C 
+    where Today() before C.abatement.value + 5 years  
 
 //define "eve-atypicalbx":
   // TODO: Implement logic for eve-atypicalbx
@@ -30,7 +29,4 @@ define "eve-geneticrisk":
 
 define "eve-acsgeneticrisk":
   DataElements."de-acsgeneticrisk"
-
-define "eve-ageatleast30":
-  AgeInYears() >= 30
 

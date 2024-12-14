@@ -57,6 +57,7 @@ code "Female-to-male Transsexual": '407377005' from "SNOMED-CT" display 'Female-
 code "Male-to-female Transsexual": '407376001' from "SNOMED-CT" display 'Male-to-female transsexual (finding)'
 code "Left (qualifier value)": '7771000' from "SNOMED-CT" display 'Left (qualifier value)'
 code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qualifier value)'
+code "History of radiation therapy to chest": '77941000119104' from "SNOMED-CT" display 'History of radiation therapy to chest'
 
 // Non-standard or "local" codes
 code "New or worsening breast symptoms": 'BreastSymptoms' from "LOCAL" display 'New or worsening breast symptoms'
@@ -331,4 +332,33 @@ define "Cowden Syndrome Conditions":
 
 define "Bannayan-Riley-Ruvalcaba Syndrome Conditions":
   Common.ValidCondition([Condition: code in "Bannayan-Riley-Ruvalcaba Syndrome"])
+
+//------------------------------------------------------------------------------
+// Chest XRT
+//------------------------------------------------------------------------------
+
+define "de-chestxrt":
+  Common.ValidCondition([Condition: code ~ "History of radiation therapy to chest"])
+
+//TODO: figure out the math with dateTime, Period, etc
+define "de-chestxrtage10to30":
+  "de-chestxrt" C 
+    where C.onset as Age is not null and C.onset.value >= 10 and C.onset.value <= 30 and C.onset.code = 'a'
+    or C.abatement as Age is not null and C.abatement.value >= 10 and C.abatement.value <= 30 and C.abatement.code = 'a'  
+
+//------------------------------------------------------------------------------
+// Previous breast cancer
+//------------------------------------------------------------------------------
+
+define "de-hxbreastca":
+  BreastCancerDiagnoses C
+    where C.clinicalStatus ~ "Condition inactive"
+      or C.clinicalStatus ~ "Condition remission"
+      or C.clinicalStatus ~ "Condition resolved"  
+
+//define "de-atypicalbx":
+  // TODO: Implement logic for de-atypicalbx
+
+//define "de-highlifetimerisk":
+  // TODO: Implement logic for de-highlifetimerisk
 
