@@ -1,17 +1,15 @@
 ---
 name: eve-geneticrisk_no_eve-chestxrt_no_eve-hxbreastca_yes_eve-hxbreastcawithin5y_yes_act-hxbreastcawithin5y
 flow: flow-HighRiskExclusions
-skip: true
+only: true
 externalData:
-  - ./events/events
-  - ./actions/actions
+  - ../HighRiskExclusionsEvents/events
+  - ../HighRiskExclusionsActions/actions
   - ../DataElements/data_elements
   - ../default_patients
 data:
-  - "*eve-geneticrisk"
-  - "*eve-chestxrt"
-  - "*eve-hxbreastca"
-  - "*eve-hxbreastcawithin5y"
+  - *defaultPatient
+  - *'Previous_breast_cancer'_is_TRUE_AND_end_date_<_5_years_ago
 results:
   flow-HighRiskExclusions:
-    - "*act-hxbreastcawithin5y"
+    - *act-hxbreastcawithin5y

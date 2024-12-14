@@ -360,10 +360,50 @@ de-acsbrcafirstdeg:
 de-acsgeneticfirstdeg:
   - "&FAMILY_HISTORY_of_Li-Fraumeni_syndrome__Cowden_or_Bannayan-Riley-Ruvalcaba_syndrome_in_first_degree_relative__including_parent_or_child"
 de-chestxrt:
-  - "&CONDITIONS_include_`CHEST_RADIOTHERAPY`_with_age_of_onset_<=_30_years"
-de-hxbreastca:
-  - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive__resolved_OR_CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_inactive__resolved_OR_CONDITIONS_include_`INVASIVE_BREAST_CANCER__IN_REMISSION`_with_status_active_OR_CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER__IN_REMISSION`_with_status_active"
-  - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive__resolved"
+  - &CONDITIONS_include_`CHEST_RADIOTHERAPY`_with_age_at_treatment_start_>=_10_years_and_<=_30_years
+    resourceType: Condition
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: inactive
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 77941000119104
+          display: History of radiation therapy to chest
+    onsetAge:
+      value: 10
+      unit: years
+      system: http://unitsofmeasure.org
+      code: a
+  - &CONDITIONS_include_`CHEST_RADIOTHERAPY`_with_age_at_treatment_end_>=_10_years_and_<=_30_years
+    resourceType: Condition
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: inactive
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 77941000119104
+          display: History of radiation therapy to chest
+    abatementAge:
+      value: 30
+      unit: years
+      system: http://unitsofmeasure.org
+      code: a      
+
+de-hxbreastca:  
+  - &CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive__resolved
+    *CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive
   - "&CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER`_with_status_inactive__resolved"
   - "&CONDITIONS_include_`INVASIVE_BREAST_CANCER__IN_REMISSION`_with_status_active"
   - "&CONDITIONS_include_`NON-INVASIVE_BREAST_CANCER__IN_REMISSION`_with_status_active"

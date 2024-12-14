@@ -3,8 +3,8 @@ name: eve-geneticrisk_no_eve-chestxrt_no_eve-hxbreastca_no_eve-atypicalbx_yes_ev
 flow: flow-HighRiskExclusions
 skip: true
 externalData:
-  - ./events/events
-  - ./actions/actions
+  - ../HighRiskExclusionsEvents/events
+  - ../HighRiskExclusionsActions/actions
   - ../DataElements/data_elements
   - ../default_patients
 data:

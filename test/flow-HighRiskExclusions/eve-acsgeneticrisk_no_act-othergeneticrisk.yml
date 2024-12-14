@@ -3,8 +3,8 @@ name: eve-geneticrisk_yes_eve-acsgeneticrisk_no_act-othergeneticrisk
 flow: flow-HighRiskExclusions
 only: true
 externalData:
-  - ./events/events
-  - ./actions/actions
+  - ../HighRiskExclusionsEvents/events
+  - ../HighRiskExclusionsActions/actions
   - ../DataElements/data_elements
   - ../default_patients
 data:
