@@ -21,11 +21,11 @@ define "eve-hxbreastcawithin5y":
   exists DataElements."de-hxbreastca" C 
     where Today() before C.abatement.value + 5 years  
 
-//define "eve-atypicalbx":
-  // TODO: Implement logic for eve-atypicalbx
+define "eve-atypicalbx":
+  DataElements."de-atypicalbx"
 
-//define "eve-highlifetimerisk":
-  // TODO: Implement logic for eve-highlifetimerisk
+define "eve-highlifetimerisk":
+  DataElements."de-highlifetimerisk"
 
 define "eve-acsgeneticrisk":
   DataElements."de-acsgeneticrisk"

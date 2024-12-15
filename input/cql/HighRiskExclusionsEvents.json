@@ -9,7 +9,7 @@
       }, {
          "type" : "Annotation",
          "s" : {
-            "r" : "292",
+            "r" : "300",
             "s" : [ {
                "value" : [ "","library HighRiskExclusionsEvents version '1.0.0'" ]
             } ]
@@ -567,9 +567,9 @@
             }
          }, {
             "localId" : "292",
-            "locator" : "30:1-31:34",
+            "locator" : "24:1-25:30",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
-            "name" : "eve-acsgeneticrisk",
+            "name" : "eve-atypicalbx",
             "context" : "Patient",
             "accessLevel" : "Public",
             "annotation" : [ {
@@ -577,7 +577,7 @@
                "s" : {
                   "r" : "292",
                   "s" : [ {
-                     "value" : [ "//define \"eve-atypicalbx\":\n  // TODO: Implement logic for eve-atypicalbx\n\n//define \"eve-highlifetimerisk\":\n  // TODO: Implement logic for eve-highlifetimerisk\n\n","define ","\"eve-acsgeneticrisk\"",":\n  " ]
+                     "value" : [ "","define ","\"eve-atypicalbx\"",":\n  " ]
                   }, {
                      "r" : "294",
                      "s" : [ {
@@ -590,7 +590,7 @@
                      }, {
                         "r" : "294",
                         "s" : [ {
-                           "value" : [ "\"de-acsgeneticrisk\"" ]
+                           "value" : [ "\"de-atypicalbx\"" ]
                         } ]
                      } ]
                   } ]
@@ -598,6 +598,84 @@
             } ],
             "expression" : {
                "localId" : "294",
+               "locator" : "25:3-25:30",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "name" : "de-atypicalbx",
+               "libraryName" : "DataElements",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "296",
+            "locator" : "27:1-28:36",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+            "name" : "eve-highlifetimerisk",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "296",
+                  "s" : [ {
+                     "value" : [ "","define ","\"eve-highlifetimerisk\"",":\n  " ]
+                  }, {
+                     "r" : "298",
+                     "s" : [ {
+                        "r" : "297",
+                        "s" : [ {
+                           "value" : [ "DataElements" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "298",
+                        "s" : [ {
+                           "value" : [ "\"de-highlifetimerisk\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "298",
+               "locator" : "28:3-28:36",
+               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+               "name" : "de-highlifetimerisk",
+               "libraryName" : "DataElements",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "300",
+            "locator" : "30:1-31:34",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+            "name" : "eve-acsgeneticrisk",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "300",
+                  "s" : [ {
+                     "value" : [ "","define ","\"eve-acsgeneticrisk\"",":\n  " ]
+                  }, {
+                     "r" : "302",
+                     "s" : [ {
+                        "r" : "301",
+                        "s" : [ {
+                           "value" : [ "DataElements" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "302",
+                        "s" : [ {
+                           "value" : [ "\"de-acsgeneticrisk\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "302",
                "locator" : "31:3-31:34",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "name" : "de-acsgeneticrisk",

@@ -48,6 +48,8 @@ valueset "Li-Fraumeni Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.
 valueset "Cowden Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
 // TODO: replace placeholder value set OID
 valueset "Bannayan-Riley-Ruvalcaba Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
+// TODO: replace placeholder value set OID
+valueset "Biopsy Atypical Results": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.235'
 
 // Standard codes
 code "Gender Identity": '76691-5' from "LOINC" display 'Gender identity'
@@ -58,12 +60,15 @@ code "Male-to-female Transsexual": '407376001' from "SNOMED-CT" display 'Male-to
 code "Left (qualifier value)": '7771000' from "SNOMED-CT" display 'Left (qualifier value)'
 code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qualifier value)'
 code "History of radiation therapy to chest": '77941000119104' from "SNOMED-CT" display 'History of radiation therapy to chest'
+code "Biopsy Report": '66110-8' from "LOINC" display 'Breast Pathology biopsy report'
 
 // Non-standard or "local" codes
 code "New or worsening breast symptoms": 'BreastSymptoms' from "LOCAL" display 'New or worsening breast symptoms'
 code "New or worsening breast exam findings": 'BreastFindings' from "LOCAL" display 'New or worsening breast exam findings'
 code "Reduced life expectancy indicator": 'ReducedLifeExpectancyIndicator' from "LOCAL" display 'Reduced life expectancy indicator'
 code "Genetic marker or syndrome associated with breast cancer": 'GeneticMarkerOrSyndrome' from "LOCAL" display 'Genetic marker or syndrome associated with breast cancer'
+code "Lifetime risk assessment result": 'LifetimeRiskResult' from "LOCAL" display 'Lifetime risk assessment result'
+code "High lifetime risk": 'HighLifetimeRisk' from "LOCAL" display 'High lifetime risk'
 
 //------------------------------------------------------------------------------
 // PARAMETERS
@@ -75,6 +80,28 @@ parameter SymptomaticLookBack default 14 days
 /***** BEGIN CDS LOGIC ********************************************************/
 
 context Patient
+
+define function ValuesFromObservation(D DiagnosticReport, ObsList List<Observation>):
+  (ObsList) O
+  where
+    Exists( (D.result ) R where Last(Split(R.reference,'/')) =  O.id ) or
+    Exists( (O.basedOn) oB where AnyTrue((D.basedOn) dB return dB = oB ) )
+  return O.value as FHIR.CodeableConcept
+
+define function CollateConclusionCodes(D DiagnosticReport, ObsList List<Observation>):
+  D.conclusionCode union
+  ValuesFromObservation(D, ObsList)
+
+// if a DiagnosticReport.code has target code, then call orignial CollateConclusionCodes
+// if a DiagnosticReport.code does not have target code, then return values from matched Observations
+define function CollateConclusionCodes(D DiagnosticReport, ObsList List<Observation>, code System.Code):
+  if FHIRHelpers.ToConcept(D.code) ~ code then
+    CollateConclusionCodes(D, ObsList)
+  else
+    ValuesFromObservation(D, ObsList)  
+
+define AllCompletedDiagnosticReport:
+  Common.CompletedDiagnosticReport([DiagnosticReport])    
 
 //------------------------------------------------------------------------------
 // Assigned female at birth
@@ -356,9 +383,41 @@ define "de-hxbreastca":
       or C.clinicalStatus ~ "Condition remission"
       or C.clinicalStatus ~ "Condition resolved"  
 
-//define "de-atypicalbx":
-  // TODO: Implement logic for de-atypicalbx
+//------------------------------------------------------------------------------
+// Previous breast cancer
+//------------------------------------------------------------------------------      
 
-//define "de-highlifetimerisk":
-  // TODO: Implement logic for de-highlifetimerisk
+define "de-atypicalbx":
+  exists Common.ValidCondition([Condition: "Biopsy Atypical Results"]) or
+    exists AtypicalBiopsyResults
+
+define AtypicalBiopsyResults:
+  BiopsyDiagnosticReports D
+    let cC: CollateConclusionCodes(D,BiopsyObservations)
+    where cC in "Biopsy Atypical Results"
+
+define BiopsyDiagnosticReports:
+  AllCompletedDiagnosticReport B
+  where 
+    Count(
+      CollateConclusionCodes(B, BiopsyObservations, "Biopsy Report")
+    ) > 0
+
+define BiopsyObservations:
+  [Observation: "Biopsy Report"]
+
+//------------------------------------------------------------------------------
+// High lifetime risk
+//------------------------------------------------------------------------------   
+
+define "de-highlifetimerisk":
+  MostRecentLifetimeRiskAssessmentResultHigh is not null
+
+define MostRecentLifetimeRiskAssessmentResultHigh:
+  MostRecentLifetimeRiskAssessment R where 
+    R.value as FHIR.Quantity is not null and C3F.QuantityValue(R).value >20 or
+    R.value as FHIR.CodeableConcept is not null and C3F.ConceptValue(R) ~ "High lifetime risk"
+
+define MostRecentLifetimeRiskAssessment:
+  C3F.MostRecent([Observation: "Lifetime risk assessment result"])
 

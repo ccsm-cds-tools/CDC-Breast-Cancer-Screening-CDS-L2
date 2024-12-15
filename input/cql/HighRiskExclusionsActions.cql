@@ -17,6 +17,7 @@ code "Genetic risk exclusion": 'geneticriskexclusion' from "ReasonCode" display 
 code "History of chest radiation ages 10-30 y": 'chestxrt' from "ReasonCode" display 'History of chest radiation ages 10-30 y'
 code "Previous breast cancer": 'hxbreastca' from "ReasonCode" display 'Previous breast cancer'
 code "Breast cancer in remission < 5 years": 'hxbreastcawithin5y' from "ReasonCode" display 'Breast cancer in remission < 5 years'
+code "Atypical biopsy high lifetime risk": 'atypicalbxhighlifetimerisk' from "ReasonCode" display 'Atypical biopsy high lifetime risk'
 
 // Standard codes
 code "MG Breast Screening": '24606-6' from "LOINC" display 'MG Breast Screening' 
@@ -56,9 +57,6 @@ define "act-acshighriskmri":
     }
 	} 
 
-//define "act-acsintriskmammo":
-  // TODO: Implement logic for act-acsintriskmammo
-
 define "act-acsgeneticriskmammo":
   SetRecommendationReasonTimingAge("act-acshighriskmammo", "Genetic risk exclusion", {value: 30.0, code: 'a'})  
 
@@ -80,11 +78,11 @@ define "act-hxbreastcawithin5y":
     reason: "Breast cancer in remission < 5 years"
 	}
 
-//define "act-startdateacsrisk":
-  // TODO: Implement logic for act-startdateacsrisk
+define "act-acsmammoatypicalbx":
+  SetRecommendationReasonTimingAge("act-acshighriskmammo", "Atypical biopsy high lifetime risk", {value: AgeInYears() * 1.0, code: 'a'})  
 
-//define "act-noexclusions":
-  // TODO: Implement logic for act-noexclusions
+define "act-acsmriatypicalbx":
+  SetRecommendationReasonTimingAge("act-acshighriskmri", "Atypical biopsy high lifetime risk", {value: AgeInYears() * 1.0, code: 'a'})  
 
 define "RadiationTherapyCompletionAge":
   First(DataElements."de-chestxrtage10to30" C).abatement as Age //TODO: support for other choice types (dateTime, Period, etc)

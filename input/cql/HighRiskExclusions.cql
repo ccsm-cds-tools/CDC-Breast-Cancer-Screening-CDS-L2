@@ -20,7 +20,9 @@ define "flow-HighRiskExclusions":
     ACSMammoAfterRT,
     ACSMriAfterRT,
     ACSMammoAfterBrca,
-    SpecialtyReferralBreastCaWithin5y
+    SpecialtyReferralBreastCaWithin5y,
+    ACSMammoAtypicalBiopsyHighRisk,
+    ACSMriAtypicalBiopsyHighRisk
   }   
   except { null }
 
@@ -133,3 +135,39 @@ define ExistsSpecialtyReferralBreastCaWithin5y:
 
 define SpecialtyReferralBreastCaWithin5yReason:
   SpecialtyReferralBreastCaWithin5y R return R.reason
+
+define ACSMammoAtypicalBiopsyHighRisk:
+  if Events."eve-geneticrisk" is false and Events."eve-chestxrt" is false and Events."eve-hxbreastca" is false
+    then if Events."eve-atypicalbx" is true and Events."eve-highlifetimerisk" is true
+      then Actions."act-acsmammoatypicalbx" else null
+    else null       
+
+define ExistsACSMammoAtypicalBiopsyHighRisk:
+  ACSMammoAtypicalBiopsyHighRisk is not null
+
+define ACSMammoAtypicalBiopsyHighRiskCode:    
+  ACSMammoAtypicalBiopsyHighRisk R return R.code
+
+define ACSMammoAtypicalBiopsyHighRiskTiming:    
+  ACSMammoAtypicalBiopsyHighRisk R return R.timingTiming
+
+define ACSMammoAtypicalBiopsyHighRiskTimingEvent:    
+  ACSMammoAtypicalBiopsyHighRiskTiming R return First(R.event)  
+
+define ACSMriAtypicalBiopsyHighRisk:
+  if Events."eve-geneticrisk" is false and Events."eve-chestxrt" is false and Events."eve-hxbreastca" is false
+    then if Events."eve-atypicalbx" is true and Events."eve-highlifetimerisk" is true
+      then Actions."act-acsmriatypicalbx" else null
+    else null       
+
+define ExistsACSMriAtypicalBiopsyHighRisk:
+  ACSMriAtypicalBiopsyHighRisk is not null
+
+define ACSMriAtypicalBiopsyHighRiskCode:    
+  ACSMriAtypicalBiopsyHighRisk R return R.code
+
+define ACSMriAtypicalBiopsyHighRiskTiming:    
+  ACSMriAtypicalBiopsyHighRisk R return R.timingTiming
+
+define ACSMriAtypicalBiopsyHighRiskTimingEvent:    
+  ACSMriAtypicalBiopsyHighRiskTiming R return First(R.event)   
