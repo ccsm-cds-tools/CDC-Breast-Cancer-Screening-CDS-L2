@@ -1,17 +1,13 @@
 ---
 name: eve-geneticrisk_no_eve-chestxrt_no_eve-hxbreastca_no_eve-atypicalbx_no_act-noexclusions
 flow: flow-HighRiskExclusions
-skip: true
+only: true
 externalData:
   - ../HighRiskExclusionsEvents/events
   - ../HighRiskExclusionsActions/actions
   - ../DataElements/data_elements
   - ../default_patients
 data:
-  - "*eve-geneticrisk"
-  - "*eve-chestxrt"
-  - "*eve-hxbreastca"
-  - "*eve-atypicalbx"
+  - *defaultPatient
 results:
-  flow-HighRiskExclusions:
-    - "*act-noexclusions"
+  flow-HighRiskExclusions: *act-noexclusions

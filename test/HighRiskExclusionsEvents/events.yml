@@ -65,17 +65,11 @@ eve-hxbreastcawithin5y:
     abatementDateTime: '2013-10-01'  
 
 eve-atypicalbx:
-  - "&'High-risk_benign_breast_lesion_on_previous_biopsies'_is_TRUE"
+  - &'High-risk_benign_breast_lesion_on_previous_biopsies'_is_TRUE
+    *PATHOLOGY_REPORT_of_type_`BREAST_BIOPSY`_includes_conclusion_of_pre-malignant_or_high-risk_lesions
 eve-highlifetimerisk:
-  - "&'Lifetime_risk_of_breast_cancer_>_20%_or_25%'"
+  - &'Lifetime_risk_of_breast_cancer_>_20%_or_25%'
+    *Risk_assessment_using_a_formal_risk_assessment_tool_based_mainly_on_family_history_is_>20%_lifetime_risk
 eve-acsgeneticrisk:
   - &'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer_as_defined_by_ACS'_is_TRUE
     *CONDITIONS_include_`BRCA-1_MUTATION_CONDITION`
-eve-ageatleast30high:
-  - "&Patient_age_>=_30_years_AND_life_expectancy_of_10_years_or_longer"
-  - "&Patient_age_>=_30_years"
-  - "&life_expectancy_of_10_years_or_longer"
-eve-ageatleast30int:
-  - "&Patient_age_>=_30_years_AND_life_expectancy_of_10_years_or_longer"
-  - "&Patient_age_>=_30_years"
-  - "&life_expectancy_of_10_years_or_longer"

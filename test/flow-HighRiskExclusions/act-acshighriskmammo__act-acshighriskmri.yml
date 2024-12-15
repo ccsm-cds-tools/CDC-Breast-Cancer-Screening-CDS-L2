@@ -1,20 +1,17 @@
 ---
-name: eve-geneticrisk_no_eve-chestxrt_no_eve-hxbreastca_no_eve-atypicalbx_yes_eve-highlifetimerisk_yes_eve-ageatleast30high_yes_act-acshighriskmammo__act-acshighriskmri
+name: eve-geneticrisk_no_eve-chestxrt_no_eve-hxbreastca_no_eve-atypicalbx_yes_eve-highlifetimerisk_yes_act-acshighriskmammo__act-acshighriskmri
 flow: flow-HighRiskExclusions
-skip: true
+only: true
 externalData:
   - ../HighRiskExclusionsEvents/events
   - ../HighRiskExclusionsActions/actions
   - ../DataElements/data_elements
   - ../default_patients
 data:
-  - "*eve-geneticrisk"
-  - "*eve-chestxrt"
-  - "*eve-hxbreastca"
-  - "*eve-atypicalbx"
-  - "*eve-highlifetimerisk"
-  - "*eve-ageatleast30high"
+  - *defaultPatient
+  - *'High-risk_benign_breast_lesion_on_previous_biopsies'_is_TRUE
+  - *'Lifetime_risk_of_breast_cancer_>_20%_or_25%'
 results:
   flow-HighRiskExclusions:
-    - "*act-acshighriskmammo"
-    - "*act-acshighriskmri"
+    - *act-acsmammoatypicalbx
+    - *act-acsmriatypicalbx
