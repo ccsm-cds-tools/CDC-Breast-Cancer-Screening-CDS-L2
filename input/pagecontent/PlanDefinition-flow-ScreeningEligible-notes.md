@@ -1,14 +1,3 @@
 ### PlanDefinition-apply operation output examples
 
-[ScreeningEligible_eve-female_no_end-noteligible](Bundle-ScreeningEligible_eve-female_no_end-noteligible.html)  
-[ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible](Bundle-ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible.html)  
-[ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_yes_act-dxtesting](Bundle-ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_yes_act-dxtesting.html)  
-[ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_yes_act-dxtesting](Bundle-ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_yes_act-dxtesting.html)  
-[ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_yes_end-noteligible](Bundle-ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_yes_end-noteligible.html)  
-[ScreeningEligible_eve-female_yes_eve-breastca_yes_end-noteligible](Bundle-ScreeningEligible_eve-female_yes_eve-breastca_yes_end-noteligible.html)  
-[ScreeningEligible_inc-AgeAtLeast18_error](Bundle-ScreeningEligible_inc-AgeAtLeast18_error.html)  
-[ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes.yml](Bundle-ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes.html)  
-[ScreeningEligible_inc-AgeAtLeast18_no](Bundle-ScreeningEligible_inc-AgeAtLeast18_no.html)  
-[ScreeningEligible_inc-AgeAtLeast18_yes](Bundle-ScreeningEligible_inc-AgeAtLeast18_yes.html)  
-[ScreeningEligible_inc-femaleortransmale_no](Bundle-ScreeningEligible_inc-femaleortransmale_no.html)  
-[ScreeningEligible_inc-femaleortransmale_yes](Bundle-ScreeningEligible_inc-femaleortransmale_yes.html)  
+{% include list_files_byprefix.html directory='' prefix='Bundle-ScreeningEligible_' %}

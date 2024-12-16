@@ -1,14 +1,14 @@
 ---
 name: eve-geneticrisk_yes_eve-acsgeneticrisk_no_act-othergeneticrisk
 flow: flow-HighRiskExclusions
-skip: true
 externalData:
-  - ./events/events
-  - ./actions/actions
+  - ../HighRiskExclusionsEvents/events
+  - ../HighRiskExclusionsActions/actions
+  - ../DataElements/data_elements
   - ../default_patients
 data:
-  - "*eve-geneticrisk"
-  - "*eve-acsgeneticrisk"
+  - *defaultPatient
+  - *'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer'_is_TRUE  
 results:
   flow-HighRiskExclusions:
-    - "*act-othergeneticrisk"
+    - *act-othergeneticrisk

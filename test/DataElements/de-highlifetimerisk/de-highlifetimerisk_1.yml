@@ -1,0 +1,10 @@
+---
+name: Risk_assessment_using_a_formal_risk_assessment_tool_based_mainly_on_family_history_is_gt20pct_lifetime_risk
+elementId: de-highlifetimerisk
+externalData:
+  - ../data_elements
+data:
+  - *Sex_assigned_at_birth_=_female_AND_gender_=_other
+  - *Risk_assessment_using_a_formal_risk_assessment_tool_based_mainly_on_family_history_is_>20%_lifetime_risk
+results:
+  de-highlifetimerisk: true

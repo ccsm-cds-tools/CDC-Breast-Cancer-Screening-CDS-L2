@@ -38,6 +38,18 @@ valueset "UNILATERAL MASTECTOMY": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840
 valueset "BILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005'
 valueset "LEFT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133'
 valueset "RIGHT UNILATERAL MASTECTOMY PROCEDURE": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134'
+// TODO: replace placeholder value set OID
+valueset "BRCA1 Gene Mutation": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1444.3.203'
+// TODO: replace placeholder value set OID
+valueset "BRCA2 Gene Mutation": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1444.3.204'
+// TODO: replace placeholder value set OID
+valueset "Li-Fraumeni Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
+// TODO: replace placeholder value set OID
+valueset "Cowden Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
+// TODO: replace placeholder value set OID
+valueset "Bannayan-Riley-Ruvalcaba Syndrome": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1240.2017.3.2.1022'
+// TODO: replace placeholder value set OID
+valueset "Biopsy Atypical Results": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1032.235'
 
 // Standard codes
 code "Gender Identity": '76691-5' from "LOINC" display 'Gender identity'
@@ -47,11 +59,16 @@ code "Female-to-male Transsexual": '407377005' from "SNOMED-CT" display 'Female-
 code "Male-to-female Transsexual": '407376001' from "SNOMED-CT" display 'Male-to-female transsexual (finding)'
 code "Left (qualifier value)": '7771000' from "SNOMED-CT" display 'Left (qualifier value)'
 code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qualifier value)'
+code "History of radiation therapy to chest": '77941000119104' from "SNOMED-CT" display 'History of radiation therapy to chest'
+code "Biopsy Report": '66110-8' from "LOINC" display 'Breast Pathology biopsy report'
 
 // Non-standard or "local" codes
 code "New or worsening breast symptoms": 'BreastSymptoms' from "LOCAL" display 'New or worsening breast symptoms'
 code "New or worsening breast exam findings": 'BreastFindings' from "LOCAL" display 'New or worsening breast exam findings'
 code "Reduced life expectancy indicator": 'ReducedLifeExpectancyIndicator' from "LOCAL" display 'Reduced life expectancy indicator'
+code "Genetic marker or syndrome associated with breast cancer": 'GeneticMarkerOrSyndrome' from "LOCAL" display 'Genetic marker or syndrome associated with breast cancer'
+code "Lifetime risk assessment result": 'LifetimeRiskResult' from "LOCAL" display 'Lifetime risk assessment result'
+code "High lifetime risk": 'HighLifetimeRisk' from "LOCAL" display 'High lifetime risk'
 
 //------------------------------------------------------------------------------
 // PARAMETERS
@@ -63,6 +80,28 @@ parameter SymptomaticLookBack default 14 days
 /***** BEGIN CDS LOGIC ********************************************************/
 
 context Patient
+
+define function ValuesFromObservation(D DiagnosticReport, ObsList List<Observation>):
+  (ObsList) O
+  where
+    Exists( (D.result ) R where Last(Split(R.reference,'/')) =  O.id ) or
+    Exists( (O.basedOn) oB where AnyTrue((D.basedOn) dB return dB = oB ) )
+  return O.value as FHIR.CodeableConcept
+
+define function CollateConclusionCodes(D DiagnosticReport, ObsList List<Observation>):
+  D.conclusionCode union
+  ValuesFromObservation(D, ObsList)
+
+// if a DiagnosticReport.code has target code, then call orignial CollateConclusionCodes
+// if a DiagnosticReport.code does not have target code, then return values from matched Observations
+define function CollateConclusionCodes(D DiagnosticReport, ObsList List<Observation>, code System.Code):
+  if FHIRHelpers.ToConcept(D.code) ~ code then
+    CollateConclusionCodes(D, ObsList)
+  else
+    ValuesFromObservation(D, ObsList)  
+
+define AllCompletedDiagnosticReport:
+  Common.CompletedDiagnosticReport([DiagnosticReport])    
 
 //------------------------------------------------------------------------------
 // Assigned female at birth
@@ -287,3 +326,98 @@ define ReducedLifeExpectancyObservations:
 
 //define "de-frailtyadvillness":
   // TODO: Implement logic for de-frailtyadvillness
+
+//------------------------------------------------------------------------------
+// Genetic syndrome
+//------------------------------------------------------------------------------
+
+define "de-geneticrisk":
+  GeneticMarkerOrSyndrome or "de-acsgeneticrisk"
+
+define GeneticMarkerOrSyndrome:
+  C3F.MostRecent(
+      [Observation: "Genetic marker or syndrome associated with breast cancer"] R
+        where R.value is true
+  ) is not null
+
+define "de-acsgeneticrisk":
+  exists "BRCA-1 Mutation Conditions" or exists "BRCA-2 Mutation Conditions" or
+    exists "Li-Fraumeni Syndrome Conditions" or exists "Cowden Syndrome Conditions" or
+    exists "Bannayan-Riley-Ruvalcaba Syndrome Conditions"
+
+define "BRCA-1 Mutation Conditions":
+  Common.ValidCondition([Condition: code in "BRCA1 Gene Mutation"])
+
+define "BRCA-2 Mutation Conditions":
+  Common.ValidCondition([Condition: code in "BRCA2 Gene Mutation"])
+
+define "Li-Fraumeni Syndrome Conditions":
+  Common.ValidCondition([Condition: code in "Li-Fraumeni Syndrome"])
+
+define "Cowden Syndrome Conditions":
+  Common.ValidCondition([Condition: code in "Cowden Syndrome"])
+
+define "Bannayan-Riley-Ruvalcaba Syndrome Conditions":
+  Common.ValidCondition([Condition: code in "Bannayan-Riley-Ruvalcaba Syndrome"])
+
+//------------------------------------------------------------------------------
+// Chest XRT
+//------------------------------------------------------------------------------
+
+define "de-chestxrt":
+  Common.ValidCondition([Condition: code ~ "History of radiation therapy to chest"])
+
+//TODO: figure out the math with dateTime, Period, etc
+define "de-chestxrtage10to30":
+  "de-chestxrt" C 
+    where C.onset as Age is not null and C.onset.value >= 10 and C.onset.value <= 30 and C.onset.code = 'a'
+    or C.abatement as Age is not null and C.abatement.value >= 10 and C.abatement.value <= 30 and C.abatement.code = 'a'  
+
+//------------------------------------------------------------------------------
+// Previous breast cancer
+//------------------------------------------------------------------------------
+
+define "de-hxbreastca":
+  BreastCancerDiagnoses C
+    where C.clinicalStatus ~ "Condition inactive"
+      or C.clinicalStatus ~ "Condition remission"
+      or C.clinicalStatus ~ "Condition resolved"  
+
+//------------------------------------------------------------------------------
+// Previous breast cancer
+//------------------------------------------------------------------------------      
+
+define "de-atypicalbx":
+  exists Common.ValidCondition([Condition: "Biopsy Atypical Results"]) or
+    exists AtypicalBiopsyResults
+
+define AtypicalBiopsyResults:
+  BiopsyDiagnosticReports D
+    let cC: CollateConclusionCodes(D,BiopsyObservations)
+    where cC in "Biopsy Atypical Results"
+
+define BiopsyDiagnosticReports:
+  AllCompletedDiagnosticReport B
+  where 
+    Count(
+      CollateConclusionCodes(B, BiopsyObservations, "Biopsy Report")
+    ) > 0
+
+define BiopsyObservations:
+  [Observation: "Biopsy Report"]
+
+//------------------------------------------------------------------------------
+// High lifetime risk
+//------------------------------------------------------------------------------   
+
+define "de-highlifetimerisk":
+  MostRecentLifetimeRiskAssessmentResultHigh is not null
+
+define MostRecentLifetimeRiskAssessmentResultHigh:
+  MostRecentLifetimeRiskAssessment R where 
+    R.value as FHIR.Quantity is not null and C3F.QuantityValue(R).value >20 or
+    R.value as FHIR.CodeableConcept is not null and C3F.ConceptValue(R) ~ "High lifetime risk"
+
+define MostRecentLifetimeRiskAssessment:
+  C3F.MostRecent([Observation: "Lifetime risk assessment result"])
+

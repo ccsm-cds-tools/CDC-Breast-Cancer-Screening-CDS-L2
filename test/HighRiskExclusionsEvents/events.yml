@@ -1,0 +1,75 @@
+eve-geneticrisk:
+  - &'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer'_is_TRUE
+    *OBSERVATIONS_include_`GENETIC_MARKER_OR_SYNDROME`
+    
+eve-chestxrt:
+  - &'History_of_high-dose_radiation_therapy_to_the_chest'_with_age_at_treatment_start_>=_10_years_and_<=_30_years
+    *CONDITIONS_include_`CHEST_RADIOTHERAPY`_with_age_at_treatment_start_>=_10_years_and_<=_30_years 
+  - &'History_of_high-dose_radiation_therapy_to_the_chest'_with_age_at_treatment_end_>=_10_years_and_<=_30_years
+    *CONDITIONS_include_`CHEST_RADIOTHERAPY`_with_age_at_treatment_end_>=_10_years_and_<=_30_years
+
+eve-hxbreastca:
+  - &'Previous_breast_cancer'_is_TRUE_AND_end_date_>=_5_years_ago
+    *CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive__resolved
+
+eve-hxbreastcawithin5y:
+  - &'Previous_breast_cancer'_is_TRUE_AND_end_date_<_5_years_ago
+    resourceType: Condition
+    id: invasive-breast-cancer
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: inactive
+          display: Inactive
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+          display: Confirmed
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-category
+            code: problem-list-item
+            display: Problem List Item
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 254837009
+          display: Invasive breast cancer
+      text: Invasive Breast Cancer
+    abatementDateTime: '2023-10-01'
+  - &'Previous_breast_cancer'_is_TRUE_AND_end_date_>=_5_years_ago
+    resourceType: Condition
+    id: invasive-breast-cancer
+    clinicalStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: inactive
+          display: Inactive
+    verificationStatus:
+      coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-ver-status
+          code: confirmed
+          display: Confirmed
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/condition-category
+            code: problem-list-item
+            display: Problem List Item
+    code:
+      coding:
+        - system: http://snomed.info/sct
+          code: 254837009
+          display: Invasive breast cancer
+      text: Invasive Breast Cancer
+    abatementDateTime: '2013-10-01'  
+
+eve-atypicalbx:
+  - &'High-risk_benign_breast_lesion_on_previous_biopsies'_is_TRUE
+    *PATHOLOGY_REPORT_of_type_`BREAST_BIOPSY`_includes_conclusion_of_pre-malignant_or_high-risk_lesions
+eve-highlifetimerisk:
+  - &'Lifetime_risk_of_breast_cancer_>_20%_or_25%'
+    *Risk_assessment_using_a_formal_risk_assessment_tool_based_mainly_on_family_history_is_>20%_lifetime_risk
+eve-acsgeneticrisk:
+  - &'Genetic_marker_or_syndrome_associated_with_a_high_risk_of_breast_cancer_as_defined_by_ACS'_is_TRUE
+    *CONDITIONS_include_`BRCA-1_MUTATION_CONDITION`

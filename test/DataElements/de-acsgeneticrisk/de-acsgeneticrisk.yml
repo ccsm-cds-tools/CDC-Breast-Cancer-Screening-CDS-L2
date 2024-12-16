@@ -1,0 +1,14 @@
+---
+name: de-acsgeneticrisk_false
+elementId: de-acsgeneticrisk
+externalData:
+  - ../data_elements
+data:
+  - *Sex_assigned_at_birth_=_female_AND_gender_=_other
+results:
+  de-acsgeneticrisk: false
+  BRCA-1 Mutation Conditions: $should have length 0
+  BRCA-2 Mutation Conditions: $should have length 0
+  Li-Fraumeni Syndrome Conditions: $should have length 0
+  Cowden Syndrome Conditions: $should have length 0
+  Bannayan-Riley-Ruvalcaba Syndrome Conditions: $should have length 0

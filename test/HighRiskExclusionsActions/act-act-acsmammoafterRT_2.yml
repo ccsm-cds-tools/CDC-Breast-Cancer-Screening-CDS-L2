@@ -1,0 +1,28 @@
+---
+name: Patient_age_lt_25_years_AND_gt=_8_years_after_completion_of_'History_of_high-dose_radiation_therapy_to_the_chest'
+elementId: eve-ageatleast25and8yafterRT
+externalData:
+  - actions
+  - ../DataElements/data_elements
+  - ../default_patients
+data:
+  - resourceType: Patient    
+    name: 
+      given:
+        - Jane
+      family: Doe    
+    gender: female
+    birthDate: 2010-01-01
+  - *Patient_age_<_25_years_AND_>=_8_years_after_completion_of_'History_of_high-dose_radiation_therapy_to_the_chest'
+results:
+  RadiationTherapyCompletionAge:
+    value: 12
+    unit: "years"
+    system: "http://unitsofmeasure.org"
+    code: "a"
+  Age8yafterRT:
+    value: 20
+    unit: 'a_g'  
+  Ageatleast25and8yafterRT: 25
+  act-acsmammoafterRT: *act-acsmammoafterRT_2
+  act-acsmriafterRT: *act-acsmriafterRT_2

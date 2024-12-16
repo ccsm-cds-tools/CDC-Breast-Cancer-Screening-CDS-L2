@@ -1,0 +1,12 @@
+---
+name: Previous_breast_cancer_is_TRUE_AND_end_date_lt_5_years_ago
+elementId: eve-hxbreastcawithin5y
+externalData:
+  - events  
+  - ../DataElements/data_elements
+  - ../default_patients
+data:
+  - *defaultPatient
+  - *'Previous_breast_cancer'_is_TRUE_AND_end_date_<_5_years_ago
+results:
+  eve-hxbreastcawithin5y: true
