@@ -1,7 +1,6 @@
 ---
 name: eve-geneticrisk_yes_eve-acsgeneticrisk_no_act-othergeneticrisk
 flow: flow-HighRiskExclusions
-only: true
 externalData:
   - ../HighRiskExclusionsEvents/events
   - ../HighRiskExclusionsActions/actions

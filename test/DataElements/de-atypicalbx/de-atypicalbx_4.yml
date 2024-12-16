@@ -1,7 +1,6 @@
 ---
 name: PATHOLOGY_REPORT_of_type_`BREAST_BIOPSY`_associated_with_observation_of_pre-malignant_or_high-risk_lesions
 elementId: de-atypicalbx
-only: true
 externalData:
   - ../data_elements
 data:

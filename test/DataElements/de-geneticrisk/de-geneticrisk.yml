@@ -1,7 +1,6 @@
 ---
 name: de-geneticrisk_false
 elementId: de-geneticrisk
-only: true
 externalData:
   - ../data_elements
 data:

@@ -1,7 +1,6 @@
 ---
 name: CONDITIONS_include_`BRCA-2_MUTATION_CONDITION`
 elementId: de-acsgeneticrisk
-only: true
 externalData:
   - ../data_elements
 data:

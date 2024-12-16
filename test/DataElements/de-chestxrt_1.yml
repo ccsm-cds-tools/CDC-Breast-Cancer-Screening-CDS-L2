@@ -1,7 +1,6 @@
 ---
 name: CONDITIONS_include_`CHEST_RADIOTHERAPY`_with_age_at_treatment_end_gt=_10_years_and_lt=_30_years
 elementId: eve-chestxrt
-only: true
 externalData:  
   - data_elements
   - ../default_patients

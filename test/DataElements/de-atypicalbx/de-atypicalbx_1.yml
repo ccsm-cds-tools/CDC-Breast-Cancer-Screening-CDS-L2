@@ -1,7 +1,6 @@
 ---
 name: CONDITIONS_include_pre-malignant_or_high-risk_lesions
 elementId: de-atypicalbx
-only: true
 externalData:
   - ../data_elements
 data:

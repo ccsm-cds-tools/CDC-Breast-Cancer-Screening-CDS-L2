@@ -1,7 +1,6 @@
 ---
 name: Risk_assessment_using_a_formal_risk_assessment_tool_based_mainly_on_family_history_is_gt20pct_lifetime_risk
 elementId: de-highlifetimerisk
-only: true
 externalData:
   - ../data_elements
 data:

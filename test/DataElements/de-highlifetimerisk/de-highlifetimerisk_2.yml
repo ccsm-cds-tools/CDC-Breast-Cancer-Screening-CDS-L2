@@ -1,7 +1,6 @@
 ---
 name: Risk_assessment_without_using_a_formal_tool_is_estimated_gt20pct_lifetime_risk
 elementId: de-highlifetimerisk
-only: true
 externalData:
   - ../data_elements
 data:

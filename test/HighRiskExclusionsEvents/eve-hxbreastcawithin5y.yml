@@ -1,7 +1,6 @@
 ---
 name: Previous_breast_cancer_is_TRUE_AND_end_date_lt_5_years_ago
 elementId: eve-hxbreastcawithin5y
-only: true
 externalData:
   - events  
   - ../DataElements/data_elements

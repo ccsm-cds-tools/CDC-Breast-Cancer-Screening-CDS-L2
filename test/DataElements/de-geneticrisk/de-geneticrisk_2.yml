@@ -1,7 +1,6 @@
 ---
 name: OBSERVATIONS_include_`GENETIC_MARKER_OR_SYNDROME`
 elementId: de-geneticrisk
-only: true
 externalData:
   - ../data_elements
 data:

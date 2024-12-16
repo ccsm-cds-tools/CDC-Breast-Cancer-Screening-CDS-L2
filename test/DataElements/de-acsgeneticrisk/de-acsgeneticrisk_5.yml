@@ -1,7 +1,6 @@
 ---
 name: CONDITIONS_include_`BANNAYAN-RILEY-RUVALCABA_SYNDROME`
 elementId: de-acsgeneticrisk
-only: true
 externalData:
   - ../data_elements
 data:

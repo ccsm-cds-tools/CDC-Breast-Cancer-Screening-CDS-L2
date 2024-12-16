@@ -1,7 +1,6 @@
 ---
 name: CONDITIONS_not_include_`CHEST_RADIOTHERAPY`
 elementId: de-chestxrt
-only: true
 externalData:  
   - data_elements
   - ../default_patients
