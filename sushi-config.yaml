@@ -176,6 +176,14 @@ groups:
     - Library/DecisionToScreen
     - Library/DecisionToScreenEvents
     - Library/DecisionToScreenActions    
+  HighRiskExclusions:
+    name: High Risk Exclusions
+    description: Resources related to HighRiskExclusions flow
+    resources:
+    - PlanDefinition/flow-HighRiskExclusions
+    - Library/HighRiskExclusions
+    - Library/HighRiskExclusionsEvents
+    - Library/HighRiskExclusionsActions      
 #   GroupA:
 #     name: Group A
 #     description: The Alpha Group

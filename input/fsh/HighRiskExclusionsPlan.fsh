@@ -117,8 +117,8 @@ Usage: #definition
 // Action #6: ACSMammoAfterBrca
 // -----------------------------------------------------------------------------
 * action[+].id = "ACSMammoAfterBrca"
-* action[=].title = "Annual screeening MRI after 5 years in remission"
-* action[=].description = "Annual screeening MRI after 5 years in remission"
+* action[=].title = "Annual screeening mammogram after 5 years in remission"
+* action[=].description = "Annual screeening mammogram after 5 years in remission"
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMammoAfterBrca"
@@ -148,7 +148,50 @@ Usage: #definition
 * action[=].dynamicValue[+].path = "reasonCode[0].coding[0]"
 * action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].dynamicValue[=].expression.expression = "SpecialtyReferralBreastCaWithin5yReason"
-
+// -----------------------------------------------------------------------------
+// Action #6: ACSMammoAtypicalBiopsyHighRisk
+// -----------------------------------------------------------------------------
+* action[+].id = "ACSMammoAtypicalBiopsyHighRisk"
+* action[=].title = "Annual screeening mammogram in past atypical biopsy with high lifetime risk"
+* action[=].description = "Annual screeening mammogram in past atypical biopsy with high lifetime risk"
+* action[=].condition[+].kind = $ACKIND#applicability "Applicability"
+* action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].condition[=].expression.expression = "ExistsACSMammoAtypicalBiopsyHighRisk"
+* action[=].definitionCanonical = Canonical(BreastScreeningServiceRequest|1.0.0)
+* action[=].dynamicValue[+].path = "%action.code[0].coding[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "ACSMammoAtypicalBiopsyHighRiskCode"
+* action[=].dynamicValue[+].path = "%action.timingTiming"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "ACSMammoAtypicalBiopsyHighRiskTiming"
+* action[=].dynamicValue[+].path = "code.coding[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "ACSMammoAtypicalBiopsyHighRiskCode"
+* action[=].dynamicValue[+].path = "occurrenceDateTime"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "ACSMammoAtypicalBiopsyHighRiskTimingEvent"
+// -----------------------------------------------------------------------------
+// Action #7: ACSMriAtypicalBiopsyHighRisk
+// -----------------------------------------------------------------------------
+* action[+].id = "ACSMriAtypicalBiopsyHighRisk"
+* action[=].title = "Annual screeening MRI in past atypical biopsy with high lifetime risk"
+* action[=].description = "Annual screeening MRI in past atypical biopsy with high lifetime risk"
+* action[=].condition[+].kind = $ACKIND#applicability "Applicability"
+* action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].condition[=].expression.expression = "ExistsACSMriAtypicalBiopsyHighRisk"
+* action[=].definitionCanonical = Canonical(BreastScreeningServiceRequest|1.0.0)
+* action[=].dynamicValue[+].path = "%action.code[0].coding[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "ACSMriAtypicalBiopsyHighRiskCode"
+* action[=].dynamicValue[+].path = "%action.timingTiming"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "ACSMriAtypicalBiopsyHighRiskTiming"
+* action[=].dynamicValue[+].path = "code.coding[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "ACSMriAtypicalBiopsyHighRiskCode"
+* action[=].dynamicValue[+].path = "occurrenceDateTime"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "ACSMriAtypicalBiopsyHighRiskTimingEvent"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Instance: BreastScreeningServiceRequest
@@ -159,7 +202,6 @@ Usage: #definition
 * insert CPGKnowledgeExtensions
 * insert CommonMetadata
 * meta.profile[+] = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
-// * cpg-partOf = Canonical(TopLevelPlanDefinition) // TODO: Tie this into the entire pathway
 * url = Canonical(BreastScreeningServiceRequest)
 * name = "BreastScreeningServiceRequest"
 * description = "This ActivityDefinition generates a ServiceRequest for screening study."
