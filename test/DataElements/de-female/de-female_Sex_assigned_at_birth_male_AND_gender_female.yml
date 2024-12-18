@@ -2,7 +2,7 @@
 name: Sex_assigned_at_birth_male_AND_gender_female
 elementId: de-female
 externalData:
-  - data_elements
+  - ../data_elements
 data:
   - *Sex_assigned_at_birth_=_male_AND_gender_=_female
 results:

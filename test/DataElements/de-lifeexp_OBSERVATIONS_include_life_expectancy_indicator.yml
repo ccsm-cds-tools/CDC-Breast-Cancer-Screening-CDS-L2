@@ -7,6 +7,6 @@ data:
   - *Sex_assigned_at_birth_=_female_AND_gender_=_other
   - *OBSERVATIONS_include_life_expectancy_indicator
 results:
-  de-lifeexp: true
-  ReducedLifeExpectancy: true
   ReducedLifeExpectancyObservations: $should have length 1
+  ReducedLifeExpectancy: true
+  de-lifeexp: true

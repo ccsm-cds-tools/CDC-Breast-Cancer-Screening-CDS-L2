@@ -1,13 +1,13 @@
 ---
-name: PROCEDURES_include_`BILATERAL_MASTECTOMY_PROCEDURE`
+name: CONDITIONS_include_`BILATERAL_MASTECTOMY`
 elementId: de-mastectomy
 externalData:
-  - data_elements
+  - ../data_elements
 data:
   - *Sex_assigned_at_birth_=_female_AND_gender_=_other
-  - *PROCEDURES_include_`BILATERAL_MASTECTOMY_PROCEDURE`
+  - *CONDITIONS_include_`BILATERAL_MASTECTOMY`
 results:
   de-mastectomy: true
   BilateralMastectomy: true
   LeftUnilateralMastectomy: false
-  RightUnilateralMastectomy: false
+  RightUnilateralMastectomy: false  

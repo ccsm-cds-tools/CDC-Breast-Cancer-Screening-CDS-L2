@@ -1,10 +1,10 @@
 ---
-name: Sex_assigned_at_birth_missing_or_unknown_AND_administrative_gender_male
+name: Sex_assigned_at_birth_none_AND_gender_male
 elementId: de-female
 externalData:
-  - data_elements
+  - ../data_elements
 data:
-  - *Sex_assigned_at_birth_missing_or_unknown_AND_administrative_gender_=_male
+  - *Sex_assigned_at_birth_=_none_AND_gender_=_male
 results:
   de-female: false
   FemaleGender: false
