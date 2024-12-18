@@ -17,6 +17,8 @@ codesystem "ICD-9": 'http://hl7.org/fhir/sid/icd-9-cm'
 codesystem "ICD-10": 'http://hl7.org/fhir/sid/icd-10-cm'
 codesystem "GENDER-IDENTITY": 'http://hl7.org/fhir/gender-identity'
 codesystem "CONDCLINSTATUS": 'http://terminology.hl7.org/CodeSystem/condition-clinical'
+//TODO: validate of this STU1 IG is valid to reference for VS
+codesystem "MGBreastDensityCS": 'http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS'
 codesystem "LOCAL": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system'
 
 code "Condition inactive code": 'inactive' from "CONDCLINSTATUS" display 'Inactive'
@@ -61,6 +63,9 @@ code "Left (qualifier value)": '7771000' from "SNOMED-CT" display 'Left (qualifi
 code "Right (qualifier value)": '24028007' from "SNOMED-CT" display 'Right (qualifier value)'
 code "History of radiation therapy to chest": '77941000119104' from "SNOMED-CT" display 'History of radiation therapy to chest'
 code "Biopsy Report": '66110-8' from "LOINC" display 'Breast Pathology biopsy report'
+code "Breast Imaging Report": '10193-1' from "LOINC" display 'Physical findings of Breasts Narrative'
+code "Heterogeneously dense": 'HeterogeneouslyDense' from "MGBreastDensityCS" display 'Heterogeneously dense'
+code "Extremely dense": 'ExtremelyDense' from "MGBreastDensityCS" display 'Extremely dense'
 
 // Non-standard or "local" codes
 code "New or worsening breast symptoms": 'BreastSymptoms' from "LOCAL" display 'New or worsening breast symptoms'
@@ -69,6 +74,7 @@ code "Reduced life expectancy indicator": 'ReducedLifeExpectancyIndicator' from 
 code "Genetic marker or syndrome associated with breast cancer": 'GeneticMarkerOrSyndrome' from "LOCAL" display 'Genetic marker or syndrome associated with breast cancer'
 code "Lifetime risk assessment result": 'LifetimeRiskResult' from "LOCAL" display 'Lifetime risk assessment result'
 code "High lifetime risk": 'HighLifetimeRisk' from "LOCAL" display 'High lifetime risk'
+code "Familial risk assessment": 'FamilialRiskAssessment' from "LOCAL" display 'Familial risk criteria'
 
 //------------------------------------------------------------------------------
 // PARAMETERS
@@ -421,3 +427,44 @@ define MostRecentLifetimeRiskAssessmentResultHigh:
 define MostRecentLifetimeRiskAssessment:
   C3F.MostRecent([Observation: "Lifetime risk assessment result"])
 
+//------------------------------------------------------------------------------
+// BI-RADS breast density category C or D
+//------------------------------------------------------------------------------  
+
+define "de-breastdensitycord":  
+  exists BreastImagingHeterogenouslyOrExtremelyDenseResults
+
+define BreastImagingHeterogenouslyOrExtremelyDenseResults:
+  BreastImagingDiagnosticReports D
+    let cC: CollateConclusionCodes(D,BreastImagingObservations)
+    where exists(cC.coding C where FHIRHelpers.ToCode(C) ~ "Heterogeneously dense") 
+      or exists (cC.coding C where FHIRHelpers.ToCode(C) ~ "Extremely dense")
+
+define BreastImagingDiagnosticReports:
+  AllCompletedDiagnosticReport B
+  where 
+    Count(
+      CollateConclusionCodes(B, BreastImagingObservations, "Breast Imaging Report")
+    ) > 0
+
+define BreastImagingObservations:
+  [Observation: "Breast Imaging Report"]
+
+//------------------------------------------------------------------------------
+// Compelling family history of breast cancer
+//------------------------------------------------------------------------------  
+
+define "de-fhxbreastcarisk":
+  FamilyHistoryAssessmentObservations
+
+define FamilyHistoryAssessmentObservations:  
+  C3F.MostRecent(
+      [Observation: "Familial risk assessment"] R
+        where R.value is true
+  ) is not null  
+
+//TODO: add observations for assessment tool output structured documentation
+// Output of validated brief familial risk assessment tool is positive
+ 
+//TODO: add FamilyMemberHistory for individual criteria
+// 'Informal familial risk criteria' exist

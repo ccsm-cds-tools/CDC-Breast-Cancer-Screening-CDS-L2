@@ -10,9 +10,11 @@ codesystem "ReasonCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSyste
 codesystem "LOINC": 'http://loinc.org'
 
 // Act Codes
-code "Refer to specialist recommendations": 'specialtyreferral' from "ActCode" display 'Refer to specialist recommendations'
+code "Perform lifetime risk assessment": 'lifetimeriskassessment' from "ActCode" display 'Perform lifetime risk assessment'
 // Reason Codes
 code "High lifetime risk": 'highlifetimerisk' from "ReasonCode" display 'High lifetime risk'
+code "BI-RADS breast density category C or D": 'breastdensitycord' from "ReasonCode" display 'BI-RADS breast density category C or D'
+code "Compelling family history of breast cancer": 'fhxbrca' from "ReasonCode" display 'Compelling family history of breast cancer'
 
 // Standard codes
 code "MG Breast Screening": '24606-6' from "LOINC" display 'MG Breast Screening' 
@@ -52,8 +54,23 @@ define "act-acshighriskmammo":
 define "act-acshighriskmri":
   SetRecommendationReasonTimingAge(mri_annual, "High lifetime risk", {value: 30.0, code: 'a'})  
 
-//define "act-performriskassessment":
-  // TODO: Implement logic for act-performriskassessment
+define "act-firstdeggeneticmammo":  
+  SetRecommendationReasonTimingAge(mammo_annual, "High lifetime risk", {value: 30.0, code: 'a'})  
+
+define "act-firstdeggeneticmri":
+  SetRecommendationReasonTimingAge(mri_annual, "High lifetime risk", {value: 30.0, code: 'a'})    
+
+define "act-breastdensitycord":
+  {
+		code: "Perform lifetime risk assessment",
+    reason: "BI-RADS breast density category C or D"
+	}  
+
+define "act-fhxbrca":
+  {
+		code: "Perform lifetime risk assessment",
+    reason: "Compelling family history of breast cancer"
+	}   
 
 define function SetRecommendationReasonTimingAge(
     recommendation Tuple{code System.Code,

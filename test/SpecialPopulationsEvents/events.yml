@@ -1,0 +1,61 @@
+eve-highlifetimerisk:
+  - &'Lifetime_risk_of_breast_cancer_>_20%_or_25%'
+    *Risk_assessment_using_a_formal_risk_assessment_tool_based_mainly_on_family_history_is_>20%_lifetime_risk
+
+eve-firstdeggenetic:
+  - &OBSERVATIONS_include_First_degree_relative_with_genetic_marker_or_syndrome
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "FirstDegGenetic"
+          display: "First degree relative with genetic marker or syndrome"
+    valueBoolean: true
+    effectiveDateTime: "2023-11-10T00:00:00.0Z"    
+  - &OBSERVATIONS_include_First_degree_relative_with_genetic_marker_or_syndrome_false
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "FirstDegGenetic"
+          display: "First degree relative with genetic marker or syndrome"
+    valueBoolean: false
+    effectiveDateTime: "2023-11-10T00:00:00.0Z"      
+  - &FAMILY_HISTORY_includes_First_degree_relative_with_genetic_marker_or_syndrome
+    resourceType: FamilyMemberHistory
+    status: completed
+    relationship:
+      coding:
+        - system: "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+          code: "MTH"
+          display: "Mother"
+    condition:
+      - code:
+          coding:
+            - system: http://loinc.org #http://snomed.info/sct
+              code: 21636-6 #412734009
+              display: BRCA1 gene mutation detected
+  - &FAMILY_HISTORY_includes_Second_degree_relative_with_genetic_marker_or_syndrome
+    resourceType: FamilyMemberHistory
+    status: completed
+    relationship:
+      coding:
+        - system: "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+          code: "GRMTH"
+          display: "grandmother"
+    condition:
+      - code:
+          coding:
+            - system: http://loinc.org #http://snomed.info/sct
+              code: 21636-6 #412734009
+              display: BRCA1 gene mutation detected              
+
+eve-breastdensitycord:
+  - &'BI-RADS_breast_density_category_C_or_D'
+  
+eve-fhxbrca:
+  - "&Output_of_validated_brief_familial_risk_assessment_tool_is_positive_OR_'Informal_familial_risk_criteria'_exist"
+  - "&Output_of_validated_brief_familial_risk_assessment_tool_is_positive"
+  - "&'Informal_familial_risk_criteria'_exist"

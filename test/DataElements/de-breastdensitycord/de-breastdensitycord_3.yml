@@ -1,0 +1,13 @@
+---
+name: BI-RADS_breast_density_category_of_'Last_mammography'__associated_structured_form
+elementId: de-breastdensitycord
+externalData:
+  - ../data_elements
+data:
+  - *Sex_assigned_at_birth_=_female_AND_gender_=_other
+  - $import: *BI-RADS_breast_density_category_of_'Last_mammography'__associated_structured_form
+results:
+  BreastImagingObservations: $should have length 1
+  BreastImagingDiagnosticReports: $should have length 1
+  BreastImagingHeterogenouslyOrExtremelyDenseResults: $should have length 1
+  de-breastdensitycord: true

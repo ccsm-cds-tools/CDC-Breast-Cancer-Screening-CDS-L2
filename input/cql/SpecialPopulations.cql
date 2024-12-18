@@ -12,7 +12,11 @@ context Patient
 define "flow-SpecialPopulations":
   {    
     ACSMammoHighRisk,
-    ACSMriHighRisk
+    ACSMriHighRisk,
+    ACSFirstDegGeneticMammo,
+    ACSFirstDegGeneticMri,
+    BreastImagingHeterogenouslyOrExtremelyDense,
+    CompellingFamilyHistory
   }   
   except { null }
 
@@ -47,3 +51,63 @@ define ACSMriHighRiskTiming:
 
 define ACSMriHighRiskTimingEvent:    
   ACSMriHighRiskTiming R return First(R.event)   
+
+define ACSFirstDegGeneticMammo:
+  if Events."eve-firstdeggenetic" is true
+  then Actions."act-firstdeggeneticmammo" else null  
+
+define ExistsACSFirstDegGeneticMammo:
+  ACSFirstDegGeneticMammo is not null
+
+define ACSFirstDegGeneticMammoCode:    
+  ACSFirstDegGeneticMammo R return R.code
+
+define ACSFirstDegGeneticMammoTiming:    
+  ACSFirstDegGeneticMammo R return R.timingTiming
+
+define ACSFirstDegGeneticMammoTimingEvent:    
+  ACSFirstDegGeneticMammoTiming R return First(R.event)    
+
+define ACSFirstDegGeneticMri:
+  if Events."eve-firstdeggenetic" is true
+  then Actions."act-firstdeggeneticmri" else null  
+
+define ExistsACSFirstDegGeneticMri:
+  ACSFirstDegGeneticMri is not null
+
+define ACSFirstDegGeneticMriCode:    
+  ACSFirstDegGeneticMri R return R.code
+
+define ACSFirstDegGeneticMriTiming:    
+  ACSFirstDegGeneticMri R return R.timingTiming
+
+define ACSFirstDegGeneticMriTimingEvent:    
+  ACSFirstDegGeneticMriTiming R return First(R.event)    
+
+define BreastImagingHeterogenouslyOrExtremelyDense:
+  if Events."eve-breastdensitycord" is true
+    then Actions."act-breastdensitycord"
+    else null
+
+define ExistsBreastImagingHeterogenouslyOrExtremelyDense:
+  BreastImagingHeterogenouslyOrExtremelyDense is not null
+
+define BreastImagingHeterogenouslyOrExtremelyDenseCode:
+  BreastImagingHeterogenouslyOrExtremelyDense.code
+
+define BreastImagingHeterogenouslyOrExtremelyDenseReason:
+  BreastImagingHeterogenouslyOrExtremelyDense.reason
+
+define CompellingFamilyHistory:
+  if Events."eve-fhxbrca" is true
+    then Actions."act-fhxbrca"
+    else null
+
+ define ExistsCompellingFamilyHistory:
+  CompellingFamilyHistory is not null
+
+define CompellingFamilyHistoryCode:
+  CompellingFamilyHistory.code
+
+define CompellingFamilyHistoryReason:
+  CompellingFamilyHistory.reason 

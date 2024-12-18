@@ -545,7 +545,103 @@ de-highlifetimerisk:
     effectiveDateTime: "2023-11-10T00:00:00.0Z"        
 
 de-breastdensitycord:
-  - "&BI-RADS_breast_density_category_of_'Last_mammography'__as_reported_in_DIAGNOSTIC_REPORT_or_documented_in_a_structured_form"
+  - &BI-RADS_breast_density_category_of_'Last_mammography'__as_reported_in_DIAGNOSTIC_REPORT
+    resourceType: DiagnosticReport
+    id: biopsy-report-1
+    status: final
+    code:
+      coding:
+        - system: http://loinc.org
+          code: 10193-1
+          display: Physical findings of Breasts Narrative
+    conclusionCode:
+      coding:
+        - system: http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS
+          code: HeterogeneouslyDense
+  - &BI-RADS_breast_density_category_of_'Last_mammography'__as_documented_in_a_structured_form
+    - resourceType: DiagnosticReport
+      id: biopsy-report-1
+      status: final
+      code:
+        coding:
+          - system: http://loinc.org
+            code: 10193-1
+            display: Physical findings of Breasts Narrative
+      result:
+        - reference: "Observation/observation-1"
+    - resourceType: Observation
+      id: observation-1
+      status: final
+      code:
+        coding:
+          - system: http://loinc.org
+            code: 10193-1
+            display: Physical findings of Breasts Narrative
+      valueCodeableConcept:        
+        coding:
+          - system:  http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS
+            code: ExtremelyDense
+  - &BI-RADS_breast_density_category_of_'Last_mammography'__associated_structured_form
+    - resourceType: DiagnosticReport
+      id: biopsy-report-1
+      status: final
+      code:
+        coding:
+          - system: http://loinc.org
+            code: 10193-1
+            display: Physical findings of Breasts Narrative
+      basedOn:
+        - reference: "ServiceRequest/order-1"
+    - resourceType: Observation
+      id: observation-1
+      status: final
+      code:
+        coding:
+          - system: http://loinc.org
+            code: 10193-1
+            display: Physical findings of Breasts Narrative
+      valueCodeableConcept:
+        coding:
+          - system:  http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS
+            code: ExtremelyDense  
+      basedOn:
+        - reference: "ServiceRequest/order-1"     
+  - &BI-RADS_breast_density_category_of_'Last_mammography'_not_C_or_D_as_documented_in_a_structured_form
+    - resourceType: DiagnosticReport
+      id: biopsy-report-1
+      status: final
+      code:
+        coding:
+          - system: http://loinc.org
+            code: 10193-1
+            display: Physical findings of Breasts Narrative
+      result:
+        - reference: "Observation/observation-1"
+    - resourceType: Observation
+      id: observation-1
+      status: final
+      code:
+        coding:
+          - system: http://loinc.org
+            code: 10193-1
+            display: Physical findings of Breasts Narrative
+      valueCodeableConcept:        
+        coding:
+          - system:  http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS
+            code: Other                                 
+  - &BI-RADS_breast_density_category_of_'Last_mammography'__not_C_or_D
+    resourceType: DiagnosticReport
+    id: biopsy-report-2
+    status: final
+    code:
+      coding:
+        - system: http://loinc.org
+          code: 10193-1
+          display: Physical findings of Breasts Narrative
+    conclusionCode:
+      coding:
+        - system:  http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS
+          code: Other   
 
 de-LifeExp10:
   - &OBSERVATIONS_include_life_expectancy_indicator
@@ -668,13 +764,34 @@ de-fhxgeneinherited:
 de-fhxbreastca:
   - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`INVASIVE_BREAST_CANCER`_OR_FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`NON-INVASIVE_BREAST_CANCER`"
   - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`INVASIVE_BREAST_CANCER`"
-  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`NON-INVASIVE_BREAST_CANCER`"
+  - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`NON-INVASIVE_BREAST_CANCER`"  
 de-fhxovca:
   - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`OVARIAN_CANCER`"
 de-fhxtubalca:
   - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`TUBAL_CANCER`"
 de-fhxperitonealca:
   - "&FAMILY_HISTORY_includes_family_member_with_DIAGNOSIS_`PERITONEAL_CANCER`"
+de-fhxbreastcarisk:
+  - &OBSERVATIONS_include_familial_risk_assessment
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "FamilialRiskAssessment"
+          display: "Familial risk assessment"
+    valueBoolean: true
+    effectiveDateTime: "2023-11-10T00:00:00.0Z" 
+  - &OBSERVATIONS_include_FALSE_familial_risk_assessment
+    resourceType: Observation
+    status: final
+    code:
+      coding:
+        - system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system"
+          code: "FamilialRiskAssessment"
+          display: "Familial risk assessment"
+    valueBoolean: false
+    effectiveDateTime: "2023-11-10T00:00:00.0Z"     
 de-fhxrisk:
   - "&FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_breast_cancer_OR_FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relatives_with_breast_cancer_diagnosed_<=_50_years_old_OR_FAMILY_HISTORY_includes_at_least_one_first-_or_second-_degree_relative_with_breast_AND_at_least_once_relative_wth_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relative_with_both_breast_and_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relative_with_2_independent_breast_cancers_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_male_relative_with_breast_cancer"
   - "&FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_breast_cancer"

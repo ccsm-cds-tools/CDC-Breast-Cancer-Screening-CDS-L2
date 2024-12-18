@@ -1,0 +1,14 @@
+---
+name: FAMILY_HISTORY_includes_Second_degree_relative_with_genetic_marker_or_syndrome
+elementId: eve-firstdeggenetic
+externalData:
+  - events
+  - ../DataElements/data_elements
+  - ../default_patients
+data:
+  - *defaultPatient
+  - *FAMILY_HISTORY_includes_Second_degree_relative_with_genetic_marker_or_syndrome
+results:
+  FirstDegRelativeGeneticMarkerOrSyndrome: $should have length 0
+  FirstDegRelativeGeneticMarkerOrSyndromeObservation: false
+  eve-firstdeggenetic: false
