@@ -44,7 +44,10 @@ Description: "Code representing plan definition action reason codes"
 * #lifeexp "Reduced life expectancy indicator"
 * #currentlylactating "Currently lactating"
 * #othergeneticrisk "Other genetic marker or syndrome associated with breast cancer"
-* #highriskexclusion "High risk exclusion"
+* #hxbreastca "Previous breast cancer"
+* #hxbreastcawithin5y "Breast cancer in remission < 5 years"
+* #atypicalbxhighlifetimerisk "Atypical biopsy high lifetime risk"
+
 
 ValueSet:    PlanDefinitionActionReasonCodes
 Id:          plan-definition-action-reason-codes

@@ -40,7 +40,11 @@ context Patient
 //------------------------------------------------------------------------------
 
 define CheckIsIncludedAndNotExcluded:
-  IsIncludedAndNotExcludedErrorsHaveOccurred is not true and IsIncludedAndNotExcluded
+  IsIncludedAndNotExcludedErrorsHaveOccurred is not true 
+    and Message(IsIncludedAndNotExcluded, IsIncludedAndNotExcluded is false,
+    'http://example.org/CodeSystem/plan-definition-action-reason-code-system/excludedornotincluded',
+    'Error', 
+    'Excluded or not included')
 
 define IsIncludedAndNotExcluded:
   IsIncluded and not Excluded

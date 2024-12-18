@@ -3,7 +3,7 @@ name: eve-AgeOver74_yes_act-sdmcontinueage__eve-LifeExp_no_eve-highriskexclusion
 flow: flow-DecisionToScreen
 externalData:
   - ../DecisionToScreenEvents/events
-  - ./actions/actions
+  - actions
   - ../DataElements/data_elements
   - ../default_patients
 data:

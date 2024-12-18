@@ -33,6 +33,8 @@ eve-lactating:
     effectiveDateTime: "2023-12-10T00:00:00.0Z"        
 
 eve-highriskexclusions:
-  - "&See_'High_Risk_Exclusions'_flow_logic"
+  - &'Previous_breast_cancer'_is_TRUE_AND_end_date_>=_5_years_ago
+    *CONDITIONS_include_`INVASIVE_BREAST_CANCER`_with_status_inactive__resolved  
+    
 eve-specialpop:
   - "&See_'Special_Populations'_flow_logic"
