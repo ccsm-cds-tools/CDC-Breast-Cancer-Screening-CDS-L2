@@ -4,18 +4,49 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/58",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/98",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "58",
+        "id": "98",
         "subject": {
-          "reference": "Patient/4425f3a0-1b83-4eeb-b34a-779fc0871db7",
+          "reference": "Patient/19c75358-5046-4ab3-9d46-0bcd5eca5615",
           "display": "Joanne Smith"
         },
-        "instantiatesCanonical": "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible",
+        "instantiatesCanonical": [
+          "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible"
+        ],
         "intent": "proposal",
         "status": "draft",
-        "action": []
+        "action": [],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-messages",
+            "valueReference": {
+              "reference": "#contained-1"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "processing",
+                "diagnostics": "Excluded or not included",
+                "details": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/CodeSystem/plan-definition-action-reason-code-system",
+                      "code": "excludedornotincluded"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "contained-1"
+          }
+        ]
       }
     }
   ]

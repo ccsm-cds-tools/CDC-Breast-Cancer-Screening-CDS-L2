@@ -4,20 +4,22 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/54",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/94",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "54",
+        "id": "94",
         "subject": {
-          "reference": "Patient/e51b45eb-f00a-4656-ac39-2f15cc61fd2b",
+          "reference": "Patient/5a4cb68d-150b-42dc-ac91-f07b223985d0",
           "display": "Joanne Smith"
         },
-        "instantiatesCanonical": "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible",
+        "instantiatesCanonical": [
+          "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible"
+        ],
         "intent": "proposal",
         "status": "draft",
         "action": [
           {
-            "id": "56",
+            "id": "96",
             "title": "Screening Eligible Missing Data",
             "description": "Top level action that defines missing data for inclusion and exclusion.",
             "documentation": [

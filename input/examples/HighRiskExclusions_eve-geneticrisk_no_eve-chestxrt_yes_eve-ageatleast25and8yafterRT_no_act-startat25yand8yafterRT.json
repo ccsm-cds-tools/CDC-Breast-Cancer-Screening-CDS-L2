@@ -4,10 +4,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/14",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/49",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "14",
+        "id": "49",
         "subject": {
           "reference": "Patient/defaultPatient",
           "display": "Jane Doe"
@@ -23,7 +23,7 @@
             "title": "Annual screeening mammogram starting age 30",
             "description": "Annual screeening mammogram starting age 30",
             "resource": {
-              "reference": "ServiceRequest/15"
+              "reference": "ServiceRequest/50"
             },
             "code": [
               {
@@ -55,7 +55,7 @@
             "title": "Annual screeening MRI starting age 30",
             "description": "Annual screeening MRI starting age 30",
             "resource": {
-              "reference": "ServiceRequest/16"
+              "reference": "ServiceRequest/51"
             },
             "code": [
               {
@@ -86,9 +86,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/15",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/50",
       "resource": {
-        "id": "15",
+        "id": "50",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [
@@ -114,9 +114,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/16",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/51",
       "resource": {
-        "id": "16",
+        "id": "51",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [
