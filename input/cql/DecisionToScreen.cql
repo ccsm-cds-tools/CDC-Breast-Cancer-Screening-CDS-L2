@@ -13,40 +13,56 @@ context Patient
 //------------------------------------------------------------------------------
 
 define "flow-DecisionToScreen":  
-  {
-    (if Events."eve-AgeOver74" is true
-    then Actions."act-sdmcontinueage" as Tuple{code Code, reason Code}
-    else null),
-    (if Events."eve-LifeExp" is true
-    then Actions."act-sdmcontinuelifexp" as Tuple{code Code, reason Code}
-    else null),
-    flatten({Actions."act-highriskexclusions"}),
-    flatten({Actions."act-specialpop"}),
+  flatten({
+    ({SDMContinueScreeningAge} except { null }),
+    ({SDMContinueScreeningLifeExp} except { null }),
+    Actions."act-highriskexclusions",
+    Actions."act-specialpop",
+    ({SDMDelayScreeningLactating} except { null }),
     (if Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0
-      and Events."eve-lactating"
-    then Actions."act-lactating" as Tuple{code Code, reason Code}
-    else null),
-    (if Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0
-    then flatten({Actions."act-avgrisk"})
-    else null)
-  }   
-  except { null, {} }
+        then Actions."act-avgrisk" else null)
+  })
+  except { null }
+
+define SDMContinueScreeningAge:
+  if Events."eve-AgeOver74" is true
+    then Actions."act-sdmcontinueage"
+    else null
 
 define ExistsSDMContinueScreeningAge:
-  Events."eve-AgeOver74"
+  SDMContinueScreeningAge is not null
+
+define SDMContinueScreeningAgeCode:
+  SDMContinueScreeningAge.code
 
 define SDMContinueScreeningAgeReason:
-  (Actions."act-sdmcontinueage").reason
+  SDMContinueScreeningAge.reason
+
+define SDMContinueScreeningLifeExp:
+  if Events."eve-LifeExp" is true
+    then Actions."act-sdmcontinuelifexp" as Tuple{code Code, reason Code}
+    else null
 
 define ExistsSDMContinueScreeningLifeExp:
-  Events."eve-LifeExp" is true
+  SDMContinueScreeningLifeExp is not null
+
+define SDMContinueScreeningLifeExpCode:
+  SDMContinueScreeningLifeExp.code  
 
 define SDMContinueScreeningLifeExpReason:
-  (Actions."act-sdmcontinuelifexp").reason  
+  SDMContinueScreeningLifeExp.reason  
+
+define SDMDelayScreeningLactating:
+  if Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0
+      and Events."eve-lactating" is true
+    then Actions."act-lactating" as Tuple{code Code, reason Code}
+    else null
 
 define ExistsSDMDelayScreeningLactating:
-  Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0
-      and Events."eve-lactating" is true
+  SDMDelayScreeningLactating is not null
+
+define SDMDelayScreeningLactatingCode:
+  SDMDelayScreeningLactating.code   
 
 define SDMDelayScreeningLactatingReason:
-  (Actions."act-lactating").reason    
+  SDMDelayScreeningLactating.reason    

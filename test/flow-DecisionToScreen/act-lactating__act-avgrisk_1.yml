@@ -3,11 +3,11 @@ name: eve-AgeOver74_no_eve-LifeExp_yes_act-sdmcontinuelifexp__eve-highriskexclus
 flow: flow-DecisionToScreen
 externalData:
   - ../DecisionToScreenEvents/events
-  - ./actions/actions
+  - actions
   - ../DataElements/data_elements
   - ../default_patients
 data:
-  - *Patient_age_=_74_years
+  - *defaultPatient
   - *Life_expectancy_reduced
   - *Patient_is_currently_lactating
 results:

@@ -4,10 +4,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/18",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/53",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "18",
+        "id": "53",
         "subject": {
           "reference": "Patient/defaultPatient",
           "display": "Jane Doe"
@@ -23,16 +23,16 @@
             "title": "Recommendation for speciality referral",
             "description": "Recommendation for speciality referral",
             "resource": {
-              "reference": "CommunicationRequest/19"
+              "reference": "CommunicationRequest/54"
             }
           }
         ]
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/19",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/54",
       "resource": {
-        "id": "19",
+        "id": "54",
         "resourceType": "CommunicationRequest",
         "status": "option",
         "basedOn": [

@@ -16,10 +16,15 @@ Usage: #definition
 // Action #1: SDM to continue screening for age
 // -----------------------------------------------------------------------------
 * action[+].id = "SDMContinueScreeningAge"
+* action[=].title = "Shared decision making to continue screening based on age"
+* action[=].description = "Shared decision making to continue screening based on age"
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsSDMContinueScreeningAge"
 * action[=].definitionCanonical = Canonical(CommunicateSDMContinueScreening|1.0.0)
+* action[=].dynamicValue[+].path = "%action.code[0].coding[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "SDMContinueScreeningAgeCode"
 * action[=].dynamicValue[+].path = "reasonCode[0].coding[0]"
 * action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].dynamicValue[=].expression.expression = "SDMContinueScreeningAgeReason"
@@ -27,10 +32,15 @@ Usage: #definition
 // Action #2: SDM to continue screening for age
 // -----------------------------------------------------------------------------
 * action[+].id = "SDMContinueScreeningLifeExp"
+* action[=].title = "Shared decision making to continue screening based on life expectancy"
+* action[=].description = "Shared decision making to continue screening based on life expectancy"
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsSDMContinueScreeningLifeExp"
 * action[=].definitionCanonical = Canonical(CommunicateSDMContinueScreening|1.0.0)
+* action[=].dynamicValue[+].path = "%action.code[0].coding[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "SDMContinueScreeningLifeExpCode"
 * action[=].dynamicValue[+].path = "reasonCode[0].coding[0]"
 * action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].dynamicValue[=].expression.expression = "SDMContinueScreeningLifeExpReason"
@@ -38,10 +48,15 @@ Usage: #definition
 // Action #3: SDM to delay screening for lactation
 // -----------------------------------------------------------------------------
 * action[+].id = "SDMDelayScreeningLactating"
+* action[=].title = "Shared decision making to delay screening based on lactation status"
+* action[=].description = "Shared decision making to delay screening based on lactation status"
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsSDMDelayScreeningLactating"
 * action[=].definitionCanonical = Canonical(CommunicateSDMDelayScreening|1.0.0)
+* action[=].dynamicValue[+].path = "%action.code[0].coding[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "SDMDelayScreeningLactatingCode"
 * action[=].dynamicValue[+].path = "reasonCode[0].coding[0]"
 * action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].dynamicValue[=].expression.expression = "SDMDelayScreeningLactatingReason"
@@ -56,7 +71,6 @@ Usage: #definition
 * insert CPGKnowledgeExtensions
 * insert CommonMetadata
 * meta.profile[+] = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
-// * cpg-partOf = Canonical(TopLevelPlanDefinition) // TODO: Tie this into the entire pathway
 * url = Canonical(CommunicateSDMContinueScreening)
 * name = "CommunicateSDMContinueScreening"
 * description = "This ActivityDefinition generates a CommunicationRequest recommending shared decision making on the decision to continue screening."
@@ -76,7 +90,6 @@ Usage: #definition
 * insert CPGKnowledgeExtensions
 * insert CommonMetadata
 * meta.profile[+] = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
-// * cpg-partOf = Canonical(TopLevelPlanDefinition) // TODO: Tie this into the entire pathway
 * url = Canonical(CommunicateSDMDelayScreening)
 * name = "CommunicateSDMDelayScreening"
 * description = "This ActivityDefinition generates a CommunicationRequest recommending shared decision making on the decision to delay screening."

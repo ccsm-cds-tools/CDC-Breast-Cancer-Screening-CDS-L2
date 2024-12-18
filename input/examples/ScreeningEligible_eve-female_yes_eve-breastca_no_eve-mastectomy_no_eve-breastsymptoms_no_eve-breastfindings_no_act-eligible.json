@@ -4,20 +4,22 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/24",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/64",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "24",
+        "id": "64",
         "subject": {
-          "reference": "Patient/e1e02616-9b53-4c6c-8efd-7e73babace31",
+          "reference": "Patient/3750c62e-1653-4829-9ee3-8222f68942af",
           "display": "Joanne Smith"
         },
-        "instantiatesCanonical": "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible",
+        "instantiatesCanonical": [
+          "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible"
+        ],
         "intent": "proposal",
         "status": "draft",
         "action": [
           {
-            "id": "25",
+            "id": "65",
             "title": "Screening Eligible Actions",
             "description": "Top level action that defines trigger and criteria for inclusion and exclusion.",
             "documentation": [
@@ -32,8 +34,19 @@
                 "id": "ScreeningEligible",
                 "title": "Screening Eligible",
                 "description": "Patient is eligible for screening",
+                "code": [
+                  {
+                    "coding": [
+                      {
+                        "code": "eligible",
+                        "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system",
+                        "display": "Eligible for screening"
+                      }
+                    ]
+                  }
+                ],
                 "resource": {
-                  "reference": "CommunicationRequest/27"
+                  "reference": "CommunicationRequest/67"
                 }
               }
             ]
@@ -42,9 +55,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/27",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/67",
       "resource": {
-        "id": "27",
+        "id": "67",
         "resourceType": "CommunicationRequest",
         "status": "option",
         "basedOn": [
@@ -53,7 +66,7 @@
           }
         ],
         "subject": {
-          "reference": "Patient/e1e02616-9b53-4c6c-8efd-7e73babace31",
+          "reference": "Patient/3750c62e-1653-4829-9ee3-8222f68942af",
           "display": "Joanne Smith"
         },
         "payload": [

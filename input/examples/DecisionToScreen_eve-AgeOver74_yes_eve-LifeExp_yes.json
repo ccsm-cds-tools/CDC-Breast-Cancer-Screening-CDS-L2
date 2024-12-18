@@ -1,0 +1,77 @@
+{
+  "resourceType": "Bundle",
+  "id": "DecisionToScreen_eve-AgeOver74_yes_eve-LifeExp_yes",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/34",
+      "resource": {
+        "resourceType": "RequestGroup",
+        "id": "34",
+        "subject": {
+          "reference": "Patient/097bcc98-97fc-4b18-8cf6-6fff9e805095",
+          "display": "Jane Doe"
+        },
+        "instantiatesCanonical": [
+          "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-DecisionToScreen"
+        ],
+        "intent": "proposal",
+        "status": "draft",
+        "action": [
+          {
+            "id": "SDMContinueScreeningAge",
+            "title": "Shared decision making to continue screening based on age",
+            "description": "Shared decision making to continue screening based on age",
+            "resource": {
+              "reference": "CommunicationRequest/35"
+            },
+            "code": [
+              {
+                "coding": [
+                  {
+                    "code": "sdmcontinue",
+                    "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system",
+                    "display": "Shared decision making to continue screening"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/35",
+      "resource": {
+        "id": "35",
+        "resourceType": "CommunicationRequest",
+        "status": "option",
+        "basedOn": [
+          {
+            "reference": "http://cancerscreeningcds.github.io/bcsm-cds/ActivityDefinition/CommunicateSDMContinueScreening"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/097bcc98-97fc-4b18-8cf6-6fff9e805095",
+          "display": "Jane Doe"
+        },
+        "payload": [
+          {
+            "contentString": "Shared decision making to continue screening"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "code": "ageover74",
+                "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+                "display": "Age over 74 years"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
