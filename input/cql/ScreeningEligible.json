@@ -12,6 +12,11 @@
          "errorSeverity" : "warning",
          "type" : "CqlToElmError"
       }, {
+         "message" : "You used a string literal: [Error] here that matches an identifier in scope: [Error]. Did you mean to use the identifier instead?",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
          "type" : "Annotation",
          "t" : [ {
             "name" : "author",
@@ -319,7 +324,7 @@
             }
          }, {
             "localId" : "244",
-            "locator" : "56:1-61:21",
+            "locator" : "60:1-65:21",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Decimal",
             "name" : "MostRecentAgeValue",
             "context" : "Patient",
@@ -455,13 +460,13 @@
             } ],
             "expression" : {
                "localId" : "389",
-               "locator" : "57:3-61:21",
+               "locator" : "61:3-65:21",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Decimal",
                "path" : "value",
                "type" : "Property",
                "source" : {
                   "localId" : "374",
-                  "locator" : "57:3-61:15",
+                  "locator" : "61:3-65:15",
                   "path" : "value",
                   "type" : "Property",
                   "resultTypeSpecifier" : {
@@ -496,7 +501,7 @@
                   },
                   "source" : {
                      "localId" : "349",
-                     "locator" : "57:3-61:9",
+                     "locator" : "61:3-65:9",
                      "path" : "value",
                      "type" : "Property",
                      "resultTypeSpecifier" : {
@@ -551,7 +556,7 @@
                      },
                      "source" : {
                         "localId" : "346",
-                        "locator" : "57:3-61:3",
+                        "locator" : "61:3-65:3",
                         "resultTypeName" : "{http://hl7.org/fhir}Observation",
                         "type" : "First",
                         "signature" : [ {
@@ -565,7 +570,7 @@
                         } ],
                         "source" : {
                            "localId" : "339",
-                           "locator" : "58:5-60:28",
+                           "locator" : "62:5-64:28",
                            "type" : "Query",
                            "resultTypeSpecifier" : {
                               "localId" : "340",
@@ -578,7 +583,7 @@
                            },
                            "source" : [ {
                               "localId" : "245",
-                              "locator" : "58:5-58:26",
+                              "locator" : "62:5-62:26",
                               "alias" : "O",
                               "resultTypeSpecifier" : {
                                  "localId" : "262",
@@ -591,7 +596,7 @@
                               },
                               "expression" : {
                                  "localId" : "248",
-                                 "locator" : "58:5-58:24",
+                                 "locator" : "62:5-62:24",
                                  "dataType" : "{http://hl7.org/fhir}Observation",
                                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Observation",
                                  "codeProperty" : "code",
@@ -612,7 +617,7 @@
                                     "signature" : [ ],
                                     "operand" : {
                                        "localId" : "247",
-                                       "locator" : "58:19-58:23",
+                                       "locator" : "62:19-62:23",
                                        "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                                        "name" : "Age",
                                        "type" : "CodeRef"
@@ -628,7 +633,7 @@
                            "relationship" : [ ],
                            "where" : {
                               "localId" : "264",
-                              "locator" : "59:7-59:34",
+                              "locator" : "63:7-63:34",
                               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "Equal",
                               "signature" : [ {
@@ -652,13 +657,13 @@
                                  } ],
                                  "operand" : [ {
                                     "localId" : "291",
-                                    "locator" : "59:13-59:24",
+                                    "locator" : "63:13-63:24",
                                     "resultTypeName" : "{http://hl7.org/fhir}string",
                                     "path" : "unit",
                                     "type" : "Property",
                                     "source" : {
                                        "localId" : "266",
-                                       "locator" : "59:13-59:19",
+                                       "locator" : "63:13-63:19",
                                        "path" : "value",
                                        "scope" : "O",
                                        "type" : "Property",
@@ -716,7 +721,7 @@
                                  } ]
                               }, {
                                  "localId" : "292",
-                                 "locator" : "59:28-59:34",
+                                 "locator" : "63:28-63:34",
                                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}String",
                                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
                                  "value" : "years",
@@ -725,10 +730,10 @@
                            },
                            "sort" : {
                               "localId" : "309",
-                              "locator" : "60:7-60:28",
+                              "locator" : "64:7-64:28",
                               "by" : [ {
                                  "localId" : "303",
-                                 "locator" : "60:15-60:28",
+                                 "locator" : "64:15-64:28",
                                  "direction" : "desc",
                                  "path" : "effective",
                                  "type" : "ByColumn",
@@ -763,7 +768,7 @@
             }
          }, {
             "localId" : "233",
-            "locator" : "104:1-105:53",
+            "locator" : "108:1-109:53",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "MissingAgeOrBirthdate",
             "context" : "Patient",
@@ -804,7 +809,7 @@
             } ],
             "expression" : {
                "localId" : "234",
-               "locator" : "105:3-105:53",
+               "locator" : "109:3-109:53",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "And",
                "signature" : [ {
@@ -818,7 +823,7 @@
                } ],
                "operand" : [ {
                   "localId" : "241",
-                  "locator" : "105:3-105:22",
+                  "locator" : "109:3-109:22",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "IsNull",
                   "signature" : [ {
@@ -828,7 +833,7 @@
                   } ],
                   "operand" : {
                      "localId" : "239",
-                     "locator" : "105:3-105:14",
+                     "locator" : "109:3-109:14",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
                      "precision" : "Year",
                      "type" : "CalculateAge",
@@ -850,7 +855,7 @@
                   }
                }, {
                   "localId" : "391",
-                  "locator" : "105:28-105:53",
+                  "locator" : "109:28-109:53",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "IsNull",
                   "signature" : [ {
@@ -860,7 +865,7 @@
                   } ],
                   "operand" : {
                      "localId" : "390",
-                     "locator" : "105:28-105:45",
+                     "locator" : "109:28-109:45",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Decimal",
                      "name" : "MostRecentAgeValue",
                      "type" : "ExpressionRef"
@@ -869,7 +874,7 @@
             }
          }, {
             "localId" : "230",
-            "locator" : "107:1-113:12",
+            "locator" : "111:1-117:12",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "ErrorMissingAgeOrBirthdate",
             "context" : "Patient",
@@ -927,19 +932,19 @@
             } ],
             "expression" : {
                "localId" : "231",
-               "locator" : "108:3-113:12",
+               "locator" : "112:3-117:12",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "If",
                "condition" : {
                   "localId" : "395",
-                  "locator" : "108:6-108:26",
+                  "locator" : "112:6-112:26",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "name" : "MissingAgeOrBirthdate",
                   "type" : "ExpressionRef"
                },
                "then" : {
                   "localId" : "408",
-                  "locator" : "109:8-112:32",
+                  "locator" : "113:8-116:32",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "Message",
                   "signature" : [ {
@@ -965,7 +970,7 @@
                   } ],
                   "source" : {
                      "localId" : "396",
-                     "locator" : "109:16-109:19",
+                     "locator" : "113:16-113:19",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "value" : "true",
@@ -973,7 +978,7 @@
                   },
                   "condition" : {
                      "localId" : "397",
-                     "locator" : "109:22-109:25",
+                     "locator" : "113:22-113:25",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "value" : "true",
@@ -981,7 +986,7 @@
                   },
                   "code" : {
                      "localId" : "398",
-                     "locator" : "110:5-110:99",
+                     "locator" : "114:5-114:99",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}String",
                      "valueType" : "{urn:hl7-org:elm-types:r1}String",
                      "value" : "http://example.org/CodeSystem/plan-definition-action-reason-code-system/missingageorbirthdate",
@@ -989,7 +994,7 @@
                   },
                   "severity" : {
                      "localId" : "399",
-                     "locator" : "111:5-111:13",
+                     "locator" : "115:5-115:13",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}String",
                      "valueType" : "{urn:hl7-org:elm-types:r1}String",
                      "value" : "Warning",
@@ -997,7 +1002,7 @@
                   },
                   "message" : {
                      "localId" : "400",
-                     "locator" : "112:5-112:31",
+                     "locator" : "116:5-116:31",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}String",
                      "valueType" : "{urn:hl7-org:elm-types:r1}String",
                      "value" : "Missing age or birth date",
@@ -1006,7 +1011,7 @@
                },
                "else" : {
                   "localId" : "414",
-                  "locator" : "113:8-113:12",
+                  "locator" : "117:8-117:12",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "value" : "false",
@@ -1015,7 +1020,7 @@
             }
          }, {
             "localId" : "228",
-            "locator" : "101:1-102:28",
+            "locator" : "105:1-106:28",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "IsIncludedAndNotExcludedErrorsHaveOccurred",
             "context" : "Patient",
@@ -1036,14 +1041,14 @@
             } ],
             "expression" : {
                "localId" : "415",
-               "locator" : "102:3-102:28",
+               "locator" : "106:3-106:28",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "name" : "ErrorMissingAgeOrBirthdate",
                "type" : "ExpressionRef"
             }
          }, {
             "localId" : "428",
-            "locator" : "53:1-54:106",
+            "locator" : "57:1-58:106",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "inc-AgeAtLeast18",
             "context" : "Patient",
@@ -1130,7 +1135,7 @@
             } ],
             "expression" : {
                "localId" : "429",
-               "locator" : "54:3-54:106",
+               "locator" : "58:3-58:106",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "Or",
                "signature" : [ {
@@ -1144,7 +1149,7 @@
                } ],
                "operand" : [ {
                   "localId" : "430",
-                  "locator" : "54:3-54:51",
+                  "locator" : "58:3-58:51",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "And",
                   "signature" : [ {
@@ -1158,7 +1163,7 @@
                   } ],
                   "operand" : [ {
                      "localId" : "439",
-                     "locator" : "54:4-54:27",
+                     "locator" : "58:4-58:27",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "Not",
                      "signature" : [ {
@@ -1168,7 +1173,7 @@
                      } ],
                      "operand" : {
                         "localId" : "437",
-                        "locator" : "54:4-54:27",
+                        "locator" : "58:4-58:27",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "type" : "IsNull",
                         "signature" : [ {
@@ -1178,7 +1183,7 @@
                         } ],
                         "operand" : {
                            "localId" : "435",
-                           "locator" : "54:4-54:15",
+                           "locator" : "58:4-58:15",
                            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
                            "precision" : "Year",
                            "type" : "CalculateAge",
@@ -1201,7 +1206,7 @@
                      }
                   }, {
                      "localId" : "441",
-                     "locator" : "54:33-54:50",
+                     "locator" : "58:33-58:50",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "GreaterOrEqual",
                      "signature" : [ {
@@ -1215,7 +1220,7 @@
                      } ],
                      "operand" : [ {
                         "localId" : "446",
-                        "locator" : "54:33-54:44",
+                        "locator" : "58:33-58:44",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
                         "precision" : "Year",
                         "type" : "CalculateAge",
@@ -1236,7 +1241,7 @@
                         }
                      }, {
                         "localId" : "448",
-                        "locator" : "54:49-54:50",
+                        "locator" : "58:49-58:50",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
                         "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
                         "value" : "18",
@@ -1245,7 +1250,7 @@
                   } ]
                }, {
                   "localId" : "453",
-                  "locator" : "54:56-54:106",
+                  "locator" : "58:56-58:106",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "And",
                   "signature" : [ {
@@ -1259,7 +1264,7 @@
                   } ],
                   "operand" : [ {
                      "localId" : "460",
-                     "locator" : "54:57-54:76",
+                     "locator" : "58:57-58:76",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "IsNull",
                      "signature" : [ {
@@ -1269,7 +1274,7 @@
                      } ],
                      "operand" : {
                         "localId" : "458",
-                        "locator" : "54:57-54:68",
+                        "locator" : "58:57-58:68",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
                         "precision" : "Year",
                         "type" : "CalculateAge",
@@ -1291,7 +1296,7 @@
                      }
                   }, {
                      "localId" : "462",
-                     "locator" : "54:82-54:105",
+                     "locator" : "58:82-58:105",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "GreaterOrEqual",
                      "signature" : [ {
@@ -1305,7 +1310,7 @@
                      } ],
                      "operand" : [ {
                         "localId" : "463",
-                        "locator" : "54:82-54:99",
+                        "locator" : "58:82-58:99",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Decimal",
                         "name" : "MostRecentAgeValue",
                         "type" : "ExpressionRef"
@@ -1319,7 +1324,7 @@
                         } ],
                         "operand" : {
                            "localId" : "464",
-                           "locator" : "54:104-54:105",
+                           "locator" : "58:104-58:105",
                            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
                            "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
                            "value" : "18",
@@ -1331,7 +1336,7 @@
             }
          }, {
             "localId" : "476",
-            "locator" : "63:1-64:57",
+            "locator" : "67:1-68:57",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "inc-femaleortransmale",
             "context" : "Patient",
@@ -1382,7 +1387,7 @@
             } ],
             "expression" : {
                "localId" : "477",
-               "locator" : "64:3-64:57",
+               "locator" : "68:3-68:57",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "Or",
                "signature" : [ {
@@ -1396,14 +1401,14 @@
                } ],
                "operand" : [ {
                   "localId" : "479",
-                  "locator" : "64:3-64:21",
+                  "locator" : "68:3-68:21",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "name" : "eve-female",
                   "libraryName" : "Events",
                   "type" : "ExpressionRef"
                }, {
                   "localId" : "481",
-                  "locator" : "64:26-64:57",
+                  "locator" : "68:26-68:57",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "name" : "TransgenderFemale",
                   "libraryName" : "DataElements",
@@ -1412,7 +1417,7 @@
             }
          }, {
             "localId" : "425",
-            "locator" : "49:1-50:48",
+            "locator" : "53:1-54:48",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "IsIncluded",
             "context" : "Patient",
@@ -1443,7 +1448,7 @@
             } ],
             "expression" : {
                "localId" : "426",
-               "locator" : "50:3-50:48",
+               "locator" : "54:3-54:48",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "And",
                "signature" : [ {
@@ -1457,13 +1462,13 @@
                } ],
                "operand" : [ {
                   "localId" : "474",
-                  "locator" : "50:3-50:20",
+                  "locator" : "54:3-54:20",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "name" : "inc-AgeAtLeast18",
                   "type" : "ExpressionRef"
                }, {
                   "localId" : "484",
-                  "locator" : "50:26-50:48",
+                  "locator" : "54:26-54:48",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "name" : "inc-femaleortransmale",
                   "type" : "ExpressionRef"
@@ -1471,7 +1476,7 @@
             }
          }, {
             "localId" : "490",
-            "locator" : "67:1-68:7",
+            "locator" : "71:1-72:7",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "Excluded",
             "context" : "Patient",
@@ -1488,7 +1493,7 @@
             } ],
             "expression" : {
                "localId" : "491",
-               "locator" : "68:3-68:7",
+               "locator" : "72:3-72:7",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
                "value" : "false",
@@ -1496,7 +1501,7 @@
             }
          }, {
             "localId" : "422",
-            "locator" : "45:1-46:29",
+            "locator" : "49:1-50:29",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "IsIncludedAndNotExcluded",
             "context" : "Patient",
@@ -1532,7 +1537,7 @@
             } ],
             "expression" : {
                "localId" : "423",
-               "locator" : "46:3-46:29",
+               "locator" : "50:3-50:29",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "And",
                "signature" : [ {
@@ -1546,13 +1551,13 @@
                } ],
                "operand" : [ {
                   "localId" : "487",
-                  "locator" : "46:3-46:12",
+                  "locator" : "50:3-50:12",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "name" : "IsIncluded",
                   "type" : "ExpressionRef"
                }, {
                   "localId" : "488",
-                  "locator" : "46:18-46:29",
+                  "locator" : "50:18-50:29",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "Not",
                   "signature" : [ {
@@ -1562,7 +1567,7 @@
                   } ],
                   "operand" : {
                      "localId" : "492",
-                     "locator" : "46:22-46:29",
+                     "locator" : "50:22-50:29",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "name" : "Excluded",
                      "type" : "ExpressionRef"
@@ -1571,7 +1576,7 @@
             }
          }, {
             "localId" : "225",
-            "locator" : "42:1-43:85",
+            "locator" : "42:1-47:31",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "CheckIsIncludedAndNotExcluded",
             "context" : "Patient",
@@ -1595,11 +1600,51 @@
                            "value" : [ " is not true" ]
                         } ]
                      }, {
-                        "value" : [ " and " ]
+                        "value" : [ " \n    and " ]
                      }, {
-                        "r" : "496",
+                        "r" : "510",
                         "s" : [ {
-                           "value" : [ "IsIncludedAndNotExcluded" ]
+                           "value" : [ "Message","(" ]
+                        }, {
+                           "r" : "496",
+                           "s" : [ {
+                              "value" : [ "IsIncludedAndNotExcluded" ]
+                           } ]
+                        }, {
+                           "value" : [ ", " ]
+                        }, {
+                           "r" : "498",
+                           "s" : [ {
+                              "r" : "497",
+                              "s" : [ {
+                                 "value" : [ "IsIncludedAndNotExcluded" ]
+                              } ]
+                           }, {
+                              "value" : [ " is false" ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "500",
+                           "s" : [ {
+                              "value" : [ "'http://example.org/CodeSystem/plan-definition-action-reason-code-system/excludedornotincluded'" ]
+                           } ]
+                        }, {
+                           "value" : [ ",\n    " ]
+                        }, {
+                           "r" : "501",
+                           "s" : [ {
+                              "value" : [ "'Error'" ]
+                           } ]
+                        }, {
+                           "value" : [ ", \n    " ]
+                        }, {
+                           "r" : "502",
+                           "s" : [ {
+                              "value" : [ "'Excluded or not included'" ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
                         } ]
                      } ]
                   } ]
@@ -1607,15 +1652,15 @@
             } ],
             "expression" : {
                "localId" : "226",
-               "locator" : "43:3-43:85",
+               "locator" : "43:3-47:31",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "And",
                "signature" : [ {
-                  "localId" : "497",
+                  "localId" : "516",
                   "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "NamedTypeSpecifier"
                }, {
-                  "localId" : "498",
+                  "localId" : "517",
                   "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "NamedTypeSpecifier"
                } ],
@@ -1648,42 +1693,111 @@
                      }
                   }
                }, {
-                  "localId" : "496",
-                  "locator" : "43:62-43:85",
+                  "localId" : "510",
+                  "locator" : "44:9-47:31",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
-                  "name" : "IsIncludedAndNotExcluded",
-                  "type" : "ExpressionRef"
+                  "type" : "Message",
+                  "signature" : [ {
+                     "localId" : "511",
+                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "512",
+                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "513",
+                     "name" : "{urn:hl7-org:elm-types:r1}String",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "514",
+                     "name" : "{urn:hl7-org:elm-types:r1}String",
+                     "type" : "NamedTypeSpecifier"
+                  }, {
+                     "localId" : "515",
+                     "name" : "{urn:hl7-org:elm-types:r1}String",
+                     "type" : "NamedTypeSpecifier"
+                  } ],
+                  "source" : {
+                     "localId" : "496",
+                     "locator" : "44:17-44:40",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "name" : "IsIncludedAndNotExcluded",
+                     "type" : "ExpressionRef"
+                  },
+                  "condition" : {
+                     "localId" : "498",
+                     "locator" : "44:43-44:75",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "IsFalse",
+                     "signature" : [ {
+                        "localId" : "499",
+                        "name" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "NamedTypeSpecifier"
+                     } ],
+                     "operand" : {
+                        "localId" : "497",
+                        "locator" : "44:43-44:66",
+                        "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "name" : "IsIncludedAndNotExcluded",
+                        "type" : "ExpressionRef"
+                     }
+                  },
+                  "code" : {
+                     "localId" : "500",
+                     "locator" : "45:5-45:99",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}String",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "http://example.org/CodeSystem/plan-definition-action-reason-code-system/excludedornotincluded",
+                     "type" : "Literal"
+                  },
+                  "severity" : {
+                     "localId" : "501",
+                     "locator" : "46:5-46:11",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}String",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "Error",
+                     "type" : "Literal"
+                  },
+                  "message" : {
+                     "localId" : "502",
+                     "locator" : "47:5-47:30",
+                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}String",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "Excluded or not included",
+                     "type" : "Literal"
+                  }
                } ]
             }
          }, {
-            "localId" : "500",
-            "locator" : "74:1-83:78",
+            "localId" : "519",
+            "locator" : "78:1-87:78",
             "name" : "flow-ScreeningEligible",
             "context" : "Patient",
             "accessLevel" : "Public",
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
-                  "r" : "500",
+                  "r" : "519",
                   "s" : [ {
                      "value" : [ "//------------------------------------------------------------------------------\n// RECOMMENDATIONS\n//------------------------------------------------------------------------------\n\n","define ","\"flow-ScreeningEligible\"",":\n  " ]
                   }, {
-                     "r" : "501",
+                     "r" : "520",
                      "s" : [ {
                         "value" : [ "if " ]
                      }, {
-                        "r" : "506",
+                        "r" : "525",
                         "s" : [ {
-                           "r" : "503",
+                           "r" : "522",
                            "s" : [ {
-                              "r" : "502",
+                              "r" : "521",
                               "s" : [ {
                                  "value" : [ "Events" ]
                               } ]
                            }, {
                               "value" : [ "." ]
                            }, {
-                              "r" : "503",
+                              "r" : "522",
                               "s" : [ {
                                  "value" : [ "\"eve-female\"" ]
                               } ]
@@ -1694,18 +1808,18 @@
                      }, {
                         "value" : [ "\n  then " ]
                      }, {
-                        "r" : "508",
+                        "r" : "527",
                         "s" : [ {
-                           "r" : "510",
+                           "r" : "529",
                            "s" : [ {
-                              "r" : "509",
+                              "r" : "528",
                               "s" : [ {
                                  "value" : [ "Actions" ]
                               } ]
                            }, {
                               "value" : [ "." ]
                            }, {
-                              "r" : "510",
+                              "r" : "529",
                               "s" : [ {
                                  "value" : [ "\"end-noteligible-notassignedfemaleatbirth\"" ]
                               } ]
@@ -1713,15 +1827,15 @@
                         }, {
                            "value" : [ " as " ]
                         }, {
-                           "r" : "525",
+                           "r" : "544",
                            "s" : [ {
                               "value" : [ "Tuple{" ]
                            }, {
-                              "r" : "526",
+                              "r" : "545",
                               "s" : [ {
                                  "value" : [ "result"," " ]
                               }, {
-                                 "r" : "527",
+                                 "r" : "546",
                                  "s" : [ {
                                     "value" : [ "Boolean" ]
                                  } ]
@@ -1729,11 +1843,11 @@
                            }, {
                               "value" : [ ", " ]
                            }, {
-                              "r" : "528",
+                              "r" : "547",
                               "s" : [ {
                                  "value" : [ "code"," " ]
                               }, {
-                                 "r" : "529",
+                                 "r" : "548",
                                  "s" : [ {
                                     "value" : [ "Code" ]
                                  } ]
@@ -1741,11 +1855,11 @@
                            }, {
                               "value" : [ ", " ]
                            }, {
-                              "r" : "530",
+                              "r" : "549",
                               "s" : [ {
                                  "value" : [ "reason"," " ]
                               }, {
-                                 "r" : "531",
+                                 "r" : "550",
                                  "s" : [ {
                                     "value" : [ "Code" ]
                                  } ]
@@ -1757,22 +1871,22 @@
                      }, {
                         "value" : [ "\n  else " ]
                      }, {
-                        "r" : "546",
+                        "r" : "565",
                         "s" : [ {
                            "value" : [ "if " ]
                         }, {
-                           "r" : "549",
+                           "r" : "568",
                            "s" : [ {
-                              "r" : "548",
+                              "r" : "567",
                               "s" : [ {
-                                 "r" : "547",
+                                 "r" : "566",
                                  "s" : [ {
                                     "value" : [ "Events" ]
                                  } ]
                               }, {
                                  "value" : [ "." ]
                               }, {
-                                 "r" : "548",
+                                 "r" : "567",
                                  "s" : [ {
                                     "value" : [ "\"eve-breastca\"" ]
                                  } ]
@@ -1783,18 +1897,18 @@
                         }, {
                            "value" : [ "\n  then " ]
                         }, {
-                           "r" : "551",
+                           "r" : "570",
                            "s" : [ {
-                              "r" : "553",
+                              "r" : "572",
                               "s" : [ {
-                                 "r" : "552",
+                                 "r" : "571",
                                  "s" : [ {
                                     "value" : [ "Actions" ]
                                  } ]
                               }, {
                                  "value" : [ "." ]
                               }, {
-                                 "r" : "553",
+                                 "r" : "572",
                                  "s" : [ {
                                     "value" : [ "\"end-noteligible-currentbreastcancer\"" ]
                                  } ]
@@ -1802,15 +1916,15 @@
                            }, {
                               "value" : [ " as " ]
                            }, {
-                              "r" : "568",
+                              "r" : "587",
                               "s" : [ {
                                  "value" : [ "Tuple{" ]
                               }, {
-                                 "r" : "569",
+                                 "r" : "588",
                                  "s" : [ {
                                     "value" : [ "result"," " ]
                                  }, {
-                                    "r" : "570",
+                                    "r" : "589",
                                     "s" : [ {
                                        "value" : [ "Boolean" ]
                                     } ]
@@ -1818,11 +1932,11 @@
                               }, {
                                  "value" : [ ", " ]
                               }, {
-                                 "r" : "571",
+                                 "r" : "590",
                                  "s" : [ {
                                     "value" : [ "code"," " ]
                                  }, {
-                                    "r" : "572",
+                                    "r" : "591",
                                     "s" : [ {
                                        "value" : [ "Code" ]
                                     } ]
@@ -1830,11 +1944,11 @@
                               }, {
                                  "value" : [ ", " ]
                               }, {
-                                 "r" : "573",
+                                 "r" : "592",
                                  "s" : [ {
                                     "value" : [ "reason"," " ]
                                  }, {
-                                    "r" : "574",
+                                    "r" : "593",
                                     "s" : [ {
                                        "value" : [ "Code" ]
                                     } ]
@@ -1846,22 +1960,22 @@
                         }, {
                            "value" : [ "\n  else " ]
                         }, {
-                           "r" : "589",
+                           "r" : "608",
                            "s" : [ {
                               "value" : [ "if " ]
                            }, {
-                              "r" : "592",
+                              "r" : "611",
                               "s" : [ {
-                                 "r" : "591",
+                                 "r" : "610",
                                  "s" : [ {
-                                    "r" : "590",
+                                    "r" : "609",
                                     "s" : [ {
                                        "value" : [ "Events" ]
                                     } ]
                                  }, {
                                     "value" : [ "." ]
                                  }, {
-                                    "r" : "591",
+                                    "r" : "610",
                                     "s" : [ {
                                        "value" : [ "\"eve-mastectomy\"" ]
                                     } ]
@@ -1872,18 +1986,18 @@
                            }, {
                               "value" : [ "\n  then " ]
                            }, {
-                              "r" : "594",
+                              "r" : "613",
                               "s" : [ {
-                                 "r" : "596",
+                                 "r" : "615",
                                  "s" : [ {
-                                    "r" : "595",
+                                    "r" : "614",
                                     "s" : [ {
                                        "value" : [ "Actions" ]
                                     } ]
                                  }, {
                                     "value" : [ "." ]
                                  }, {
-                                    "r" : "596",
+                                    "r" : "615",
                                     "s" : [ {
                                        "value" : [ "\"end-noteligible-bilatmastectomy\"" ]
                                     } ]
@@ -1891,15 +2005,15 @@
                               }, {
                                  "value" : [ " as " ]
                               }, {
-                                 "r" : "611",
+                                 "r" : "630",
                                  "s" : [ {
                                     "value" : [ "Tuple{" ]
                                  }, {
-                                    "r" : "612",
+                                    "r" : "631",
                                     "s" : [ {
                                        "value" : [ "result"," " ]
                                     }, {
-                                       "r" : "613",
+                                       "r" : "632",
                                        "s" : [ {
                                           "value" : [ "Boolean" ]
                                        } ]
@@ -1907,11 +2021,11 @@
                                  }, {
                                     "value" : [ ", " ]
                                  }, {
-                                    "r" : "614",
+                                    "r" : "633",
                                     "s" : [ {
                                        "value" : [ "code"," " ]
                                     }, {
-                                       "r" : "615",
+                                       "r" : "634",
                                        "s" : [ {
                                           "value" : [ "Code" ]
                                        } ]
@@ -1919,11 +2033,11 @@
                                  }, {
                                     "value" : [ ", " ]
                                  }, {
-                                    "r" : "616",
+                                    "r" : "635",
                                     "s" : [ {
                                        "value" : [ "reason"," " ]
                                     }, {
-                                       "r" : "617",
+                                       "r" : "636",
                                        "s" : [ {
                                           "value" : [ "Code" ]
                                        } ]
@@ -1935,24 +2049,24 @@
                            }, {
                               "value" : [ "  \n  else " ]
                            }, {
-                              "r" : "632",
+                              "r" : "651",
                               "s" : [ {
                                  "value" : [ "if " ]
                               }, {
-                                 "r" : "633",
+                                 "r" : "652",
                                  "s" : [ {
-                                    "r" : "636",
+                                    "r" : "655",
                                     "s" : [ {
-                                       "r" : "635",
+                                       "r" : "654",
                                        "s" : [ {
-                                          "r" : "634",
+                                          "r" : "653",
                                           "s" : [ {
                                              "value" : [ "Events" ]
                                           } ]
                                        }, {
                                           "value" : [ "." ]
                                        }, {
-                                          "r" : "635",
+                                          "r" : "654",
                                           "s" : [ {
                                              "value" : [ "\"eve-breastsymptoms\"" ]
                                           } ]
@@ -1963,18 +2077,18 @@
                                  }, {
                                     "value" : [ " or " ]
                                  }, {
-                                    "r" : "640",
+                                    "r" : "659",
                                     "s" : [ {
-                                       "r" : "639",
+                                       "r" : "658",
                                        "s" : [ {
-                                          "r" : "638",
+                                          "r" : "657",
                                           "s" : [ {
                                              "value" : [ "Events" ]
                                           } ]
                                        }, {
                                           "value" : [ "." ]
                                        }, {
-                                          "r" : "639",
+                                          "r" : "658",
                                           "s" : [ {
                                              "value" : [ "\"eve-breastfindings\"" ]
                                           } ]
@@ -1986,18 +2100,18 @@
                               }, {
                                  "value" : [ "\n  then " ]
                               }, {
-                                 "r" : "644",
+                                 "r" : "663",
                                  "s" : [ {
-                                    "r" : "646",
+                                    "r" : "665",
                                     "s" : [ {
-                                       "r" : "645",
+                                       "r" : "664",
                                        "s" : [ {
                                           "value" : [ "Actions" ]
                                        } ]
                                     }, {
                                        "value" : [ "." ]
                                     }, {
-                                       "r" : "646",
+                                       "r" : "665",
                                        "s" : [ {
                                           "value" : [ "\"act-dxtesting\"" ]
                                        } ]
@@ -2005,15 +2119,15 @@
                                  }, {
                                     "value" : [ " as " ]
                                  }, {
-                                    "r" : "661",
+                                    "r" : "680",
                                     "s" : [ {
                                        "value" : [ "Tuple{" ]
                                     }, {
-                                       "r" : "662",
+                                       "r" : "681",
                                        "s" : [ {
                                           "value" : [ "result"," " ]
                                        }, {
-                                          "r" : "663",
+                                          "r" : "682",
                                           "s" : [ {
                                              "value" : [ "Boolean" ]
                                           } ]
@@ -2021,11 +2135,11 @@
                                     }, {
                                        "value" : [ ", " ]
                                     }, {
-                                       "r" : "664",
+                                       "r" : "683",
                                        "s" : [ {
                                           "value" : [ "code"," " ]
                                        }, {
-                                          "r" : "665",
+                                          "r" : "684",
                                           "s" : [ {
                                              "value" : [ "Code" ]
                                           } ]
@@ -2033,11 +2147,11 @@
                                     }, {
                                        "value" : [ ", " ]
                                     }, {
-                                       "r" : "666",
+                                       "r" : "685",
                                        "s" : [ {
                                           "value" : [ "reason"," " ]
                                        }, {
-                                          "r" : "667",
+                                          "r" : "686",
                                           "s" : [ {
                                              "value" : [ "Code" ]
                                           } ]
@@ -2049,18 +2163,18 @@
                               }, {
                                  "value" : [ "    \n  else " ]
                               }, {
-                                 "r" : "682",
+                                 "r" : "701",
                                  "s" : [ {
-                                    "r" : "684",
+                                    "r" : "703",
                                     "s" : [ {
-                                       "r" : "683",
+                                       "r" : "702",
                                        "s" : [ {
                                           "value" : [ "Actions" ]
                                        } ]
                                     }, {
                                        "value" : [ "." ]
                                     }, {
-                                       "r" : "684",
+                                       "r" : "703",
                                        "s" : [ {
                                           "value" : [ "\"act-eligible\"" ]
                                        } ]
@@ -2068,15 +2182,15 @@
                                  }, {
                                     "value" : [ " as " ]
                                  }, {
-                                    "r" : "699",
+                                    "r" : "718",
                                     "s" : [ {
                                        "value" : [ "Tuple{" ]
                                     }, {
-                                       "r" : "700",
+                                       "r" : "719",
                                        "s" : [ {
                                           "value" : [ "result"," " ]
                                        }, {
-                                          "r" : "701",
+                                          "r" : "720",
                                           "s" : [ {
                                              "value" : [ "Boolean" ]
                                           } ]
@@ -2084,11 +2198,11 @@
                                     }, {
                                        "value" : [ ", " ]
                                     }, {
-                                       "r" : "702",
+                                       "r" : "721",
                                        "s" : [ {
                                           "value" : [ "code"," " ]
                                        }, {
-                                          "r" : "703",
+                                          "r" : "722",
                                           "s" : [ {
                                              "value" : [ "Code" ]
                                           } ]
@@ -2096,11 +2210,11 @@
                                     }, {
                                        "value" : [ ", " ]
                                     }, {
-                                       "r" : "704",
+                                       "r" : "723",
                                        "s" : [ {
                                           "value" : [ "reason"," " ]
                                        }, {
-                                          "r" : "705",
+                                          "r" : "724",
                                           "s" : [ {
                                              "value" : [ "Code" ]
                                           } ]
@@ -2117,90 +2231,90 @@
                }
             } ],
             "resultTypeSpecifier" : {
-               "localId" : "748",
+               "localId" : "767",
                "type" : "TupleTypeSpecifier",
                "element" : [ {
-                  "localId" : "749",
+                  "localId" : "768",
                   "name" : "result",
                   "elementType" : {
-                     "localId" : "750",
+                     "localId" : "769",
                      "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "NamedTypeSpecifier"
                   }
                }, {
-                  "localId" : "751",
+                  "localId" : "770",
                   "name" : "code",
                   "elementType" : {
-                     "localId" : "752",
+                     "localId" : "771",
                      "name" : "{urn:hl7-org:elm-types:r1}Code",
                      "type" : "NamedTypeSpecifier"
                   }
                }, {
-                  "localId" : "753",
+                  "localId" : "772",
                   "name" : "reason",
                   "elementType" : {
-                     "localId" : "754",
+                     "localId" : "773",
                      "name" : "{urn:hl7-org:elm-types:r1}Code",
                      "type" : "NamedTypeSpecifier"
                   }
                } ]
             },
             "expression" : {
-               "localId" : "501",
-               "locator" : "75:3-83:78",
+               "localId" : "520",
+               "locator" : "79:3-87:78",
                "type" : "If",
                "resultTypeSpecifier" : {
-                  "localId" : "741",
+                  "localId" : "760",
                   "type" : "TupleTypeSpecifier",
                   "element" : [ {
-                     "localId" : "742",
+                     "localId" : "761",
                      "name" : "result",
                      "elementType" : {
-                        "localId" : "743",
+                        "localId" : "762",
                         "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
-                     "localId" : "744",
+                     "localId" : "763",
                      "name" : "code",
                      "elementType" : {
-                        "localId" : "745",
+                        "localId" : "764",
                         "name" : "{urn:hl7-org:elm-types:r1}Code",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
-                     "localId" : "746",
+                     "localId" : "765",
                      "name" : "reason",
                      "elementType" : {
-                        "localId" : "747",
+                        "localId" : "766",
                         "name" : "{urn:hl7-org:elm-types:r1}Code",
                         "type" : "NamedTypeSpecifier"
                      }
                   } ]
                },
                "condition" : {
-                  "localId" : "506",
-                  "locator" : "75:6-75:36",
+                  "localId" : "525",
+                  "locator" : "79:6-79:36",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "Not",
                   "signature" : [ {
-                     "localId" : "507",
+                     "localId" : "526",
                      "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "NamedTypeSpecifier"
                   } ],
                   "operand" : {
-                     "localId" : "504",
-                     "locator" : "75:6-75:36",
+                     "localId" : "523",
+                     "locator" : "79:6-79:36",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "IsTrue",
                      "signature" : [ {
-                        "localId" : "505",
+                        "localId" : "524",
                         "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "type" : "NamedTypeSpecifier"
                      } ],
                      "operand" : {
-                        "localId" : "503",
-                        "locator" : "75:6-75:24",
+                        "localId" : "522",
+                        "locator" : "79:6-79:24",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "name" : "eve-female",
                         "libraryName" : "Events",
@@ -2209,34 +2323,34 @@
                   }
                },
                "then" : {
-                  "localId" : "508",
-                  "locator" : "76:8-76:106",
+                  "localId" : "527",
+                  "locator" : "80:8-80:106",
                   "strict" : false,
                   "type" : "As",
                   "resultTypeSpecifier" : {
-                     "localId" : "539",
+                     "localId" : "558",
                      "type" : "TupleTypeSpecifier",
                      "element" : [ {
-                        "localId" : "540",
+                        "localId" : "559",
                         "name" : "result",
                         "elementType" : {
-                           "localId" : "541",
+                           "localId" : "560",
                            "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "542",
+                        "localId" : "561",
                         "name" : "code",
                         "elementType" : {
-                           "localId" : "543",
+                           "localId" : "562",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "544",
+                        "localId" : "563",
                         "name" : "reason",
                         "elementType" : {
-                           "localId" : "545",
+                           "localId" : "564",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
@@ -2244,35 +2358,35 @@
                   },
                   "signature" : [ ],
                   "operand" : {
-                     "localId" : "510",
-                     "locator" : "76:8-76:57",
+                     "localId" : "529",
+                     "locator" : "80:8-80:57",
                      "name" : "end-noteligible-notassignedfemaleatbirth",
                      "libraryName" : "Actions",
                      "type" : "ExpressionRef",
                      "resultTypeSpecifier" : {
-                        "localId" : "518",
+                        "localId" : "537",
                         "type" : "TupleTypeSpecifier",
                         "element" : [ {
-                           "localId" : "519",
+                           "localId" : "538",
                            "name" : "result",
                            "elementType" : {
-                              "localId" : "520",
+                              "localId" : "539",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "521",
+                           "localId" : "540",
                            "name" : "code",
                            "elementType" : {
-                              "localId" : "522",
+                              "localId" : "541",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "523",
+                           "localId" : "542",
                            "name" : "reason",
                            "elementType" : {
-                              "localId" : "524",
+                              "localId" : "543",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
@@ -2280,67 +2394,67 @@
                      }
                   },
                   "asTypeSpecifier" : {
-                     "localId" : "525",
-                     "locator" : "76:62-76:106",
+                     "localId" : "544",
+                     "locator" : "80:62-80:106",
                      "type" : "TupleTypeSpecifier",
                      "resultTypeSpecifier" : {
-                        "localId" : "532",
+                        "localId" : "551",
                         "type" : "TupleTypeSpecifier",
                         "element" : [ {
-                           "localId" : "533",
+                           "localId" : "552",
                            "name" : "result",
                            "elementType" : {
-                              "localId" : "534",
+                              "localId" : "553",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "535",
+                           "localId" : "554",
                            "name" : "code",
                            "elementType" : {
-                              "localId" : "536",
+                              "localId" : "555",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "537",
+                           "localId" : "556",
                            "name" : "reason",
                            "elementType" : {
-                              "localId" : "538",
+                              "localId" : "557",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         } ]
                      },
                      "element" : [ {
-                        "localId" : "526",
-                        "locator" : "76:68-76:81",
+                        "localId" : "545",
+                        "locator" : "80:68-80:81",
                         "name" : "result",
                         "elementType" : {
-                           "localId" : "527",
-                           "locator" : "76:75-76:81",
+                           "localId" : "546",
+                           "locator" : "80:75-80:81",
                            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "528",
-                        "locator" : "76:84-76:92",
+                        "localId" : "547",
+                        "locator" : "80:84-80:92",
                         "name" : "code",
                         "elementType" : {
-                           "localId" : "529",
-                           "locator" : "76:89-76:92",
+                           "localId" : "548",
+                           "locator" : "80:89-80:92",
                            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "530",
-                        "locator" : "76:95-76:105",
+                        "localId" : "549",
+                        "locator" : "80:95-80:105",
                         "name" : "reason",
                         "elementType" : {
-                           "localId" : "531",
-                           "locator" : "76:102-76:105",
+                           "localId" : "550",
+                           "locator" : "80:102-80:105",
                            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
@@ -2349,51 +2463,51 @@
                   }
                },
                "else" : {
-                  "localId" : "546",
-                  "locator" : "77:8-83:78",
+                  "localId" : "565",
+                  "locator" : "81:8-87:78",
                   "type" : "If",
                   "resultTypeSpecifier" : {
-                     "localId" : "734",
+                     "localId" : "753",
                      "type" : "TupleTypeSpecifier",
                      "element" : [ {
-                        "localId" : "735",
+                        "localId" : "754",
                         "name" : "result",
                         "elementType" : {
-                           "localId" : "736",
+                           "localId" : "755",
                            "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "737",
+                        "localId" : "756",
                         "name" : "code",
                         "elementType" : {
-                           "localId" : "738",
+                           "localId" : "757",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "739",
+                        "localId" : "758",
                         "name" : "reason",
                         "elementType" : {
-                           "localId" : "740",
+                           "localId" : "759",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
                      } ]
                   },
                   "condition" : {
-                     "localId" : "549",
-                     "locator" : "77:11-77:39",
+                     "localId" : "568",
+                     "locator" : "81:11-81:39",
                      "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                      "type" : "IsTrue",
                      "signature" : [ {
-                        "localId" : "550",
+                        "localId" : "569",
                         "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "type" : "NamedTypeSpecifier"
                      } ],
                      "operand" : {
-                        "localId" : "548",
-                        "locator" : "77:11-77:31",
+                        "localId" : "567",
+                        "locator" : "81:11-81:31",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "name" : "eve-breastca",
                         "libraryName" : "Events",
@@ -2401,34 +2515,34 @@
                      }
                   },
                   "then" : {
-                     "localId" : "551",
-                     "locator" : "78:8-78:101",
+                     "localId" : "570",
+                     "locator" : "82:8-82:101",
                      "strict" : false,
                      "type" : "As",
                      "resultTypeSpecifier" : {
-                        "localId" : "582",
+                        "localId" : "601",
                         "type" : "TupleTypeSpecifier",
                         "element" : [ {
-                           "localId" : "583",
+                           "localId" : "602",
                            "name" : "result",
                            "elementType" : {
-                              "localId" : "584",
+                              "localId" : "603",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "585",
+                           "localId" : "604",
                            "name" : "code",
                            "elementType" : {
-                              "localId" : "586",
+                              "localId" : "605",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "587",
+                           "localId" : "606",
                            "name" : "reason",
                            "elementType" : {
-                              "localId" : "588",
+                              "localId" : "607",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
@@ -2436,35 +2550,35 @@
                      },
                      "signature" : [ ],
                      "operand" : {
-                        "localId" : "553",
-                        "locator" : "78:8-78:52",
+                        "localId" : "572",
+                        "locator" : "82:8-82:52",
                         "name" : "end-noteligible-currentbreastcancer",
                         "libraryName" : "Actions",
                         "type" : "ExpressionRef",
                         "resultTypeSpecifier" : {
-                           "localId" : "561",
+                           "localId" : "580",
                            "type" : "TupleTypeSpecifier",
                            "element" : [ {
-                              "localId" : "562",
+                              "localId" : "581",
                               "name" : "result",
                               "elementType" : {
-                                 "localId" : "563",
+                                 "localId" : "582",
                                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "564",
+                              "localId" : "583",
                               "name" : "code",
                               "elementType" : {
-                                 "localId" : "565",
+                                 "localId" : "584",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "566",
+                              "localId" : "585",
                               "name" : "reason",
                               "elementType" : {
-                                 "localId" : "567",
+                                 "localId" : "586",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
@@ -2472,67 +2586,67 @@
                         }
                      },
                      "asTypeSpecifier" : {
-                        "localId" : "568",
-                        "locator" : "78:57-78:101",
+                        "localId" : "587",
+                        "locator" : "82:57-82:101",
                         "type" : "TupleTypeSpecifier",
                         "resultTypeSpecifier" : {
-                           "localId" : "575",
+                           "localId" : "594",
                            "type" : "TupleTypeSpecifier",
                            "element" : [ {
-                              "localId" : "576",
+                              "localId" : "595",
                               "name" : "result",
                               "elementType" : {
-                                 "localId" : "577",
+                                 "localId" : "596",
                                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "578",
+                              "localId" : "597",
                               "name" : "code",
                               "elementType" : {
-                                 "localId" : "579",
+                                 "localId" : "598",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "580",
+                              "localId" : "599",
                               "name" : "reason",
                               "elementType" : {
-                                 "localId" : "581",
+                                 "localId" : "600",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
                            } ]
                         },
                         "element" : [ {
-                           "localId" : "569",
-                           "locator" : "78:63-78:76",
+                           "localId" : "588",
+                           "locator" : "82:63-82:76",
                            "name" : "result",
                            "elementType" : {
-                              "localId" : "570",
-                              "locator" : "78:70-78:76",
+                              "localId" : "589",
+                              "locator" : "82:70-82:76",
                               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "571",
-                           "locator" : "78:79-78:87",
+                           "localId" : "590",
+                           "locator" : "82:79-82:87",
                            "name" : "code",
                            "elementType" : {
-                              "localId" : "572",
-                              "locator" : "78:84-78:87",
+                              "localId" : "591",
+                              "locator" : "82:84-82:87",
                               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "573",
-                           "locator" : "78:90-78:100",
+                           "localId" : "592",
+                           "locator" : "82:90-82:100",
                            "name" : "reason",
                            "elementType" : {
-                              "localId" : "574",
-                              "locator" : "78:97-78:100",
+                              "localId" : "593",
+                              "locator" : "82:97-82:100",
                               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
@@ -2541,51 +2655,51 @@
                      }
                   },
                   "else" : {
-                     "localId" : "589",
-                     "locator" : "79:8-83:78",
+                     "localId" : "608",
+                     "locator" : "83:8-87:78",
                      "type" : "If",
                      "resultTypeSpecifier" : {
-                        "localId" : "727",
+                        "localId" : "746",
                         "type" : "TupleTypeSpecifier",
                         "element" : [ {
-                           "localId" : "728",
+                           "localId" : "747",
                            "name" : "result",
                            "elementType" : {
-                              "localId" : "729",
+                              "localId" : "748",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "730",
+                           "localId" : "749",
                            "name" : "code",
                            "elementType" : {
-                              "localId" : "731",
+                              "localId" : "750",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "732",
+                           "localId" : "751",
                            "name" : "reason",
                            "elementType" : {
-                              "localId" : "733",
+                              "localId" : "752",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         } ]
                      },
                      "condition" : {
-                        "localId" : "592",
-                        "locator" : "79:11-79:41",
+                        "localId" : "611",
+                        "locator" : "83:11-83:41",
                         "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                         "type" : "IsTrue",
                         "signature" : [ {
-                           "localId" : "593",
+                           "localId" : "612",
                            "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "NamedTypeSpecifier"
                         } ],
                         "operand" : {
-                           "localId" : "591",
-                           "locator" : "79:11-79:33",
+                           "localId" : "610",
+                           "locator" : "83:11-83:33",
                            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "name" : "eve-mastectomy",
                            "libraryName" : "Events",
@@ -2593,34 +2707,34 @@
                         }
                      },
                      "then" : {
-                        "localId" : "594",
-                        "locator" : "80:8-80:97",
+                        "localId" : "613",
+                        "locator" : "84:8-84:97",
                         "strict" : false,
                         "type" : "As",
                         "resultTypeSpecifier" : {
-                           "localId" : "625",
+                           "localId" : "644",
                            "type" : "TupleTypeSpecifier",
                            "element" : [ {
-                              "localId" : "626",
+                              "localId" : "645",
                               "name" : "result",
                               "elementType" : {
-                                 "localId" : "627",
+                                 "localId" : "646",
                                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "628",
+                              "localId" : "647",
                               "name" : "code",
                               "elementType" : {
-                                 "localId" : "629",
+                                 "localId" : "648",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "630",
+                              "localId" : "649",
                               "name" : "reason",
                               "elementType" : {
-                                 "localId" : "631",
+                                 "localId" : "650",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
@@ -2628,35 +2742,35 @@
                         },
                         "signature" : [ ],
                         "operand" : {
-                           "localId" : "596",
-                           "locator" : "80:8-80:48",
+                           "localId" : "615",
+                           "locator" : "84:8-84:48",
                            "name" : "end-noteligible-bilatmastectomy",
                            "libraryName" : "Actions",
                            "type" : "ExpressionRef",
                            "resultTypeSpecifier" : {
-                              "localId" : "604",
+                              "localId" : "623",
                               "type" : "TupleTypeSpecifier",
                               "element" : [ {
-                                 "localId" : "605",
+                                 "localId" : "624",
                                  "name" : "result",
                                  "elementType" : {
-                                    "localId" : "606",
+                                    "localId" : "625",
                                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "607",
+                                 "localId" : "626",
                                  "name" : "code",
                                  "elementType" : {
-                                    "localId" : "608",
+                                    "localId" : "627",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "609",
+                                 "localId" : "628",
                                  "name" : "reason",
                                  "elementType" : {
-                                    "localId" : "610",
+                                    "localId" : "629",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
@@ -2664,67 +2778,67 @@
                            }
                         },
                         "asTypeSpecifier" : {
-                           "localId" : "611",
-                           "locator" : "80:53-80:97",
+                           "localId" : "630",
+                           "locator" : "84:53-84:97",
                            "type" : "TupleTypeSpecifier",
                            "resultTypeSpecifier" : {
-                              "localId" : "618",
+                              "localId" : "637",
                               "type" : "TupleTypeSpecifier",
                               "element" : [ {
-                                 "localId" : "619",
+                                 "localId" : "638",
                                  "name" : "result",
                                  "elementType" : {
-                                    "localId" : "620",
+                                    "localId" : "639",
                                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "621",
+                                 "localId" : "640",
                                  "name" : "code",
                                  "elementType" : {
-                                    "localId" : "622",
+                                    "localId" : "641",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "623",
+                                 "localId" : "642",
                                  "name" : "reason",
                                  "elementType" : {
-                                    "localId" : "624",
+                                    "localId" : "643",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               } ]
                            },
                            "element" : [ {
-                              "localId" : "612",
-                              "locator" : "80:59-80:72",
+                              "localId" : "631",
+                              "locator" : "84:59-84:72",
                               "name" : "result",
                               "elementType" : {
-                                 "localId" : "613",
-                                 "locator" : "80:66-80:72",
+                                 "localId" : "632",
+                                 "locator" : "84:66-84:72",
                                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "614",
-                              "locator" : "80:75-80:83",
+                              "localId" : "633",
+                              "locator" : "84:75-84:83",
                               "name" : "code",
                               "elementType" : {
-                                 "localId" : "615",
-                                 "locator" : "80:80-80:83",
+                                 "localId" : "634",
+                                 "locator" : "84:80-84:83",
                                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "616",
-                              "locator" : "80:86-80:96",
+                              "localId" : "635",
+                              "locator" : "84:86-84:96",
                               "name" : "reason",
                               "elementType" : {
-                                 "localId" : "617",
-                                 "locator" : "80:93-80:96",
+                                 "localId" : "636",
+                                 "locator" : "84:93-84:96",
                                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
@@ -2733,83 +2847,83 @@
                         }
                      },
                      "else" : {
-                        "localId" : "632",
-                        "locator" : "81:8-83:78",
+                        "localId" : "651",
+                        "locator" : "85:8-87:78",
                         "type" : "If",
                         "resultTypeSpecifier" : {
-                           "localId" : "720",
+                           "localId" : "739",
                            "type" : "TupleTypeSpecifier",
                            "element" : [ {
-                              "localId" : "721",
+                              "localId" : "740",
                               "name" : "result",
                               "elementType" : {
-                                 "localId" : "722",
+                                 "localId" : "741",
                                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "723",
+                              "localId" : "742",
                               "name" : "code",
                               "elementType" : {
-                                 "localId" : "724",
+                                 "localId" : "743",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
-                              "localId" : "725",
+                              "localId" : "744",
                               "name" : "reason",
                               "elementType" : {
-                                 "localId" : "726",
+                                 "localId" : "745",
                                  "name" : "{urn:hl7-org:elm-types:r1}Code",
                                  "type" : "NamedTypeSpecifier"
                               }
                            } ]
                         },
                         "condition" : {
-                           "localId" : "633",
-                           "locator" : "81:11-81:84",
+                           "localId" : "652",
+                           "locator" : "85:11-85:84",
                            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "Or",
                            "signature" : [ {
-                              "localId" : "642",
+                              "localId" : "661",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            }, {
-                              "localId" : "643",
+                              "localId" : "662",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            } ],
                            "operand" : [ {
-                              "localId" : "636",
-                              "locator" : "81:11-81:45",
+                              "localId" : "655",
+                              "locator" : "85:11-85:45",
                               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "IsTrue",
                               "signature" : [ {
-                                 "localId" : "637",
+                                 "localId" : "656",
                                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "type" : "NamedTypeSpecifier"
                               } ],
                               "operand" : {
-                                 "localId" : "635",
-                                 "locator" : "81:11-81:37",
+                                 "localId" : "654",
+                                 "locator" : "85:11-85:37",
                                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "name" : "eve-breastsymptoms",
                                  "libraryName" : "Events",
                                  "type" : "ExpressionRef"
                               }
                            }, {
-                              "localId" : "640",
-                              "locator" : "81:50-81:84",
+                              "localId" : "659",
+                              "locator" : "85:50-85:84",
                               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "IsTrue",
                               "signature" : [ {
-                                 "localId" : "641",
+                                 "localId" : "660",
                                  "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "type" : "NamedTypeSpecifier"
                               } ],
                               "operand" : {
-                                 "localId" : "639",
-                                 "locator" : "81:50-81:76",
+                                 "localId" : "658",
+                                 "locator" : "85:50-85:76",
                                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                                  "name" : "eve-breastfindings",
                                  "libraryName" : "Events",
@@ -2818,34 +2932,34 @@
                            } ]
                         },
                         "then" : {
-                           "localId" : "644",
-                           "locator" : "82:8-82:79",
+                           "localId" : "663",
+                           "locator" : "86:8-86:79",
                            "strict" : false,
                            "type" : "As",
                            "resultTypeSpecifier" : {
-                              "localId" : "675",
+                              "localId" : "694",
                               "type" : "TupleTypeSpecifier",
                               "element" : [ {
-                                 "localId" : "676",
+                                 "localId" : "695",
                                  "name" : "result",
                                  "elementType" : {
-                                    "localId" : "677",
+                                    "localId" : "696",
                                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "678",
+                                 "localId" : "697",
                                  "name" : "code",
                                  "elementType" : {
-                                    "localId" : "679",
+                                    "localId" : "698",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "680",
+                                 "localId" : "699",
                                  "name" : "reason",
                                  "elementType" : {
-                                    "localId" : "681",
+                                    "localId" : "700",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
@@ -2853,35 +2967,35 @@
                            },
                            "signature" : [ ],
                            "operand" : {
-                              "localId" : "646",
-                              "locator" : "82:8-82:30",
+                              "localId" : "665",
+                              "locator" : "86:8-86:30",
                               "name" : "act-dxtesting",
                               "libraryName" : "Actions",
                               "type" : "ExpressionRef",
                               "resultTypeSpecifier" : {
-                                 "localId" : "654",
+                                 "localId" : "673",
                                  "type" : "TupleTypeSpecifier",
                                  "element" : [ {
-                                    "localId" : "655",
+                                    "localId" : "674",
                                     "name" : "result",
                                     "elementType" : {
-                                       "localId" : "656",
+                                       "localId" : "675",
                                        "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
-                                    "localId" : "657",
+                                    "localId" : "676",
                                     "name" : "code",
                                     "elementType" : {
-                                       "localId" : "658",
+                                       "localId" : "677",
                                        "name" : "{urn:hl7-org:elm-types:r1}Code",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
-                                    "localId" : "659",
+                                    "localId" : "678",
                                     "name" : "reason",
                                     "elementType" : {
-                                       "localId" : "660",
+                                       "localId" : "679",
                                        "name" : "{urn:hl7-org:elm-types:r1}Code",
                                        "type" : "NamedTypeSpecifier"
                                     }
@@ -2889,67 +3003,67 @@
                               }
                            },
                            "asTypeSpecifier" : {
-                              "localId" : "661",
-                              "locator" : "82:35-82:79",
+                              "localId" : "680",
+                              "locator" : "86:35-86:79",
                               "type" : "TupleTypeSpecifier",
                               "resultTypeSpecifier" : {
-                                 "localId" : "668",
+                                 "localId" : "687",
                                  "type" : "TupleTypeSpecifier",
                                  "element" : [ {
-                                    "localId" : "669",
+                                    "localId" : "688",
                                     "name" : "result",
                                     "elementType" : {
-                                       "localId" : "670",
+                                       "localId" : "689",
                                        "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
-                                    "localId" : "671",
+                                    "localId" : "690",
                                     "name" : "code",
                                     "elementType" : {
-                                       "localId" : "672",
+                                       "localId" : "691",
                                        "name" : "{urn:hl7-org:elm-types:r1}Code",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
-                                    "localId" : "673",
+                                    "localId" : "692",
                                     "name" : "reason",
                                     "elementType" : {
-                                       "localId" : "674",
+                                       "localId" : "693",
                                        "name" : "{urn:hl7-org:elm-types:r1}Code",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  } ]
                               },
                               "element" : [ {
-                                 "localId" : "662",
-                                 "locator" : "82:41-82:54",
+                                 "localId" : "681",
+                                 "locator" : "86:41-86:54",
                                  "name" : "result",
                                  "elementType" : {
-                                    "localId" : "663",
-                                    "locator" : "82:48-82:54",
+                                    "localId" : "682",
+                                    "locator" : "86:48-86:54",
                                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "664",
-                                 "locator" : "82:57-82:65",
+                                 "localId" : "683",
+                                 "locator" : "86:57-86:65",
                                  "name" : "code",
                                  "elementType" : {
-                                    "localId" : "665",
-                                    "locator" : "82:62-82:65",
+                                    "localId" : "684",
+                                    "locator" : "86:62-86:65",
                                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "666",
-                                 "locator" : "82:68-82:78",
+                                 "localId" : "685",
+                                 "locator" : "86:68-86:78",
                                  "name" : "reason",
                                  "elementType" : {
-                                    "localId" : "667",
-                                    "locator" : "82:75-82:78",
+                                    "localId" : "686",
+                                    "locator" : "86:75-86:78",
                                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
@@ -2958,34 +3072,34 @@
                            }
                         },
                         "else" : {
-                           "localId" : "682",
-                           "locator" : "83:8-83:78",
+                           "localId" : "701",
+                           "locator" : "87:8-87:78",
                            "strict" : false,
                            "type" : "As",
                            "resultTypeSpecifier" : {
-                              "localId" : "713",
+                              "localId" : "732",
                               "type" : "TupleTypeSpecifier",
                               "element" : [ {
-                                 "localId" : "714",
+                                 "localId" : "733",
                                  "name" : "result",
                                  "elementType" : {
-                                    "localId" : "715",
+                                    "localId" : "734",
                                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "716",
+                                 "localId" : "735",
                                  "name" : "code",
                                  "elementType" : {
-                                    "localId" : "717",
+                                    "localId" : "736",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "718",
+                                 "localId" : "737",
                                  "name" : "reason",
                                  "elementType" : {
-                                    "localId" : "719",
+                                    "localId" : "738",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
@@ -2993,35 +3107,35 @@
                            },
                            "signature" : [ ],
                            "operand" : {
-                              "localId" : "684",
-                              "locator" : "83:8-83:29",
+                              "localId" : "703",
+                              "locator" : "87:8-87:29",
                               "name" : "act-eligible",
                               "libraryName" : "Actions",
                               "type" : "ExpressionRef",
                               "resultTypeSpecifier" : {
-                                 "localId" : "692",
+                                 "localId" : "711",
                                  "type" : "TupleTypeSpecifier",
                                  "element" : [ {
-                                    "localId" : "693",
+                                    "localId" : "712",
                                     "name" : "result",
                                     "elementType" : {
-                                       "localId" : "694",
+                                       "localId" : "713",
                                        "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
-                                    "localId" : "695",
+                                    "localId" : "714",
                                     "name" : "code",
                                     "elementType" : {
-                                       "localId" : "696",
+                                       "localId" : "715",
                                        "name" : "{urn:hl7-org:elm-types:r1}Code",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
-                                    "localId" : "697",
+                                    "localId" : "716",
                                     "name" : "reason",
                                     "elementType" : {
-                                       "localId" : "698",
+                                       "localId" : "717",
                                        "name" : "{urn:hl7-org:elm-types:r1}Code",
                                        "type" : "NamedTypeSpecifier"
                                     }
@@ -3029,67 +3143,67 @@
                               }
                            },
                            "asTypeSpecifier" : {
-                              "localId" : "699",
-                              "locator" : "83:34-83:78",
+                              "localId" : "718",
+                              "locator" : "87:34-87:78",
                               "type" : "TupleTypeSpecifier",
                               "resultTypeSpecifier" : {
-                                 "localId" : "706",
+                                 "localId" : "725",
                                  "type" : "TupleTypeSpecifier",
                                  "element" : [ {
-                                    "localId" : "707",
+                                    "localId" : "726",
                                     "name" : "result",
                                     "elementType" : {
-                                       "localId" : "708",
+                                       "localId" : "727",
                                        "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
-                                    "localId" : "709",
+                                    "localId" : "728",
                                     "name" : "code",
                                     "elementType" : {
-                                       "localId" : "710",
+                                       "localId" : "729",
                                        "name" : "{urn:hl7-org:elm-types:r1}Code",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
-                                    "localId" : "711",
+                                    "localId" : "730",
                                     "name" : "reason",
                                     "elementType" : {
-                                       "localId" : "712",
+                                       "localId" : "731",
                                        "name" : "{urn:hl7-org:elm-types:r1}Code",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  } ]
                               },
                               "element" : [ {
-                                 "localId" : "700",
-                                 "locator" : "83:40-83:53",
+                                 "localId" : "719",
+                                 "locator" : "87:40-87:53",
                                  "name" : "result",
                                  "elementType" : {
-                                    "localId" : "701",
-                                    "locator" : "83:47-83:53",
+                                    "localId" : "720",
+                                    "locator" : "87:47-87:53",
                                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                                     "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "702",
-                                 "locator" : "83:56-83:64",
+                                 "localId" : "721",
+                                 "locator" : "87:56-87:64",
                                  "name" : "code",
                                  "elementType" : {
-                                    "localId" : "703",
-                                    "locator" : "83:61-83:64",
+                                    "localId" : "722",
+                                    "locator" : "87:61-87:64",
                                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
-                                 "localId" : "704",
-                                 "locator" : "83:67-83:77",
+                                 "localId" : "723",
+                                 "locator" : "87:67-87:77",
                                  "name" : "reason",
                                  "elementType" : {
-                                    "localId" : "705",
-                                    "locator" : "83:74-83:77",
+                                    "localId" : "724",
+                                    "locator" : "87:74-87:77",
                                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                                     "name" : "{urn:hl7-org:elm-types:r1}Code",
                                     "type" : "NamedTypeSpecifier"
@@ -3102,8 +3216,8 @@
                }
             }
          }, {
-            "localId" : "756",
-            "locator" : "85:1-86:41",
+            "localId" : "775",
+            "locator" : "89:1-90:41",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "IsScreeningEligible",
             "context" : "Patient",
@@ -3111,22 +3225,22 @@
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
-                  "r" : "756",
+                  "r" : "775",
                   "s" : [ {
                      "value" : [ "","define ","IsScreeningEligible",":\n  " ]
                   }, {
-                     "r" : "766",
+                     "r" : "785",
                      "s" : [ {
-                        "r" : "765",
+                        "r" : "784",
                         "s" : [ {
-                           "r" : "757",
+                           "r" : "776",
                            "s" : [ {
                               "value" : [ "\"flow-ScreeningEligible\"" ]
                            } ]
                         }, {
                            "value" : [ "." ]
                         }, {
-                           "r" : "765",
+                           "r" : "784",
                            "s" : [ {
                               "value" : [ "result" ]
                            } ]
@@ -3138,50 +3252,50 @@
                }
             } ],
             "expression" : {
-               "localId" : "766",
-               "locator" : "86:3-86:41",
+               "localId" : "785",
+               "locator" : "90:3-90:41",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "IsTrue",
                "signature" : [ {
-                  "localId" : "767",
+                  "localId" : "786",
                   "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "NamedTypeSpecifier"
                } ],
                "operand" : {
-                  "localId" : "765",
-                  "locator" : "86:3-86:33",
+                  "localId" : "784",
+                  "locator" : "90:3-90:33",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "path" : "result",
                   "type" : "Property",
                   "source" : {
-                     "localId" : "757",
-                     "locator" : "86:3-86:26",
+                     "localId" : "776",
+                     "locator" : "90:3-90:26",
                      "name" : "flow-ScreeningEligible",
                      "type" : "ExpressionRef",
                      "resultTypeSpecifier" : {
-                        "localId" : "758",
+                        "localId" : "777",
                         "type" : "TupleTypeSpecifier",
                         "element" : [ {
-                           "localId" : "759",
+                           "localId" : "778",
                            "name" : "result",
                            "elementType" : {
-                              "localId" : "760",
+                              "localId" : "779",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "761",
+                           "localId" : "780",
                            "name" : "code",
                            "elementType" : {
-                              "localId" : "762",
+                              "localId" : "781",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "763",
+                           "localId" : "782",
                            "name" : "reason",
                            "elementType" : {
-                              "localId" : "764",
+                              "localId" : "783",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
@@ -3191,8 +3305,8 @@
                }
             }
          }, {
-            "localId" : "769",
-            "locator" : "88:1-89:42",
+            "localId" : "788",
+            "locator" : "92:1-93:42",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
             "name" : "IsNotScreeningEligible",
             "context" : "Patient",
@@ -3200,22 +3314,22 @@
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
-                  "r" : "769",
+                  "r" : "788",
                   "s" : [ {
                      "value" : [ "","define ","IsNotScreeningEligible",":\n  " ]
                   }, {
-                     "r" : "779",
+                     "r" : "798",
                      "s" : [ {
-                        "r" : "778",
+                        "r" : "797",
                         "s" : [ {
-                           "r" : "770",
+                           "r" : "789",
                            "s" : [ {
                               "value" : [ "\"flow-ScreeningEligible\"" ]
                            } ]
                         }, {
                            "value" : [ "." ]
                         }, {
-                           "r" : "778",
+                           "r" : "797",
                            "s" : [ {
                               "value" : [ "result" ]
                            } ]
@@ -3227,50 +3341,50 @@
                }
             } ],
             "expression" : {
-               "localId" : "779",
-               "locator" : "89:3-89:42",
+               "localId" : "798",
+               "locator" : "93:3-93:42",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                "type" : "IsFalse",
                "signature" : [ {
-                  "localId" : "780",
+                  "localId" : "799",
                   "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "NamedTypeSpecifier"
                } ],
                "operand" : {
-                  "localId" : "778",
-                  "locator" : "89:3-89:33",
+                  "localId" : "797",
+                  "locator" : "93:3-93:33",
                   "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "path" : "result",
                   "type" : "Property",
                   "source" : {
-                     "localId" : "770",
-                     "locator" : "89:3-89:26",
+                     "localId" : "789",
+                     "locator" : "93:3-93:26",
                      "name" : "flow-ScreeningEligible",
                      "type" : "ExpressionRef",
                      "resultTypeSpecifier" : {
-                        "localId" : "771",
+                        "localId" : "790",
                         "type" : "TupleTypeSpecifier",
                         "element" : [ {
-                           "localId" : "772",
+                           "localId" : "791",
                            "name" : "result",
                            "elementType" : {
-                              "localId" : "773",
+                              "localId" : "792",
                               "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "774",
+                           "localId" : "793",
                            "name" : "code",
                            "elementType" : {
-                              "localId" : "775",
+                              "localId" : "794",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
                         }, {
-                           "localId" : "776",
+                           "localId" : "795",
                            "name" : "reason",
                            "elementType" : {
-                              "localId" : "777",
+                              "localId" : "796",
                               "name" : "{urn:hl7-org:elm-types:r1}Code",
                               "type" : "NamedTypeSpecifier"
                            }
@@ -3280,8 +3394,8 @@
                }
             }
          }, {
-            "localId" : "782",
-            "locator" : "91:1-92:31",
+            "localId" : "801",
+            "locator" : "95:1-96:31",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
             "name" : "ScreeningEligibleCode",
             "context" : "Patient",
@@ -3289,20 +3403,20 @@
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
-                  "r" : "782",
+                  "r" : "801",
                   "s" : [ {
                      "value" : [ "","define ","ScreeningEligibleCode",":\n  " ]
                   }, {
-                     "r" : "791",
+                     "r" : "810",
                      "s" : [ {
-                        "r" : "783",
+                        "r" : "802",
                         "s" : [ {
                            "value" : [ "\"flow-ScreeningEligible\"" ]
                         } ]
                      }, {
                         "value" : [ "." ]
                      }, {
-                        "r" : "791",
+                        "r" : "810",
                         "s" : [ {
                            "value" : [ "code" ]
                         } ]
@@ -3311,40 +3425,40 @@
                }
             } ],
             "expression" : {
-               "localId" : "791",
-               "locator" : "92:3-92:31",
+               "localId" : "810",
+               "locator" : "96:3-96:31",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                "path" : "code",
                "type" : "Property",
                "source" : {
-                  "localId" : "783",
-                  "locator" : "92:3-92:26",
+                  "localId" : "802",
+                  "locator" : "96:3-96:26",
                   "name" : "flow-ScreeningEligible",
                   "type" : "ExpressionRef",
                   "resultTypeSpecifier" : {
-                     "localId" : "784",
+                     "localId" : "803",
                      "type" : "TupleTypeSpecifier",
                      "element" : [ {
-                        "localId" : "785",
+                        "localId" : "804",
                         "name" : "result",
                         "elementType" : {
-                           "localId" : "786",
+                           "localId" : "805",
                            "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "787",
+                        "localId" : "806",
                         "name" : "code",
                         "elementType" : {
-                           "localId" : "788",
+                           "localId" : "807",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "789",
+                        "localId" : "808",
                         "name" : "reason",
                         "elementType" : {
-                           "localId" : "790",
+                           "localId" : "809",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
@@ -3353,8 +3467,8 @@
                }
             }
          }, {
-            "localId" : "793",
-            "locator" : "94:1-95:33",
+            "localId" : "812",
+            "locator" : "98:1-99:33",
             "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
             "name" : "ScreeningEligibleReason",
             "context" : "Patient",
@@ -3362,20 +3476,20 @@
             "annotation" : [ {
                "type" : "Annotation",
                "s" : {
-                  "r" : "793",
+                  "r" : "812",
                   "s" : [ {
                      "value" : [ "","define ","ScreeningEligibleReason",":\n  " ]
                   }, {
-                     "r" : "802",
+                     "r" : "821",
                      "s" : [ {
-                        "r" : "794",
+                        "r" : "813",
                         "s" : [ {
                            "value" : [ "\"flow-ScreeningEligible\"" ]
                         } ]
                      }, {
                         "value" : [ "." ]
                      }, {
-                        "r" : "802",
+                        "r" : "821",
                         "s" : [ {
                            "value" : [ "reason" ]
                         } ]
@@ -3384,40 +3498,40 @@
                }
             } ],
             "expression" : {
-               "localId" : "802",
-               "locator" : "95:3-95:33",
+               "localId" : "821",
+               "locator" : "99:3-99:33",
                "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
                "path" : "reason",
                "type" : "Property",
                "source" : {
-                  "localId" : "794",
-                  "locator" : "95:3-95:26",
+                  "localId" : "813",
+                  "locator" : "99:3-99:26",
                   "name" : "flow-ScreeningEligible",
                   "type" : "ExpressionRef",
                   "resultTypeSpecifier" : {
-                     "localId" : "795",
+                     "localId" : "814",
                      "type" : "TupleTypeSpecifier",
                      "element" : [ {
-                        "localId" : "796",
+                        "localId" : "815",
                         "name" : "result",
                         "elementType" : {
-                           "localId" : "797",
+                           "localId" : "816",
                            "name" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "798",
+                        "localId" : "817",
                         "name" : "code",
                         "elementType" : {
-                           "localId" : "799",
+                           "localId" : "818",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
-                        "localId" : "800",
+                        "localId" : "819",
                         "name" : "reason",
                         "elementType" : {
-                           "localId" : "801",
+                           "localId" : "820",
                            "name" : "{urn:hl7-org:elm-types:r1}Code",
                            "type" : "NamedTypeSpecifier"
                         }
