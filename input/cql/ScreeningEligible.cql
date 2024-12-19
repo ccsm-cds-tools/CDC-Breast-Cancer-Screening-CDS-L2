@@ -77,20 +77,20 @@ define Excluded:
 
 define "flow-ScreeningEligible":
   if Events."eve-female" is not true
-  then Actions."end-noteligible-notassignedfemaleatbirth" as Tuple{result Boolean, code Code, reason Code}
+  then Actions."end-noteligible-notassignedfemaleatbirth"
   else if Events."eve-breastca" is true
-  then Actions."end-noteligible-currentbreastcancer" as Tuple{result Boolean, code Code, reason Code}
+  then Actions."end-noteligible-currentbreastcancer"
   else if Events."eve-mastectomy" is true
-  then Actions."end-noteligible-bilatmastectomy" as Tuple{result Boolean, code Code, reason Code}  
+  then Actions."end-noteligible-bilatmastectomy"
   else if Events."eve-breastsymptoms" is true or Events."eve-breastfindings" is true
-  then Actions."act-dxtesting" as Tuple{result Boolean, code Code, reason Code}    
-  else Actions."act-eligible" as Tuple{result Boolean, code Code, reason Code}
+  then Actions."act-dxtesting"
+  else Actions."act-eligible"
 
 define IsScreeningEligible:
-  "flow-ScreeningEligible".result is true
+  "flow-ScreeningEligible".code ~ Actions."Eligible for screening"
 
 define IsNotScreeningEligible:
-  "flow-ScreeningEligible".result is false  
+  "flow-ScreeningEligible".code ~ Actions."Not eligible for screening" 
 
 define ScreeningEligibleCode:
   "flow-ScreeningEligible".code

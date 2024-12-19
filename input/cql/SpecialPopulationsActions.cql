@@ -65,28 +65,39 @@ define mri_annual:
 	}
 
 define "act-acshighriskmammo":  
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mammo_annual, "High lifetime risk", {value: 30.0, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation(mammo_annual.code, "High lifetime risk", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_annual.timingTiming.repeat)     
 
-define "act-acshighriskmri":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mri_annual, "High lifetime risk", {value: 30.0, code: 'a'})  
+define "act-acshighriskmri":  
+  BCSMCommonFunctions.SetRecommendation(mri_annual.code, "High lifetime risk", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, mri_annual.timingTiming.repeat)
 
-define "act-firstdeggeneticmammo":  
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mammo_annual, "First degree relative with genetic marker or syndrome", {value: 30.0, code: 'a'})  
+define "act-firstdeggeneticmammo":    
+  BCSMCommonFunctions.SetRecommendation(mammo_annual.code, "First degree relative with genetic marker or syndrome", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_annual.timingTiming.repeat)
 
-define "act-firstdeggeneticmri":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mri_annual, "First degree relative with genetic marker or syndrome", {value: 30.0, code: 'a'})    
+define "act-firstdeggeneticmri":  
+  BCSMCommonFunctions.SetRecommendation(mri_annual.code, "First degree relative with genetic marker or syndrome", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, mri_annual.timingTiming.repeat)
 
 define "act-breastdensitycord":
   {
 		code: "Perform lifetime risk assessment",
-    reason: "BI-RADS breast density category C or D"
+    reason: "BI-RADS breast density category C or D",
+    documentation: BCSMCommonFunctions.SourceDocumentationACS
 	}  
 
 define "act-fhxbreastcarisk":
   {
 		code: "Perform lifetime risk assessment",
-    reason: "Compelling family history of breast cancer"
+    reason: "Compelling family history of breast cancer",
+    documentation: BCSMCommonFunctions.SourceDocumentationACS
 	}   
 
 define "act-uspstfrecs":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mammo_biennial, "USPSTF average risk", {value: 40.0, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation(mammo_biennial.code, "USPSTF average risk", 
+    BCSMCommonFunctions.SourceDocumentationUSPSTF, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_biennial.timingTiming.repeat) 

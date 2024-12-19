@@ -7,26 +7,56 @@ include FHIRHelpers version '4.0.1' called FHIRHelpers
 
 context Patient
 
-define function SetRecommendationReasonTimingAge(
-    recommendation Tuple{code System.Code,
-      timingTiming Tuple{event List<System.String>,repeat Tuple{frequency System.Integer,period System.Integer,periodUnit System.String}}},
+define SourceDocumentationACS:
+  {
+    label: 'ACS'
+  }
+
+define SourceDocumentationUSPSTF:
+  {
+    label: 'USPSTF'
+  }
+
+define SourceDocumentationOther:
+  {
+    label: 'Other'
+  }    
+
+define function SetRecommendation(          
+    code System.Code,
     reason System.Code,
-    timingAge Tuple{value Decimal, code String}) 
-    returns Tuple {code System.Code,reason System.Code,timingAge Tuple{value Decimal, code String},
+    documentation Tuple{label System.String},
+    timingAge Tuple{value Decimal, code String},
+    event List<System.String>,
+    repeat Tuple{frequency System.Integer,period System.Integer,periodUnit System.String}) 
+    returns Tuple {code System.Code,reason System.Code,documentation Tuple{label System.String},timingAge Tuple{value Decimal, code String},
       timingTiming Tuple{event List<System.String>,repeat Tuple{boundsPeriod Tuple{start System.String},frequency System.Integer,period System.Integer,periodUnit System.String}}}: 
   Tuple {
-    code: recommendation.code,
+    code: code,
     reason: reason,
+    documentation: documentation,
     timingAge: timingAge,
     timingTiming: {
-      event: recommendation.timingTiming.event,
+      event: event,
       repeat: {
         boundsPeriod: {
           start: ToString(Patient.birthDate + System.Quantity{value: timingAge.value, unit: FHIRHelpers.ToCalendarUnit(timingAge.code)})
         },
-        frequency: recommendation.timingTiming.repeat.frequency,
-        period: recommendation.timingTiming.repeat.period,
-        periodUnit: recommendation.timingTiming.repeat.periodUnit
+        frequency: repeat.frequency,
+        period: repeat.period,
+        periodUnit: repeat.periodUnit
       }
     }
-  } 
+  }
+
+define function AggregateRecommendationsByCode(recommendations List<Choice<Tuple{code Code,reason Code}, 
+  Tuple{code System.Code,reason System.Code,timingAge Tuple{value Decimal, code String},
+    timingTiming Tuple{event List<String>,repeat Tuple{boundsPeriod Tuple{start System.String},frequency System.Integer,period System.Integer,periodUnit System.String}}}>>)
+  returns List<Tuple{code Code, value List<Any>}>:
+  // For each unique code, create a  Tuple with the code and the List of associated values
+  distinct(recommendations.code) actCode
+  return
+  {
+    code: actCode,
+    value: recommendations R where R.code ~ actCode
+  }   

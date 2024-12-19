@@ -4,6 +4,7 @@ using FHIR version '4.0.1'
 include FHIRHelpers  version '4.0.1' called FHIRHelpers
 
 include DataElements version '1.0.0' called DataElements
+include BCSMCommonFunctions version '1.0.0' called BCSMCommonFunctions
 
 codesystem "ActCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system'
 codesystem "ReasonCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system'
@@ -22,36 +23,36 @@ context Patient
 
 define "act-eligible":
   {
-    result: true,
 		code: "Eligible for screening",
-    reason: "Eligible for screening reason"
+    reason: "Eligible for screening reason",
+    documentation: BCSMCommonFunctions.SourceDocumentationOther
 	}
 
 define "end-noteligible-notassignedfemaleatbirth":
-  {
-    result: false,
+  {    
 		code: "Not eligible for screening",
-    reason: "Not assigned female at birth"
+    reason: "Not assigned female at birth",
+    documentation: BCSMCommonFunctions.SourceDocumentationUSPSTF
 	}
 
 define "end-noteligible-currentbreastcancer":
   {
-    result: false,
 		code: "Not eligible for screening",
-    reason: "Current breast cancer"
+    reason: "Current breast cancer",
+    documentation: BCSMCommonFunctions.SourceDocumentationUSPSTF
 	}  
 
 define "end-noteligible-bilatmastectomy":  
   {
-    result: false,
 		code: "Not eligible for screening",
-    reason: "Bilateral mastectomy"
+    reason: "Bilateral mastectomy",
+    documentation: BCSMCommonFunctions.SourceDocumentationOther
 	} 
 
 define "act-dxtesting":
   {
-    result: false,
 		code: "Not eligible for screening",
-    reason: "Diagnostic testing"
+    reason: "Diagnostic testing",
+    documentation: BCSMCommonFunctions.SourceDocumentationOther
 	} 
 

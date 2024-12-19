@@ -1,54 +1,59 @@
 act-eligible:
   - &act-eligible
-    result: true
     code:
       code: "eligible"
       display: "Eligible for screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: Other
     reason:
       code: "eligibleforscreening"
       display: "Eligible for screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"      
 end-noteligible-notassignedfemaleatbirth:
   - &end-noteligible-notassignedfemaleatbirth
-    result: false
     code:
       code: "noteligible"
       display: "Not eligible for screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: USPSTF
     reason:
       code: "notassignedfemaleatbirth"
       display: "Not assigned female at birth"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"    
 end-noteligible-currentbreastcancer:
   - &end-noteligible-currentbreastcancer
-    result: false
     code:
       code: "noteligible"
       display: "Not eligible for screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system" 
+    documentation:
+      label: USPSTF
     reason:
       code: "currentbreastcancer"
       display: "Current breast cancer"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"        
 end-noteligible-bilatmastectomy:
   - &end-noteligible-bilatmastectomy
-    result: false
     code:
       code: "noteligible"
       display: "Not eligible for screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: Other
     reason:
       code: "bilatmastectomy"
       display: "Bilateral mastectomy"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"             
 act-dxtesting:
   - &act-dxtesting
-    result: false
     code:
       code: "noteligible"
       display: "Not eligible for screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: Other
     reason:
       code: "diagtesting"
       display: "Diagnostic testing"

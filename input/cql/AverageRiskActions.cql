@@ -47,13 +47,17 @@ define mammo_biennial:
 
 //TODO: determine if any codes needed for Offer annual screening mammogram ages 40-44
 define "act-acsavgrecs40":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mammo_annual, "ACS average risk", {value: 40.0, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation(mammo_annual.code, "ACS average risk", 
+    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_annual.timingTiming.repeat)  
 
 define "act-acsavgrecs45":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mammo_annual, "ACS average risk", {value: 40.0, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation(mammo_annual.code, "ACS average risk", 
+    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_annual.timingTiming.repeat)    
 
 define "act-acsavgrecs55":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mammo_biennial, "ACS average risk", {value: 40.0, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation(mammo_biennial.code, "ACS average risk", 
+    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_biennial.timingTiming.repeat)    
 
 define "act-uspstfavgrecs":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge(mammo_biennial, "USPSTF average risk", {value: 40.0, code: 'a'})
+  BCSMCommonFunctions.SetRecommendation(mammo_biennial.code, "USPSTF average risk", 
+    BCSMCommonFunctions.SourceDocumentationUSPSTF, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_biennial.timingTiming.repeat)   

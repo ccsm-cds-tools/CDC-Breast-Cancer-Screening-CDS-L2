@@ -4,6 +4,8 @@ act-sdmcontinueage:
       code: "sdmcontinue"
       display: "Shared decision making to continue screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: USPSTF
     reason:
       code: "ageover74"
       display: "Age over 74 years"
@@ -14,6 +16,8 @@ act-sdmcontinuelifexp:
       code: "sdmcontinue"
       display: "Shared decision making to continue screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: ACS
     reason:
       code: "lifeexp"
       display: "Reduced life expectancy indicator"
@@ -24,6 +28,8 @@ act-lactating:
       code: "sdmdelay"
       display: "Shared decision making to consider delay in screening"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: Other
     reason:
       code: "currentlylactating"
       display: "Currently lactating"
@@ -35,6 +41,8 @@ act-acsavgrisk:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "ACSaveragerisk"
       display: "ACS average risk"
@@ -56,6 +64,8 @@ act-acsavgrisk:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "ACSaveragerisk"
       display: "ACS average risk"
@@ -78,6 +88,8 @@ act-uspstfavgrisk:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: USPSTF
     reason:
       code: "USPSTFaveragerisk"
       display: "USPSTF average risk"
@@ -99,6 +111,8 @@ act-uspstfavgrisk:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: USPSTF
     reason:
       code: "USPSTFaveragerisk"
       display: "USPSTF average risk"
@@ -122,6 +136,8 @@ act-highriskexclusions:
       code: 24606-6
       system: http://loinc.org
       display: MG Breast Screening
+    documentation:
+      label: ACS
     reason:
       code: hxbreastca
       system: http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system

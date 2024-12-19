@@ -7,7 +7,11 @@ include DecisionToScreenEvents version '1.0.0' called Events
 include DecisionToScreenActions version '1.0.0' called Actions
 
 codesystem "cpg-activity-type-cs": 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs'
+codesystem "LOINC": 'http://loinc.org'
+
 code "Record an inference": 'record-inference' from "cpg-activity-type-cs" display 'Record an inference'
+code "MG Breast Screening": '24606-6' from "LOINC" display 'MG Breast Screening' 
+code "MR Breast": '30794-2' from "LOINC" display 'MR Breast' 
 
 context Patient
 
@@ -17,15 +21,20 @@ context Patient
 
 define "flow-DecisionToScreen":  
   flatten({
-    ({SDMContinueScreeningAge} except { null }),
-    ({SDMContinueScreeningLifeExp} except { null }),
+    {SDMContinueScreeningAge} except { null },
+    {SDMContinueScreeningLifeExp} except { null },
     HighRiskExclusions except { null },
     SpecialPopulations except { null },
-    ({SDMDelayScreeningLactating} except { null }),
-    (if Count(HighRiskExclusions) = 0 and Count(SpecialPopulations) = 0
-        then Actions."act-avgrisk" else null)
+    {SDMDelayScreeningLactating} except { null },
+    AverageRisk except { null }
   })
   except { null }
+
+define ExistsMammogramRecommendations:
+  exists "flow-DecisionToScreen" R where R.code ~ "MG Breast Screening"
+
+define ExistsMriRecommendations:
+  exists "flow-DecisionToScreen" R where R.code ~ "MR Breast"  
 
 define SDMContinueScreeningAge:
   if Events."eve-AgeOver74" is true
@@ -43,7 +52,7 @@ define SDMContinueScreeningAgeReason:
 
 define SDMContinueScreeningLifeExp:
   if Events."eve-LifeExp" is true
-    then Actions."act-sdmcontinuelifexp" as Tuple{code Code, reason Code}
+    then Actions."act-sdmcontinuelifexp"
     else null
 
 define ExistsSDMContinueScreeningLifeExp:
@@ -59,13 +68,16 @@ define HighRiskExclusions:
   Actions."act-highriskexclusions"  
 
 define SpecialPopulations:
-  Actions."act-specialpop"  
+  Actions."act-specialpop"
+
+define AverageRisk:  
+  Actions."act-avgrisk" 
 
 define SDMDelayScreeningLactating:
-  if Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0
+  if not exists HighRiskExclusions
       and Events."eve-lactating" is true
-    then Actions."act-lactating" as Tuple{code Code, reason Code}
-    else null
+  then Actions."act-lactating"
+  else null
 
 define ExistsSDMDelayScreeningLactating:
   SDMDelayScreeningLactating is not null
