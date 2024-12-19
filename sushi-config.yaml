@@ -192,18 +192,14 @@ groups:
     - Library/SpecialPopulations
     - Library/SpecialPopulationsEvents
     - Library/SpecialPopulationsActions          
-#   GroupA:
-#     name: Group A
-#     description: The Alpha Group
-#     resources:
-#     - StructureDefinition/animal-patient
-#     - StructureDefinition/arm-procedure
-#   GroupB:
-#     name: Group B
-#     description: The Beta Group
-#     resources:
-#     - StructureDefinition/bark-control
-#     - StructureDefinition/bee-sting
+  AverageRisk: 
+    name: Average Risk
+    description: Resources related to AverageRisk flow
+    resources:
+    - PlanDefinition/flow-AverageRisk
+    - Library/AverageRisk
+    - Library/AverageRiskEvents
+    - Library/AverageRiskActions  
 #
 #
 # The ImplementationGuide resource defines several other properties
