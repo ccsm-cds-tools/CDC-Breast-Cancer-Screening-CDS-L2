@@ -1,5 +1,5 @@
 ---
-name: eve-highlifetimerisk_eve-acs_act-acshighriskmammo_act-acshighriskmri
+name: eve-breastdensitycord_eve-acs_act-performriskassessment
 flow: flow-SpecialPopulations
 externalData:
   - ../SpecialPopulationsEvents/events
@@ -8,9 +8,8 @@ externalData:
   - ../default_patients
 data:
   - *defaultPatient
-  - *'Lifetime_risk_of_breast_cancer_>_20%_or_25%'
+  - *'BI-RADS_breast_density_category_C_or_D'
 results:
   flow-SpecialPopulations:
-    - *act-acshighriskmammo
-    - *act-acshighriskmri
+    - *act-breastdensitycord
     - *act-uspstfrecs

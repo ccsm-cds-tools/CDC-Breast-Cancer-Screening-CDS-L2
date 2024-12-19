@@ -791,7 +791,10 @@ de-fhxbreastcarisk:
           code: "FamilialRiskAssessment"
           display: "Familial risk assessment"
     valueBoolean: false
-    effectiveDateTime: "2023-11-10T00:00:00.0Z"     
+    effectiveDateTime: "2023-11-10T00:00:00.0Z"  
+  - "&Output_of_validated_brief_familial_risk_assessment_tool_is_positive_OR_'Informal_familial_risk_criteria'_exist"
+  - "&Output_of_validated_brief_familial_risk_assessment_tool_is_positive"
+  - "&'Informal_familial_risk_criteria'_exist"       
 de-fhxrisk:
   - "&FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_breast_cancer_OR_FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relatives_with_breast_cancer_diagnosed_<=_50_years_old_OR_FAMILY_HISTORY_includes_at_least_one_first-_or_second-_degree_relative_with_breast_AND_at_least_once_relative_wth_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relative_with_both_breast_and_ovarian_cancer_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_relative_with_2_independent_breast_cancers_OR_FAMILY_HISTORY_includes_>=_1_first-_or_second-_degree_male_relative_with_breast_cancer"
   - "&FAMILY_HISTORY_includes_>=_2_first-_or_second-_degree_relatives_with_breast_cancer"

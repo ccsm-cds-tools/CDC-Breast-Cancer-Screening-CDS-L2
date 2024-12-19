@@ -54,8 +54,8 @@ eve-firstdeggenetic:
 
 eve-breastdensitycord:
   - &'BI-RADS_breast_density_category_C_or_D'
+    *BI-RADS_breast_density_category_of_'Last_mammography'__as_reported_in_DIAGNOSTIC_REPORT
   
-eve-fhxbrca:
-  - "&Output_of_validated_brief_familial_risk_assessment_tool_is_positive_OR_'Informal_familial_risk_criteria'_exist"
-  - "&Output_of_validated_brief_familial_risk_assessment_tool_is_positive"
-  - "&'Informal_familial_risk_criteria'_exist"
+eve-fhxbreastcarisk:
+  - &eve-fhxbreastcarisk
+    *OBSERVATIONS_include_familial_risk_assessment

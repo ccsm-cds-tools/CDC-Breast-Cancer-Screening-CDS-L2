@@ -10,6 +10,7 @@ codesystem "ActCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/p
 codesystem "ReasonCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system'
 
 // Act Codes
+code "Screening Next Due": 'screeningnextdue' from "ActCode" display 'Screening Next Due'
 code "Discuss decision to continue screening": 'sdmcontinue' from "ActCode" display 'Shared decision making to continue screening'
 code "Discuss delay in screening": 'sdmdelay' from "ActCode" display 'Shared decision making to consider delay in screening'
 // Reason Codes

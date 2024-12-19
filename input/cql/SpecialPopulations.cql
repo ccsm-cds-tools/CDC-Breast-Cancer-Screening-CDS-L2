@@ -10,6 +10,9 @@ include DataElements version '1.0.0' called DataElements
 context Patient
 
 define "flow-SpecialPopulations":
+  ACSRecommendations union {USPSTFRecommendation}
+
+define ACSRecommendations:
   {    
     ACSMammoHighRisk,
     ACSMriHighRisk,
@@ -99,8 +102,8 @@ define BreastImagingHeterogenouslyOrExtremelyDenseReason:
   BreastImagingHeterogenouslyOrExtremelyDense.reason
 
 define CompellingFamilyHistory:
-  if Events."eve-fhxbrca" is true
-    then Actions."act-fhxbrca"
+  if Events."eve-fhxbreastcarisk" is true
+    then Actions."act-fhxbreastcarisk"
     else null
 
  define ExistsCompellingFamilyHistory:
@@ -111,3 +114,20 @@ define CompellingFamilyHistoryCode:
 
 define CompellingFamilyHistoryReason:
   CompellingFamilyHistory.reason 
+
+define USPSTFRecommendation:
+  if exists ACSRecommendations 
+    then Actions."act-uspstfrecs"
+    else null
+
+define ExistsUSPSTFRecommendation:
+  USPSTFRecommendation is not null
+
+define USPSTFRecommendationCode:    
+  USPSTFRecommendation R return R.code
+
+define USPSTFRecommendationTiming:    
+  USPSTFRecommendation R return R.timingTiming
+
+define USPSTFRecommendationTimingEvent:    
+  USPSTFRecommendationTiming R return First(R.event)    

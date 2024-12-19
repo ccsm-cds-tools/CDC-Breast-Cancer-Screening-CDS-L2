@@ -64,5 +64,5 @@ define "FirstDegRelativeGeneticMarkerOrSyndrome":
 define "eve-breastdensitycord":
   DataElements."de-breastdensitycord"
 
-define "eve-fhxbrca":
+define "eve-fhxbreastcarisk":
   DataElements."de-fhxbreastcarisk"

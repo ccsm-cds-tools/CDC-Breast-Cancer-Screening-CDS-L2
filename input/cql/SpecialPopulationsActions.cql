@@ -13,8 +13,10 @@ codesystem "LOINC": 'http://loinc.org'
 code "Perform lifetime risk assessment": 'lifetimeriskassessment' from "ActCode" display 'Perform lifetime risk assessment'
 // Reason Codes
 code "High lifetime risk": 'highlifetimerisk' from "ReasonCode" display 'High lifetime risk'
+code "First degree relative with genetic marker or syndrome": 'firstdeggenetic' from "ReasonCode" display 'First degree relative with genetic marker or syndrome'
 code "BI-RADS breast density category C or D": 'breastdensitycord' from "ReasonCode" display 'BI-RADS breast density category C or D'
-code "Compelling family history of breast cancer": 'fhxbrca' from "ReasonCode" display 'Compelling family history of breast cancer'
+code "Compelling family history of breast cancer": 'fhxbreastcarisk' from "ReasonCode" display 'Compelling family history of breast cancer'
+code "USPSTF average risk": 'USPSTFaveragerisk' from "ReasonCode" display 'USPSTF average risk'
 
 // Standard codes
 code "MG Breast Screening": '24606-6' from "LOINC" display 'MG Breast Screening' 
@@ -34,6 +36,19 @@ define mammo_annual:
       }
     }
 	} 
+
+define mammo_biennial:
+  {
+		code: "MG Breast Screening",
+    timingTiming: {
+      event: {ToString(@2025-01-25)}, //TODO: placeholder for testing nextduedate
+      repeat: {
+        frequency: 1,
+        period: 2,
+        periodUnit: 'a'
+      }
+    }
+	}   
 
 define mri_annual:
   {
@@ -55,10 +70,10 @@ define "act-acshighriskmri":
   SetRecommendationReasonTimingAge(mri_annual, "High lifetime risk", {value: 30.0, code: 'a'})  
 
 define "act-firstdeggeneticmammo":  
-  SetRecommendationReasonTimingAge(mammo_annual, "High lifetime risk", {value: 30.0, code: 'a'})  
+  SetRecommendationReasonTimingAge(mammo_annual, "First degree relative with genetic marker or syndrome", {value: 30.0, code: 'a'})  
 
 define "act-firstdeggeneticmri":
-  SetRecommendationReasonTimingAge(mri_annual, "High lifetime risk", {value: 30.0, code: 'a'})    
+  SetRecommendationReasonTimingAge(mri_annual, "First degree relative with genetic marker or syndrome", {value: 30.0, code: 'a'})    
 
 define "act-breastdensitycord":
   {
@@ -66,11 +81,14 @@ define "act-breastdensitycord":
     reason: "BI-RADS breast density category C or D"
 	}  
 
-define "act-fhxbrca":
+define "act-fhxbreastcarisk":
   {
 		code: "Perform lifetime risk assessment",
     reason: "Compelling family history of breast cancer"
 	}   
+
+define "act-uspstfrecs":
+  SetRecommendationReasonTimingAge(mammo_biennial, "USPSTF average risk", {value: 40.0, code: 'a'})  
 
 define function SetRecommendationReasonTimingAge(
     recommendation Tuple{code System.Code,
