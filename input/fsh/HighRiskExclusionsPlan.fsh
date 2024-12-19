@@ -192,26 +192,6 @@ Usage: #definition
 * action[=].dynamicValue[+].path = "occurrenceDateTime"
 * action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].dynamicValue[=].expression.expression = "ACSMriAtypicalBiopsyHighRiskTimingEvent"
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Instance: BreastScreeningServiceRequest
-InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity
-Title: "Breast Screening Service Request"
-Usage: #definition
-
-* insert CPGKnowledgeExtensions
-* insert CommonMetadata
-* meta.profile[+] = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
-* url = Canonical(BreastScreeningServiceRequest)
-* name = "BreastScreeningServiceRequest"
-* description = "This ActivityDefinition generates a ServiceRequest for screening study."
-* kind = $RRTYPE#ServiceRequest "ServiceRequest"
-* intent = $RINTENT#proposal "Proposal"
-* priority = $RPRIOR#routine "Routine"
-* library[+] = "Library/HighRiskExclusions|1.0.0"
-* dynamicValue[+].path = "occurrenceDateTime"
-* dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
-* dynamicValue[=].expression.expression = "ACSGeneticRiskMammoTimingEvent"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

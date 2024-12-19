@@ -17,6 +17,7 @@ Description: "Code representing plan definition action codes"
 * #sdmcontinue "Shared decision making to continue screening"
 * #sdmdelay "Shared decision making to delay screening"
 * #specialtyreferral "Refer to specialist recommendations"
+* #lifetimeriskassessment "Perform lifetime risk assessment"
 
 ValueSet:    PlanDefinitionActionCodes
 Id:          plan-definition-action-codes
@@ -47,6 +48,12 @@ Description: "Code representing plan definition action reason codes"
 * #hxbreastca "Previous breast cancer"
 * #hxbreastcawithin5y "Breast cancer in remission < 5 years"
 * #atypicalbxhighlifetimerisk "Atypical biopsy high lifetime risk"
+* #highlifetimerisk "High lifetime risk"
+* #firstdeggenetic "First degree relative with genetic marker or syndrome"
+* #breastdensitycord "BI-RADS breast density category C or D"
+* #fhxbreastcarisk "Compelling family history of breast cancer"
+* #USPSTFaveragerisk "USPSTF average risk"
+
 
 
 ValueSet:    PlanDefinitionActionReasonCodes

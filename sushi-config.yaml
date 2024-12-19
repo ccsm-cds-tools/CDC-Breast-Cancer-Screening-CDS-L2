@@ -183,7 +183,15 @@ groups:
     - PlanDefinition/flow-HighRiskExclusions
     - Library/HighRiskExclusions
     - Library/HighRiskExclusionsEvents
-    - Library/HighRiskExclusionsActions      
+    - Library/HighRiskExclusionsActions    
+  SpecialPopulations: 
+    name: Special Populations
+    description: Resources related to SpecialPopulations flow
+    resources:
+    - PlanDefinition/flow-SpecialPopulations
+    - Library/SpecialPopulations
+    - Library/SpecialPopulationsEvents
+    - Library/SpecialPopulationsActions          
 #   GroupA:
 #     name: Group A
 #     description: The Alpha Group
