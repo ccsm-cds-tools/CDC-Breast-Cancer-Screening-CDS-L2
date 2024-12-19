@@ -36,9 +36,6 @@
             "resource": {
               "reference": "CommunicationRequest/17"
             }
-          },
-          {
-            "id": "HighRiskExclusions"
           }
         ]
       }

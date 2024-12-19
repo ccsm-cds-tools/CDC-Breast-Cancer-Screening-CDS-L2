@@ -4,12 +4,12 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/131",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/105",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "131",
+        "id": "105",
         "subject": {
-          "reference": "Patient/3f0e8a8e-d642-4752-9ef7-84f70c42a10f",
+          "reference": "Patient/22c7e10d-1608-4c1e-9f23-fa07544da911",
           "display": "Joanne Smith"
         },
         "instantiatesCanonical": [

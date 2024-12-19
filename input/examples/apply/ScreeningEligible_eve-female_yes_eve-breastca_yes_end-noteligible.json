@@ -4,12 +4,12 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/120",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/94",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "120",
+        "id": "94",
         "subject": {
-          "reference": "Patient/ee1709ba-4457-4aaf-b7a7-68c2942f54f2",
+          "reference": "Patient/94c0c077-f700-47fa-9cce-ee2072f3e196",
           "display": "Joanne Smith"
         },
         "instantiatesCanonical": [
@@ -34,16 +34,16 @@
               }
             ],
             "resource": {
-              "reference": "CommunicationRequest/122"
+              "reference": "CommunicationRequest/96"
             }
           }
         ]
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/122",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/96",
       "resource": {
-        "id": "122",
+        "id": "96",
         "resourceType": "CommunicationRequest",
         "status": "option",
         "basedOn": [
@@ -52,7 +52,7 @@
           }
         ],
         "subject": {
-          "reference": "Patient/ee1709ba-4457-4aaf-b7a7-68c2942f54f2",
+          "reference": "Patient/94c0c077-f700-47fa-9cce-ee2072f3e196",
           "display": "Joanne Smith"
         },
         "payload": [

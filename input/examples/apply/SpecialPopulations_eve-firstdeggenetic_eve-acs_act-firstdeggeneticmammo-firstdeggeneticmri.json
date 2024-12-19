@@ -4,10 +4,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/153",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/127",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "153",
+        "id": "127",
         "subject": {
           "reference": "Patient/defaultPatient",
           "display": "Jane Doe"
@@ -22,8 +22,14 @@
             "id": "ACSFirstDegGeneticMammo",
             "title": "Annual screeening mammo starting age 30",
             "description": "Annual screeening mammo starting age 30",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "ACS"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/154"
+              "reference": "ServiceRequest/128"
             },
             "code": [
               {
@@ -54,8 +60,14 @@
             "id": "ACSFirstDegGeneticMri",
             "title": "Annual screeening MRI starting age 30",
             "description": "Annual screeening MRI starting age 30",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "ACS"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/155"
+              "reference": "ServiceRequest/129"
             },
             "code": [
               {
@@ -86,8 +98,17 @@
             "id": "USPSTFRecommendation",
             "title": "Biennial screeening mammo starting age 40",
             "description": "Biennial screeening mammo starting age 40",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "USPSTF",
+                "display": "Screening for Breast Cancer: US Preventive Services Task Force Recommendation Statement.",
+                "citation": "US Preventive Services Task Force. Screening for Breast Cancer: US Preventive Services Task Force Recommendation Statement. JAMA. Published online April 30, 2024.",
+                "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/156"
+              "reference": "ServiceRequest/130"
             },
             "code": [
               {
@@ -118,9 +139,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/154",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/128",
       "resource": {
-        "id": "154",
+        "id": "128",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [
@@ -146,9 +167,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/155",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/129",
       "resource": {
-        "id": "155",
+        "id": "129",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [
@@ -174,9 +195,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/156",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/130",
       "resource": {
-        "id": "156",
+        "id": "130",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [

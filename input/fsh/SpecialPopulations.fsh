@@ -18,6 +18,7 @@ Usage: #definition
 * action[+].id = "ACSMammoHighRisk"
 * action[=].title = "Annual screeening mammogram starting age 30"
 * action[=].description = "Annual screeening mammogram starting age 30"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMammoHighRisk"
@@ -40,6 +41,7 @@ Usage: #definition
 * action[+].id = "ACSMriHighRisk"
 * action[=].title = "Annual screeening MRI starting age 30"
 * action[=].description = "Annual screeening MRI starting age 30"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMriHighRisk"
@@ -62,6 +64,7 @@ Usage: #definition
 * action[+].id = "ACSFirstDegGeneticMammo"
 * action[=].title = "Annual screeening mammo starting age 30"
 * action[=].description = "Annual screeening mammo starting age 30"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSFirstDegGeneticMammo"
@@ -84,6 +87,7 @@ Usage: #definition
 * action[+].id = "ACSFirstDegGeneticMri"
 * action[=].title = "Annual screeening MRI starting age 30"
 * action[=].description = "Annual screeening MRI starting age 30"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSFirstDegGeneticMri"
@@ -132,6 +136,7 @@ Usage: #definition
 * action[+].id = "USPSTFRecommendation"
 * action[=].title = "Biennial screeening mammo starting age 40"
 * action[=].description = "Biennial screeening mammo starting age 40"
+* insert USPSTFScreeningCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsUSPSTFRecommendation"

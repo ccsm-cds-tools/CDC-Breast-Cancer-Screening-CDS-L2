@@ -4,10 +4,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/26",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/23",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "26",
+        "id": "23",
         "subject": {
           "reference": "Patient/defaultPatient",
           "display": "Jane Doe"
@@ -22,8 +22,14 @@
             "id": "ACSMammoAvgRiskAgeOver54",
             "title": "Biennial screeening mammo after age 54",
             "description": "Biennial screeening mammo after age 54",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "ACS"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/27"
+              "reference": "ServiceRequest/24"
             },
             "code": [
               {
@@ -54,8 +60,17 @@
             "id": "USPSTFAvgRisk",
             "title": "Biennial screeening mammo starting age 40",
             "description": "Biennial screeening mammo starting age 40",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "USPSTF",
+                "display": "Screening for Breast Cancer: US Preventive Services Task Force Recommendation Statement.",
+                "citation": "US Preventive Services Task Force. Screening for Breast Cancer: US Preventive Services Task Force Recommendation Statement. JAMA. Published online April 30, 2024.",
+                "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/28"
+              "reference": "ServiceRequest/25"
             },
             "code": [
               {
@@ -86,9 +101,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/27",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/24",
       "resource": {
-        "id": "27",
+        "id": "24",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [
@@ -114,9 +129,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/28",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/25",
       "resource": {
-        "id": "28",
+        "id": "25",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [

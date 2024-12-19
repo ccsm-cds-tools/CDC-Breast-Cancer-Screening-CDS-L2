@@ -4,10 +4,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/97",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/71",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "97",
+        "id": "71",
         "subject": {
           "reference": "Patient/defaultPatient",
           "display": "Jane Doe"
@@ -22,8 +22,14 @@
             "id": "ACSGeneticRiskMammo",
             "title": "Annual screeening mammogram starting age 30",
             "description": "Annual screeening mammogram starting age 30",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "ACS"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/98"
+              "reference": "ServiceRequest/72"
             },
             "code": [
               {
@@ -54,8 +60,14 @@
             "id": "ACSGeneticRiskMri",
             "title": "Annual screeening MRI starting age 30",
             "description": "Annual screeening MRI starting age 30",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "ACS"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/99"
+              "reference": "ServiceRequest/73"
             },
             "code": [
               {
@@ -86,9 +98,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/98",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/72",
       "resource": {
-        "id": "98",
+        "id": "72",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [
@@ -114,9 +126,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/99",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/73",
       "resource": {
-        "id": "99",
+        "id": "73",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [

@@ -4,10 +4,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/80",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/54",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "80",
+        "id": "54",
         "subject": {
           "reference": "Patient/defaultPatient",
           "display": "Jane Doe"
@@ -22,8 +22,14 @@
             "id": "ACSMammoAtypicalBiopsyHighRisk",
             "title": "Annual screeening mammogram in past atypical biopsy with high lifetime risk",
             "description": "Annual screeening mammogram in past atypical biopsy with high lifetime risk",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "ACS"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/81"
+              "reference": "ServiceRequest/55"
             },
             "code": [
               {
@@ -54,8 +60,14 @@
             "id": "ACSMriAtypicalBiopsyHighRisk",
             "title": "Annual screeening MRI in past atypical biopsy with high lifetime risk",
             "description": "Annual screeening MRI in past atypical biopsy with high lifetime risk",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "ACS"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/82"
+              "reference": "ServiceRequest/56"
             },
             "code": [
               {
@@ -86,9 +98,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/81",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/55",
       "resource": {
-        "id": "81",
+        "id": "55",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [
@@ -114,9 +126,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/82",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/56",
       "resource": {
-        "id": "82",
+        "id": "56",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [

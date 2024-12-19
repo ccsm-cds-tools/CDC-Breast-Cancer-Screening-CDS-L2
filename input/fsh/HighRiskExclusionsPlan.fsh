@@ -18,6 +18,7 @@ Usage: #definition
 * action[+].id = "ACSGeneticRiskMammo"
 * action[=].title = "Annual screeening mammogram starting age 30"
 * action[=].description = "Annual screeening mammogram starting age 30"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSGeneticRiskMammo"
@@ -40,6 +41,7 @@ Usage: #definition
 * action[+].id = "ACSGeneticRiskMri"
 * action[=].title = "Annual screeening MRI starting age 30"
 * action[=].description = "Annual screeening MRI starting age 30"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSGeneticRiskMri"
@@ -75,6 +77,7 @@ Usage: #definition
 * action[+].id = "ACSMammoAfterRT"
 * action[=].title = "Annual screeening mammogram starting age 30"
 * action[=].description = "Annual screeening mammogram starting age 30"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMammoAfterRT"
@@ -97,6 +100,7 @@ Usage: #definition
 * action[+].id = "ACSMriAfterRT"
 * action[=].title = "Annual screeening MRI starting age 30"
 * action[=].description = "Annual screeening MRI starting age 30"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMriAfterRT"
@@ -119,6 +123,7 @@ Usage: #definition
 * action[+].id = "ACSMammoAfterBrca"
 * action[=].title = "Annual screeening mammogram after 5 years in remission"
 * action[=].description = "Annual screeening mammogram after 5 years in remission"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMammoAfterBrca"
@@ -154,6 +159,7 @@ Usage: #definition
 * action[+].id = "ACSMammoAtypicalBiopsyHighRisk"
 * action[=].title = "Annual screeening mammogram in past atypical biopsy with high lifetime risk"
 * action[=].description = "Annual screeening mammogram in past atypical biopsy with high lifetime risk"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMammoAtypicalBiopsyHighRisk"
@@ -176,6 +182,7 @@ Usage: #definition
 * action[+].id = "ACSMriAtypicalBiopsyHighRisk"
 * action[=].title = "Annual screeening MRI in past atypical biopsy with high lifetime risk"
 * action[=].description = "Annual screeening MRI in past atypical biopsy with high lifetime risk"
+* insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMriAtypicalBiopsyHighRisk"

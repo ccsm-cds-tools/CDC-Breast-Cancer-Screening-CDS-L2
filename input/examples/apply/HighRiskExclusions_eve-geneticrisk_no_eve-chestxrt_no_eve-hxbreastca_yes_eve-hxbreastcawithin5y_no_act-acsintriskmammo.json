@@ -4,10 +4,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/84",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/58",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "84",
+        "id": "58",
         "subject": {
           "reference": "Patient/defaultPatient",
           "display": "Jane Doe"
@@ -22,8 +22,14 @@
             "id": "ACSMammoAfterBrca",
             "title": "Annual screeening mammogram after 5 years in remission",
             "description": "Annual screeening mammogram after 5 years in remission",
+            "documentation": [
+              {
+                "type": "citation",
+                "label": "ACS"
+              }
+            ],
             "resource": {
-              "reference": "ServiceRequest/85"
+              "reference": "ServiceRequest/59"
             },
             "code": [
               {
@@ -54,9 +60,9 @@
       }
     },
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/85",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/ServiceRequest/59",
       "resource": {
-        "id": "85",
+        "id": "59",
         "resourceType": "ServiceRequest",
         "status": "option",
         "basedOn": [

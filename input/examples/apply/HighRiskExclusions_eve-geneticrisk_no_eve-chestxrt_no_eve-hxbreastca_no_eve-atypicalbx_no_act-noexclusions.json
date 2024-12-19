@@ -4,10 +4,10 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/78",
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/52",
       "resource": {
         "resourceType": "RequestGroup",
-        "id": "78",
+        "id": "52",
         "subject": {
           "reference": "Patient/defaultPatient",
           "display": "Jane Doe"
