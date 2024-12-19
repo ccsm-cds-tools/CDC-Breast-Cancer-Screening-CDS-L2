@@ -5,6 +5,7 @@ using FHIR version '4.0.1'
 include FHIRHelpers  version '4.0.1' called FHIRHelpers
 include HighRiskExclusions version '1.0.0'
 include SpecialPopulations version '1.0.0'
+include AverageRisk version '1.0.0'
 
 codesystem "ActCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system'
 codesystem "ReasonCode": 'http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system'
@@ -45,6 +46,5 @@ define "act-specialpop":
   SpecialPopulations."flow-SpecialPopulations"
 
 define "act-avgrisk":
-  // TODO: Implement logic for act-avgrisk
-  {}
+  AverageRisk."flow-AverageRisk"
 

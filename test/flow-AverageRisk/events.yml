@@ -1,0 +1,40 @@
+eve-ageUnder40:
+  - &Patient_age_<_40_years
+    resourceType: Patient
+    id: "defaultPatient"
+    name: 
+      given:
+        - Jane
+      family: Doe    
+    gender: female
+    birthDate: 1990-01-01  
+eve-age40to44:
+  - &Patient_age_>=40_and_<=44
+    resourceType: Patient
+    id: "defaultPatient"
+    name: 
+      given:
+        - Jane
+      family: Doe    
+    gender: female
+    birthDate: 1980-01-01  
+eve-Age45to54:
+  - &Patient_age_>=45_and_<=54
+    resourceType: Patient
+    id: "defaultPatient"
+    name: 
+      given:
+        - Jane
+      family: Doe    
+    gender: female
+    birthDate: 1970-01-01  
+eve-AgeOver54:
+  - &Patient_age_>=55
+    resourceType: Patient
+    id: "defaultPatient"
+    name: 
+      given:
+        - Jane
+      family: Doe    
+    gender: female
+    birthDate: 1965-01-01  

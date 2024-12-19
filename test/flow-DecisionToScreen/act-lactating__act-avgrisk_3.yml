@@ -15,4 +15,5 @@ results:
     - *act-sdmcontinueage
     - *act-sdmcontinuelifexp
     - *act-lactating    
-    #- "*act-avgrisk"
+    - *act-acsavgriskover74    
+    - *act-uspstfavgriskover74

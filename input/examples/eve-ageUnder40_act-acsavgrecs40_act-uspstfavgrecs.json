@@ -1,0 +1,1957 @@
+{
+  "patientResults": {
+    "defaultPatient": {
+      "Patient": {
+        "name": [
+          {
+            "family": {
+              "value": "Doe"
+            },
+            "given": [
+              {
+                "value": "Jane"
+              }
+            ]
+          }
+        ],
+        "gender": {
+          "value": "female"
+        },
+        "birthDate": {
+          "value": "1990-01-01"
+        },
+        "id": {
+          "value": "defaultPatient"
+        }
+      },
+      "ACSMammoAvgRiskAgeUnder45": {
+        "code": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "reason": {
+          "code": "ACSaveragerisk",
+          "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+          "display": "ACS average risk"
+        },
+        "timingAge": {
+          "value": 40,
+          "code": "a"
+        },
+        "timingTiming": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        }
+      },
+      "ACSMammoAvgRiskAge45to54": null,
+      "ACSMammoAvgRiskAgeOver54": null,
+      "USPSTFAvgRisk": {
+        "code": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "reason": {
+          "code": "USPSTFaveragerisk",
+          "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+          "display": "USPSTF average risk"
+        },
+        "timingAge": {
+          "value": 40,
+          "code": "a"
+        },
+        "timingTiming": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 2,
+            "periodUnit": "a"
+          }
+        }
+      },
+      "flow-AverageRisk": [
+        {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        }
+      ],
+      "ExistsACSMammoAvgRiskAgeUnder45": true,
+      "ACSMammoAvgRiskAgeUnder45Code": {
+        "code": "24606-6",
+        "system": "http://loinc.org",
+        "display": "MG Breast Screening"
+      },
+      "ACSMammoAvgRiskAgeUnder45Timing": {
+        "event": [
+          "2025-01-25"
+        ],
+        "repeat": {
+          "boundsPeriod": {
+            "start": "2030-01-01"
+          },
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "a"
+        }
+      },
+      "ACSMammoAvgRiskAgeUnder45TimingEvent": "2025-01-25",
+      "ExistsACSMammoAvgRiskAge45to54": false,
+      "ACSMammoAvgRiskAge45to54Code": null,
+      "ACSMammoAvgRiskAge45to54Timing": null,
+      "ACSMammoAvgRiskAge45to54TimingEvent": null,
+      "ExistsACSMammoAvgRiskAgeOver54": false,
+      "ACSMammoAvgRiskAgeOver54Code": null,
+      "ACSMammoAvgRiskAgeOver54Timing": null,
+      "ACSMammoAvgRiskAgeOver54TimingEvent": null,
+      "ExistsUSPSTFAvgRisk": true,
+      "USPSTFAvgRiskCode": {
+        "code": "24606-6",
+        "system": "http://loinc.org",
+        "display": "MG Breast Screening"
+      },
+      "USPSTFAvgRiskTiming": {
+        "event": [
+          "2025-01-25"
+        ],
+        "repeat": {
+          "boundsPeriod": {
+            "start": "2030-01-01"
+          },
+          "frequency": 1,
+          "period": 2,
+          "periodUnit": "a"
+        }
+      },
+      "USPSTFAvgRiskimingEvent": "2025-01-25",
+      "AgeInYears": 33
+    }
+  },
+  "unfilteredResults": {},
+  "localIdPatientResultsMap": {
+    "defaultPatient": {
+      "AverageRisk": {
+        "211": [
+          {
+            "name": [
+              {
+                "family": {
+                  "value": "Doe"
+                },
+                "given": [
+                  {
+                    "value": "Jane"
+                  }
+                ]
+              }
+            ],
+            "gender": {
+              "value": "female"
+            },
+            "birthDate": {
+              "value": "1990-01-01"
+            },
+            "id": {
+              "value": "defaultPatient"
+            }
+          }
+        ],
+        "212": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "213": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "216": [
+          {
+            "code": {
+              "code": "24606-6",
+              "system": "http://loinc.org",
+              "display": "MG Breast Screening"
+            },
+            "reason": {
+              "code": "ACSaveragerisk",
+              "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+              "display": "ACS average risk"
+            },
+            "timingAge": {
+              "value": 40,
+              "code": "a"
+            },
+            "timingTiming": {
+              "event": [
+                "2025-01-25"
+              ],
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2030-01-01"
+                },
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "a"
+              }
+            }
+          },
+          {
+            "code": {
+              "code": "24606-6",
+              "system": "http://loinc.org",
+              "display": "MG Breast Screening"
+            },
+            "reason": {
+              "code": "USPSTFaveragerisk",
+              "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+              "display": "USPSTF average risk"
+            },
+            "timingAge": {
+              "value": 40,
+              "code": "a"
+            },
+            "timingTiming": {
+              "event": [
+                "2025-01-25"
+              ],
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2030-01-01"
+                },
+                "frequency": 1,
+                "period": 2,
+                "periodUnit": "a"
+              }
+            }
+          }
+        ],
+        "217": [
+          {
+            "code": {
+              "code": "24606-6",
+              "system": "http://loinc.org",
+              "display": "MG Breast Screening"
+            },
+            "reason": {
+              "code": "ACSaveragerisk",
+              "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+              "display": "ACS average risk"
+            },
+            "timingAge": {
+              "value": 40,
+              "code": "a"
+            },
+            "timingTiming": {
+              "event": [
+                "2025-01-25"
+              ],
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2030-01-01"
+                },
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "a"
+              }
+            }
+          },
+          null,
+          null,
+          {
+            "code": {
+              "code": "24606-6",
+              "system": "http://loinc.org",
+              "display": "MG Breast Screening"
+            },
+            "reason": {
+              "code": "USPSTFaveragerisk",
+              "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+              "display": "USPSTF average risk"
+            },
+            "timingAge": {
+              "value": 40,
+              "code": "a"
+            },
+            "timingTiming": {
+              "event": [
+                "2025-01-25"
+              ],
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2030-01-01"
+                },
+                "frequency": 1,
+                "period": 2,
+                "periodUnit": "a"
+              }
+            }
+          }
+        ],
+        "219": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "220": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "221": true,
+        "223": true,
+        "225": false,
+        "226": false,
+        "231": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "374": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "404": null,
+        "405": null,
+        "407": false,
+        "408": false,
+        "468": null,
+        "469": null,
+        "554": null,
+        "584": null,
+        "585": null,
+        "587": false,
+        "588": false,
+        "648": null,
+        "649": null,
+        "734": null,
+        "764": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "766": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "851": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "909": [
+          null
+        ],
+        "910": null,
+        "913": [
+          {
+            "code": {
+              "code": "24606-6",
+              "system": "http://loinc.org",
+              "display": "MG Breast Screening"
+            },
+            "reason": {
+              "code": "ACSaveragerisk",
+              "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+              "display": "ACS average risk"
+            },
+            "timingAge": {
+              "value": 40,
+              "code": "a"
+            },
+            "timingTiming": {
+              "event": [
+                "2025-01-25"
+              ],
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2030-01-01"
+                },
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "a"
+              }
+            }
+          },
+          {
+            "code": {
+              "code": "24606-6",
+              "system": "http://loinc.org",
+              "display": "MG Breast Screening"
+            },
+            "reason": {
+              "code": "USPSTFaveragerisk",
+              "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+              "display": "USPSTF average risk"
+            },
+            "timingAge": {
+              "value": 40,
+              "code": "a"
+            },
+            "timingTiming": {
+              "event": [
+                "2025-01-25"
+              ],
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2030-01-01"
+                },
+                "frequency": 1,
+                "period": 2,
+                "periodUnit": "a"
+              }
+            }
+          }
+        ],
+        "914": [
+          null
+        ],
+        "917": null,
+        "918": null,
+        "1092": true,
+        "1093": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "1122": false,
+        "1124": true,
+        "1127": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "1129": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "1216": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "1217": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "1219": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "1221": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "1308": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "1357": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "1391": "2025-01-25",
+        "1393": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "1444": [
+          "2025-01-25"
+        ],
+        "1453": "2025-01-25",
+        "1456": "2025-01-25",
+        "1486": false,
+        "1487": null,
+        "1516": true,
+        "1518": false,
+        "1521": null,
+        "1523": null,
+        "1611": null,
+        "1613": null,
+        "1615": null,
+        "1751": null,
+        "1785": null,
+        "1787": null,
+        "1850": null,
+        "1880": false,
+        "1881": null,
+        "1910": true,
+        "1912": false,
+        "1915": null,
+        "1917": null,
+        "2005": null,
+        "2007": null,
+        "2009": null,
+        "2145": null,
+        "2179": null,
+        "2181": null,
+        "2244": null,
+        "2274": true,
+        "2275": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "2304": false,
+        "2306": true,
+        "2309": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "2311": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "2398": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "2399": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "2401": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 2,
+            "periodUnit": "a"
+          }
+        },
+        "2403": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "2490": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 2,
+            "periodUnit": "a"
+          }
+        },
+        "2539": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 2,
+            "periodUnit": "a"
+          }
+        },
+        "2573": "2025-01-25",
+        "2575": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 2,
+            "periodUnit": "a"
+          }
+        },
+        "2626": [
+          "2025-01-25"
+        ],
+        "2635": "2025-01-25",
+        "2638": "2025-01-25",
+        "2640": 33,
+        "2643": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "2644": "1990-01-01",
+        "2645": 33
+      },
+      "AverageRiskEvents": {
+        "209": [
+          {
+            "name": [
+              {
+                "family": {
+                  "value": "Doe"
+                },
+                "given": [
+                  {
+                    "value": "Jane"
+                  }
+                ]
+              }
+            ],
+            "gender": {
+              "value": "female"
+            },
+            "birthDate": {
+              "value": "1990-01-01"
+            },
+            "id": {
+              "value": "defaultPatient"
+            }
+          }
+        ],
+        "210": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "211": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "214": true,
+        "215": true,
+        "217": 33,
+        "220": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "221": "1990-01-01",
+        "222": 33,
+        "224": 33,
+        "225": 40,
+        "229": false,
+        "230": false,
+        "231": false,
+        "232": 33,
+        "233": 40,
+        "236": true,
+        "237": 33,
+        "238": 44,
+        "244": false,
+        "245": false,
+        "246": false,
+        "247": 33,
+        "248": 45,
+        "251": true,
+        "252": 33,
+        "253": 54,
+        "259": false,
+        "260": false,
+        "261": 33,
+        "262": 54
+      },
+      "AverageRiskActions": {
+        "210": {
+          "id": "http://loinc.org"
+        },
+        "211": {
+          "id": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system"
+        },
+        "213": {
+          "code": "ACSaveragerisk",
+          "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+          "display": "ACS average risk"
+        },
+        "215": {
+          "code": "USPSTFaveragerisk",
+          "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+          "display": "USPSTF average risk"
+        },
+        "217": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "224": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "225": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "226": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "227": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "228": [
+          "2025-01-25"
+        ],
+        "230": 2025,
+        "231": 1,
+        "232": 25,
+        "233": "2025-01-25",
+        "237": "2025-01-25",
+        "241": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "a"
+        },
+        "242": 1,
+        "243": 1,
+        "244": "a",
+        "297": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "298": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "299": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "300": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "frequency": 1,
+            "period": 2,
+            "periodUnit": "a"
+          }
+        },
+        "301": [
+          "2025-01-25"
+        ],
+        "303": 2025,
+        "304": 1,
+        "305": 25,
+        "306": "2025-01-25",
+        "310": "2025-01-25",
+        "314": {
+          "frequency": 1,
+          "period": 2,
+          "periodUnit": "a"
+        },
+        "315": 1,
+        "316": 2,
+        "317": "a",
+        "370": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "372": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "389": {
+          "code": "ACSaveragerisk",
+          "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+          "display": "ACS average risk"
+        },
+        "390": {
+          "value": 40,
+          "code": "a"
+        },
+        "391": 40,
+        "392": "a",
+        "398": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "778": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "780": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "797": {
+          "code": "USPSTFaveragerisk",
+          "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+          "display": "USPSTF average risk"
+        },
+        "798": {
+          "value": 40,
+          "code": "a"
+        },
+        "799": 40,
+        "800": "a",
+        "806": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "USPSTFaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "USPSTF average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 2,
+              "periodUnit": "a"
+            }
+          }
+        }
+      },
+      "BCSMCommonFunctions": {
+        "209": [
+          {
+            "name": [
+              {
+                "family": {
+                  "value": "Doe"
+                },
+                "given": [
+                  {
+                    "value": "Jane"
+                  }
+                ]
+              }
+            ],
+            "gender": {
+              "value": "female"
+            },
+            "birthDate": {
+              "value": "1990-01-01"
+            },
+            "id": {
+              "value": "defaultPatient"
+            }
+          }
+        ],
+        "210": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "211": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "374": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "reason": {
+            "code": "ACSaveragerisk",
+            "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+            "display": "ACS average risk"
+          },
+          "timingAge": {
+            "value": 40,
+            "code": "a"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "boundsPeriod": {
+                "start": "2030-01-01"
+              },
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "375": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "392": {
+          "code": "24606-6",
+          "system": "http://loinc.org",
+          "display": "MG Breast Screening"
+        },
+        "393": {
+          "code": "ACSaveragerisk",
+          "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-reason-code-system",
+          "display": "ACS average risk"
+        },
+        "394": {
+          "value": 40,
+          "code": "a"
+        },
+        "400": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2030-01-01"
+            },
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "401": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "418": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "443": [
+          "2025-01-25"
+        ],
+        "448": {
+          "boundsPeriod": {
+            "start": "2030-01-01"
+          },
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "a"
+        },
+        "449": {
+          "start": "2030-01-01"
+        },
+        "450": "2030-01-01",
+        "451": {
+          "name": [
+            {
+              "family": {
+                "value": "Doe"
+              },
+              "given": [
+                {
+                  "value": "Jane"
+                }
+              ]
+            }
+          ],
+          "gender": {
+            "value": "female"
+          },
+          "birthDate": {
+            "value": "1990-01-01"
+          },
+          "id": {
+            "value": "defaultPatient"
+          }
+        },
+        "452": {
+          "value": "1990-01-01"
+        },
+        "453": {
+          "value": 40,
+          "unit": "year"
+        },
+        "455": {
+          "value": 40,
+          "code": "a"
+        },
+        "461": 40,
+        "463": {
+          "value": 40,
+          "code": "a"
+        },
+        "469": "a",
+        "470": "year",
+        "472": "1990-01-01",
+        "479": "2030-01-01",
+        "484": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "501": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "526": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "a"
+        },
+        "541": 1,
+        "542": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "559": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "584": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "a"
+        },
+        "599": 1,
+        "600": {
+          "code": {
+            "code": "24606-6",
+            "system": "http://loinc.org",
+            "display": "MG Breast Screening"
+          },
+          "timingTiming": {
+            "event": [
+              "2025-01-25"
+            ],
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "a"
+            }
+          }
+        },
+        "617": {
+          "event": [
+            "2025-01-25"
+          ],
+          "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "a"
+          }
+        },
+        "642": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "a"
+        },
+        "657": "a"
+      },
+      "FHIRHelpers": {
+        "252": "year",
+        "253": "a",
+        "255": "ms",
+        "258": "s",
+        "261": "min",
+        "264": "h",
+        "267": "d",
+        "270": "wk",
+        "273": "mo",
+        "276": "a",
+        "277": "year",
+        "2329": {
+          "value": "1990-01-01"
+        },
+        "2330": "1990-01-01"
+      }
+    }
+  },
+  "patientEvaluatedRecords": {
+    "defaultPatient": [
+      {
+        "name": [
+          {
+            "family": {
+              "value": "Doe"
+            },
+            "given": [
+              {
+                "value": "Jane"
+              }
+            ]
+          }
+        ],
+        "gender": {
+          "value": "female"
+        },
+        "birthDate": {
+          "value": "1990-01-01"
+        },
+        "id": {
+          "value": "defaultPatient"
+        }
+      },
+      {
+        "name": [
+          {
+            "family": {
+              "value": "Doe"
+            },
+            "given": [
+              {
+                "value": "Jane"
+              }
+            ]
+          }
+        ],
+        "gender": {
+          "value": "female"
+        },
+        "birthDate": {
+          "value": "1990-01-01"
+        },
+        "id": {
+          "value": "defaultPatient"
+        }
+      },
+      {
+        "name": [
+          {
+            "family": {
+              "value": "Doe"
+            },
+            "given": [
+              {
+                "value": "Jane"
+              }
+            ]
+          }
+        ],
+        "gender": {
+          "value": "female"
+        },
+        "birthDate": {
+          "value": "1990-01-01"
+        },
+        "id": {
+          "value": "defaultPatient"
+        }
+      },
+      {
+        "name": [
+          {
+            "family": {
+              "value": "Doe"
+            },
+            "given": [
+              {
+                "value": "Jane"
+              }
+            ]
+          }
+        ],
+        "gender": {
+          "value": "female"
+        },
+        "birthDate": {
+          "value": "1990-01-01"
+        },
+        "id": {
+          "value": "defaultPatient"
+        }
+      }
+    ]
+  }
+}
