@@ -1,0 +1,53 @@
+{
+  "resourceType": "Bundle",
+  "id": "ScreeningEligible_inc-AgeAtLeast18_no",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/131",
+      "resource": {
+        "resourceType": "RequestGroup",
+        "id": "131",
+        "subject": {
+          "reference": "Patient/3f0e8a8e-d642-4752-9ef7-84f70c42a10f",
+          "display": "Joanne Smith"
+        },
+        "instantiatesCanonical": [
+          "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible"
+        ],
+        "intent": "proposal",
+        "status": "draft",
+        "action": [],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-messages",
+            "valueReference": {
+              "reference": "#contained-1"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "OperationOutcome",
+            "issue": [
+              {
+                "severity": "error",
+                "code": "processing",
+                "diagnostics": "Excluded or not included",
+                "details": {
+                  "coding": [
+                    {
+                      "system": "http://example.org/CodeSystem/plan-definition-action-reason-code-system",
+                      "code": "excludedornotincluded"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "contained-1"
+          }
+        ]
+      }
+    }
+  ]
+}

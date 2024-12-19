@@ -1,0 +1,66 @@
+{
+  "resourceType": "Bundle",
+  "id": "ScreeningEligible_inc-AgeAtLeast18_MostRecentAgeValue_yes",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/124",
+      "resource": {
+        "resourceType": "RequestGroup",
+        "id": "124",
+        "subject": {
+          "reference": "Patient/609b3885-0c0f-4fc0-9d0d-c5fa114c79eb",
+          "display": "Joanne Smith"
+        },
+        "instantiatesCanonical": [
+          "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible"
+        ],
+        "intent": "proposal",
+        "status": "draft",
+        "action": [
+          {
+            "id": "IsScreeningEligible",
+            "title": "Screening eligible",
+            "description": "Patient is eligible for screening",
+            "code": [
+              {
+                "coding": [
+                  {
+                    "code": "eligible",
+                    "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system",
+                    "display": "Eligible for screening"
+                  }
+                ]
+              }
+            ],
+            "resource": {
+              "reference": "CommunicationRequest/126"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/126",
+      "resource": {
+        "id": "126",
+        "resourceType": "CommunicationRequest",
+        "status": "option",
+        "basedOn": [
+          {
+            "reference": "http://cancerscreeningcds.github.io/bcsm-cds/ActivityDefinition/CommunicateEligible"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/609b3885-0c0f-4fc0-9d0d-c5fa114c79eb",
+          "display": "Joanne Smith"
+        },
+        "payload": [
+          {
+            "contentString": "Eligible for screening"
+          }
+        ]
+      }
+    }
+  ]
+}

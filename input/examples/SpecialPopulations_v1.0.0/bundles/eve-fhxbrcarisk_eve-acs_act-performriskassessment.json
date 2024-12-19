@@ -1,0 +1,44 @@
+{
+  "resourceType": "Bundle",
+  "id": "eve-fhxbrcarisk_eve-acs_act-performriskassessment",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "defaultPatient",
+        "name": [
+          {
+            "given": [
+              "Jane"
+            ],
+            "family": "Doe"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1980-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "0247d9c1-2c2e-4103-a368-61d2b2205939",
+        "subject": {
+          "reference": "Patient/defaultPatient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system",
+              "code": "FamilialRiskAssessment",
+              "display": "Familial risk assessment"
+            }
+          ]
+        },
+        "valueBoolean": true,
+        "effectiveDateTime": "2023-11-10T00:00:00.0Z"
+      }
+    }
+  ]
+}

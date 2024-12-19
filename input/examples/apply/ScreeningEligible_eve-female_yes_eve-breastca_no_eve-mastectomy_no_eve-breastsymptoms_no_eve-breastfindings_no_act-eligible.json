@@ -1,0 +1,66 @@
+{
+  "resourceType": "Bundle",
+  "id": "ScreeningEligible_eve-female_yes_eve-breastca_no_eve-mastectomy_no_eve-breastsymptoms_no_eve-breastfindings_no_act-eligible",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/RequestGroup/104",
+      "resource": {
+        "resourceType": "RequestGroup",
+        "id": "104",
+        "subject": {
+          "reference": "Patient/c6a01e25-01ba-410c-8516-eede3401a59d",
+          "display": "Joanne Smith"
+        },
+        "instantiatesCanonical": [
+          "http://cancerscreeningcds.github.io/bcsm-cds/PlanDefinition/flow-ScreeningEligible"
+        ],
+        "intent": "proposal",
+        "status": "draft",
+        "action": [
+          {
+            "id": "IsScreeningEligible",
+            "title": "Screening eligible",
+            "description": "Patient is eligible for screening",
+            "code": [
+              {
+                "coding": [
+                  {
+                    "code": "eligible",
+                    "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system",
+                    "display": "Eligible for screening"
+                  }
+                ]
+              }
+            ],
+            "resource": {
+              "reference": "CommunicationRequest/106"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://cancerscreeningcds.github.io/bcsm-cds/CommunicationRequest/106",
+      "resource": {
+        "id": "106",
+        "resourceType": "CommunicationRequest",
+        "status": "option",
+        "basedOn": [
+          {
+            "reference": "http://cancerscreeningcds.github.io/bcsm-cds/ActivityDefinition/CommunicateEligible"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/c6a01e25-01ba-410c-8516-eede3401a59d",
+          "display": "Joanne Smith"
+        },
+        "payload": [
+          {
+            "contentString": "Eligible for screening"
+          }
+        ]
+      }
+    }
+  ]
+}

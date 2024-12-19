@@ -1,0 +1,47 @@
+{
+  "resourceType": "Bundle",
+  "id": "eve-highlifetimerisk_eve-acs_act-acshighriskmammo_act-acshighriskmri",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "defaultPatient",
+        "name": [
+          {
+            "given": [
+              "Jane"
+            ],
+            "family": "Doe"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1980-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f741985a-7961-4fd2-9f97-d5673ce7f57b",
+        "subject": {
+          "reference": "Patient/defaultPatient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/screening-observation-code-system",
+              "code": "LifetimeRiskResult",
+              "display": "Lifetime risk assessment result"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 21,
+          "code": "%"
+        },
+        "effectiveDateTime": "2023-11-10T00:00:00.0Z"
+      }
+    }
+  ]
+}

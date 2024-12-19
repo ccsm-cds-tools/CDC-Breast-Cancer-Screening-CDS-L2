@@ -1,0 +1,23 @@
+{
+  "resourceType": "Bundle",
+  "id": "eve-AgeOver54_act-acsavgrecs55-uspstfavgrecs",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "defaultPatient",
+        "name": [
+          {
+            "given": [
+              "Jane"
+            ],
+            "family": "Doe"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1965-01-01"
+      }
+    }
+  ]
+}

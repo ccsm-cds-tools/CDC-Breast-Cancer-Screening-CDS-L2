@@ -1,0 +1,22 @@
+{
+  "resourceType": "Bundle",
+  "id": "inc-AgeAtLeast18_error",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "0e44a3b9-d405-4838-a47f-67a24340970b",
+        "name": [
+          {
+            "given": [
+              "Joanne"
+            ],
+            "family": "Smith"
+          }
+        ],
+        "gender": "female"
+      }
+    }
+  ]
+}
