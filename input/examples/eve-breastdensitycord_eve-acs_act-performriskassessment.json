@@ -1,0 +1,52 @@
+{
+  "resourceType": "Bundle",
+  "id": "eve-breastdensitycord_eve-acs_act-performriskassessment",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "defaultPatient",
+        "name": [
+          {
+            "given": [
+              "Jane"
+            ],
+            "family": "Doe"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1980-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "biopsy-report-1",
+        "subject": {
+          "reference": "Patient/defaultPatient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10193-1",
+              "display": "Physical findings of Breasts Narrative"
+            }
+          ]
+        },
+        "conclusionCode": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS",
+                "code": "HeterogeneouslyDense"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
