@@ -1,7 +1,6 @@
 ---
 name: eve-ageUnder40_act-acsavgrecs40_act-uspstfavgrecs
 flow: flow-AverageRisk
-only: true
 externalData:
   - events
   - actions

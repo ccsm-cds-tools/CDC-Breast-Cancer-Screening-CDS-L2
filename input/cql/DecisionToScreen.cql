@@ -19,10 +19,10 @@ define "flow-DecisionToScreen":
   flatten({
     ({SDMContinueScreeningAge} except { null }),
     ({SDMContinueScreeningLifeExp} except { null }),
-    Actions."act-highriskexclusions" except { null },
-    Actions."act-specialpop" except { null },
+    HighRiskExclusions except { null },
+    SpecialPopulations except { null },
     ({SDMDelayScreeningLactating} except { null }),
-    (if Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0
+    (if Count(HighRiskExclusions) = 0 and Count(SpecialPopulations) = 0
         then Actions."act-avgrisk" else null)
   })
   except { null }
@@ -54,6 +54,12 @@ define SDMContinueScreeningLifeExpCode:
 
 define SDMContinueScreeningLifeExpReason:
   SDMContinueScreeningLifeExp.reason  
+
+define HighRiskExclusions:
+  Actions."act-highriskexclusions"  
+
+define SpecialPopulations:
+  Actions."act-specialpop"  
 
 define SDMDelayScreeningLactating:
   if Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0

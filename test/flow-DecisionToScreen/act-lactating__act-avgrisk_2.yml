@@ -13,4 +13,5 @@ results:
   flow-DecisionToScreen:
     - *act-sdmcontinueage
     - *act-lactating
-    #- "*act-avgrisk"
+    - *act-acsavgriskover74    
+    - *act-uspstfavgriskover74

@@ -12,3 +12,5 @@ results:
   flow-DecisionToScreen:
     - *act-sdmcontinueage
     - *act-sdmcontinuelifexp
+    - *act-acsavgriskover74
+    - *act-uspstfavgriskover74        
