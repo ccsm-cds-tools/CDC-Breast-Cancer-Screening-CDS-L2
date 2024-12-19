@@ -1,0 +1,11 @@
+---
+name: eve-age40to44_act-acsavgrecs40_act-uspstfavgrecs
+flow: flow-AverageRisk
+only: true
+externalData:
+  - events
+  - actions
+data:
+  - *Patient_age_>=40_and_<=44
+results:
+  flow-AverageRisk: *Screening_age_=_>=40_and_<45
