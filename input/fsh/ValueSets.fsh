@@ -53,8 +53,7 @@ Description: "Code representing plan definition action reason codes"
 * #breastdensitycord "BI-RADS breast density category C or D"
 * #fhxbreastcarisk "Compelling family history of breast cancer"
 * #USPSTFaveragerisk "USPSTF average risk"
-
-
+* #ACSaveragerisk "ACS average risk"
 
 ValueSet:    PlanDefinitionActionReasonCodes
 Id:          plan-definition-action-reason-codes
