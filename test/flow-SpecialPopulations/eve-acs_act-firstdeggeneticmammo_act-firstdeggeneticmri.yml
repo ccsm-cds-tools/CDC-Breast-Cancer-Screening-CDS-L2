@@ -1,0 +1,15 @@
+---
+name: eve-firstdeggenetic_eve-acs_act-firstdeggeneticmammo-firstdeggeneticmri
+externalData:
+  - ../SpecialPopulationsEvents/events
+  - actions
+  - ../DataElements/data_elements
+  - ../default_patients
+data:
+  - *defaultPatient
+  - *OBSERVATIONS_include_First_degree_relative_with_genetic_marker_or_syndrome
+results:
+  flow-SpecialPopulations:
+    - *act-firstdeggeneticmammo
+    - *act-firstdeggeneticmri
+    - *act-uspstfrecs

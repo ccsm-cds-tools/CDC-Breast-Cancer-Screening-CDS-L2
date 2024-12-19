@@ -6,6 +6,9 @@ include FHIRHelpers  version '4.0.1' called FHIRHelpers
 include DecisionToScreenEvents version '1.0.0' called Events
 include DecisionToScreenActions version '1.0.0' called Actions
 
+codesystem "cpg-activity-type-cs": 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs'
+code "Record an inference": 'record-inference' from "cpg-activity-type-cs" display 'Record an inference'
+
 context Patient
 
 //------------------------------------------------------------------------------
@@ -16,8 +19,8 @@ define "flow-DecisionToScreen":
   flatten({
     ({SDMContinueScreeningAge} except { null }),
     ({SDMContinueScreeningLifeExp} except { null }),
-    Actions."act-highriskexclusions",
-    Actions."act-specialpop",
+    Actions."act-highriskexclusions" except { null },
+    Actions."act-specialpop" except { null },
     ({SDMDelayScreeningLactating} except { null }),
     (if Count(Actions."act-highriskexclusions") = 0 and Count(Actions."act-specialpop") = 0
         then Actions."act-avgrisk" else null)
@@ -65,4 +68,27 @@ define SDMDelayScreeningLactatingCode:
   SDMDelayScreeningLactating.code   
 
 define SDMDelayScreeningLactatingReason:
-  SDMDelayScreeningLactating.reason    
+  SDMDelayScreeningLactating.reason
+
+define InferenceCode:
+  "Record an inference"   
+
+define InferenceObservation:
+  CreateObservation(Actions."Screening Next Due", FHIR.dateTime {value: Now()}) 
+  
+define function CreateObservation(code System.Code, value FHIR.dateTime):
+  FHIR.Observation {
+    status: ObservationStatus{value: 'final'},
+    issued: FHIR.instant{value: Now()},
+    subject: FHIR.Reference {reference: FHIR.string { value: 'Patient/' + Patient.id }},
+    code: FHIR.CodeableConcept {
+      coding: {
+        FHIR.Coding {
+          system: FHIR.uri { value: code.system},
+          code: FHIR.code { value: code.code },
+          display: FHIR.string { value: code.display }
+        }
+      }
+    },    
+    value: value
+  }

@@ -1,0 +1,10 @@
+---
+name: OBSERVATIONS_NOT_include_familial_risk_assessment
+elementId: de-fhxbreastcarisk
+externalData:
+  - ../data_elements
+data:
+  - *Sex_assigned_at_birth_=_female_AND_gender_=_other
+results:
+  FamilyHistoryAssessmentObservations: false
+  de-fhxbreastcarisk: false

@@ -100,3 +100,45 @@ Usage: #definition
 * code.text = "Shared decision making to delay screening"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Instance: BreastScreeningServiceRequest
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity
+Title: "Breast Screening Service Request"
+Usage: #definition
+
+* insert CPGKnowledgeExtensions
+* insert CommonMetadata
+* meta.profile[+] = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
+* url = Canonical(BreastScreeningServiceRequest)
+* name = "BreastScreeningServiceRequest"
+* description = "This ActivityDefinition generates a ServiceRequest for screening study."
+* kind = $RRTYPE#ServiceRequest "ServiceRequest"
+* intent = $RINTENT#proposal "Proposal"
+* priority = $RPRIOR#routine "Routine"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Instance: BreastScreeningNextDueRecordInferenceTask
+InstanceOf: http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity
+Title: "Breast Screening Next Due Record Inference Task"
+Usage: #definition
+
+* insert CPGKnowledgeExtensions
+* insert CommonMetadata
+* meta.profile[+] = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableactivity"
+* url = Canonical(BreastScreeningNextDueRecordInferenceTask)
+* name = "BreastScreeningNextDueRecordInferenceTask"
+* description = "This ActivityDefinition generates a RecordInferenceTask for screening study next due."
+* kind = $RRTYPE#Task "Task"
+* profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recordinferencetask"
+* code.coding[0] = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs#record-inference "Record an inference"
+* intent = $RINTENT#proposal "Proposal"
+* priority = $RPRIOR#routine "Routine"
+* dynamicValue[+].path = "input[0].type"
+* dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* dynamicValue[=].expression.expression = "InferenceCode"
+* dynamicValue[+].path = "input[0].value.ofType(dateTime)"
+* dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* dynamicValue[=].expression.expression = "ExampleInferenceObservation"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////

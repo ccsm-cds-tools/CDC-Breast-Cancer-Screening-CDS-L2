@@ -1,16 +1,16 @@
 ---
-name: eve-highlifetimerisk_eve-age30to39_eve-acs_act-acshighriskmammo_act-acshighriskmri
+name: eve-highlifetimerisk_eve-acs_act-acshighriskmammo_act-acshighriskmri
 flow: flow-SpecialPopulations
-skip: true
 externalData:
-  - ./events/events
-  - ./actions/actions
+  - ../SpecialPopulationsEvents/events
+  - actions
+  - ../DataElements/data_elements
   - ../default_patients
 data:
-  - "*eve-highlifetimerisk"
-  - "*eve-age30to39"
-  - "*eve-acs"
+  - *defaultPatient
+  - *'Lifetime_risk_of_breast_cancer_>_20%_or_25%'
 results:
   flow-SpecialPopulations:
-    - "*act-acshighriskmammo"
-    - "*act-acshighriskmri"
+    - *act-acshighriskmammo
+    - *act-acshighriskmri
+    - *act-uspstfrecs
