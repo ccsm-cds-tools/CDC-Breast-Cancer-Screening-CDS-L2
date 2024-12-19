@@ -1,0 +1,23 @@
+{
+  "resourceType": "Bundle",
+  "id": "inc-AgeAtLeast18_yes",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "11d6e67a-4e18-4fa1-be0e-7d2a35d73f2c",
+        "name": [
+          {
+            "given": [
+              "Joanne"
+            ],
+            "family": "Smith"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1980-01-01"
+      }
+    }
+  ]
+}

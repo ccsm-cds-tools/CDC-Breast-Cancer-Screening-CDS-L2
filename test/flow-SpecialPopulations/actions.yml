@@ -4,6 +4,8 @@ act-acshighriskmammo:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "highlifetimerisk"
       display: "High lifetime risk"
@@ -26,6 +28,8 @@ act-acshighriskmri:
       code: "30794-2"
       display: "MR Breast"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "highlifetimerisk"
       display: "High lifetime risk"
@@ -48,6 +52,8 @@ act-firstdeggeneticmammo:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "firstdeggenetic"
       display: "First degree relative with genetic marker or syndrome"
@@ -70,6 +76,8 @@ act-firstdeggeneticmri:
       code: "30794-2"
       display: "MR Breast"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "firstdeggenetic"
       display: "First degree relative with genetic marker or syndrome"
@@ -92,6 +100,8 @@ act-breastdensitycord:
       code: "lifetimeriskassessment"
       display: "Perform lifetime risk assessment"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: ACS
     reason:
       code: "breastdensitycord"
       display: "BI-RADS breast density category C or D"
@@ -102,6 +112,8 @@ act-fhxbrcarisk:
       code: "lifetimeriskassessment"
       display: "Perform lifetime risk assessment"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: ACS
     reason:
       code: "fhxbreastcarisk"
       display: "Compelling family history of breast cancer"
@@ -112,6 +124,8 @@ act-uspstfrecs:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: USPSTF
     reason:
       code: "USPSTFaveragerisk"
       display: "USPSTF average risk"

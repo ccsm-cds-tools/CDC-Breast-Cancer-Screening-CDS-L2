@@ -18,9 +18,13 @@ RuleSet: CommonMetadata
 * reviewer[+].name = "Division of Cancer Prevention and Control, Centers for Disease Control and Prevention"
 * endorser[+].name = "Division of Cancer Prevention and Control, Centers for Disease Control and Prevention"
 
+RuleSet: ACSCitationActionDocumentation
+* action[=].documentation[+].type = $RATYPE#citation "Citation"
+* action[=].documentation[=].label = "ACS"
+
 RuleSet: USPSTFScreeningCitationActionDocumentation
 * action[=].documentation[+].type = $RATYPE#citation "Citation"
-* action[=].documentation[=].label = "US Preventive Services Task Force"
+* action[=].documentation[=].label = "USPSTF"
 * action[=].documentation[=].display = "Screening for Breast Cancer: US Preventive Services Task Force Recommendation Statement."
 * action[=].documentation[=].citation = "US Preventive Services Task Force. Screening for Breast Cancer: US Preventive Services Task Force Recommendation Statement. JAMA. Published online April 30, 2024."
 * action[=].documentation[=].url = "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"

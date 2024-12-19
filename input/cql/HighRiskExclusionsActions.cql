@@ -29,7 +29,8 @@ context Patient
 define "act-othergeneticrisk":
   {
 		code: "Refer to specialist recommendations",
-    reason: "Other genetic marker or syndrome associated with breast cancer"
+    reason: "Other genetic marker or syndrome associated with breast cancer",
+    documentation: BCSMCommonFunctions.SourceDocumentationACS
 	}  
 
 define "act-acshighriskmammo":
@@ -59,31 +60,46 @@ define "act-acshighriskmri":
 	} 
 
 define "act-acsgeneticriskmammo":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge("act-acshighriskmammo", "Genetic risk exclusion", {value: 30.0, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation("act-acshighriskmammo".code, "Genetic risk exclusion", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, "act-acshighriskmammo".timingTiming.repeat)    
 
 define "act-acsgeneticriskmri":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge("act-acshighriskmri", "Genetic risk exclusion", {value: 30.0, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation("act-acshighriskmri".code, "Genetic risk exclusion", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, "act-acshighriskmri".timingTiming.repeat)    
 
 define "act-acsmammoafterRT":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge("act-acshighriskmammo", "History of chest radiation ages 10-30 y", {value: Ageatleast25and8yafterRT, code: 'a'})
+  BCSMCommonFunctions.SetRecommendation("act-acshighriskmammo".code, "History of chest radiation ages 10-30 y", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: Ageatleast25and8yafterRT, code: 'a'}, {ToString(@2025-01-25)}, "act-acshighriskmammo".timingTiming.repeat) 
 
 define "act-acsmriafterRT":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge("act-acshighriskmri", "History of chest radiation ages 10-30 y", {value: Ageatleast25and8yafterRT, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation("act-acshighriskmri".code, "History of chest radiation ages 10-30 y", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: Ageatleast25and8yafterRT, code: 'a'}, {ToString(@2025-01-25)}, "act-acshighriskmri".timingTiming.repeat) 
 
 define "act-acsmammoafterbrca":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge("act-acshighriskmammo", "Previous breast cancer", {value: AgeInYears() * 1.0, code: 'a'})
+  BCSMCommonFunctions.SetRecommendation("act-acshighriskmammo".code, "Previous breast cancer", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: AgeInYears() * 1.0, code: 'a'}, {ToString(@2025-01-25)}, "act-acshighriskmammo".timingTiming.repeat) 
 
 define "act-hxbreastcawithin5y":
   {
 		code: "Refer to specialist recommendations",
-    reason: "Breast cancer in remission < 5 years"
+    reason: "Breast cancer in remission < 5 years",
+    documentation: BCSMCommonFunctions.SourceDocumentationOther
 	}
 
 define "act-acsmammoatypicalbx":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge("act-acshighriskmammo", "Atypical biopsy high lifetime risk", {value: AgeInYears() * 1.0, code: 'a'})  
+  BCSMCommonFunctions.SetRecommendation("act-acshighriskmammo".code, "Atypical biopsy high lifetime risk", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: AgeInYears() * 1.0, code: 'a'}, {ToString(@2025-01-25)}, "act-acshighriskmammo".timingTiming.repeat)   
 
-define "act-acsmriatypicalbx":
-  BCSMCommonFunctions.SetRecommendationReasonTimingAge("act-acshighriskmri", "Atypical biopsy high lifetime risk", {value: AgeInYears() * 1.0, code: 'a'})  
+define "act-acsmriatypicalbx":  
+  BCSMCommonFunctions.SetRecommendation("act-acshighriskmri".code, "Atypical biopsy high lifetime risk", 
+    BCSMCommonFunctions.SourceDocumentationACS, 
+    {value: AgeInYears() * 1.0, code: 'a'}, {ToString(@2025-01-25)}, "act-acshighriskmri".timingTiming.repeat)   
 
 define "RadiationTherapyCompletionAge":
   First(DataElements."de-chestxrtage10to30" C).abatement as Age //TODO: support for other choice types (dateTime, Period, etc)

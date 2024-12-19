@@ -4,6 +4,8 @@ act-acsavgrecs40:
         code: "24606-6"
         display: "MG Breast Screening"
         system: "http://loinc.org"
+      documentation:
+        label: ACS
       reason:
         code: "ACSaveragerisk"
         display: "ACS average risk"
@@ -24,6 +26,8 @@ act-acsavgrecs40:
         code: "24606-6"
         display: "MG Breast Screening"
         system: "http://loinc.org"
+      documentation:
+        label: USPSTF
       reason:
         code: "USPSTFaveragerisk"
         display: "USPSTF average risk"
@@ -45,6 +49,8 @@ act-acsavgrecs40:
         code: "24606-6"
         display: "MG Breast Screening"
         system: "http://loinc.org"
+      documentation:
+        label: ACS
       reason:
         code: "ACSaveragerisk"
         display: "ACS average risk"
@@ -65,6 +71,8 @@ act-acsavgrecs40:
         code: "24606-6"
         display: "MG Breast Screening"
         system: "http://loinc.org"
+      documentation:
+        label: USPSTF
       reason:
         code: "USPSTFaveragerisk"
         display: "USPSTF average risk"
@@ -86,6 +94,8 @@ act-acsavgrecs45: &Screening_age_=_>=_45_and_<=54
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "ACSaveragerisk"
       display: "ACS average risk"
@@ -106,6 +116,8 @@ act-acsavgrecs45: &Screening_age_=_>=_45_and_<=54
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: USPSTF
     reason:
       code: "USPSTFaveragerisk"
       display: "USPSTF average risk"
@@ -127,6 +139,8 @@ act-AgeOver54: &Screening_age_=_>=_55
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "ACSaveragerisk"
       display: "ACS average risk"
@@ -147,6 +161,8 @@ act-AgeOver54: &Screening_age_=_>=_55
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: USPSTF
     reason:
       code: "USPSTFaveragerisk"
       display: "USPSTF average risk"

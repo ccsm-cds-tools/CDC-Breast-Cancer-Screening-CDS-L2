@@ -4,6 +4,8 @@ act-othergeneticrisk:
       code: "specialtyreferral"
       display: "Refer to specialist recommendations"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: ACS
     reason:
       code: "othergeneticrisk"
       display: "Other genetic marker or syndrome associated with breast cancer"
@@ -15,6 +17,8 @@ act-acsgeneticriskmammo:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "geneticriskexclusion"
       display: "Genetic risk exclusion"
@@ -38,6 +42,8 @@ act-acsgeneticriskmri:
       code: "30794-2"
       display: "MR Breast"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "geneticriskexclusion"
       display: "Genetic risk exclusion"
@@ -69,6 +75,8 @@ act-acsmammoafterRT:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "chestxrt"
       display: "History of chest radiation ages 10-30 y"
@@ -110,6 +118,8 @@ act-acsmammoafterRT:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "chestxrt"
       display: "History of chest radiation ages 10-30 y"
@@ -151,6 +161,8 @@ act-acsmammoafterRT:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "chestxrt"
       display: "History of chest radiation ages 10-30 y"
@@ -192,6 +204,8 @@ act-acsmammoafterRT:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "chestxrt"
       display: "History of chest radiation ages 10-30 y"
@@ -235,6 +249,8 @@ act-acsmriafterRT:
       code: "30794-2"
       display: "MR Breast"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "chestxrt"
       display: "History of chest radiation ages 10-30 y"
@@ -256,6 +272,8 @@ act-acsmriafterRT:
       code: "30794-2"
       display: "MR Breast"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "chestxrt"
       display: "History of chest radiation ages 10-30 y"
@@ -277,6 +295,8 @@ act-acsmriafterRT:
       code: "30794-2"
       display: "MR Breast"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "chestxrt"
       display: "History of chest radiation ages 10-30 y"
@@ -298,6 +318,8 @@ act-acsmriafterRT:
       code: "30794-2"
       display: "MR Breast"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "chestxrt"
       display: "History of chest radiation ages 10-30 y"
@@ -321,6 +343,8 @@ act-acsmammoafterbrca:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "hxbreastca"
       display: "Previous breast cancer"
@@ -344,6 +368,8 @@ act-hxbreastcawithin5y:
       code: "specialtyreferral"
       display: "Refer to specialist recommendations"
       system: "http://cancerscreeningcds.github.io/bcsm-cds/CodeSystem/plan-definition-action-code-system"
+    documentation:
+      label: Other
     reason:
       code: "hxbreastcawithin5y"
       display: "Breast cancer in remission < 5 years"
@@ -355,6 +381,8 @@ act-acsmammoatypicalbx:
       code: "24606-6"
       display: "MG Breast Screening"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "atypicalbxhighlifetimerisk"
       display: "Atypical biopsy high lifetime risk"
@@ -378,6 +406,8 @@ act-acsmriatypicalbx:
       code: "30794-2"
       display: "MR Breast"
       system: "http://loinc.org"
+    documentation:
+      label: ACS
     reason:
       code: "atypicalbxhighlifetimerisk"
       display: "Atypical biopsy high lifetime risk"
