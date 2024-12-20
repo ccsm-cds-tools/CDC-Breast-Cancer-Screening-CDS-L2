@@ -18,7 +18,7 @@ Usage: #definition
 * action[+].id = "ACSMammoAvgRiskAgeUnder45"
 * action[=].title = "Annual screeening mammo starting age 40"
 * action[=].description = "Annual screeening mammo starting age 40"
-* insert ACSCitationActionDocumentation
+* action[=] insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMammoAvgRiskAgeUnder45"
@@ -41,7 +41,7 @@ Usage: #definition
 * action[+].id = "ACSMammoAvgRiskAge45to54"
 * action[=].title = "Annual screeening mammo starting age 40"
 * action[=].description = "Annual screeening mammo starting age 40"
-* insert ACSCitationActionDocumentation
+* action[=] insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMammoAvgRiskAge45to54"
@@ -64,7 +64,7 @@ Usage: #definition
 * action[+].id = "ACSMammoAvgRiskAgeOver54"
 * action[=].title = "Biennial screeening mammo after age 54"
 * action[=].description = "Biennial screeening mammo after age 54"
-* insert ACSCitationActionDocumentation
+* action[=] insert ACSCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsACSMammoAvgRiskAgeOver54"
@@ -87,7 +87,7 @@ Usage: #definition
 * action[+].id = "USPSTFAvgRisk"
 * action[=].title = "Biennial screeening mammo starting age 40"
 * action[=].description = "Biennial screeening mammo starting age 40"
-* insert USPSTFScreeningCitationActionDocumentation
+* action[=] insert USPSTFScreeningCitationActionDocumentation
 * action[=].condition[+].kind = $ACKIND#applicability "Applicability"
 * action[=].condition[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].condition[=].expression.expression = "ExistsUSPSTFAvgRisk"
