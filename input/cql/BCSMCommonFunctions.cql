@@ -5,6 +5,9 @@ using FHIR version '4.0.1'
 include CDSConnectCommonsforFHIRv401 version '1.0.0' called C3F
 include FHIRHelpers version '4.0.1' called FHIRHelpers
 
+codesystem "cpg-activity-type-cs": 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs'
+code "Record an inference": 'record-inference' from "cpg-activity-type-cs" display 'Record an inference'
+
 context Patient
 
 define SourceDocumentationACS:
@@ -60,3 +63,28 @@ define function AggregateRecommendationsByCode(recommendations List<Choice<Tuple
     code: actCode,
     value: recommendations R where R.code ~ actCode
   }   
+
+define InferenceTaskInput:
+  {
+    type: {coding: {"Record an inference"}},
+    valueReference: '#inference'
+  }
+
+define function CreateInferenceTaskObservation(code System.Code, value DateTime):
+  {
+    resourceType: 'Observation',
+    id : 'inference',
+    status: 'final',
+    issued: ToString(Now()),
+    subject: {reference: 'Patient/' + Patient.id },
+    code: {
+      coding: {
+        {
+          system: code.system,
+          code: code.code ,
+          display: code.display
+        }
+      }
+    },    
+    valueDateTime: ToString(value)
+  }  

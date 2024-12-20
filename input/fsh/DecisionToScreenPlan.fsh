@@ -60,7 +60,19 @@ Usage: #definition
 * action[=].dynamicValue[+].path = "reasonCode[0].coding[0]"
 * action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
 * action[=].dynamicValue[=].expression.expression = "SDMDelayScreeningLactatingReason"
-
+/*
+// -----------------------------------------------------------------------------
+// TestInferenceTask
+// -----------------------------------------------------------------------------
+* action[+].id = "TestInferenceTask"
+* action[=].definitionCanonical = Canonical(BreastScreeningNextDueRecordInferenceTask|1.0.0)
+* action[=].dynamicValue[+].path = "input[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "InferenceTaskInput"
+* action[=].dynamicValue[+].path = "contained[0]"
+* action[=].dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
+* action[=].dynamicValue[=].expression.expression = "InferenceTaskInputObservation"
+*/
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Instance: CommunicateSDMContinueScreening
@@ -134,11 +146,5 @@ Usage: #definition
 * code.coding[0] = http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs#record-inference "Record an inference"
 * intent = $RINTENT#proposal "Proposal"
 * priority = $RPRIOR#routine "Routine"
-* dynamicValue[+].path = "input[0].type"
-* dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
-* dynamicValue[=].expression.expression = "InferenceCode"
-* dynamicValue[+].path = "input[0].value.ofType(dateTime)"
-* dynamicValue[=].expression.language = $EXLANG|4.0.1#text/cql "CQL"
-* dynamicValue[=].expression.expression = "ExampleInferenceObservation"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

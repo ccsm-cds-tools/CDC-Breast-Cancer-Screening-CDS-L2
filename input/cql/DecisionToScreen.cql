@@ -5,11 +5,10 @@ using FHIR version '4.0.1'
 include FHIRHelpers  version '4.0.1' called FHIRHelpers
 include DecisionToScreenEvents version '1.0.0' called Events
 include DecisionToScreenActions version '1.0.0' called Actions
+include BCSMCommonFunctions version '1.0.0'
 
-codesystem "cpg-activity-type-cs": 'http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type-cs'
 codesystem "LOINC": 'http://loinc.org'
 
-code "Record an inference": 'record-inference' from "cpg-activity-type-cs" display 'Record an inference'
 code "MG Breast Screening": '24606-6' from "LOINC" display 'MG Breast Screening' 
 code "MR Breast": '30794-2' from "LOINC" display 'MR Breast' 
 
@@ -87,26 +86,3 @@ define SDMDelayScreeningLactatingCode:
 
 define SDMDelayScreeningLactatingReason:
   SDMDelayScreeningLactating.reason
-
-define InferenceCode:
-  "Record an inference"   
-
-define InferenceObservation:
-  CreateObservation(Actions."Screening Next Due", FHIR.dateTime {value: Now()}) 
-  
-define function CreateObservation(code System.Code, value FHIR.dateTime):
-  FHIR.Observation {
-    status: ObservationStatus{value: 'final'},
-    issued: FHIR.instant{value: Now()},
-    subject: FHIR.Reference {reference: FHIR.string { value: 'Patient/' + Patient.id }},
-    code: FHIR.CodeableConcept {
-      coding: {
-        FHIR.Coding {
-          system: FHIR.uri { value: code.system},
-          code: FHIR.code { value: code.code },
-          display: FHIR.string { value: code.display }
-        }
-      }
-    },    
-    value: value
-  }
