@@ -52,7 +52,7 @@ act-acsavgrisk:
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "2020-01-01"
       repeat:
         boundsPeriod:
           start: "2020-01-01"
@@ -75,7 +75,7 @@ act-acsavgrisk:
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "1985-01-01"
       repeat:
         boundsPeriod:
           start: "1985-01-01"
@@ -99,7 +99,7 @@ act-uspstfavgrisk:
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "2020-01-01"
       repeat:
         boundsPeriod:
           start: "2020-01-01"
@@ -122,7 +122,7 @@ act-uspstfavgrisk:
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "1985-01-01"
       repeat:
         boundsPeriod:
           start: "1985-01-01"
@@ -147,10 +147,10 @@ act-highriskexclusions:
       code: a
     timingTiming:
       event:
-      - '2025-01-25'
+      - "2023-01-01"
       repeat:
         boundsPeriod:
-          start: '2023-01-01'
+          start: "2023-01-01"
         frequency: 1
         period: 1
         periodUnit: a  

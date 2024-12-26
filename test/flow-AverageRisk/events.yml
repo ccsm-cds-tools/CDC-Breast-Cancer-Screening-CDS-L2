@@ -38,3 +38,20 @@ eve-AgeOver54:
       family: Doe    
     gender: female
     birthDate: 1965-01-01  
+
+diagnostic_report_mammo:
+  - &diagnostic_report_mammo
+    resourceType: DiagnosticReport    
+    status: final
+    category:
+      - coding:
+          - system: http://terminology.hl7.org/CodeSystem/v2-0074
+            code: RAD
+            display: Radiology
+    code:
+      coding:
+        - system: http://loinc.org
+          code: 24606-6
+          display: MG Breast Screening
+    effectiveDateTime: 2023-10-01T10:00:00Z
+    issued: 2023-10-02T15:00:00Z

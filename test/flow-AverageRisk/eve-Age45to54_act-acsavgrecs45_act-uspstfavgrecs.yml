@@ -6,5 +6,6 @@ externalData:
   - actions
 data:
   - *Patient_age_>=45_and_<=54
+  - *diagnostic_report_mammo
 results:
   flow-AverageRisk: *Screening_age_=_>=_45_and_<=54
