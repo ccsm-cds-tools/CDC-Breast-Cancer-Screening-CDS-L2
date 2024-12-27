@@ -49,7 +49,7 @@ define function SetRecommendation(
         {ToString(CalculateNextDueByCodeAndInterval(ToConcept(code), CalculateStartDateByAge(timingAge), repeat))}),
       repeat: {
         boundsPeriod: {
-          start: ToString(CalculateStartDateByAge(timingAge))
+          start: if timingAge is not null then ToString(CalculateStartDateByAge(timingAge)) else null
         },
         frequency: repeat.frequency,
         period: repeat.period,

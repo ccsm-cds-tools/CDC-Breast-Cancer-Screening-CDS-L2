@@ -13,6 +13,9 @@ context Patient
 // RECOMMENDATIONS
 //------------------------------------------------------------------------------
 
+// TODO:check mammogram activity exists
 define "flow-ScreeningDue":
-  Events."eve-due"
+  if exists Events."eve-due" then
+   Events."eve-due"
+  else null
 

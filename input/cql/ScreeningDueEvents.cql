@@ -28,57 +28,57 @@ context Patient
 //  -duedate, -interval, +lastreport = use lastreport + 24mos
 //  no activity = use today
 //return{
-//  activity: FHIR.Activity
-//  activityCode: FHIR.Activity.detail.code
+//  activity: Faction
+//  activityCode: action.code
 //  nextdue: calculated date
-//  scheduleddue: FHIR.Activity.detail.scheduled.event
-//  scheduledstart: FHIR.Activity.detail.scheduled.repeat.boundsPeriod.start
-//  scheduledrepeat: FHIR.Activity.detail.scheduled.repeat
+//  scheduleddue: action.timingTiming.event
+//  scheduledstart: action.timingTiming.repeat.boundsPeriod.start
+//  scheduledrepeat: action.timingTiming.repeat
 //  lastReportDate: DiagnosticReport date
 //  flag: "NOT DUE", "DUE", "OVERDUE", none
 //}
 
 define "eve-nextdueexists":
-  ActivityScheduledDate(MammogramScheduledActivity.detail) is not null
+  ActivityScheduledDate(MammogramScheduledActivity.timing) is not null
 
 define "eve-due":
   CarePlanActivitiesDue A where A.flag in {'DUE', 'OVERDUE'}
 
 define CarePlanActivitiesDue:
-  ActiveBreastCancerScreeningCarePlanActivities A
-  let lastReport: BCSMCommonFunctions.MostRecentDiagnosticReportByCode(FHIRHelpers.ToConcept(A.detail.code)),
+  BreastCancerScreeningActivities A
+  let lastReport: BCSMCommonFunctions.MostRecentDiagnosticReportByCode(First(A.code)),
   lastReportDate: FHIRHelpers.ToDateTime(lastReport.effective) as DateTime,
   nextdue: CalculateActivityNextDue(A)
   return {
     activity: A,
-    activityCode: A.detail.code,
+    activityCode: A.code,
     nextDue: nextdue,
-    scheduledDue: ActivityScheduledDate(A.detail),
-    scheduledStart: ((A.detail.scheduled as Timing).repeat.bounds as Period).start,
-    scheduledRepeat: (A.detail.scheduled as Timing).repeat,
+    scheduledDue: ActivityScheduledDate(A.timing),
+    scheduledStart: ((A.timing as Timing).repeat.bounds as Period).start,
+    scheduledRepeat: (A.timing as Timing).repeat,
     lastReportDate: lastReportDate,
-    flag: EvaluateFlag(A.detail.scheduled as FHIR.Timing, nextdue)
+    flag: EvaluateFlag(A.timing as FHIR.Timing, nextdue)
   } 
 
 //------------------------------------------------------------------------------
 // calculated next due
 //------------------------------------------------------------------------------
 
-define function CalculateActivityNextDue(activity FHIR.CarePlan.Activity):
-  activity A
-  let lastReport: BCSMCommonFunctions.MostRecentDiagnosticReportByCode(FHIRHelpers.ToConcept(A.detail.code)),
+define function CalculateActivityNextDue(action FHIR.RequestGroup.Action):
+  action A
+  let lastReport: BCSMCommonFunctions.MostRecentDiagnosticReportByCode(First(A.code)),
   lastReportDate: FHIRHelpers.ToDateTime(lastReport.effective) as DateTime,
-  duedate: ActivityScheduledDate(A.detail),
-  repeat: Tuple{frequency: FHIRHelpers.ToInteger((activity.detail.scheduled as Timing).repeat.frequency),
-        period: FHIRHelpers.ToDecimal((activity.detail.scheduled as Timing).repeat.period),
-        periodUnit: FHIRHelpers.ToString((activity.detail.scheduled as Timing).repeat.periodUnit)}
+  duedate: ActivityScheduledDate(A.timing),
+  repeat: Tuple{frequency: FHIRHelpers.ToInteger((A.timing as Timing).repeat.frequency),
+        period: FHIRHelpers.ToDecimal((A.timing as Timing).repeat.period),
+        periodUnit: FHIRHelpers.ToString((A.timing as Timing).repeat.periodUnit)}
   return
     case
       // -duedate = use CalculateNextDueByCodeAndInterval
       when duedate is null then 
         BCSMCommonFunctions.CalculateNextDueByCodeAndInterval(
-          FHIRHelpers.ToConcept(A.detail.code), 
-          FHIRHelpers.ToDateTime(((activity.detail.scheduled as Timing).repeat.bounds as Period).start),
+          First(A.code), 
+          FHIRHelpers.ToDateTime(((A.timing as Timing).repeat.bounds as Period).start),
           repeat)
       // +duedate, -repeat, -lastreport or +lastreport < duedate = use duedate
       when BCSMCommonFunctions.RepeatIsValid(repeat) is false and (lastReport is null or lastReportDate < duedate) then duedate
@@ -94,8 +94,15 @@ define function CalculateActivityNextDue(activity FHIR.CarePlan.Activity):
     end    
 
 //------------------------------------------------------------------------------
-// Care plan
+// Care plan/Request group
 //------------------------------------------------------------------------------
+
+define BreastCancerScreeningRequestGroup:
+  if MostRecentActiveBreastCancerScreeningCarePlan.activity[0].reference.reference is not null
+    and StartsWith(MostRecentActiveBreastCancerScreeningCarePlan.activity[0].reference.reference,'RequestGroup/')
+  then
+    FHIRHelpers.resolve(MostRecentActiveBreastCancerScreeningCarePlan.activity[0].reference) as FHIR.RequestGroup
+  else null      
 
 define BreastCancerScreeningCarePlan:
   MostRecentActiveBreastCancerScreeningCarePlan
@@ -108,36 +115,34 @@ define MostRecentActiveBreastCancerScreeningCarePlan:
 
 define ActiveBreastCancerScreeningCarePlans:
   [CarePlan] C
-    where C.status = 'active'
-      and exists C.category cat where cat ~ "Breast cancer screening"
+    where C.status in {'active', 'draft'}
+      and exists C.category cat where cat ~ "Breast cancer screening"   
 
 //------------------------------------------------------------------------------
 // Activity
 //------------------------------------------------------------------------------
 
 define MammogramScheduledActivity:
-  NextScheduledActivityByCode(ActiveBreastCancerScreeningCarePlanActivities, "MG Breast Screening")    
+  NextScheduledActivityByCode(BreastCancerScreeningActivities, "MG Breast Screening")    
 
-define ActiveBreastCancerScreeningCarePlanActivities:
-  BreastCancerScreeningCarePlan.activity A
-    where A.detail.status in {'not-started', 'scheduled', 'in-progress'}
+define BreastCancerScreeningActivities:
+  BreastCancerScreeningRequestGroup.action A
 
-define function NextScheduledActivityByCode(activities List<FHIR.CarePlan.Activity>, code Code):
-  NextScheduledActivity(ActiveBreastCancerScreeningCarePlanActivities A
-    where A.detail.code ~ code)  
+define function NextScheduledActivityByCode(activities List<FHIR.RequestGroup.Action>, code Code):
+  NextScheduledActivity(activities A where exists A.code C where C ~ ToConcept(code))
 
-define function NextScheduledActivity(activities List<FHIR.CarePlan.Activity>):
-  Last(activities A sort by ActivityScheduledDate(detail))
+define function NextScheduledActivity(activities List<FHIR.RequestGroup.Action>):
+  Last(activities A sort by ActivityScheduledDate(timing))
 
 //------------------------------------------------------------------------------
 // scheduled due date
 //------------------------------------------------------------------------------
 
-define function ActivityScheduledDate(detail FHIR.CarePlan.Activity.Detail):
+define function ActivityScheduledDate(timing Choice<FHIR.Timing,FHIR.Period>):
   Coalesce(
-    MostRecentTimingEvent(detail.scheduled as FHIR.Timing),
-    (detail.scheduled as FHIR.Period)."start".value,
-    (detail.scheduled as FHIR.Period)."end".value
+    MostRecentTimingEvent(timing as FHIR.Timing),
+    (timing as FHIR.Period)."start".value,
+    (timing as FHIR.Period)."end".value
   )
 
 define function MostRecentTimingEvent(timing FHIR.Timing):
@@ -182,7 +187,7 @@ define function EvaluateFlagBiennial(nextDueDate DateTime):
 define function EvaluateFlagAnnual(nextDueDate DateTime):
   if nextDueDate < Today() - 2 months then
     'OVERDUE'
-  else if nextDueDate <= Today() + 2 months or nextDueDate >= Today() - 3 months then
+  else if nextDueDate <= Today() + 2 months or nextDueDate >= Today() - 2 months then
     'DUE'
   else
     'NOT DUE'   
