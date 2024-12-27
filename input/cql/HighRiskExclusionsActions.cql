@@ -40,7 +40,7 @@ define "act-acshighriskmammo":
       event: {},
       repeat: {
         frequency: 1,
-        period: 1,
+        period: 1.0,
         periodUnit: 'a'
       }
     }
@@ -53,7 +53,7 @@ define "act-acshighriskmri":
       event: {},
       repeat: {
         frequency: 1,
-        period: 1,
+        period: 1.0,
         periodUnit: 'a'
       }
     }

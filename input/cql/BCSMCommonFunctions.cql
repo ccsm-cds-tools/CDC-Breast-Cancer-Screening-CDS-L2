@@ -36,16 +36,17 @@ define function SetRecommendation(
     documentation Tuple{label System.String},
     timingAge Tuple{value Decimal, code String},
     event List<System.String>,
-    repeat Tuple{frequency System.Integer,period System.Integer,periodUnit System.String}) 
+    repeat Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}) 
     returns Tuple {code System.Code,reason System.Code,documentation Tuple{label System.String},timingAge Tuple{value Decimal, code String},
-      timingTiming Tuple{event List<System.String>,repeat Tuple{boundsPeriod Tuple{start System.String},frequency System.Integer,period System.Integer,periodUnit System.String}}}: 
+      timingTiming Tuple{event List<System.String>,repeat Tuple{boundsPeriod Tuple{start System.String},frequency System.Integer,period System.Decimal,periodUnit System.String}}}: 
   Tuple {
     code: code,
     reason: reason,
     documentation: documentation,
     timingAge: timingAge,
     timingTiming: {
-      event: (if exists event then event else {ToString(CalculateNextDueByCodeAndInterval(code, CalculateStartDateByAge(timingAge), repeat))}),
+      event: (if exists event then event else 
+        {ToString(CalculateNextDueByCodeAndInterval(ToConcept(code), CalculateStartDateByAge(timingAge), repeat))}),
       repeat: {
         boundsPeriod: {
           start: ToString(CalculateStartDateByAge(timingAge))
@@ -71,9 +72,9 @@ define function CalculateStartDateByAge(timingAge Tuple{value Decimal, code Stri
 //  -startDate, +repeat, -lastreport = use today
 //  -startDate, -repeat, +lastreport = no prediction (non-repeating and ?completed)
 //  -startDate, -repeat, -lastreport = use today
-define function CalculateNextDueByCodeAndInterval(code Code, 
+define function CalculateNextDueByCodeAndInterval(code Concept, 
     startDate DateTime,
-    repeat Tuple{frequency System.Integer,period System.Integer,periodUnit System.String}):
+    repeat Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}):
   code C
   //TODO: add last report lookup from observation for cases where report itself is not transmitted, only documented in a flowsheet
   let lastReport: MostRecentDiagnosticReportByCode(C)
@@ -107,22 +108,20 @@ define function CalculateNextDueByCodeAndInterval(code Code,
       else null  
     end
 
-define function RepeatIsValid(repeat Tuple{frequency System.Integer,period System.Integer,periodUnit System.String}):
+define function RepeatIsValid(repeat Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}):
   repeat.frequency is not null and repeat.period is not null and repeat.periodUnit is not null
 
 //TODO: determine if this needs a value set
-define function MostRecentDiagnosticReportByCode(code Code):
-    CSMCommonFunctions.MostRecentDiagnosticReport(DiagnosticReportsByCode({code}))
+define function MostRecentDiagnosticReportByCode(code Concept):
+    CSMCommonFunctions.MostRecentDiagnosticReport(DiagnosticReportsByCode(code))
 
 //TODO: determine if we need to look for non-test result, like specialty referral
-define function DiagnosticReportsByCode(codes List<Code>):
+define function DiagnosticReportsByCode(concept Concept):
   [DiagnosticReport] R
-    where exists (
-      codes C where C ~ R.code
-  )
+    where R.code ~ concept  
 
 define function AddIntervalToDateTime(startDateTime System.DateTime, 
-    repeat Tuple{frequency System.Integer,period System.Integer,periodUnit System.String}):
+    repeat Tuple{frequency System.Integer,period System.Decimal,periodUnit System.String}):
   startDateTime + System.Quantity {
     value: (repeat.frequency * repeat.period) * 1.0,
     unit: FHIRHelpers.ToCalendarUnit(repeat.periodUnit)

@@ -26,7 +26,7 @@ define mammo_annual:
       event: {},
       repeat: {
         frequency: 1,
-        period: 1,
+        period: 1.0,
         periodUnit: 'a'
       }
     }
@@ -39,7 +39,7 @@ define mammo_biennial:
       event: {},
       repeat: {
         frequency: 1,
-        period: 2,
+        period: 2.0,
         periodUnit: 'a'
       }
     }

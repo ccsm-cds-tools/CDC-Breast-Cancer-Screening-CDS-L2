@@ -498,7 +498,7 @@
                                  }, {
                                     "s" : [ {
                                        "r" : "243",
-                                       "value" : [ "period",": ","1" ]
+                                       "value" : [ "period",": ","1.0" ]
                                     } ]
                                  }, {
                                     "value" : [ ",\n        " ]
@@ -573,7 +573,7 @@
                               "name" : "period",
                               "elementType" : {
                                  "localId" : "293",
-                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
@@ -642,7 +642,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "277",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -708,7 +708,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "261",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -762,7 +762,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "249",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -789,10 +789,10 @@
                               "name" : "period",
                               "value" : {
                                  "localId" : "243",
-                                 "locator" : "35:17",
-                                 "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
-                                 "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                                 "value" : "1",
+                                 "locator" : "35:17-35:19",
+                                 "resultTypeName" : "{urn:hl7-org:elm-types:r1}Decimal",
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}Decimal",
+                                 "value" : "1.0",
                                  "type" : "Literal"
                               }
                            }, {
@@ -869,7 +869,7 @@
                                  }, {
                                     "s" : [ {
                                        "r" : "306",
-                                       "value" : [ "period",": ","2" ]
+                                       "value" : [ "period",": ","2.0" ]
                                     } ]
                                  }, {
                                     "value" : [ ",\n        " ]
@@ -944,7 +944,7 @@
                               "name" : "period",
                               "elementType" : {
                                  "localId" : "356",
-                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
@@ -1013,7 +1013,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "340",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -1079,7 +1079,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "324",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -1133,7 +1133,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "312",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -1160,10 +1160,10 @@
                               "name" : "period",
                               "value" : {
                                  "localId" : "306",
-                                 "locator" : "48:17",
-                                 "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
-                                 "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                                 "value" : "2",
+                                 "locator" : "48:17-48:19",
+                                 "resultTypeName" : "{urn:hl7-org:elm-types:r1}Decimal",
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}Decimal",
+                                 "value" : "2.0",
                                  "type" : "Literal"
                               }
                            }, {
@@ -1240,7 +1240,7 @@
                                  }, {
                                     "s" : [ {
                                        "r" : "369",
-                                       "value" : [ "period",": ","1" ]
+                                       "value" : [ "period",": ","1.0" ]
                                     } ]
                                  }, {
                                     "value" : [ ",\n        " ]
@@ -1315,7 +1315,7 @@
                               "name" : "period",
                               "elementType" : {
                                  "localId" : "419",
-                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
@@ -1384,7 +1384,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "403",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -1450,7 +1450,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "387",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -1504,7 +1504,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "375",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -1531,10 +1531,10 @@
                               "name" : "period",
                               "value" : {
                                  "localId" : "369",
-                                 "locator" : "61:17",
-                                 "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
-                                 "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                                 "value" : "1",
+                                 "locator" : "61:17-61:19",
+                                 "resultTypeName" : "{urn:hl7-org:elm-types:r1}Decimal",
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}Decimal",
+                                 "value" : "1.0",
                                  "type" : "Literal"
                               }
                            }, {
@@ -1789,7 +1789,7 @@
                               "name" : "period",
                               "elementType" : {
                                  "localId" : "638",
-                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
@@ -1924,7 +1924,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "606",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -2005,7 +2005,7 @@
                      "name" : "period",
                      "elementType" : {
                         "localId" : "542",
-                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
@@ -2077,7 +2077,7 @@
                                        "name" : "period",
                                        "elementType" : {
                                           "localId" : "439",
-                                          "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                           "type" : "NamedTypeSpecifier"
                                        }
                                     }, {
@@ -2226,7 +2226,7 @@
                         "name" : "period",
                         "elementType" : {
                            "localId" : "517",
-                           "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
@@ -2278,7 +2278,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "502",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -2346,7 +2346,7 @@
                                           "name" : "period",
                                           "elementType" : {
                                              "localId" : "477",
-                                             "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                              "type" : "NamedTypeSpecifier"
                                           }
                                        }, {
@@ -2603,7 +2603,7 @@
                               "name" : "period",
                               "elementType" : {
                                  "localId" : "857",
-                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
@@ -2738,7 +2738,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "825",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -2819,7 +2819,7 @@
                      "name" : "period",
                      "elementType" : {
                         "localId" : "761",
-                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
@@ -2891,7 +2891,7 @@
                                        "name" : "period",
                                        "elementType" : {
                                           "localId" : "658",
-                                          "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                           "type" : "NamedTypeSpecifier"
                                        }
                                     }, {
@@ -3040,7 +3040,7 @@
                         "name" : "period",
                         "elementType" : {
                            "localId" : "736",
-                           "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
@@ -3092,7 +3092,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "721",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -3160,7 +3160,7 @@
                                           "name" : "period",
                                           "elementType" : {
                                              "localId" : "696",
-                                             "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                              "type" : "NamedTypeSpecifier"
                                           }
                                        }, {
@@ -3417,7 +3417,7 @@
                               "name" : "period",
                               "elementType" : {
                                  "localId" : "1076",
-                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
@@ -3552,7 +3552,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "1044",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -3633,7 +3633,7 @@
                      "name" : "period",
                      "elementType" : {
                         "localId" : "980",
-                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
@@ -3705,7 +3705,7 @@
                                        "name" : "period",
                                        "elementType" : {
                                           "localId" : "877",
-                                          "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                           "type" : "NamedTypeSpecifier"
                                        }
                                     }, {
@@ -3854,7 +3854,7 @@
                         "name" : "period",
                         "elementType" : {
                            "localId" : "955",
-                           "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
@@ -3906,7 +3906,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "940",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -3974,7 +3974,7 @@
                                           "name" : "period",
                                           "elementType" : {
                                              "localId" : "915",
-                                             "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                              "type" : "NamedTypeSpecifier"
                                           }
                                        }, {
@@ -4231,7 +4231,7 @@
                               "name" : "period",
                               "elementType" : {
                                  "localId" : "1295",
-                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
@@ -4366,7 +4366,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "1263",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -4447,7 +4447,7 @@
                      "name" : "period",
                      "elementType" : {
                         "localId" : "1199",
-                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
@@ -4519,7 +4519,7 @@
                                        "name" : "period",
                                        "elementType" : {
                                           "localId" : "1096",
-                                          "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                           "type" : "NamedTypeSpecifier"
                                        }
                                     }, {
@@ -4668,7 +4668,7 @@
                         "name" : "period",
                         "elementType" : {
                            "localId" : "1174",
-                           "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
@@ -4720,7 +4720,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "1159",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -4788,7 +4788,7 @@
                                           "name" : "period",
                                           "elementType" : {
                                              "localId" : "1134",
-                                             "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                              "type" : "NamedTypeSpecifier"
                                           }
                                        }, {
@@ -5411,7 +5411,7 @@
                               "name" : "period",
                               "elementType" : {
                                  "localId" : "1576",
-                                 "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                  "type" : "NamedTypeSpecifier"
                               }
                            }, {
@@ -5546,7 +5546,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "1544",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -5627,7 +5627,7 @@
                      "name" : "period",
                      "elementType" : {
                         "localId" : "1480",
-                        "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                         "type" : "NamedTypeSpecifier"
                      }
                   }, {
@@ -5699,7 +5699,7 @@
                                        "name" : "period",
                                        "elementType" : {
                                           "localId" : "1377",
-                                          "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                           "type" : "NamedTypeSpecifier"
                                        }
                                     }, {
@@ -5848,7 +5848,7 @@
                         "name" : "period",
                         "elementType" : {
                            "localId" : "1455",
-                           "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                            "type" : "NamedTypeSpecifier"
                         }
                      }, {
@@ -5900,7 +5900,7 @@
                                  "name" : "period",
                                  "elementType" : {
                                     "localId" : "1440",
-                                    "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                    "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                     "type" : "NamedTypeSpecifier"
                                  }
                               }, {
@@ -5968,7 +5968,7 @@
                                           "name" : "period",
                                           "elementType" : {
                                              "localId" : "1415",
-                                             "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                              "type" : "NamedTypeSpecifier"
                                           }
                                        }, {

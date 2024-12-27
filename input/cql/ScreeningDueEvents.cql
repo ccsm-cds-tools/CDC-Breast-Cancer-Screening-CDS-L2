@@ -5,6 +5,7 @@ using FHIR version '4.0.1'
 include FHIRHelpers  version '4.0.1' called FHIRHelpers
 include DataElements version '1.0.0' called DataElements
 include CSMCommonFunctions version '1.0.0' called CSMCommonFunctions
+include BCSMCommonFunctions version '1.0.0' called BCSMCommonFunctions
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMED": 'http://snomed.info/sct'
@@ -16,15 +17,12 @@ code "MR Breast": '30794-2' from "LOINC" display 'MR Breast'
 
 context Patient
 
-//modify L2 calculated nextdue logic:
+//calculated nextdue logic:
 //  +duedate, -interval, -lastreport or +lastreport < duedate = use duedate
 //  +duedate, +interval, -lastreport or +lastreport < duedate = use duedate
 //  +duedate, -interval, +lastreport > duedate = no prediction
 //  +duedate, +interval, +lastreport > duedate = use lastreport + interval
-//  -duedate, +interval, -lastreport = use interval.start or use today (still due until marked completed)
-//  -duedate, +interval, +lastreport = use lastreport + interval
-//  -duedate, -interval, +lastreport = no prediction
-//  -duedate, -interval, -lastreport = use today (still due until marked completed)
+//  -duedate = use CalculateNextDueByCodeAndInterval
 // mammogram only and in age range:
 //  +duedate, -interval, +lastreport > duedate = use lastreport + 24mos
 //  -duedate, -interval, +lastreport = use lastreport + 24mos
@@ -44,11 +42,56 @@ define "eve-nextdueexists":
   ActivityScheduledDate(MammogramScheduledActivity.detail) is not null
 
 define "eve-due":
+  CarePlanActivitiesDue A where A.flag in {'DUE', 'OVERDUE'}
+
+define CarePlanActivitiesDue:
   ActiveBreastCancerScreeningCarePlanActivities A
+  let lastReport: BCSMCommonFunctions.MostRecentDiagnosticReportByCode(FHIRHelpers.ToConcept(A.detail.code)),
+  lastReportDate: FHIRHelpers.ToDateTime(lastReport.effective) as DateTime,
+  nextdue: CalculateActivityNextDue(A)
   return {
     activity: A,
-    due: EvaluateDueDate(A.detail.scheduled as FHIR.Timing, ActivityScheduledDate(A.detail))
-  }
+    activityCode: A.detail.code,
+    nextDue: nextdue,
+    scheduledDue: ActivityScheduledDate(A.detail),
+    scheduledStart: ((A.detail.scheduled as Timing).repeat.bounds as Period).start,
+    scheduledRepeat: (A.detail.scheduled as Timing).repeat,
+    lastReportDate: lastReportDate,
+    flag: EvaluateFlag(A.detail.scheduled as FHIR.Timing, nextdue)
+  } 
+
+//------------------------------------------------------------------------------
+// calculated next due
+//------------------------------------------------------------------------------
+
+define function CalculateActivityNextDue(activity FHIR.CarePlan.Activity):
+  activity A
+  let lastReport: BCSMCommonFunctions.MostRecentDiagnosticReportByCode(FHIRHelpers.ToConcept(A.detail.code)),
+  lastReportDate: FHIRHelpers.ToDateTime(lastReport.effective) as DateTime,
+  duedate: ActivityScheduledDate(A.detail),
+  repeat: Tuple{frequency: FHIRHelpers.ToInteger((activity.detail.scheduled as Timing).repeat.frequency),
+        period: FHIRHelpers.ToDecimal((activity.detail.scheduled as Timing).repeat.period),
+        periodUnit: FHIRHelpers.ToString((activity.detail.scheduled as Timing).repeat.periodUnit)}
+  return
+    case
+      // -duedate = use CalculateNextDueByCodeAndInterval
+      when duedate is null then 
+        BCSMCommonFunctions.CalculateNextDueByCodeAndInterval(
+          FHIRHelpers.ToConcept(A.detail.code), 
+          FHIRHelpers.ToDateTime(((activity.detail.scheduled as Timing).repeat.bounds as Period).start),
+          repeat)
+      // +duedate, -repeat, -lastreport or +lastreport < duedate = use duedate
+      when BCSMCommonFunctions.RepeatIsValid(repeat) is false and (lastReport is null or lastReportDate < duedate) then duedate
+      // +duedate, +repeat, -lastreport or +lastreport < duedate = use duedate
+      when BCSMCommonFunctions.RepeatIsValid(repeat) and (lastReport is null or lastReportDate < duedate) then duedate
+      // +duedate, -repeat, +lastreport > duedate = no prediction
+      when BCSMCommonFunctions.RepeatIsValid(repeat) is false and lastReport is not null and lastReportDate > duedate then null
+      // +duedate, +repeat, +lastreport > duedate = use lastreport + repeat
+      when BCSMCommonFunctions.RepeatIsValid(repeat) and lastReport is not null and lastReportDate > duedate then
+        date from BCSMCommonFunctions.AddIntervalToDateTime(lastReportDate, repeat)
+      // Default case if none of the above conditions are met      
+      else null
+    end    
 
 //------------------------------------------------------------------------------
 // Care plan
@@ -73,19 +116,18 @@ define ActiveBreastCancerScreeningCarePlans:
 //------------------------------------------------------------------------------
 
 define MammogramScheduledActivity:
-  NextDueActivity(ActiveBreastCancerScreeningCarePlanActivities A
-    where A.detail.code ~ "MG Breast Screening")    
+  NextScheduledActivityByCode(ActiveBreastCancerScreeningCarePlanActivities, "MG Breast Screening")    
 
 define ActiveBreastCancerScreeningCarePlanActivities:
   BreastCancerScreeningCarePlan.activity A
     where A.detail.status in {'not-started', 'scheduled', 'in-progress'}
 
-define function NextDueActivity(activities List<FHIR.CarePlan.Activity>):
-  Last(activities A sort by ActivityScheduledDate(detail))    
+define function NextScheduledActivityByCode(activities List<FHIR.CarePlan.Activity>, code Code):
+  NextScheduledActivity(ActiveBreastCancerScreeningCarePlanActivities A
+    where A.detail.code ~ code)  
 
-//------------------------------------------------------------------------------
-// calculated next due
-//------------------------------------------------------------------------------
+define function NextScheduledActivity(activities List<FHIR.CarePlan.Activity>):
+  Last(activities A sort by ActivityScheduledDate(detail))
 
 //------------------------------------------------------------------------------
 // scheduled due date
@@ -114,38 +156,19 @@ define function TimingIsBiennial(timing FHIR.Timing):
   then true else false
 
 //------------------------------------------------------------------------------
-// last report date
-//------------------------------------------------------------------------------
-
-define CodeList: {
-  Code '12345-6' from "LOINC",
-  Code '67890-1' from "LOINC",
-  Code '23456-7' from "LOINC"
-}
-
-define DiagnosticReportsActivityCodes:
-  [DiagnosticReport] R
-    where FHIRHelpers.ToConcept(R.code) in CodeList
-
-define MostRecentReportPerCode:
-  distinct (DiagnosticReportsActivityCodes R return R.code) C
-    return 
-    CSMCommonFunctions.MostRecentDiagnosticReport(DiagnosticReportsActivityCodes R2 where R2.code = C)
-
-//------------------------------------------------------------------------------
 // flag due/overdue
 //------------------------------------------------------------------------------
 
-define function EvaluateDueDate(timing FHIR.Timing, nextDueDate DateTime):
+define function EvaluateFlag(timing FHIR.Timing, nextDueDate DateTime):
   case
     when TimingIsAnnual(timing)
-      then EvaluateDueDateAnnual(nextDueDate)
+      then EvaluateFlagAnnual(nextDueDate)
     when TimingIsBiennial(timing)
-      then EvaluateDueDateBiennial(nextDueDate)
-    else EvaluateDueDateDefault(nextDueDate)
+      then EvaluateFlagBiennial(nextDueDate)
+    else EvaluateFlagDefault(nextDueDate)
   end
 
-define function EvaluateDueDateDefault(nextDueDate DateTime):
+define function EvaluateFlagDefault(nextDueDate DateTime):
   if nextDueDate < Today() - 3 months then
     'OVERDUE'
   else if nextDueDate <= Today() + 2 months or nextDueDate >= Today() - 3 months then
@@ -153,10 +176,10 @@ define function EvaluateDueDateDefault(nextDueDate DateTime):
   else
     'NOT DUE'  
 
-define function EvaluateDueDateBiennial(nextDueDate DateTime):
-  EvaluateDueDateDefault(nextDueDate)
+define function EvaluateFlagBiennial(nextDueDate DateTime):
+  EvaluateFlagDefault(nextDueDate)
 
-define function EvaluateDueDateAnnual(nextDueDate DateTime):
+define function EvaluateFlagAnnual(nextDueDate DateTime):
   if nextDueDate < Today() - 2 months then
     'OVERDUE'
   else if nextDueDate <= Today() + 2 months or nextDueDate >= Today() - 3 months then

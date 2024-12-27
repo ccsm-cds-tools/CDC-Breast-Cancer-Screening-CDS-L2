@@ -9,6 +9,10 @@ include DataElements version '1.0.0' called DataElements
 
 context Patient
 
+//------------------------------------------------------------------------------
+// RECOMMENDATIONS
+//------------------------------------------------------------------------------
+
 define "flow-ScreeningDue":
-  true
+  Events."eve-due"
 
