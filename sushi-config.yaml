@@ -200,7 +200,14 @@ groups:
     - PlanDefinition/flow-AverageRisk
     - Library/AverageRisk
     - Library/AverageRiskEvents
-    - Library/AverageRiskActions  
+    - Library/AverageRiskActions
+  ScreeningDue: 
+    name: Screening due
+    description: Resources related to ScreeningDue flow
+    resources:
+    - Library/ScreeningDue
+    - Library/ScreeningDueEvents
+    - Library/ScreeningDueActions 
 #
 #
 # The ImplementationGuide resource defines several other properties
