@@ -15,7 +15,7 @@ act-acsavgrecs40:
         code: 'a'
       timingTiming:
         event:
-          - "2025-01-25"
+          - "2030-01-01"
         repeat:
           boundsPeriod:
             start: "2030-01-01"
@@ -37,7 +37,7 @@ act-acsavgrecs40:
         code: 'a'
       timingTiming:
         event:
-          - "2025-01-25"
+          - "2030-01-01"
         repeat:
           boundsPeriod:
             start: "2030-01-01"
@@ -60,7 +60,7 @@ act-acsavgrecs40:
         code: 'a'
       timingTiming:
         event:
-          - "2025-01-25"
+          - "2020-01-01"
         repeat:
           boundsPeriod:
             start: "2020-01-01"
@@ -82,7 +82,7 @@ act-acsavgrecs40:
         code: 'a'
       timingTiming:
         event:
-          - "2025-01-25"
+          - "2020-01-01"
         repeat:
           boundsPeriod:
             start: "2020-01-01"
@@ -105,7 +105,7 @@ act-acsavgrecs45: &Screening_age_=_>=_45_and_<=54
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "2024-10-01"
       repeat:
         boundsPeriod:
           start: "2010-01-01"
@@ -127,7 +127,7 @@ act-acsavgrecs45: &Screening_age_=_>=_45_and_<=54
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "2025-10-01"
       repeat:
         boundsPeriod:
           start: "2010-01-01"
@@ -150,7 +150,7 @@ act-AgeOver54: &Screening_age_=_>=_55
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "2025-10-01"
       repeat:
         boundsPeriod:
           start: "2005-01-01"
@@ -172,7 +172,7 @@ act-AgeOver54: &Screening_age_=_>=_55
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "2025-10-01"
       repeat:
         boundsPeriod:
           start: "2005-01-01"

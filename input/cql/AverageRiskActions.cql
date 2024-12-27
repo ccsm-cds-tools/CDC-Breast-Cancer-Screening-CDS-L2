@@ -23,10 +23,10 @@ define mammo_annual:
   {
 		code: "MG Breast Screening",
     timingTiming: {
-      event: {ToString(@2025-01-25)}, //TODO: placeholder for testing nextduedate
+      event: {},
       repeat: {
         frequency: 1,
-        period: 1,
+        period: 1.0,
         periodUnit: 'a'
       }
     }
@@ -36,10 +36,10 @@ define mammo_biennial:
   {
 		code: "MG Breast Screening",
     timingTiming: {
-      event: {ToString(@2025-01-25)}, //TODO: placeholder for testing nextduedate
+      event: {},
       repeat: {
         frequency: 1,
-        period: 2,
+        period: 2.0,
         periodUnit: 'a'
       }
     }
@@ -48,16 +48,16 @@ define mammo_biennial:
 //TODO: determine if any codes needed for Offer annual screening mammogram ages 40-44
 define "act-acsavgrecs40":
   BCSMCommonFunctions.SetRecommendation(mammo_annual.code, "ACS average risk", 
-    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_annual.timingTiming.repeat)  
+    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {}, mammo_annual.timingTiming.repeat)  
 
 define "act-acsavgrecs45":
   BCSMCommonFunctions.SetRecommendation(mammo_annual.code, "ACS average risk", 
-    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_annual.timingTiming.repeat)    
+    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {}, mammo_annual.timingTiming.repeat)    
 
 define "act-acsavgrecs55":
   BCSMCommonFunctions.SetRecommendation(mammo_biennial.code, "ACS average risk", 
-    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_biennial.timingTiming.repeat)    
+    BCSMCommonFunctions.SourceDocumentationACS, {value: 40.0, code: 'a'}, {}, mammo_biennial.timingTiming.repeat)    
 
 define "act-uspstfavgrecs":
   BCSMCommonFunctions.SetRecommendation(mammo_biennial.code, "USPSTF average risk", 
-    BCSMCommonFunctions.SourceDocumentationUSPSTF, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_biennial.timingTiming.repeat)   
+    BCSMCommonFunctions.SourceDocumentationUSPSTF, {value: 40.0, code: 'a'}, {}, mammo_biennial.timingTiming.repeat)

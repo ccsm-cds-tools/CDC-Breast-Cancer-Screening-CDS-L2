@@ -15,7 +15,7 @@ act-acshighriskmammo:
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        -  "2010-01-01"
       repeat:
         boundsPeriod:
           start: "2010-01-01"
@@ -39,7 +39,7 @@ act-acshighriskmri:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2010-01-01"
       repeat:
         boundsPeriod:
           start: "2010-01-01"
@@ -63,7 +63,7 @@ act-firstdeggeneticmammo:
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "2010-01-01"
       repeat:
         boundsPeriod:
           start: "2010-01-01"
@@ -87,7 +87,7 @@ act-firstdeggeneticmri:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2010-01-01"
       repeat:
         boundsPeriod:
           start: "2010-01-01"
@@ -135,7 +135,7 @@ act-uspstfrecs:
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        - "2020-01-01"
       repeat:
         boundsPeriod:
           start: "2020-01-01"

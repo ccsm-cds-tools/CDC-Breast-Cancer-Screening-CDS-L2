@@ -28,7 +28,7 @@ act-acsgeneticriskmammo:
       code: 'a'
     timingTiming:
       event:
-        - "2025-01-25"
+        -  "2010-01-01"
       repeat:
         boundsPeriod:
           start: "2010-01-01"
@@ -53,7 +53,7 @@ act-acsgeneticriskmri:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2010-01-01"
       repeat:
         boundsPeriod:
           start: "2010-01-01"
@@ -86,7 +86,7 @@ act-acsmammoafterRT:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        -  "2005-01-01"
       repeat:
         boundsPeriod:
           start: "2005-01-01"
@@ -129,7 +129,7 @@ act-acsmammoafterRT:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2025-01-01"
       repeat:
         boundsPeriod:
           start: "2025-01-01"
@@ -172,7 +172,7 @@ act-acsmammoafterRT:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2035-01-01"
       repeat:
         boundsPeriod:
           start: "2035-01-01"
@@ -215,7 +215,7 @@ act-acsmammoafterRT:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2040-01-01"
       repeat:
         boundsPeriod:
           start: "2040-01-01"
@@ -260,7 +260,7 @@ act-acsmriafterRT:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2005-01-01"
       repeat:
         boundsPeriod:
           start: "2005-01-01"
@@ -283,7 +283,7 @@ act-acsmriafterRT:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2025-01-01"
       repeat:
         boundsPeriod:
           start: "2025-01-01"
@@ -306,7 +306,7 @@ act-acsmriafterRT:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2035-01-01"
       repeat:
         boundsPeriod:
           start: "2035-01-01"
@@ -329,7 +329,7 @@ act-acsmriafterRT:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2040-01-01"
       repeat:
         boundsPeriod:
           start: "2040-01-01"
@@ -354,7 +354,7 @@ act-acsmammoafterbrca:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2023-01-01"
       repeat:
         boundsPeriod:
           start: "2023-01-01"
@@ -392,7 +392,7 @@ act-acsmammoatypicalbx:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2023-01-01"
       repeat:
         boundsPeriod:
           start: "2023-01-01"
@@ -417,7 +417,7 @@ act-acsmriatypicalbx:
       code: 'a'
     timingTiming:
       event: 
-        - "2025-01-25"
+        - "2023-01-01"
       repeat:
         boundsPeriod:
           start: "2023-01-01"

@@ -29,10 +29,10 @@ define mammo_annual:
   {
 		code: "MG Breast Screening",
     timingTiming: {
-      event: {ToString(@2025-01-25)}, //TODO: placeholder for testing nextduedate
+      event: {},
       repeat: {
         frequency: 1,
-        period: 1,
+        period: 1.0,
         periodUnit: 'a'
       }
     }
@@ -42,10 +42,10 @@ define mammo_biennial:
   {
 		code: "MG Breast Screening",
     timingTiming: {
-      event: {ToString(@2025-01-25)}, //TODO: placeholder for testing nextduedate
+      event: {},
       repeat: {
         frequency: 1,
-        period: 2,
+        period: 2.0,
         periodUnit: 'a'
       }
     }
@@ -55,10 +55,10 @@ define mri_annual:
   {
 		code: "MR Breast",
     timingTiming: {
-      event: {ToString(@2025-01-25)}, //TODO: placeholder for testing nextduedate
+      event: {},
       repeat: {
         frequency: 1,
-        period: 1,
+        period: 1.0,
         periodUnit: 'a'
       }
     }
@@ -67,22 +67,22 @@ define mri_annual:
 define "act-acshighriskmammo":  
   BCSMCommonFunctions.SetRecommendation(mammo_annual.code, "High lifetime risk", 
     BCSMCommonFunctions.SourceDocumentationACS, 
-    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_annual.timingTiming.repeat)     
+    {value: 30.0, code: 'a'}, {}, mammo_annual.timingTiming.repeat)     
 
 define "act-acshighriskmri":  
   BCSMCommonFunctions.SetRecommendation(mri_annual.code, "High lifetime risk", 
     BCSMCommonFunctions.SourceDocumentationACS, 
-    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, mri_annual.timingTiming.repeat)
+    {value: 30.0, code: 'a'}, {}, mri_annual.timingTiming.repeat)
 
 define "act-firstdeggeneticmammo":    
   BCSMCommonFunctions.SetRecommendation(mammo_annual.code, "First degree relative with genetic marker or syndrome", 
     BCSMCommonFunctions.SourceDocumentationACS, 
-    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_annual.timingTiming.repeat)
+    {value: 30.0, code: 'a'}, {}, mammo_annual.timingTiming.repeat)
 
 define "act-firstdeggeneticmri":  
   BCSMCommonFunctions.SetRecommendation(mri_annual.code, "First degree relative with genetic marker or syndrome", 
     BCSMCommonFunctions.SourceDocumentationACS, 
-    {value: 30.0, code: 'a'}, {ToString(@2025-01-25)}, mri_annual.timingTiming.repeat)
+    {value: 30.0, code: 'a'}, {}, mri_annual.timingTiming.repeat)
 
 define "act-breastdensitycord":
   {
@@ -100,4 +100,4 @@ define "act-fhxbreastcarisk":
 
 define "act-uspstfrecs":
   BCSMCommonFunctions.SetRecommendation(mammo_biennial.code, "USPSTF average risk", 
-    BCSMCommonFunctions.SourceDocumentationUSPSTF, {value: 40.0, code: 'a'}, {ToString(@2025-01-25)}, mammo_biennial.timingTiming.repeat) 
+    BCSMCommonFunctions.SourceDocumentationUSPSTF, {value: 40.0, code: 'a'}, {}, mammo_biennial.timingTiming.repeat) 

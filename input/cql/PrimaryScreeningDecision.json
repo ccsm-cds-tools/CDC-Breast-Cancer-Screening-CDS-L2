@@ -328,7 +328,7 @@
                                     "name" : "period",
                                     "elementType" : {
                                        "localId" : "428",
-                                       "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                       "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }, {
@@ -506,7 +506,7 @@
                                        "name" : "period",
                                        "elementType" : {
                                           "localId" : "385",
-                                          "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                          "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                           "type" : "NamedTypeSpecifier"
                                        }
                                     }, {
@@ -693,7 +693,7 @@
                                           "name" : "period",
                                           "elementType" : {
                                              "localId" : "297",
-                                             "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                              "type" : "NamedTypeSpecifier"
                                           }
                                        }, {
@@ -878,7 +878,7 @@
                                           "name" : "period",
                                           "elementType" : {
                                              "localId" : "342",
-                                             "name" : "{urn:hl7-org:elm-types:r1}Integer",
+                                             "name" : "{urn:hl7-org:elm-types:r1}Decimal",
                                              "type" : "NamedTypeSpecifier"
                                           }
                                        }, {
